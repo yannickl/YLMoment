@@ -49,6 +49,9 @@
 - (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat;
 + (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat;
 
+- (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier;
++ (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier;
+
 - (NSString *)format;
 - (NSString *)format:(NSString *)dateFormat;
 

@@ -22,12 +22,13 @@
     NSMoment *moment = [NSMoment now];
     
     // Formatting dates
-    NSLog(@"moment: %@", [moment format:@"MMMM dd YYYY, h:mm:ss a"]);
+    NSLog(@"moment: %@", [moment format:@"MMMM dd yyyy, h:mm:ss a"]);
     NSLog(@"moment: %@", [moment format:@"MMM DD yy"]);
-    NSLog(@"moment: %@", [moment format:@"YYYY 'escaped' YYYY"]);
+    NSLog(@"moment: %@", [moment format:@"yyyy 'escaped' YYYY"]);
     NSLog(@"moment: %@", [moment format]);
     
-    NSLog(@"moment: %@", [[NSMoment momentWithDateAsString:@"1986-12-11 at 08h" format:@"YYYY-MM-dd 'at' HH'h'"] format]);
+    NSLog(@"moment: %@", [[NSMoment momentWithDateAsString:@"1986-12-11 at 08h" format:@"yyyy-MM-dd 'at' HH'h'"] format]);
+    NSLog(@"moment: %@", [[NSMoment momentWithDateAsString:@"juillet 2012" format:@"MMMM yyyy" localeIdentifier:@"fr_FR"] format]);
 }
 
 - (void)didReceiveMemoryWarning

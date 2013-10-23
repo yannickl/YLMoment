@@ -89,9 +89,23 @@ static NSString * const formattingTokens    = @"(\\[[^\\[]*\\])|(\\\\)?(Mo|MM?M?
 
 - (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
 {
+    NSString *localeIdentifier =[[NSLocale currentLocale] identifier];
+    return [self initWithDateAsString:dateAsString format:dateFormat localeIdentifier:localeIdentifier];
+}
+
++ (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
+{
+    return [[self alloc] initWithDateAsString:dateAsString format:dateFormat];
+}
+
+#pragma mark -
+
+- (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
+{
     if ((self = [super init]))
     {
         _formatter            = [[NSDateFormatter alloc] init];
+        _formatter.locale     = [NSLocale localeWithLocaleIdentifier:localeIdentifier];
         _formatter.dateFormat = dateFormat;
         
         _date                 = [_formatter dateFromString:dateAsString];
@@ -99,9 +113,16 @@ static NSString * const formattingTokens    = @"(\\[[^\\[]*\\])|(\\\\)?(Mo|MM?M?
     return self;
 }
 
-+ (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
++ (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
 {
-    return [[self alloc] initWithDateAsString:dateAsString format:dateFormat];
+    return [[self alloc] initWithDateAsString:dateAsString format:dateFormat localeIdentifier:localeIdentifier];
+}
+
+#pragma mark -
+
+- (NSString *)description
+{
+    return [self format];
 }
 
 #pragma mark - Public Methods
@@ -113,9 +134,11 @@ static NSString * const formattingTokens    = @"(\\[[^\\[]*\\])|(\\\\)?(Mo|MM?M?
 
 - (NSString *)format:(NSString *)dateFormat
 {
-    _formatter.dateFormat = dateFormat;
-    
-    return [_formatter stringFromDate:_date];
+    NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
+    formatter.locale            = [NSLocale currentLocale];
+    formatter.dateFormat        = dateFormat;
+
+    return [formatter stringFromDate:_date];
 }
 
 - (BOOL)isValid
