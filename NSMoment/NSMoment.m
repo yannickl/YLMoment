@@ -26,17 +26,8 @@
 
 #import "NSMoment.h"
 
-/************************************
- Constants
- ************************************/
-
-static NSString * const NSMomentIsoFormat   = @"yyyy-MM-dd'T'HH:mm:ssZ";
-static NSString * const formattingTokens    = @"(\\[[^\\[]*\\])|(\\\\)?(Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|mm?|ss?|SS?S?|X|zz?|ZZ?|.)";
-
 @interface NSMoment ()
-@property (nonatomic, strong) NSDate          *date;
-@property (nonatomic, strong) NSString        *dateAsString;
-@property (nonatomic, strong) NSDateFormatter *formatter;
+@property (nonatomic, strong) NSDate   *date;
 
 @end
 
@@ -58,26 +49,33 @@ static NSString * const formattingTokens    = @"(\\[[^\\[]*\\])|(\\\\)?(Mo|MM?M?
 {
     if ((self = [super init]))
     {
-        // Sets the default date and formatter
-        _date                 = date;
-        
-        _formatter            = [[NSDateFormatter alloc] init];
-        //_formatter.locale     = [[NSLocale alloc] initWithLocaleIdentifier:[NSLocale currentLocale]];
-        _formatter.dateFormat = NSMomentIsoFormat;
+        _date = date;
     }
     return self;
 }
 
 + (id)momentWithDate:(NSDate *)date
 {
-    return [[self alloc] init];
+    return [[self alloc] initWithDate:[NSDate date]];
 }
 
 #pragma mark -
 
 - (id)initWithDateAsString:(NSString *)dateAsString
 {
-    @throw [NSException exceptionWithName:@"Not Yet Implemented" reason:@"Under Development" userInfo:nil];
+    if ((self = [super init]))
+    {
+        NSError *error;
+        NSDataDetector *detector    = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:&error];
+        NSTextCheckingResult *match = [detector firstMatchInString:dateAsString options:0 range:NSMakeRange(0, [dateAsString length])];
+
+        if (match)
+        {
+            _date = match.date;
+        }
+    }
+    
+    return self;
 }
 
 + (id)momentWithDateAsString:(NSString *)dateAsString
@@ -90,6 +88,7 @@ static NSString * const formattingTokens    = @"(\\[[^\\[]*\\])|(\\\\)?(Mo|MM?M?
 - (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
 {
     NSString *localeIdentifier =[[NSLocale currentLocale] identifier];
+    
     return [self initWithDateAsString:dateAsString format:dateFormat localeIdentifier:localeIdentifier];
 }
 
@@ -104,11 +103,11 @@ static NSString * const formattingTokens    = @"(\\[[^\\[]*\\])|(\\\\)?(Mo|MM?M?
 {
     if ((self = [super init]))
     {
-        _formatter            = [[NSDateFormatter alloc] init];
-        _formatter.locale     = [NSLocale localeWithLocaleIdentifier:localeIdentifier];
-        _formatter.dateFormat = dateFormat;
+        NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
+        formatter.locale            = [NSLocale localeWithLocaleIdentifier:localeIdentifier];
+        formatter.dateFormat        = dateFormat;
         
-        _date                 = [_formatter dateFromString:dateAsString];
+        _date                       = [formatter dateFromString:dateAsString];
     }
     return self;
 }
@@ -129,7 +128,7 @@ static NSString * const formattingTokens    = @"(\\[[^\\[]*\\])|(\\\\)?(Mo|MM?M?
 
 - (NSString *)format
 {
-    return [self format:NSMomentIsoFormat];
+    return [self format:NSMomentIso8601Format];
 }
 
 - (NSString *)format:(NSString *)dateFormat

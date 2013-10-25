@@ -26,23 +26,42 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
+
 /**
- `NSMoment` is an object with convenience methods for manipulating dates inspired by the [moment.js](http://momentjs.com/) library.
+ * `NSMoment` is an object with convenience methods for manipulating dates 
+ * inspired by the [moment.js](http://momentjs.com/) library.
+ * It aims to provide just one entry class to work with dates in Objective-C. It
+ * only uses the `Foundation` components (`NSDate`, `NSDateFormatter`, etc.) in
+ * order to be as simple as possible.
  */
 @interface NSMoment : NSObject
 
-///---------------------
-/// @name Initialization
-///---------------------
+///-----------------------------------------------
+/// @name Creating and Initializing Moment Objects
+///-----------------------------------------------
+
+#pragma mark Creating and Initializing Moment Objects
 
 /**
- * @abstract Creates and returns an `NSMoment` with the current date.
+ * @abstract Creates and returns a moment which is set to the current date.
  */
 + (id)now;
 
+/**
+ * @abstract Initialize a moment using a given date.
+ * @param date a date.
+ */
 - (id)initWithDate:(NSDate *)date;
 + (id)momentWithDate:(NSDate *)date;
 
+/**
+ * @abstract Initialize a moment using a date representation of a given string 
+ * interpreted using the receiver’s current settings.
+ * @param dateAsString The string to parse.
+ * @discussion If the `dateAsString` can not be parsed the moment will be not 
+ * valid.
+ */
 - (id)initWithDateAsString:(NSString *)dateAsString;
 + (id)momentWithDateAsString:(NSString *)dateAsString;
 
@@ -52,7 +71,28 @@
 - (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier;
 + (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier;
 
+///--------------------------------------
+/// @name Representing Moments as Strings
+///--------------------------------------
+
+#pragma mark Representing Moments as Strings
+
+/**
+ * @abstract Returns a string representation of the moment formatted using the 
+ * `ISO-8601` format.
+ * @return A string representation of the moment formatted using the `ISO-8601`
+ * format.
+ */
 - (NSString *)format;
+
+/**
+ * @abstract Returns a string representation of the moment formatted using a
+ * given date format.
+ * @param dateFormat The date format for the receiver. See Data Formatting Guide
+ * for a list of the conversion specifiers permitted in date format strings.
+ * @return A string representation of the moment formatted using a given date
+ * format.
+ */
 - (NSString *)format:(NSString *)dateFormat;
 
 - (BOOL)isValid;
