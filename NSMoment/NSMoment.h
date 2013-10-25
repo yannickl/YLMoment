@@ -29,11 +29,12 @@
 static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 
 /**
- * `NSMoment` is an object with convenience methods for manipulating dates 
- * inspired by the [moment.js](http://momentjs.com/) library.
- * It aims to provide just one entry class to work with dates in Objective-C. It
- * only uses the `Foundation` components (`NSDate`, `NSDateFormatter`, etc.) in
- * order to be as simple as possible.
+ * `NSMoment` is a library which provides an high abstraction level for parsing,
+ * validating, manipulating, and formatting the dates in Objective-C.
+ *
+ * Its API is inspired by the well know [moment.js](http://momentjs.com/)
+ * library and its core is build upon the `Foundation Framework` components
+ * (`NSDate`, `NSDateFormatter`,etc.).
  */
 @interface NSMoment : NSObject
 
@@ -53,18 +54,34 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @param date a date.
  */
 - (id)initWithDate:(NSDate *)date;
+
+/**
+ * @abstract Creates and returns a moment using a given date.
+ * @param date a date.
+ */
 + (id)momentWithDate:(NSDate *)date;
 
 /**
- * @abstract Initialize a moment using a date representation of a given string 
- * interpreted using the receiver’s current settings.
+ * @abstract Initialize a moment using the date representation of a given string
+ * interpreted.
  * @param dateAsString The string to parse.
- * @discussion If the `dateAsString` can not be parsed the moment will be not 
- * valid.
+ * @discussion The initializer uses the `NSDataDetector` to interpret the date
+ * format.
  */
 - (id)initWithDateAsString:(NSString *)dateAsString;
+
+/**
+ * @abstract Creates and returns a moment using the date representation of a 
+ * given string.
+ * @param dateAsString The string to parse.
+ * @discussion The initializer uses the `NSDataDetector` to interpret the date
+ * format.
+ */
 + (id)momentWithDateAsString:(NSString *)dateAsString;
 
+/**
+ *
+ */
 - (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat;
 + (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat;
 
@@ -95,7 +112,23 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  */
 - (NSString *)format:(NSString *)dateFormat;
 
+///-------------------------
+/// @name Validating Moments
+///-------------------------
+
+#pragma mark Validating Moments
+
+/**
+ * @abstract Returns true whether the current moment is valid.
+ * @return `true` whether the current moment is valid.
+ */
 - (BOOL)isValid;
+
+///---------------------------
+/// @name Working with Moments
+///---------------------------
+
+#pragma mark Working with Moments
 
 /**
  - (void)clone;
