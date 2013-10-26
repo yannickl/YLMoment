@@ -167,7 +167,19 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * Returns the `NSDate` corresponding to the current moment.
  * @return the `NSDate` corresponding to the current moment.
  */
-- (NSDate *)toDate;
+- (NSDate *)date;
+
+#pragma mark Comparing Moments
+/** @name Comparing Moments */
+
+/**
+ * @abstract Returns a Boolean value that indicates whether a given object
+ * is an `NSMoment` object and exactly equal the receiver.
+ * @param anotherMoment The moment to compare with the receiver.
+ * @return YES if the anotherMoment is an `NSMoment` object and is exactly
+ * equal to the receiver, otherwise NO.
+ */
+- (BOOL)isEqualToMoment:(NSMoment *)anotherMoment;
 
 #pragma mark Working with Moments
 /** @name Working with Moments */

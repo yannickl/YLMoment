@@ -56,7 +56,7 @@
 
 + (id)momentWithDate:(NSDate *)date
 {
-    return [[self alloc] initWithDate:[NSDate date]];
+    return [[self alloc] initWithDate:date];
 }
 
 #pragma mark -
@@ -81,8 +81,9 @@
         components.hour              = hour;
         components.minute            = minute;
         components.second            = second;
-        
-        _date = [components date];
+
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        _date                = [calendar dateFromComponents:components];
     }
     return self;
 }
@@ -149,7 +150,7 @@
     return [[self alloc] initWithDateAsString:dateAsString format:dateFormat localeIdentifier:localeIdentifier];
 }
 
-#pragma mark -
+#pragma mark - Properties
 
 - (NSString *)description
 {
@@ -183,9 +184,23 @@
 
 #pragma mark Converting Moments
 
-- (NSDate *)toDate
+- (NSDate *)date
 {
     return _date;
+}
+
+#pragma mark Comparing Moments
+
+- (BOOL)isEqualToMoment:(NSMoment *)anotherMoment
+{
+    if ([anotherMoment isMemberOfClass:[self class]])
+    {
+        NSDate *reference = [anotherMoment date];
+        
+        return [_date isEqualToDate:reference];
+    }
+    
+    return NO;
 }
 
 #pragma mark Working with Moments

@@ -19,25 +19,60 @@
 
 @implementation NSMomentTests_Create
 
+- (void)testCreateFromArray
+{
+    NSMoment *moment = [NSMoment momentWithArrayComponents:@[@2010]];
+    expect([moment date]).notTo.beNil();
+    
+    moment = [NSMoment momentWithArrayComponents:@[@2010, @1]];
+    expect([moment date]).notTo.beNil();
+    
+    moment = [NSMoment momentWithArrayComponents:@[@2010, @1, @12]];
+    expect([moment date]).notTo.beNil();
+    
+    moment = [NSMoment momentWithArrayComponents:@[@2010, @1, @12, @1]];
+    expect([moment date]).notTo.beNil();
+    
+    moment = [NSMoment momentWithArrayComponents:@[@2010, @1, @12, @1, @1]];
+    expect([moment date]).notTo.beNil();
+    
+    moment = [NSMoment momentWithArrayComponents:@[@2010, @1, @12, @1, @1, @1]];
+    expect([moment date]).notTo.beNil();
+    
+    NSCalendar *calendar         = [NSCalendar currentCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.year              = 2010;
+    components.month             = 1;
+    components.day               = 12;
+    components.hour              = 1;
+    components.minute            = 1;
+    components.second            = 1;
+    
+    NSDate *date        = [calendar dateFromComponents:components];
+    NSMoment *reference = [NSMoment momentWithDate:date];
+    
+    expect([moment isEqualToMoment:reference]).to.beTruthy();
+}
+
 - (void)testCreateFromDate
 {
     NSMoment *moment = [NSMoment momentWithDate:[NSDate date]];
-    expect([moment toDate]).notTo.beNil();
+    expect([moment date]).notTo.beNil();
 }
 
 - (void)testCreateFromNow
 {
     NSMoment *moment = [NSMoment now];
-    expect([moment toDate]).notTo.beNil();
+    expect([moment date]).notTo.beNil();
 }
 
 - (void)testCreateFromStringWithoutFormat
 {
     NSMoment *moment = [NSMoment momentWithDateAsString:@"Aug 9, 1995"];
-    expect([moment toDate]).notTo.beNil();
+    expect([moment date]).notTo.beNil();
     
     moment = [NSMoment momentWithDateAsString:@"Mon, 25 Dec 1995 13:30:00 GMT"];
-    expect([moment toDate]).notTo.beNil();
+    expect([moment date]).notTo.beNil();
 }
 
 @end
