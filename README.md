@@ -1,5 +1,7 @@
 ## NSMoment
 
+[![Build Status](https://travis-ci.org/YannickL/NSMoment.png?branch=master)](https://travis-ci.org/YannickL/NSMoment)
+
 `NSMoment` is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.
 
 Its API is inspired by the well know [moment.js](http://momentjs.com/) library and its core is build upon the `Foundation Framework` components (`NSDate`, `NSDateFormatter`,etc.).
