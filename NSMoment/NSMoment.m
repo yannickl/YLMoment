@@ -61,6 +61,39 @@
 
 #pragma mark -
 
+- (id)initWithArrayComponents:(NSArray *)dateAsArray
+{
+    if ((self = [super init]))
+    {
+        NSInteger componentCount = [dateAsArray count];
+        
+        NSInteger year   = (componentCount > 0) ? [dateAsArray[0] integerValue] : 0;
+        NSInteger month  = (componentCount > 1) ? [dateAsArray[1] integerValue] : 0;
+        NSInteger day    = (componentCount > 2) ? [dateAsArray[2] integerValue] : 0;
+        NSInteger hour   = (componentCount > 3) ? [dateAsArray[3] integerValue] : 0;
+        NSInteger minute = (componentCount > 4) ? [dateAsArray[4] integerValue] : 0;
+        NSInteger second = (componentCount > 5) ? [dateAsArray[5] integerValue] : 0;
+        
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        components.year              = year;
+        components.month             = month;
+        components.day               = day;
+        components.hour              = hour;
+        components.minute            = minute;
+        components.second            = second;
+        
+        _date = [components date];
+    }
+    return self;
+}
+
++ (id)momentWithArrayComponents:(NSArray *)dateAsArray
+{
+    return [[self alloc] initWithArrayComponents:dateAsArray];
+}
+
+#pragma mark -
+
 - (id)initWithDateAsString:(NSString *)dateAsString
 {
     if ((self = [super init]))
