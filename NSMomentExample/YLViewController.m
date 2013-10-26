@@ -19,12 +19,12 @@
 {
     [super viewDidLoad];
 
-    NSMoment *moment = [[NSMoment alloc] initWithDateAsString:@"11/12/1986 2h15 +0200"];
+    NSMoment *moment = [NSMoment momentWithDateAsString:@"11/12/1986 2h15 +0200"];
     
     // Formatting dates
     NSLog(@"moment: %@", [moment format:@"MMMM dd yyyy, h:mm:ss a"]);
-    NSLog(@"moment: %@", [moment format:@"MMM DD yy"]);
-    NSLog(@"moment: %@", [moment format:@"yyyy 'escaped' YYYY"]);
+    NSLog(@"moment: %@", [moment format:@"MMM dd yy"]);
+    NSLog(@"moment: %@", [moment format:@"yyyy 'escaped' yyyy"]);
     NSLog(@"moment: %@", [moment format]);
     
     NSLog(@"moment: %@", [[NSMoment momentWithDateAsString:@"1986-12-11 at 08h" format:@"yyyy-MM-dd 'at' HH'h'"] format]);

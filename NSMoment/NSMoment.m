@@ -79,7 +79,7 @@
 
 + (id)momentWithDateAsString:(NSString *)dateAsString
 {
-    return [[self init] initWithString:dateAsString];
+    return [[self alloc] initWithDateAsString:dateAsString];
 }
 
 #pragma mark -
@@ -136,7 +136,7 @@
     formatter.locale            = [NSLocale currentLocale];
     formatter.dateFormat        = dateFormat;
 
-    return [formatter stringFromDate:_date];
+    return [formatter stringFromDate:_date] ?: @"Invalid Date";
 }
 
 - (BOOL)isValid
