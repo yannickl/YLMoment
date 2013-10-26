@@ -144,6 +144,15 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  */
 - (BOOL)isValid;
 
+#pragma mark Converting Moments
+/** @name Working with Moments */
+
+/**
+ * Returns the `NSDate` corresponding to the current moment.
+ * @return the `NSDate` corresponding to the current moment.
+ */
+- (NSDate *)toDate;
+
 #pragma mark Working with Moments
 /** @name Working with Moments */
 

@@ -27,7 +27,7 @@
 #import "NSMoment.h"
 
 @interface NSMoment ()
-@property (nonatomic, strong) NSDate   *date;
+@property (nonatomic, strong) NSDate *date;
 
 @end
 
@@ -125,6 +125,8 @@
 
 #pragma mark - Public Methods
 
+#pragma mark Representing Moments as Strings
+
 - (NSString *)format
 {
     return [self format:NSMomentIso8601Format];
@@ -139,10 +141,21 @@
     return [formatter stringFromDate:_date] ?: @"Invalid Date";
 }
 
+#pragma mark Validating Moments
+
 - (BOOL)isValid
 {
     return (_date != nil);
 }
+
+#pragma mark Converting Moments
+
+- (NSDate *)toDate
+{
+    return _date;
+}
+
+#pragma mark Working with Moments
 
 #pragma mark - Private Methods
 

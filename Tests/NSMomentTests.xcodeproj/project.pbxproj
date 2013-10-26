@@ -14,6 +14,7 @@
 		F4605D47181C3416007F83EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D43181C33EA007F83EF /* Foundation.framework */; };
 		F4605D4B181C3F73007F83EF /* NSMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605D4A181C3F73007F83EF /* NSMoment.m */; };
 		F4605D4E181C3FCD007F83EF /* NSMomentTests+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605D4D181C3FCD007F83EF /* NSMomentTests+Format.m */; };
+		F4605D51181C4512007F83EF /* NSMomentTests+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605D50181C4512007F83EF /* NSMomentTests+Create.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		F4605D49181C3F73007F83EF /* NSMoment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMoment.h; sourceTree = "<group>"; };
 		F4605D4A181C3F73007F83EF /* NSMoment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMoment.m; sourceTree = "<group>"; };
 		F4605D4D181C3FCD007F83EF /* NSMomentTests+Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTests+Format.m"; sourceTree = "<group>"; };
+		F4605D50181C4512007F83EF /* NSMomentTests+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTests+Create.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				F4605D36181C33AA007F83EF /* Supporting Files */,
 				F4605D4D181C3FCD007F83EF /* NSMomentTests+Format.m */,
+				F4605D50181C4512007F83EF /* NSMomentTests+Create.m */,
 			);
 			path = iOSTests;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4605D51181C4512007F83EF /* NSMomentTests+Create.m in Sources */,
 				F4605D4B181C3F73007F83EF /* NSMoment.m in Sources */,
 				F4605D4E181C3FCD007F83EF /* NSMomentTests+Format.m in Sources */,
 			);
