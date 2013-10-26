@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F4605CDB181BC6E7007F83EF /* NSMoment+FormatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605CDA181BC6E7007F83EF /* NSMoment+FormatTests.m */; };
 		F4E52B3F1811B847003A9B65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B3E1811B847003A9B65 /* Foundation.framework */; };
 		F4E52B411811B847003A9B65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B401811B847003A9B65 /* CoreGraphics.framework */; };
 		F4E52B431811B847003A9B65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B421811B847003A9B65 /* UIKit.framework */; };
@@ -18,25 +17,10 @@
 		F4E52B551811B847003A9B65 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E52B531811B847003A9B65 /* Main_iPad.storyboard */; };
 		F4E52B581811B847003A9B65 /* YLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E52B571811B847003A9B65 /* YLViewController.m */; };
 		F4E52B5A1811B847003A9B65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E52B591811B847003A9B65 /* Images.xcassets */; };
-		F4E52B611811B847003A9B65 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B601811B847003A9B65 /* XCTest.framework */; };
-		F4E52B621811B847003A9B65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B3E1811B847003A9B65 /* Foundation.framework */; };
-		F4E52B631811B847003A9B65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B421811B847003A9B65 /* UIKit.framework */; };
-		F4E52B6B1811B847003A9B65 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4E52B691811B847003A9B65 /* InfoPlist.strings */; };
 		F4E52B7C1811B89E003A9B65 /* NSMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E52B7B1811B89E003A9B65 /* NSMoment.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F4E52B641811B847003A9B65 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F4E52B331811B847003A9B65 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F4E52B3A1811B847003A9B65;
-			remoteInfo = NSMomentExample;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		F4605CDA181BC6E7007F83EF /* NSMoment+FormatTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMoment+FormatTests.m"; sourceTree = "<group>"; };
 		F4E52B3B1811B847003A9B65 /* NSMomentExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSMomentExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E52B3E1811B847003A9B65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4E52B401811B847003A9B65 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -52,10 +36,6 @@
 		F4E52B561811B847003A9B65 /* YLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLViewController.h; sourceTree = "<group>"; };
 		F4E52B571811B847003A9B65 /* YLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLViewController.m; sourceTree = "<group>"; };
 		F4E52B591811B847003A9B65 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F4E52B5F1811B847003A9B65 /* NSMomentExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSMomentExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4E52B601811B847003A9B65 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		F4E52B681811B847003A9B65 /* NSMomentExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSMomentExampleTests-Info.plist"; sourceTree = "<group>"; };
-		F4E52B6A1811B847003A9B65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4E52B7A1811B89E003A9B65 /* NSMoment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMoment.h; sourceTree = "<group>"; };
 		F4E52B7B1811B89E003A9B65 /* NSMoment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMoment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,16 +51,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4E52B5C1811B847003A9B65 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F4E52B611811B847003A9B65 /* XCTest.framework in Frameworks */,
-				F4E52B631811B847003A9B65 /* UIKit.framework in Frameworks */,
-				F4E52B621811B847003A9B65 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -89,7 +59,6 @@
 			children = (
 				F4E52B791811B89E003A9B65 /* NSMoment */,
 				F4E52B441811B847003A9B65 /* NSMomentExample */,
-				F4E52B661811B847003A9B65 /* NSMomentExampleTests */,
 				F4E52B3D1811B847003A9B65 /* Frameworks */,
 				F4E52B3C1811B847003A9B65 /* Products */,
 			);
@@ -99,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				F4E52B3B1811B847003A9B65 /* NSMomentExample.app */,
-				F4E52B5F1811B847003A9B65 /* NSMomentExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,7 +78,6 @@
 				F4E52B3E1811B847003A9B65 /* Foundation.framework */,
 				F4E52B401811B847003A9B65 /* CoreGraphics.framework */,
 				F4E52B421811B847003A9B65 /* UIKit.framework */,
-				F4E52B601811B847003A9B65 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,31 +108,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F4E52B661811B847003A9B65 /* NSMomentExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				F4E52B671811B847003A9B65 /* Supporting Files */,
-				F4605CDA181BC6E7007F83EF /* NSMoment+FormatTests.m */,
-			);
-			path = NSMomentExampleTests;
-			sourceTree = "<group>";
-		};
-		F4E52B671811B847003A9B65 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F4E52B681811B847003A9B65 /* NSMomentExampleTests-Info.plist */,
-				F4E52B691811B847003A9B65 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		F4E52B791811B89E003A9B65 /* NSMoment */ = {
 			isa = PBXGroup;
 			children = (
 				F4E52B7A1811B89E003A9B65 /* NSMoment.h */,
 				F4E52B7B1811B89E003A9B65 /* NSMoment.m */,
 			);
-			path = NSMoment;
+			name = NSMoment;
+			path = ../NSMoment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,24 +138,6 @@
 			productReference = F4E52B3B1811B847003A9B65 /* NSMomentExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F4E52B5E1811B847003A9B65 /* NSMomentExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F4E52B731811B848003A9B65 /* Build configuration list for PBXNativeTarget "NSMomentExampleTests" */;
-			buildPhases = (
-				F4E52B5B1811B847003A9B65 /* Sources */,
-				F4E52B5C1811B847003A9B65 /* Frameworks */,
-				F4E52B5D1811B847003A9B65 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F4E52B651811B847003A9B65 /* PBXTargetDependency */,
-			);
-			name = NSMomentExampleTests;
-			productName = NSMomentExampleTests;
-			productReference = F4E52B5F1811B847003A9B65 /* NSMomentExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,11 +147,6 @@
 				CLASSPREFIX = YL;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Yannick Loriot";
-				TargetAttributes = {
-					F4E52B5E1811B847003A9B65 = {
-						TestTargetID = F4E52B3A1811B847003A9B65;
-					};
-				};
 			};
 			buildConfigurationList = F4E52B361811B847003A9B65 /* Build configuration list for PBXProject "NSMomentExample" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -235,7 +162,6 @@
 			projectRoot = "";
 			targets = (
 				F4E52B3A1811B847003A9B65 /* NSMomentExample */,
-				F4E52B5E1811B847003A9B65 /* NSMomentExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,14 +175,6 @@
 				F4E52B5A1811B847003A9B65 /* Images.xcassets in Resources */,
 				F4E52B521811B847003A9B65 /* Main_iPhone.storyboard in Resources */,
 				F4E52B491811B847003A9B65 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4E52B5D1811B847003A9B65 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F4E52B6B1811B847003A9B65 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,23 +192,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4E52B5B1811B847003A9B65 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F4605CDB181BC6E7007F83EF /* NSMoment+FormatTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F4E52B651811B847003A9B65 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F4E52B3A1811B847003A9B65 /* NSMomentExample */;
-			targetProxy = F4E52B641811B847003A9B65 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F4E52B471811B847003A9B65 /* InfoPlist.strings */ = {
@@ -315,14 +217,6 @@
 				F4E52B541811B847003A9B65 /* Base */,
 			);
 			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		F4E52B691811B847003A9B65 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F4E52B6A1811B847003A9B65 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -428,48 +322,6 @@
 			};
 			name = Release;
 		};
-		F4E52B741811B848003A9B65 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NSMomentExample.app/NSMomentExample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NSMomentExample/NSMomentExample-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "NSMomentExampleTests/NSMomentExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		F4E52B751811B848003A9B65 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NSMomentExample.app/NSMomentExample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NSMomentExample/NSMomentExample-Prefix.pch";
-				INFOPLIST_FILE = "NSMomentExampleTests/NSMomentExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -487,15 +339,6 @@
 			buildConfigurations = (
 				F4E52B711811B848003A9B65 /* Debug */,
 				F4E52B721811B848003A9B65 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F4E52B731811B848003A9B65 /* Build configuration list for PBXNativeTarget "NSMomentExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F4E52B741811B848003A9B65 /* Debug */,
-				F4E52B751811B848003A9B65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
