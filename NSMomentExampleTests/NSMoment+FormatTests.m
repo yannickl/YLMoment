@@ -1,18 +1,18 @@
 //
-//  NSMomentExampleTests.m
-//  NSMomentExampleTests
+//  NSMoment+FormatTests.m
+//  NSMomentExample
 //
-//  Created by YannickL on 18/10/13.
+//  Created by YannickL on 26/10/2013.
 //  Copyright (c) 2013 Yannick Loriot. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface NSMomentExampleTests : XCTestCase
+@interface NSMoment_FormatTests : XCTestCase
 
 @end
 
-@implementation NSMomentExampleTests
+@implementation NSMoment_FormatTests
 
 - (void)setUp
 {

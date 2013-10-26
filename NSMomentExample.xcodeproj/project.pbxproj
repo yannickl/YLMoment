@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4605CDB181BC6E7007F83EF /* NSMoment+FormatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605CDA181BC6E7007F83EF /* NSMoment+FormatTests.m */; };
 		F4E52B3F1811B847003A9B65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B3E1811B847003A9B65 /* Foundation.framework */; };
 		F4E52B411811B847003A9B65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B401811B847003A9B65 /* CoreGraphics.framework */; };
 		F4E52B431811B847003A9B65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B421811B847003A9B65 /* UIKit.framework */; };
@@ -21,7 +22,6 @@
 		F4E52B621811B847003A9B65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B3E1811B847003A9B65 /* Foundation.framework */; };
 		F4E52B631811B847003A9B65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B421811B847003A9B65 /* UIKit.framework */; };
 		F4E52B6B1811B847003A9B65 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4E52B691811B847003A9B65 /* InfoPlist.strings */; };
-		F4E52B6D1811B847003A9B65 /* NSMomentExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E52B6C1811B847003A9B65 /* NSMomentExampleTests.m */; };
 		F4E52B7C1811B89E003A9B65 /* NSMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E52B7B1811B89E003A9B65 /* NSMoment.m */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F4605CDA181BC6E7007F83EF /* NSMoment+FormatTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMoment+FormatTests.m"; sourceTree = "<group>"; };
 		F4E52B3B1811B847003A9B65 /* NSMomentExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSMomentExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E52B3E1811B847003A9B65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4E52B401811B847003A9B65 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,7 +56,6 @@
 		F4E52B601811B847003A9B65 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F4E52B681811B847003A9B65 /* NSMomentExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSMomentExampleTests-Info.plist"; sourceTree = "<group>"; };
 		F4E52B6A1811B847003A9B65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F4E52B6C1811B847003A9B65 /* NSMomentExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSMomentExampleTests.m; sourceTree = "<group>"; };
 		F4E52B7A1811B89E003A9B65 /* NSMoment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMoment.h; sourceTree = "<group>"; };
 		F4E52B7B1811B89E003A9B65 /* NSMoment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMoment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				F4E52B671811B847003A9B65 /* Supporting Files */,
-				F4E52B6C1811B847003A9B65 /* NSMomentExampleTests.m */,
+				F4605CDA181BC6E7007F83EF /* NSMoment+FormatTests.m */,
 			);
 			path = NSMomentExampleTests;
 			sourceTree = "<group>";
@@ -278,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4E52B6D1811B847003A9B65 /* NSMomentExampleTests.m in Sources */,
+				F4605CDB181BC6E7007F83EF /* NSMoment+FormatTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

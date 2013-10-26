@@ -1,15 +1,24 @@
-NSMoment
-========
+## NSMoment
 
 `NSMoment` is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.
 
 Its API is inspired by the well know [moment.js](http://momentjs.com/) library and its core is build upon the `Foundation Framework` components (`NSDate`, `NSDateFormatter`,etc.).
 
-Changelog
-====================
+## Installation with CocoaPods
 
-License (MIT)
-====================
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like NSMoment in your projects.
+
+### Podfile
+
+```ruby
+platform :ios, ‘5.0’
+pod "NSMoment", "~> 0.1.0 »
+```
+
+## Usage
+
+## License (MIT)
+
 Copyright (c) 2013 - Yannick Loriot and contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
