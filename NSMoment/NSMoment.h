@@ -141,9 +141,16 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 + (instancetype)proxy;
 
 /**
- * @abstract The calendar that will be used for the date calculation.
+ * @abstract The calendar that will be used for the date calculations.
+ * @discussion The default value is set to the current calendar.
  */
 @property (atomic, strong) NSCalendar *calendar;
+
+/**
+ * @abstract The local that will be used to display the dates.
+ * @discussion The default value is set to the current locale.
+ */
+@property (atomic, strong) NSLocale *locale;
 
 #pragma mark Representing Moments as Strings
 /** @name Representing Moments as Strings */

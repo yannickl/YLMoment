@@ -123,9 +123,9 @@
 
 - (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
 {
-    NSString *localeIdentifier =[[NSLocale currentLocale] identifier];
+    NSLocale *locale = _locale ?: [[[self class] proxy] locale];
     
-    return [self initWithDateAsString:dateAsString format:dateFormat localeIdentifier:localeIdentifier];
+    return [self initWithDateAsString:dateAsString format:dateFormat localeIdentifier:[locale localeIdentifier]];
 }
 
 + (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
@@ -184,7 +184,7 @@
 - (NSString *)format:(NSString *)dateFormat
 {
     NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
-    formatter.locale            = [NSLocale currentLocale];
+    formatter.locale            = _locale ?: [[[self class] proxy] locale];
     formatter.dateFormat        = dateFormat;
 
     return [formatter stringFromDate:_date] ?: @"Invalid Date";
@@ -227,6 +227,7 @@
     if ((self = [super init]))
     {
         _calendar   = [NSCalendar currentCalendar];
+        _locale     = [NSLocale currentLocale];
     }
     return self;
 }
