@@ -56,8 +56,11 @@
 
 - (void)testCreateFromDate
 {
-    NSMoment *moment = [NSMoment momentWithDate:[NSDate date]];
+    NSDate *reference = [NSDate date];
+    
+    NSMoment *moment = [NSMoment momentWithDate:reference];
     expect([moment date]).notTo.beNil();
+    expect([[moment date] isEqualToDate:reference]).to.beTruthy();
 }
 
 - (void)testCreateForDateMutation
