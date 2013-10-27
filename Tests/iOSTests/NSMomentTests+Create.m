@@ -39,7 +39,7 @@
     moment = [NSMoment momentWithArrayComponents:@[@2010, @1, @12, @1, @1, @1]];
     expect([moment date]).notTo.beNil();
     
-    NSCalendar *calendar         = [NSCalendar currentCalendar];
+    NSCalendar *calendar         = [[NSMoment proxy] calendar];
     NSDateComponents *components = [[NSDateComponents alloc] init];
     components.year              = 2010;
     components.month             = 1;

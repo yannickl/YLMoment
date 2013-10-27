@@ -130,6 +130,21 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  */
 + (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier;
 
+#pragma mark Configuring Moments
+/** @name Configuring Moments */
+
+/**
+ * @abstract Returns the proxy for the receiver.
+ * @return The appearance proxy for the receiver.
+ * @discussion The proxy is useful to configuring the `NSMoment` in a global way.
+ */
++ (instancetype)proxy;
+
+/**
+ * @abstract The calendar that will be used for the date calculation.
+ */
+@property (atomic, strong) NSCalendar *calendar;
+
 #pragma mark Representing Moments as Strings
 /** @name Representing Moments as Strings */
 

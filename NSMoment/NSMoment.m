@@ -29,6 +29,9 @@
 @interface NSMoment ()
 @property (nonatomic, strong) NSDate *date;
 
+/** Init the proxy with the default values. */
+- (id)initProxy;
+
 @end
 
 @implementation NSMoment
@@ -82,7 +85,7 @@
         components.minute            = minute;
         components.second            = second;
 
-        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSCalendar *calendar = _calendar ?: [[[self class] proxy] calendar];
         _date                = [calendar dateFromComponents:components];
     }
     return self;
@@ -157,6 +160,18 @@
     return [self format];
 }
 
+#pragma mark - Configuring Moments
+
++ (instancetype)proxy
+{
+    static NSMoment *_sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[self alloc] initProxy];
+    });
+    return _sharedInstance;
+}
+
 #pragma mark - Public Methods
 
 #pragma mark Representing Moments as Strings
@@ -206,5 +221,14 @@
 #pragma mark Working with Moments
 
 #pragma mark - Private Methods
+
+- (id)initProxy
+{
+    if ((self = [super init]))
+    {
+        _calendar   = [NSCalendar currentCalendar];
+    }
+    return self;
+}
 
 @end
