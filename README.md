@@ -14,10 +14,20 @@ Its API is inspired by the well know [moment.js](http://momentjs.com/) library a
 
 ```ruby
 platform :ios, ‘5.0’
-pod "NSMoment", "~> 0.1.0 »
+pod "NSMoment", "~> 0.1.0"
 ```
 
 ## Usage
+
+### Formatting dates
+```objective-c
+NSMoment *moment = [NSMoment now];
+
+NSLog(@"%@", [moment format:@"MMMM dd yyyy, h:mm:ss a"]); // October 27 2013, 10:49:48 AM
+NSLog(@"%@", [moment format:@"MMM dd yy"]);               // Oct 27 13
+NSLog(@"%@", [moment format:@"yyyy 'escaped' yyyy"]);     // 2013 escaped 2013
+NSLog(@"%@", [moment format]);                            // 2013-10-27T10:49:48+0100
+```
 
 ## License (MIT)
 
