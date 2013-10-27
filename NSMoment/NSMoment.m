@@ -49,7 +49,7 @@
 {
     if ((self = [super init]))
     {
-        _date = date;
+        _date = [[NSDate alloc] initWithTimeInterval:0 sinceDate:date];
     }
     return self;
 }

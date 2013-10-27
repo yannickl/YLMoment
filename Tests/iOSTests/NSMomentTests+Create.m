@@ -64,8 +64,8 @@
 {
     NSDate *reference = [NSDate date];
     NSMoment *moment  = [NSMoment momentWithDate:reference];
-    
-    expect([[moment date] isEqual:reference]).notTo.beTruthy();
+
+    expect([moment date] == reference).notTo.beTruthy();
 }
 
 - (void)testCreateFromNow
