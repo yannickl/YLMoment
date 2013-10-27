@@ -86,4 +86,15 @@
     expect([moment date]).notTo.beNil();
 }
 
+- (void)testCreateFromEmptyStringWithFormats
+{
+    expect([[NSMoment momentWithDateAsString:@"" format:@"MM"] format:@"yyyy-MM-dd HH:mm:ss"]).to.equal(@"Invalid Date");
+    expect([[NSMoment momentWithDateAsString:@" " format:@"MM"] format:@"yyyy-MM-dd HH:mm:ss"]).to.equal(@"Invalid Date");
+    expect([[NSMoment momentWithDateAsString:@" " format:@"DD"] format:@"yyyy-MM-dd HH:mm:ss"]).to.equal(@"Invalid Date");
+    
+    expect([[NSMoment momentWithDateAsString:@"" format:@"MM"] isValid]).to.beFalsy();
+    expect([[NSMoment momentWithDateAsString:@" " format:@"MM"] isValid]).to.beFalsy();
+    expect([[NSMoment momentWithDateAsString:@" " format:@"DD"] isValid]).to.beFalsy();
+}
+
 @end
