@@ -15,6 +15,7 @@
 		F4605D4B181C3F73007F83EF /* NSMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605D4A181C3F73007F83EF /* NSMoment.m */; };
 		F4605D4E181C3FCD007F83EF /* NSMomentTests+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605D4D181C3FCD007F83EF /* NSMomentTests+Format.m */; };
 		F4605D51181C4512007F83EF /* NSMomentTests+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605D50181C4512007F83EF /* NSMomentTests+Create.m */; };
+		F4605D67181D5B84007F83EF /* NSMomentFormat.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F4605D66181D5B84007F83EF /* NSMomentFormat.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		F4605D4A181C3F73007F83EF /* NSMoment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMoment.m; sourceTree = "<group>"; };
 		F4605D4D181C3FCD007F83EF /* NSMomentTests+Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTests+Format.m"; sourceTree = "<group>"; };
 		F4605D50181C4512007F83EF /* NSMomentTests+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTests+Create.m"; sourceTree = "<group>"; };
+		F4605D66181D5B84007F83EF /* NSMomentFormat.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NSMomentFormat.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		F4605D48181C3F73007F83EF /* NSMoment */ = {
 			isa = PBXGroup;
 			children = (
+				F4605D66181D5B84007F83EF /* NSMomentFormat.bundle */,
 				F4605D49181C3F73007F83EF /* NSMoment.h */,
 				F4605D4A181C3F73007F83EF /* NSMoment.m */,
 			);
@@ -136,6 +139,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
 			);
 			mainGroup = F4605D09181C326A007F83EF;
 			productRefGroup = F4605D09181C326A007F83EF;
@@ -153,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4605D3A181C33AA007F83EF /* InfoPlist.strings in Resources */,
+				F4605D67181D5B84007F83EF /* NSMomentFormat.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

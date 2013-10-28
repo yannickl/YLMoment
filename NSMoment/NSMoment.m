@@ -27,14 +27,29 @@
 #import "NSMoment.h"
 
 @interface NSMoment ()
-@property (nonatomic, strong) NSDate *date;
+#pragma mark internal
+@property (nonatomic, strong) NSDate   *date;
+
+#pragma mark langs
+@property (nonatomic, strong) NSBundle *langBundle;
 
 /** Init the proxy with the default values. */
 - (id)initProxy;
 
+/** Called when the moment is initiated. */
+- (void)momentInitiated;
+
+/** Update the lang bundle with the current locale preferred localizations. */
+- (void)updateLangBundle;
+
 @end
 
 @implementation NSMoment
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"locale"];
+}
 
 - (id)init
 {
@@ -52,7 +67,12 @@
 {
     if ((self = [super init]))
     {
-        _date = [[NSDate alloc] initWithTimeInterval:0 sinceDate:date];
+        if (date)
+        {
+            _date = [[NSDate alloc] initWithTimeInterval:0 sinceDate:date];
+        }
+        
+        [self momentInitiated];
     }
     return self;
 }
@@ -66,29 +86,26 @@
 
 - (id)initWithArrayComponents:(NSArray *)dateAsArray
 {
-    if ((self = [super init]))
-    {
-        NSInteger componentCount = [dateAsArray count];
-        
-        NSInteger year   = (componentCount > 0) ? [dateAsArray[0] integerValue] : 0;
-        NSInteger month  = (componentCount > 1) ? [dateAsArray[1] integerValue] : 0;
-        NSInteger day    = (componentCount > 2) ? [dateAsArray[2] integerValue] : 0;
-        NSInteger hour   = (componentCount > 3) ? [dateAsArray[3] integerValue] : 0;
-        NSInteger minute = (componentCount > 4) ? [dateAsArray[4] integerValue] : 0;
-        NSInteger second = (componentCount > 5) ? [dateAsArray[5] integerValue] : 0;
-        
-        NSDateComponents *components = [[NSDateComponents alloc] init];
-        components.year              = year;
-        components.month             = month;
-        components.day               = day;
-        components.hour              = hour;
-        components.minute            = minute;
-        components.second            = second;
-
-        NSCalendar *calendar = _calendar ?: [[[self class] proxy] calendar];
-        _date                = [calendar dateFromComponents:components];
-    }
-    return self;
+    NSInteger componentCount = [dateAsArray count];
+    
+    NSInteger year   = (componentCount > 0) ? [dateAsArray[0] integerValue] : 0;
+    NSInteger month  = (componentCount > 1) ? [dateAsArray[1] integerValue] : 0;
+    NSInteger day    = (componentCount > 2) ? [dateAsArray[2] integerValue] : 0;
+    NSInteger hour   = (componentCount > 3) ? [dateAsArray[3] integerValue] : 0;
+    NSInteger minute = (componentCount > 4) ? [dateAsArray[4] integerValue] : 0;
+    NSInteger second = (componentCount > 5) ? [dateAsArray[5] integerValue] : 0;
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.year              = year;
+    components.month             = month;
+    components.day               = day;
+    components.hour              = hour;
+    components.minute            = minute;
+    components.second            = second;
+    
+    NSCalendar *calendar = [[[self class] proxy] calendar];
+    
+    return [self initWithDate:[calendar dateFromComponents:components]];
 }
 
 + (id)momentWithArrayComponents:(NSArray *)dateAsArray
@@ -100,18 +117,10 @@
 
 - (id)initWithDateAsString:(NSString *)dateAsString
 {
-    if ((self = [super init]))
-    {
-        NSDataDetector *detector    = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:nil];
-        NSTextCheckingResult *match = [detector firstMatchInString:dateAsString options:0 range:NSMakeRange(0, [dateAsString length])];
-
-        if (match)
-        {
-            _date = match.date;
-        }
-    }
+    NSDataDetector *detector    = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:nil];
+    NSTextCheckingResult *match = [detector firstMatchInString:dateAsString options:0 range:NSMakeRange(0, [dateAsString length])];
     
-    return self;
+    return [self initWithDate:match.date];
 }
 
 + (id)momentWithDateAsString:(NSString *)dateAsString
@@ -123,7 +132,7 @@
 
 - (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
 {
-    NSLocale *locale = _locale ?: [[[self class] proxy] locale];
+    NSLocale *locale = [[[self class] proxy] locale];
     
     return [self initWithDateAsString:dateAsString format:dateFormat localeIdentifier:[locale localeIdentifier]];
 }
@@ -137,15 +146,11 @@
 
 - (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
 {
-    if ((self = [super init]))
-    {
-        NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
-        formatter.locale            = [NSLocale localeWithLocaleIdentifier:localeIdentifier];
-        formatter.dateFormat        = dateFormat;
-        
-        _date                       = [formatter dateFromString:dateAsString];
-    }
-    return self;
+    NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
+    formatter.locale            = [NSLocale localeWithLocaleIdentifier:localeIdentifier];
+    formatter.dateFormat        = dateFormat;
+    
+    return [self initWithDate:[formatter dateFromString:dateAsString]];
 }
 
 + (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
@@ -186,7 +191,7 @@
     NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
     formatter.locale            = _locale ?: [[[self class] proxy] locale];
     formatter.dateFormat        = dateFormat;
-
+    
     return [formatter stringFromDate:_date] ?: @"Invalid Date";
 }
 
@@ -226,10 +231,60 @@
 {
     if ((self = [super init]))
     {
-        _calendar   = [NSCalendar currentCalendar];
-        _locale     = [NSLocale currentLocale];
+        _calendar = [NSCalendar currentCalendar];
+        _locale   = [NSLocale currentLocale];
+        
+        [self updateLangBundle];
+        [self momentInitiated];
     }
     return self;
+}
+
+- (void)momentInitiated
+{
+    [self addObserver:self forKeyPath:@"locale" options:0 context:nil];
+}
+
+- (void)updateLangBundle
+{
+    NSString *lang = [[_locale localeIdentifier] substringToIndex:2];
+    
+    NSBundle *classBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *langURL        = [classBundle URLForResource:lang withExtension:@"lproj"];
+    
+    if (langURL)
+    {
+        _langBundle = [NSBundle bundleWithURL:langURL];
+    } else
+    {
+        NSArray *preferredLocalizations = [classBundle preferredLocalizations];
+        
+        for (NSString *preferredLocalization in preferredLocalizations)
+        {
+            langURL = [classBundle URLForResource:preferredLocalization withExtension:@"lproj"];
+            
+            if (langURL)
+            {
+                _langBundle = [NSBundle bundleWithURL:langURL];
+                break;
+            }
+        }
+    }
+    
+    NSLog(@"updateLangBundle: %@", _langBundle);
+}
+
+#pragma mark - KVO Delegate Method
+
+- (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context
+{
+    if ([keyPath isEqualToString:@"locale"])
+    {
+        [self updateLangBundle];
+    } else
+    {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 @end

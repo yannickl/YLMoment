@@ -1,0 +1,21 @@
+/* 
+  NSMomentFormat.strings
+  NSMomentTests
+
+  Created by YannickL on 27/10/2013.
+  Translation comes from the http://momemt.js project.
+*/
+
+"future" = "in %s";
+"past"   = "%s ago";
+"s"      = "a few seconds";
+"m"      = "a minute";
+"mm"     = "%d minutes";
+"h"      = "an hour";
+"hh"     = "%d hours";
+"d"      = "a day";
+"dd"     = "%d days";
+"M"      = "a month";
+"MM"     = "%d months";
+"y"      = "a year";
+"yy"     = "%d years";

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4605D69181D7D0E007F83EF /* NSMomentFormat.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F4605D68181D7D0E007F83EF /* NSMomentFormat.bundle */; };
 		F4E52B3F1811B847003A9B65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B3E1811B847003A9B65 /* Foundation.framework */; };
 		F4E52B411811B847003A9B65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B401811B847003A9B65 /* CoreGraphics.framework */; };
 		F4E52B431811B847003A9B65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E52B421811B847003A9B65 /* UIKit.framework */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4605D68181D7D0E007F83EF /* NSMomentFormat.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NSMomentFormat.bundle; sourceTree = "<group>"; };
 		F4E52B3B1811B847003A9B65 /* NSMomentExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSMomentExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E52B3E1811B847003A9B65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4E52B401811B847003A9B65 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -111,6 +113,7 @@
 		F4E52B791811B89E003A9B65 /* NSMoment */ = {
 			isa = PBXGroup;
 			children = (
+				F4605D68181D7D0E007F83EF /* NSMomentFormat.bundle */,
 				F4E52B7A1811B89E003A9B65 /* NSMoment.h */,
 				F4E52B7B1811B89E003A9B65 /* NSMoment.m */,
 			);
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E52B551811B847003A9B65 /* Main_iPad.storyboard in Resources */,
+				F4605D69181D7D0E007F83EF /* NSMomentFormat.bundle in Resources */,
 				F4E52B5A1811B847003A9B65 /* Images.xcassets in Resources */,
 				F4E52B521811B847003A9B65 /* Main_iPhone.storyboard in Resources */,
 				F4E52B491811B847003A9B65 /* InfoPlist.strings in Resources */,

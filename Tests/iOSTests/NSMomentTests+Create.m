@@ -38,7 +38,7 @@
     
     moment = [NSMoment momentWithArrayComponents:@[@2010, @1, @12, @1, @1, @1]];
     expect([moment date]).notTo.beNil();
-    
+
     NSCalendar *calendar         = [[NSMoment proxy] calendar];
     NSDateComponents *components = [[NSDateComponents alloc] init];
     components.year              = 2010;
@@ -84,6 +84,9 @@
     
     moment = [NSMoment momentWithDateAsString:@"Mon, 25 Dec 1995 13:30:00 GMT"];
     expect([moment date]).notTo.beNil();
+    
+    moment = [NSMoment momentWithDateAsString:@"I'm not a date"];
+    expect([moment date]).to.beNil();
 }
 
 - (void)testCreateFromEmptyStringWithFormats
