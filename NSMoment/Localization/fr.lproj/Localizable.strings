@@ -6,8 +6,8 @@
   Translation comes from the http://momemt.js project.
 */
 
-"future" = "dans %s";
-"past"   = "il y a %s";
+"future" = "dans %@";
+"past"   = "il y a %@";
 "s"      = "quelques secondes";
 "m"      = "une minute";
 "mm"     = "%d minutes";

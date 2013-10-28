@@ -223,7 +223,89 @@
     return NO;
 }
 
-#pragma mark Working with Moments
+#pragma mark Working with Relative Time
+
+- (NSString *)fromNow
+{
+    return [self fromNowWithSuffix:YES];
+}
+
+- (NSString *)fromNowWithSuffix:(BOOL)suffixed
+{
+    // Get the lang bundle
+    NSBundle *langBundle = _langBundle ?: [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
+    
+    // Compute the time interval
+    double referenceTime = [_date timeIntervalSinceDate:[NSDate date]];
+    double seconds       = round(fabs(referenceTime));
+    double minutes       = round(seconds / 60.0f);
+    double hours         = round(minutes / 60.0f);
+    double days          = round(hours / 24.0f);
+    double years         = round(days / 365.0f);
+    
+    // Build the formatted string
+    NSString *formattedString = @"";
+    int unit                  = 0;
+    if (seconds < 45)
+    {
+        formattedString = [langBundle localizedStringForKey:@"s" value:@"a few seconds" table:nil];
+        unit            = seconds;
+    } else if (minutes == 1)
+    {
+        formattedString = [langBundle localizedStringForKey:@"m" value:@"a minute" table:nil];
+    } else if (minutes < 45)
+    {
+        formattedString = [langBundle localizedStringForKey:@"mm" value:@"%d minutes" table:nil];
+        unit            = minutes;
+    } else if (hours == 1)
+    {
+        formattedString = [langBundle localizedStringForKey:@"h" value:@"an hour" table:nil];
+    } else if (hours < 22)
+    {
+        formattedString = [langBundle localizedStringForKey:@"hh" value:@"%d hours" table:nil];
+        unit            = hours;
+    } else if (days == 1)
+    {
+        formattedString = [langBundle localizedStringForKey:@"d" value:@"a day" table:nil];
+    } else if (days <= 25)
+    {
+        formattedString = [langBundle localizedStringForKey:@"dd" value:@"%d days" table:nil];
+        unit            = days;
+    } else if (days <= 45)
+    {
+        formattedString = [langBundle localizedStringForKey:@"M" value:@"a month" table:nil];
+    } else if (days < 345)
+    {
+        formattedString = [langBundle localizedStringForKey:@"MM" value:@"%d months" table:nil];
+        unit            = round(days / 30);
+    } else if (years == 1)
+    {
+        formattedString = [langBundle localizedStringForKey:@"y" value:@"a year" table:nil];
+    } else
+    {
+        formattedString = [langBundle localizedStringForKey:@"yy" value:@"%d years" table:nil];
+    }
+    formattedString = [NSString stringWithFormat:formattedString, unit];
+
+    // If the string needs to be suffixed
+    if (suffixed)
+    {
+        BOOL isFuture = (referenceTime > 0);
+        
+        NSString *suffixedString = @"";
+        if (isFuture)
+        {
+            suffixedString = [langBundle localizedStringForKey:@"future" value:@"in %@" table:nil];
+        } else
+        {
+            suffixedString = [langBundle localizedStringForKey:@"past" value:@"%@ ago" table:nil];
+        }
+        
+        formattedString = [NSString stringWithFormat:suffixedString, formattedString];
+    }
+    
+    return formattedString;
+}
 
 #pragma mark - Private Methods
 

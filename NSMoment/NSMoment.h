@@ -203,8 +203,44 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  */
 - (BOOL)isEqualToMoment:(NSMoment *)anotherMoment;
 
-#pragma mark Working with Moments
-/** @name Working with Moments */
+#pragma mark Working with Relative Time
+/** @name Working with Relative Times */
+
+/**
+ * @abstract Returns a suffixed string representing the relative time using
+ * the locale of the moment.
+ * @return A suffixed string with the representing time using the locale of
+ * the moment.
+ * @see fromNowWithSuffix:
+ */
+- (NSString *)fromNow;
+
+/**
+ * @abstract Returns a string representing the relative time using the 
+ * locale of the moment and suffixed if necessary.
+ * @param suffixed Tells whether the relative time needs to be suffixed. E.g.
+ * a relative suffixed time looks that `4 years ago` whereas a relative 
+ * unsuffixed time looks like this `4 years`.
+ * @return a string representing the relative time using the locale of the
+ * moment and suffixed if necessary.
+ * @discussion The breakdown of which string is displayed for each length
+ * of time is outlined in the table below:
+ *
+ * Range                       | Key | Sample Output
+ * --------------------------- | --- | -------------
+ * 0 to 45 seconds             | s   | seconds ago
+ * 45 to 90 seconds            | m   | a minute ago
+ * 90 seconds to 45 minutes    | mm  | 2 minutes ago ... 45 minutes ago
+ * 45 to 90 minutes            | h   | an hour ago
+ * 90 minutes to 22 hours      | hh  | 2 hours ago ... 22 hours ago
+ * 22 to 36 hours              | d   | a day ago
+ * 36 hours to 25 days         | dd  | 2 days ago ... 25 days ago
+ * 25 to 45 days               | M   | a month ago
+ * 45 to 345 days              | MM  | 2 months ago ... 11 months ago
+ * 345 to 547 days (1.5 years) | y   | a year ago
+ * 548 days+                   | yy  | 2 years ago ... 20 years ago
+ */
+- (NSString *)fromNowWithSuffix:(BOOL)suffixed;
 
 /*
  - (void)clone;
