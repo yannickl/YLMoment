@@ -242,7 +242,7 @@
     double hours         = round(minutes / 60.0f);
     double days          = round(hours / 24.0f);
     double years         = round(days / 365.0f);
-    
+
     // Build the formatted string
     NSString *formattedString = @"";
     int unit                  = 0;
@@ -284,6 +284,7 @@
     } else
     {
         formattedString = [langBundle localizedStringForKey:@"yy" value:@"%d years" table:nil];
+        unit            = years;
     }
     formattedString = [NSString stringWithFormat:formattedString, unit];
 
@@ -352,8 +353,6 @@
             }
         }
     }
-    
-    NSLog(@"updateLangBundle: %@", _langBundle);
 }
 
 #pragma mark - KVO Delegate Method

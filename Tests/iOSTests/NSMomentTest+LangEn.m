@@ -58,8 +58,6 @@
     newDate       = [calendar dateByAddingComponents:comp3 toDate:now options:0];
     reference     = [NSMoment momentWithDate:newDate];
     expect([reference fromNow]).to.equal(@"a day ago");
-    
-    
 }
 
 @end
