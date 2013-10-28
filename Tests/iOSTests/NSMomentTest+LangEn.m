@@ -33,6 +33,11 @@
     [super tearDown];
 }
 
+- (void)testLangNowFromNow
+{
+    expect([[NSMoment now] fromNow]).to.equal(@"a few seconds ago");
+}
+
 - (void)testLangFromNow
 {
     NSDate *now             = [NSDate date];
