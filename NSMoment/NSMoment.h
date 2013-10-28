@@ -170,6 +170,28 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * for a list of the conversion specifiers permitted in date format strings.
  * @return A string representation of the moment formatted using a given date
  * format.
+ * @discussion The breakdown of which string is displayed for each format 
+ * tokens is outlined in the table below:
+ *
+ * Format String         | Output String
+ * --------------------- | --------------
+ * M/d/y                 | 11/4/2012
+ * MM/dd/yy              | 11/04/12
+ * MMM d, ''yy           | Nov 4, '12
+ * MMMM                  | November
+ * E                     | Sun
+ * EEEE                  | Sunday
+ * 'Week' w 'of 52'      | Week 45 of 52
+ * 'Day' D 'of 365'      | Day 309 of 365
+ * QQQ                   | Q4
+ * QQQQ                  | 4th quarter
+ * m 'minutes past' h    | 9 minutes past 8
+ * h:mm a                | 8:09 PM
+ * HH:mm:ss's'           | 20:09:00s
+ * HH:mm:ss:SS           | 20:09:00:00
+ * h:mm a zz             | 8:09 PM CST
+ * h:mm a zzzz           | 8:09 PM Central Standard Time
+ * yyyy-MM-dd HH:mm:ss Z | 2012-11-04 20:09:00 -0600
  */
 - (NSString *)format:(NSString *)dateFormat;
 
@@ -228,7 +250,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  *
  * Range                       | Key | Sample Output
  * --------------------------- | --- | -------------
- * 0 to 45 seconds             | s   | seconds ago
+ * 0 to 45 seconds             | s   | a few seconds ago
  * 45 to 90 seconds            | m   | a minute ago
  * 90 seconds to 45 minutes    | mm  | 2 minutes ago ... 45 minutes ago
  * 45 to 90 minutes            | h   | an hour ago
@@ -242,54 +264,48 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  */
 - (NSString *)fromNowWithSuffix:(BOOL)suffixed;
 
-/*
- - (void)clone;
- - (void)valueOf;
- - (void)unix;
- - (void)toString;
- - (void)toDate;
- - (void)toISOString;
- - (void)toArray;
- - (void)isValid;
- - (void)isDSTShifted;
- - (void)parsingFlags;
- - (void)incalidAt;
- - (void)utc;
- - (void)local;
- - (void)formatWithString:(NSString *)inputString;
- - (void)addWithInput:Value;
- - (void)substractWithInput:Value;
- - (void)diffWithInput:units:asFloat:
- - (void)fromWithTime:withoutSuffix:
- - (void)fromNowWithoutSuffix;
- - (void)calendar;
- - (void)isLeapYear;
- - (void)isDST;
- - (void)dayWithInput:;
- - (void)monthWithInput:;
- - (void)startOfWithUnits:;
- - (void)endOfWithUnits:;
- - (void)isAfterWithInput:units:;
- - (void)isBeforeWithInput:units:;
- - (void)isSameWithInput:units;
- - (void)minWithOther:;
- - (void)maxWithOther:;
- - (void)zoneWithInput:;
- - (void)zoneAddr;
- - (void)zoneName;
- - (void)parseZone;
- - (void)hasAlignedHourOffsetWithInput:;
- - (void)daysInMonth;
- - (void)dayOfYearWithInput:;
- - (void)weekYearWithInput:;
- - (void)isoWeekYearWithInput:;
- - (void)weekWithInput:;
- - (void)isoWeekWithInput:;
- - (void)weekdayWithInput:;
- - (void)isoWeekdayWithInput:;
- - (void)setWithUnits:;
- - (void)setWithUnits:value:;
- - (void)langWithKey:;
+#pragma mark Manipulating Moments
+/** @name Manipulating Moments */
+
+/**
+ * @abstract Mutates and returns the original moment by adding time. To add 
+ * time, pass the key of what time you want to add, and the amount you want to add.
+ * @param amount The amount of time you want to add.
+ * @param key The key of what time you want to add.
+ * @return The current moment with the amount of time added for a fluent interface
+ * pattern.
+ * @discussion There are some shorthand keys as well if you're into that whole
+ * brevity thing:
+ *
+ * Key          | Shorthand | NSCalendarUnit Correspondence
+ * ------------ | --------- | -----------------------------
+ * years        | y         | `NSCalendarUnitYear`
+ * months       | M         | `NSCalendarUnitMonth`
+ * weeks        | w         | `NSCalendarUnitWeekOfMonth`
+ * days         | d         | `NSCalendarUnitDay`
+ * hours        | h         | `NSCalendarUnitHour`
+ * minutes      | m         | `NSCalendarUnitMinute`
+ * seconds      | s         | `NSCalendarUnitSecond`
  */
+- (NSMoment *)addAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key;
+
+/**
+ * @abstract Mutates and returns the original moment by adding time. To add
+ * time, pass the calendar unit of what time you want to add, and the amount
+ * you want to add.
+ * @param amount The amount of time you want to add.
+ * @param unit The calendar unit of what time you want to add.
+ * @return The current moment with the amount of time added for a fluent interface
+ * pattern.
+ */
+- (NSMoment *)addAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit;
+
+/**
+ * @abstract Mutates and returns the original moment by adding a time duration.
+ * @param duration A time interval to add.
+ * @return The current moment with the time duration added for a fluent interface
+ * pattern.
+ */
+- (NSMoment *)addDuration:(NSTimeInterval)duration;
 
 @end

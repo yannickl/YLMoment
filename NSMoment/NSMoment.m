@@ -308,6 +308,79 @@
     return formattedString;
 }
 
+#pragma mark Manipulating Moments
+
+- (NSMoment *)addAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key
+{
+    if ([key isEqualToString:@"years"] || [key isEqualToString:@"y"])
+    {
+        return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitYear];
+    } else if ([key isEqualToString:@"months"] || [key isEqualToString:@"M"])
+    {
+        return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitMonth];
+    } else if ([key isEqualToString:@"weeks"] || [key isEqualToString:@"w"])
+    {
+        return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitWeekOfMonth];
+    } else if ([key isEqualToString:@"days"] || [key isEqualToString:@"d"])
+    {
+        return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitDay];
+    } else if ([key isEqualToString:@"hours"] || [key isEqualToString:@"h"])
+    {
+        return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitHour];
+    } else if ([key isEqualToString:@"minutes"] || [key isEqualToString:@"m"])
+    {
+        return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitMinute];
+    } else if ([key isEqualToString:@"seconds"] || [key isEqualToString:@"s"])
+    {
+        return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitSecond];
+    }
+    return self;
+}
+
+- (NSMoment *)addAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit
+{
+    NSCalendar *currentCalendar  = _calendar ?: [[[self class] proxy] calendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    
+    switch (unit)
+    {
+        case NSCalendarUnitYear:
+            components.year = amount;
+            break;
+        case NSCalendarUnitMonth:
+            components.month = amount;
+            break;
+        case NSCalendarUnitWeekOfMonth:
+            components.week = amount;
+            break;
+        case NSCalendarUnitDay:
+            components.day = amount;
+            break;
+        case NSCalendarUnitHour:
+            components.hour = amount;
+            break;
+        case NSCalendarUnitMinute:
+            components.minute = amount;
+            break;
+        case NSCalendarUnitSecond:
+            components.second = amount;
+            break;
+        default:
+            break;
+    }
+    
+    _date = [currentCalendar dateByAddingComponents:components toDate:_date options:0];
+    
+    return self;
+}
+
+- (NSMoment *)addDuration:(NSTimeInterval)duration
+{
+    _date = [_date dateByAddingTimeInterval:duration];
+    
+    return self;
+}
+
 #pragma mark - Private Methods
 
 - (id)initProxy

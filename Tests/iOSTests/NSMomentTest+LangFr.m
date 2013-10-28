@@ -40,30 +40,14 @@
 
 - (void)testLangFromNow
 {
-    NSDate *now             = [NSDate date];
-    
-    NSCalendar *calendar    = [[NSMoment proxy] calendar];
+    NSMoment *reference1 = [[NSMoment now] addAmountOfTime:30 forCalendarUnit:NSCalendarUnitSecond];
+    expect([reference1 fromNow]).to.equal(@"dans quelques secondes");
 
-    NSDateComponents *comp1 = [[NSDateComponents alloc] init];
-    comp1.second            = 30;
+    NSMoment *reference2 = [[NSMoment now] addAmountOfTime:5 forCalendarUnit:NSCalendarUnitDay];
+    expect([reference2 fromNow]).to.equal(@"dans 5 jours");
     
-    NSDate *newDate         = [calendar dateByAddingComponents:comp1 toDate:now options:0];
-    NSMoment *reference     = [NSMoment momentWithDate:newDate];
-    expect([reference fromNow]).to.equal(@"dans quelques secondes");
-    
-    NSDateComponents *comp2 = [[NSDateComponents alloc] init];
-    comp2.day               = 5;
-    
-    newDate       = [calendar dateByAddingComponents:comp2 toDate:now options:0];
-    reference     = [NSMoment momentWithDate:newDate];
-    expect([reference fromNow]).to.equal(@"dans 5 jours");
-    
-    NSDateComponents *comp3 = [[NSDateComponents alloc] init];
-    comp3.day               = -1;
-    
-    newDate       = [calendar dateByAddingComponents:comp3 toDate:now options:0];
-    reference     = [NSMoment momentWithDate:newDate];
-    expect([reference fromNow]).to.equal(@"il y a un jour");
+    NSMoment *reference3 = [[NSMoment now] addAmountOfTime:-1 forCalendarUnit:NSCalendarUnitDay];
+    expect([reference3 fromNow]).to.equal(@"il y a un jour");
 }
 
 @end

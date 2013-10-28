@@ -19,6 +19,20 @@
 
 @implementation NSMomentTests_Create
 
+- (void)setUp
+{
+    [super setUp];
+    
+    [[NSMoment proxy] setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+}
+
+- (void)tearDown
+{
+    [[NSMoment proxy] setLocale:[NSLocale currentLocale]];
+    
+    [super tearDown];
+}
+
 - (void)testCreateFromArray
 {
     NSMoment *moment = [NSMoment momentWithArrayComponents:@[@2010]];
@@ -87,6 +101,13 @@
     
     moment = [NSMoment momentWithDateAsString:@"I'm not a date"];
     expect([moment date]).to.beNil();
+}
+
+- (void)testCreateFromStringWithFormatDroppedAMPMBug
+{
+    expect([[NSMoment momentWithDateAsString:@"05/1/2012 12:25:00" format:@"MM/d/yyyy hh:mm:ss"] format:@"MM/dd/yyyy"]).to.equal(@"05/01/2012");
+    expect([[NSMoment momentWithDateAsString:@"05/1/2012 12:25:00 am" format:@"MM/d/yyyy hh:mm:ss a"] format:@"MM/dd/yyyy"]).to.equal(@"05/01/2012");
+    expect([[NSMoment momentWithDateAsString:@"05/1/2012 12:25:00 pm" format:@"MM/d/yyyy hh:mm:ss a"] format:@"MM/dd/yyyy"]).to.equal(@"05/01/2012");
 }
 
 - (void)testCreateFromEmptyStringWithFormats
