@@ -43,12 +43,14 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 
 /**
  * @abstract Creates and returns a moment which is set to the current date.
+ * @version 0.1.0
  */
 + (id)now;
 
 /**
  * @abstract Initializes a moment using a given date.
  * @param date a date.
+ * @version 0.1.0
  */
 - (id)initWithDate:(NSDate *)date;
 
@@ -56,6 +58,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @abstract Creates and returns a moment using a given date.
  * @param date a date.
  * @see initWithDate:
+ * @version 0.1.0
  */
 + (id)momentWithDate:(NSDate *)date;
 
@@ -64,6 +67,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * following components ['year', 'month', 'day', 'hour', 'minute', 'second'].
  * @param dateAsArray An array which represent the date components.
  * @discussion The moment will create a date in the current timezone.
+ * @version 0.1.0
  */
 - (id)initWithArrayComponents:(NSArray *)dateAsArray;
 
@@ -72,6 +76,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * the following components ['year', 'month', 'day', 'hour', 'minute', 'second'].
  * @param dateAsArray An array which represent the date components.
  * @discussion The moment will create a date in the current timezone.
+ * @version 0.1.0
  */
 + (id)momentWithArrayComponents:(NSArray *)dateAsArray;
 
@@ -81,6 +86,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @param dateAsString The date string to parse.
  * @discussion The initializer uses the `NSDataDetector` to interpret the date
  * format.
+ * @version 0.1.0
  */
 - (id)initWithDateAsString:(NSString *)dateAsString;
 
@@ -91,6 +97,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @discussion The initializer uses the `NSDataDetector` to interpret the date
  * format.
  * @see initWithDateAsString:
+ * @version 0.1.0
  */
 + (id)momentWithDateAsString:(NSString *)dateAsString;
 
@@ -99,6 +106,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * interpreted and using a given date format.
  * @param dateAsString The date string to parse.
  * @param dateFormat The date format string used by the receiver.
+ * @version 0.1.0
  */
 - (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat;
 
@@ -108,6 +116,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @param dateAsString The date string to parse.
  * @param dateFormat The date format string used by the receiver.
  * @see initWithDateAsString:format:
+ * @version 0.1.0
  */
 + (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat;
 
@@ -127,6 +136,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @param dateFormat The date format string used by the receiver.
  * @param localeIdentifier The identifier for the new locale for the receiver.
  * @see initWithDateAsString:format:localeIdentifier:
+ * @version 0.1.0
  */
 + (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier;
 
@@ -137,18 +147,21 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @abstract Returns the proxy for the receiver.
  * @return The appearance proxy for the receiver.
  * @discussion The proxy is useful to configuring the `NSMoment` in a global way.
+ * @version 0.1.0
  */
 + (instancetype)proxy;
 
 /**
  * @abstract The calendar that will be used for the date calculations.
  * @discussion The default value is set to the current calendar.
+ * @version 0.1.0
  */
 @property (atomic, strong) NSCalendar *calendar;
 
 /**
  * @abstract The local that will be used to display the dates.
  * @discussion The default value is set to the current locale.
+ * @version 0.1.0
  */
 @property (atomic, strong) NSLocale *locale;
 
@@ -160,6 +173,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * `ISO-8601` format.
  * @return A string representation of the moment formatted using the `ISO-8601`
  * format.
+ * @version 0.1.0
  */
 - (NSString *)format;
 
@@ -192,6 +206,8 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * h:mm a zz             | 8:09 PM CST
  * h:mm a zzzz           | 8:09 PM Central Standard Time
  * yyyy-MM-dd HH:mm:ss Z | 2012-11-04 20:09:00 -0600
+ *
+ * @version 0.1.0
  */
 - (NSString *)format:(NSString *)dateFormat;
 
@@ -201,6 +217,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 /**
  * @abstract Returns true whether the current moment is valid.
  * @return `true` whether the current moment is valid.
+ * @version 0.1.0
  */
 - (BOOL)isValid;
 
@@ -210,6 +227,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 /**
  * Returns the `NSDate` corresponding to the current moment.
  * @return the `NSDate` corresponding to the current moment.
+ * @version 0.1.0
  */
 - (NSDate *)date;
 
@@ -222,6 +240,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @param anotherMoment The moment to compare with the receiver.
  * @return YES if the anotherMoment is an `NSMoment` object and is exactly
  * equal to the receiver, otherwise NO.
+ * @version 0.1.0
  */
 - (BOOL)isEqualToMoment:(NSMoment *)anotherMoment;
 
@@ -234,6 +253,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @return A suffixed string with the representing time using the locale of
  * the moment.
  * @see fromNowWithSuffix:
+ * @version 0.1.0
  */
 - (NSString *)fromNow;
 
@@ -261,6 +281,8 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * 45 to 345 days              | MM  | 2 months ago ... 11 months ago
  * 345 to 547 days (1.5 years) | y   | a year ago
  * 548 days+                   | yy  | 2 years ago ... 20 years ago
+ *
+ * @version 0.1.0
  */
 - (NSString *)fromNowWithSuffix:(BOOL)suffixed;
 
@@ -286,6 +308,8 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * hours        | h         | `NSCalendarUnitHour`
  * minutes      | m         | `NSCalendarUnitMinute`
  * seconds      | s         | `NSCalendarUnitSecond`
+ *
+ * @version 0.1.0
  */
 - (NSMoment *)addAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key;
 
@@ -297,6 +321,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @param unit The calendar unit of what time you want to add.
  * @return The current moment with the amount of time added for a fluent interface
  * pattern.
+ * @version 0.1.0
  */
 - (NSMoment *)addAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit;
 
@@ -305,7 +330,57 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @param duration A time interval to add.
  * @return The current moment with the time duration added for a fluent interface
  * pattern.
+ * @version 0.1.0
  */
 - (NSMoment *)addDuration:(NSTimeInterval)duration;
+
+#pragma mark Getting/Setting Moment Components
+/** @name Getting/Setting Moment Components */
+
+/**
+ * @abstract Gets or sets the seconds.
+ * @discussion Accepts numbers from 0 to 59. If the range is exceeded, it will bubble
+ * up to the minutes.
+ * @version 0.1.0
+ */
+@property (nonatomic, assign) NSUInteger second;
+
+/**
+ * @abstract Gets or sets the minutes.
+ * @discussion Accepts numbers from 0 to 59. If the range is exceeded, it will bubble
+ * up to the hours.
+ * @version 0.1.0
+ */
+@property (nonatomic, assign) NSUInteger minute;
+
+/**
+ * @abstract Gets or sets the hour.
+ * @discussion Accepts numbers from 0 to 23. If the range is exceeded, it will bubble 
+ * up to the day.
+ * @version 0.1.0
+ */
+@property (nonatomic, assign) NSUInteger hour;
+
+/**
+ * @abstract Gets or sets the hour.
+ * @discussion Accepts numbers from 0 to 23. If the range is exceeded, it will bubble
+ * up to the day.
+ * @version 0.1.0
+ */
+@property (nonatomic, assign) NSUInteger day;
+
+/**
+ * @abstract Gets or sets the month.
+ * @discussion Accepts numbers from 0 to 11. If the range is exceeded, it will bubble
+ * up to the year.
+ * @version 0.1.0
+ */
+@property (nonatomic, assign) NSUInteger month;
+
+/**
+ * @abstract Gets or sets the year.
+ * @version 0.1.0
+ */
+@property (nonatomic, assign) NSUInteger year;
 
 @end

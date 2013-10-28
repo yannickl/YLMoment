@@ -441,4 +441,122 @@
     }
 }
 
+#pragma mark Getting/Setting Moment Components
+
+- (NSUInteger)getCalendarUnit:(NSCalendarUnit)unit
+{
+    NSCalendar *currentCalendar = _calendar ?: [[[self class] proxy] calendar];
+    NSDateComponents *components = [currentCalendar components:unit fromDate:_date];
+    
+    switch (unit)
+    {
+        case NSSecondCalendarUnit:
+            return components.second;
+        case NSMinuteCalendarUnit:
+            return components.minute;
+        case NSHourCalendarUnit:
+            return components.hour;
+        case NSDayCalendarUnit:
+            return components.day;
+        case NSMonthCalendarUnit:
+            return components.month;
+        case NSYearCalendarUnit:
+            return components.year;
+        default:
+            return 0;
+    }
+}
+
+- (void)setValue:(NSUInteger)value forCalendarUnit:(NSCalendarUnit)unit
+{
+    NSCalendar *currentCalendar  = _calendar ?: [[[self class] proxy] calendar];
+    NSDateComponents *components = [currentCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSTimeZoneCalendarUnit) fromDate:_date];
+ 
+    switch (unit)
+    {
+        case NSSecondCalendarUnit:
+            components.second = value;
+            break;
+        case NSMinuteCalendarUnit:
+            components.minute = value;
+            break;
+        case NSHourCalendarUnit:
+            components.hour = value;
+            break;
+        case NSDayCalendarUnit:
+            components.day = value;
+            break;
+        case NSMonthCalendarUnit:
+            components.month = value;
+            break;
+        case NSYearCalendarUnit:
+            components.year = value;
+            break;
+        default:
+            break;
+    }
+
+    _date = [currentCalendar dateFromComponents:components];
+}
+
+- (NSUInteger)second
+{
+    return [self getCalendarUnit:NSSecondCalendarUnit];
+}
+
+- (void)setSecond:(NSUInteger)second
+{
+    [self setValue:second forCalendarUnit:NSSecondCalendarUnit];
+}
+
+- (NSUInteger)minute
+{
+    return [self getCalendarUnit:NSMinuteCalendarUnit];
+}
+
+- (void)setMinute:(NSUInteger)minute
+{
+    [self setValue:minute forCalendarUnit:NSMinuteCalendarUnit];
+}
+
+- (NSUInteger)hour
+{
+    return [self getCalendarUnit:NSHourCalendarUnit];
+}
+
+- (void)setHour:(NSUInteger)hour
+{
+    [self setValue:hour forCalendarUnit:NSHourCalendarUnit];
+}
+
+- (NSUInteger)day
+{
+    return [self getCalendarUnit:NSDayCalendarUnit];
+}
+
+- (void)setDay:(NSUInteger)day
+{
+    [self setValue:day forCalendarUnit:NSDayCalendarUnit];
+}
+
+- (NSUInteger)month
+{
+    return [self getCalendarUnit:NSMonthCalendarUnit];
+}
+
+- (void)setMonth:(NSUInteger)month
+{
+    [self setValue:month forCalendarUnit:NSMonthCalendarUnit];
+}
+
+- (NSUInteger)year
+{
+    return [self getCalendarUnit:NSYearCalendarUnit];
+}
+
+- (void)setYear:(NSUInteger)year
+{
+    [self setValue:year forCalendarUnit:NSYearCalendarUnit];
+}
+
 @end
