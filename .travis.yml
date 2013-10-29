@@ -1,4 +1,7 @@
 language: objective-c
+branches:
+  only:
+    - master
 before_install:
     - brew update
     - brew uninstall xctool && brew install xctool --HEAD
