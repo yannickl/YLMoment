@@ -1,79 +1,111 @@
 <!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Nsmoment : Parsing, validating, manipulating, and formatting dates easily in Objective-C (API inspired by moment.js)" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Nsmoment</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/YannickL/NSMoment">View on GitHub</a>
-
-          <h1 id="project_title">Nsmoment</h1>
-          <h2 id="project_tagline">Parsing, validating, manipulating, and formatting dates easily in Objective-C (API inspired by moment.js)</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/YannickL/NSMoment/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/YannickL/NSMoment/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>NSMoment</title>
+  <link href="http://fonts.googleapis.com/css?family=Anonymous+Pro:400,700|Droid+Sans+Mono|Open+Sans:400,700|Linden+Hill|Quattrocento:400,700|News+Cycle:400,700|Antic+Slab|Cabin+Condensed:400,700" rel="stylesheet" type="text/css">
+  <link href="stylesheets/stylesheet.css" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/xcode.css">
+  <script src="javascripts/highlight.pack.js"></script>
+</head>
+<body>
+  <a id="forkbanner" href="https://github.com/YannickL/NSMoment"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  <div id="wrap" class="homepage">
+    <div id="header">
+      <h1><a href="https://github.com/YannickL/NSMoment" target="blank"><div class="mongoose">NSMoment</div></a></h1>
     </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
+    <p class="tagline">Parsing, validating, manipulating, and formatting dates easily in <strong>Objective-C</strong></p>
+    <div id="links">
+      <ul>
+        <li><a href="http://yannickloriot.com/library/ios/nsmoment/">Read the Docs</a></li>
+      </ul>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Nsmoment maintained by <a href="https://github.com/YannickL">YannickL</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
+    <div id="follow">
+      <ul>
+        <li><iframe src="http://ghbtns.com/github-btn.html?user=YannickL&amp;repo=NSMoment&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px" class="github-btn"></iframe></li>
+        <li id="version"><span>Version 0.1.0</span></li>
+        <li><iframe src="http://ghbtns.com/github-btn.html?user=YannickL&amp;repo=NSMoment&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px" class="github-btn"></iframe></li>
+      </ul>
     </div>
+    <div id="inner">
+      <div>
+        <p class="what">NSMoment is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.</p>
+        <p class="what">Its API is inspired by the well know <a href="http://momentjs.com/" target="blank">moment.js</a> library, however unlike his father its core is build upon the Foundation Framework components (NSDate, NSDateFormatter,etc.)</p>
+      </div>
+      <div id="example">
+        <h2>Formatting dates</h2>
+        <pre>
+          <code>
+// Display: October 27 2013, 10:49:48 AM
+NSLog(@"%@", [[NSMoment now] format:@"MMMM dd yyyy, h:mm:ss a"]);
 
-    
+// Display: Oct 27 13
+NSLog(@"%@", [[NSMoment now] format:@"MMM dd yy"]); 
 
-  </body>
+// Display: 2013 escaped 2013
+NSLog(@"%@", [[NSMoment now] format:@"yyyy 'escaped' yyyy"]);
+
+// Display: 2013-10-27T10:49:48+0100
+NSLog(@"%@", [[NSMoment now] format]);
+          </code>
+        </pre>
+      </div>
+      
+      <div id="example">
+        <h2>Relative Times</h2>
+        <pre>
+          <code>
+// Display: 2 years ago
+NSLog(@"%@", [[NSMoment momentWithDateAsString:@"20111031"] fromNow]); 
+
+// Display: a year ago
+NSMoment *m = 
+[NSMoment momentWithDateAsString:@"2012/06/20" format:@"yyyy/MM/dd"];
+NSLog(@"%@", [m fromNow]); 
+
+// Display: 19 hours ago
+NSLog(@"%@", [[[NSMoment now] startOf:@"day"] fromNow]); 
+
+// Display: in 5 hours
+NSLog(@"%@", [[[NSMoment now] endOf:@"day"] fromNow]); 
+
+// Display: 11 minutes ago
+NSLog(@"%@", [[[NSMoment now] startOf:@"hour"] fromNow]);
+          </code>
+        </pre>
+      </div>
+
+      <div id="example">
+        <h2>Languages</h2>
+        <pre>
+          <code>
+// Display: il y a quelques secondes
+NSMoment *french = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+[french setLocale:[NSLocale localeWithLocaleIdentifier:@"fr_FR"]];
+NSLog(@"%@", [french fromNow]);
+
+// Display: disa sekonda me parë
+NSMoment *albanian = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+[albanian setLocale:[NSLocale localeWithLocaleIdentifier:@"sq_AL"]];
+NSLog(@"%@", [albanian fromNow]); 
+
+// Display: hace unos segundos
+NSMoment *spanish = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+[spanish setLocale:[NSLocale localeWithLocaleIdentifier:@"es_ES"]];
+NSLog(@"%@", [spanish fromNow]);
+
+// Display: in 11 months
+NSMoment *reference = [NSMoment momentWithArray:@[@2013]];
+NSMoment *english   = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+[english setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+NSLog(@"%@", [english fromMoment:reference]); 
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+  <p id="footer">Licensed under MIT. Maintained by <a href="http://yannickloriot.com">Yannick Loriot</a>.</p>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
 </html>
