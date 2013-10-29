@@ -23,12 +23,12 @@
 {
     NSMoment *a = [NSMoment momentWithArrayComponents:@[@2011, @9, @12, @6, @7, @8]];
     
-    expect([[a addAmountOfTime:1 forCalendarUnit:NSSecondCalendarUnit] second]).to.equal(9);
-    expect([[a addAmountOfTime:1 forCalendarUnit:NSMinuteCalendarUnit] minute]).to.equal(8);
-    expect([[a addAmountOfTime:1 forCalendarUnit:NSHourCalendarUnit] hour]).to.equal(7);
-    expect([[a addAmountOfTime:1 forCalendarUnit:NSDayCalendarUnit] day]).to.equal(13);
-    expect([[a addAmountOfTime:1 forCalendarUnit:NSMonthCalendarUnit] month]).to.equal(10);
-    expect([[a addAmountOfTime:1 forCalendarUnit:NSYearCalendarUnit] year]).to.equal(2012);
+    expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitSecond] second]).to.equal(9);
+    expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitMinute] minute]).to.equal(8);
+    expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitHour] hour]).to.equal(7);
+    expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitDay] day]).to.equal(13);
+    expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitMonth] month]).to.equal(10);
+    expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitYear] year]).to.equal(2012);
 }
 
 - (void)testAddStringLong

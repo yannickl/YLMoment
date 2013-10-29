@@ -296,19 +296,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @param key The key of what time you want to add.
  * @return The current moment with the amount of time added for a fluent interface
  * pattern.
- * @discussion There are some shorthand keys as well if you're into that whole
- * brevity thing:
- *
- * Key          | Shorthand | NSCalendarUnit Correspondence
- * ------------ | --------- | -----------------------------
- * year         | y         | `NSCalendarUnitYear`
- * month        | M         | `NSCalendarUnitMonth`
- * week         | w         | `NSCalendarUnitWeekOfMonth`
- * day          | d         | `NSCalendarUnitDay`
- * hour         | h         | `NSCalendarUnitHour`
- * minute       | m         | `NSCalendarUnitMinute`
- * second       | s         | `NSCalendarUnitSecond`
- *
+ * @see calendarUnitForKey:
  * @version 0.1.0
  */
 - (NSMoment *)addAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key;
@@ -382,5 +370,29 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @version 0.1.0
  */
 @property (nonatomic, assign) NSUInteger year;
+
+#pragma mark Helpers
+/** @name Helpers */
+
+/**
+ * @abstract Returns the `NSCalendarUnit` corresponding to a given unit string
+ * key.
+ * @param key A unit string key.
+ * @return The `NSCalendarUnit` corresponding to a given unit string key. `-1`
+ * if the key is unknow.
+ * @discussion There are some shorthand keys as well if you're into that whole
+ * brevity thing:
+ *
+ * Singular  | Plural    | Shorthand | NSCalendarUnit Correspondence
+ * --------- | --------- | --------- | -----------------------------
+ * year      | years     | y         | `NSCalendarUnitYear`
+ * month     | months    | M         | `NSCalendarUnitMonth`
+ * week      | weeks     | w         | `NSCalendarUnitWeekOfMonth`
+ * day       | days      | d         | `NSCalendarUnitDay`
+ * hour      | hours     | h         | `NSCalendarUnitHour`
+ * minute    | minutes   | m         | `NSCalendarUnitMinute`
+ * second    | seconds   | s         | `NSCalendarUnitSecond`
+ */
++ (NSCalendarUnit)calendarUnitForKey:(NSString *)key;
 
 @end
