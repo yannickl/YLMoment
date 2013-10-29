@@ -415,6 +415,18 @@
     return self;
 }
 
+- (NSMoment *)endOf:(NSString *)unitString
+{
+    NSCalendarUnit unit = [[self class] calendarUnitForKey:unitString];
+    
+    return [self endOfCalendarUnit:unit];
+}
+
+- (NSMoment *)endOfCalendarUnit:(NSCalendarUnit)unit
+{
+    return [[[self startOfCalendarUnit:unit] addAmountOfTime:1 forCalendarUnit:unit] addAmountOfTime:-1 forCalendarUnit:NSCalendarUnitSecond];
+}
+
 #pragma mark - Private Methods
 
 - (id)initProxy

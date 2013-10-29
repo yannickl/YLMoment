@@ -389,10 +389,32 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @param unit The key of what time you want to start.
  * @return The original moment with the setting applied for a fluent interface
  * pattern.
- * @see startOfCalendarUnit:
  * @version 0.1.0
  */
 - (NSMoment *)startOfCalendarUnit:(NSCalendarUnit)unit;
+
+/**
+ * @abstract Mutates and returns the original moment by setting it to the end of
+ * a given unit of time. This is the same as `startOf`, only instead of setting 
+ * to the start of a unit of time, it sets to the end of a unit of time.
+ * @param unitString The key of what time you want to end.
+ * @return The original moment with the setting applied for a fluent interface
+ * pattern.
+ * @see endOfCalendarUnit:
+ * @version 0.1.0
+ */
+- (NSMoment *)endOf:(NSString *)unitString;
+
+/**
+ * @abstract Mutates and returns the original moment by setting it to the end of
+ * a given unit of time. This is the same as `startOfCalendarUnit`, only instead
+ * of setting to the start of a unit of time, it sets to the end of a unit of time.
+ * @param unit The key of what time you want to end.
+ * @return The original moment with the setting applied for a fluent interface
+ * pattern.
+ * @version 0.1.0
+ */
+- (NSMoment *)endOfCalendarUnit:(NSCalendarUnit)unit;
 
 #pragma mark Getting/Setting Moment Components
 /** @name Getting/Setting Moment Components */
