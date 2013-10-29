@@ -312,25 +312,25 @@
 
 - (NSMoment *)addAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key
 {
-    if ([key isEqualToString:@"years"] || [key isEqualToString:@"y"])
+    if ([key isEqualToString:@"y"] || [key isEqualToString:@"year"] || [key isEqualToString:@"years"])
     {
         return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitYear];
-    } else if ([key isEqualToString:@"months"] || [key isEqualToString:@"M"])
+    } else if ([key isEqualToString:@"M"] || [key isEqualToString:@"month"] || [key isEqualToString:@"months"])
     {
         return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitMonth];
-    } else if ([key isEqualToString:@"weeks"] || [key isEqualToString:@"w"])
+    } else if ([key isEqualToString:@"w"] | [key isEqualToString:@"week"] || [key isEqualToString:@"weeks"])
     {
         return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitWeekOfMonth];
-    } else if ([key isEqualToString:@"days"] || [key isEqualToString:@"d"])
+    } else if ([key isEqualToString:@"d"] || [key isEqualToString:@"day"] || [key isEqualToString:@"days"])
     {
         return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitDay];
-    } else if ([key isEqualToString:@"hours"] || [key isEqualToString:@"h"])
+    } else if ([key isEqualToString:@"h"] || [key isEqualToString:@"hour"] || [key isEqualToString:@"hours"])
     {
         return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitHour];
-    } else if ([key isEqualToString:@"minutes"] || [key isEqualToString:@"m"])
+    } else if ([key isEqualToString:@"m"] || [key isEqualToString:@"minute"] || [key isEqualToString:@"minutes"])
     {
         return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitMinute];
-    } else if ([key isEqualToString:@"seconds"] || [key isEqualToString:@"s"])
+    } else if ([key isEqualToString:@"s"] || [key isEqualToString:@"second"] || [key isEqualToString:@"seconds"])
     {
         return [self addAmountOfTime:amount forCalendarUnit:NSCalendarUnitSecond];
     }

@@ -301,13 +301,13 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  *
  * Key          | Shorthand | NSCalendarUnit Correspondence
  * ------------ | --------- | -----------------------------
- * years        | y         | `NSCalendarUnitYear`
- * months       | M         | `NSCalendarUnitMonth`
- * weeks        | w         | `NSCalendarUnitWeekOfMonth`
- * days         | d         | `NSCalendarUnitDay`
- * hours        | h         | `NSCalendarUnitHour`
- * minutes      | m         | `NSCalendarUnitMinute`
- * seconds      | s         | `NSCalendarUnitSecond`
+ * year         | y         | `NSCalendarUnitYear`
+ * month        | M         | `NSCalendarUnitMonth`
+ * week         | w         | `NSCalendarUnitWeekOfMonth`
+ * day          | d         | `NSCalendarUnitDay`
+ * hour         | h         | `NSCalendarUnitHour`
+ * minute       | m         | `NSCalendarUnitMinute`
+ * second       | s         | `NSCalendarUnitSecond`
  *
  * @version 0.1.0
  */
@@ -362,9 +362,9 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 @property (nonatomic, assign) NSUInteger hour;
 
 /**
- * @abstract Gets or sets the hour.
- * @discussion Accepts numbers from 0 to 23. If the range is exceeded, it will bubble
- * up to the day.
+ * @abstract Gets or sets the day of the month.
+ * @discussion Accepts numbers from 1 to 31. If the range is exceeded, it will bubble
+ * up to the months.
  * @version 0.1.0
  */
 @property (nonatomic, assign) NSUInteger day;
