@@ -50,7 +50,22 @@ NSLog(@"%@", [[[NSMoment now] startOf:@"hour"] fromNow]); // 11 minutes ago
 
 ### Languages
 ```objective-c
-
+NSMoment *french = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+[french setLocale:[NSLocale localeWithLocaleIdentifier:@"fr_FR"]];
+NSLog(@"%@", [french fromNow]); // il y a quelques secondes
+    
+NSMoment *albanian = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+[albanian setLocale:[NSLocale localeWithLocaleIdentifier:@"sq_AL"]];
+NSLog(@"%@", [albanian fromNow]); // disa sekonda me parë
+    
+NSMoment *spanish = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+[spanish setLocale:[NSLocale localeWithLocaleIdentifier:@"es_ES"]];
+NSLog(@"%@", [spanish fromNow]); // hace unos segundos
+    
+NSMoment *reference = [NSMoment momentWithArray:@[@2013]];
+NSMoment *english   = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+[english setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+NSLog(@"%@", [english fromMoment:reference]); // in 11 months
 ```
 
 ## License (MIT)

@@ -193,6 +193,7 @@
 				fr,
 				es,
 				sq,
+				it,
 			);
 			mainGroup = F4605D09181C326A007F83EF;
 			productRefGroup = F4605D09181C326A007F83EF;
