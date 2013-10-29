@@ -381,6 +381,40 @@
     return self;
 }
 
+- (NSMoment *)startOf:(NSString *)unitString
+{
+    NSCalendarUnit unit = [[self class] calendarUnitForKey:unitString];
+    
+    return [self startOfCalendarUnit:unit];
+}
+
+- (NSMoment *)startOfCalendarUnit:(NSCalendarUnit)unit
+{
+    switch (unit)
+    {
+        case NSCalendarUnitYear:
+            [self setMonth:1];
+            /* falls through */
+        case NSCalendarUnitMonth:
+            [self setDay:1];
+            /* falls through */
+        case NSCalendarUnitWeekOfMonth:
+        case NSCalendarUnitDay:
+            [self setHour:0];
+            /* falls through */
+        case NSCalendarUnitHour:
+            [self setMinute:0];
+            /* falls through */
+        case NSCalendarUnitMinute:
+            [self setSecond:0];
+            /* falls through */
+        default:
+            break;
+    }
+    
+    return self;
+}
+
 #pragma mark - Private Methods
 
 - (id)initProxy
@@ -506,7 +540,10 @@
 
 - (void)setSecond:(NSUInteger)second
 {
-    [self setValue:second forCalendarUnit:NSCalendarUnitSecond];
+    if (second < 60)
+    {
+        [self setValue:second forCalendarUnit:NSCalendarUnitSecond];
+    }
 }
 
 - (NSUInteger)minute
@@ -516,7 +553,10 @@
 
 - (void)setMinute:(NSUInteger)minute
 {
-    [self setValue:minute forCalendarUnit:NSCalendarUnitMinute];
+    if (minute < 60)
+    {
+        [self setValue:minute forCalendarUnit:NSCalendarUnitMinute];
+    }
 }
 
 - (NSUInteger)hour
@@ -526,7 +566,10 @@
 
 - (void)setHour:(NSUInteger)hour
 {
-    [self setValue:hour forCalendarUnit:NSCalendarUnitHour];
+    if (hour < 24)
+    {
+        [self setValue:hour forCalendarUnit:NSCalendarUnitHour];
+    }
 }
 
 - (NSUInteger)day
@@ -536,7 +579,10 @@
 
 - (void)setDay:(NSUInteger)day
 {
-    [self setValue:day forCalendarUnit:NSCalendarUnitDay];
+    if (day > 0 && day <= 31)
+    {
+        [self setValue:day forCalendarUnit:NSCalendarUnitDay];
+    }
 }
 
 - (NSUInteger)month
@@ -546,7 +592,10 @@
 
 - (void)setMonth:(NSUInteger)month
 {
-    [self setValue:month forCalendarUnit:NSCalendarUnitMonth];
+    if (month > 0 && month <= 12)
+    {
+        [self setValue:month forCalendarUnit:NSCalendarUnitMonth];
+    }
 }
 
 - (NSUInteger)year

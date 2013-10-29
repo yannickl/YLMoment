@@ -372,6 +372,28 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  */
 - (NSMoment *)addDuration:(NSTimeInterval)duration;
 
+/**
+ * @abstract Mutates and returns the original moment by setting it to the start of
+ * a given unit of time.
+ * @param unitString The key of what time you want to start.
+ * @return The original moment with the setting applied for a fluent interface
+ * pattern.
+ * @see startOfCalendarUnit:
+ * @version 0.1.0
+ */
+- (NSMoment *)startOf:(NSString *)unitString;
+
+/**
+ * @abstract Mutates and returns the original moment by setting it to the start of
+ * a given unit of time.
+ * @param unit The key of what time you want to start.
+ * @return The original moment with the setting applied for a fluent interface
+ * pattern.
+ * @see startOfCalendarUnit:
+ * @version 0.1.0
+ */
+- (NSMoment *)startOfCalendarUnit:(NSCalendarUnit)unit;
+
 #pragma mark Getting/Setting Moment Components
 /** @name Getting/Setting Moment Components */
 
@@ -409,7 +431,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 
 /**
  * @abstract Gets or sets the month.
- * @discussion Accepts numbers from 0 to 11. If the range is exceeded, it will bubble
+ * @discussion Accepts numbers from 1 to 12. If the range is exceeded, it will bubble
  * up to the year.
  * @version 0.1.0
  */
@@ -442,6 +464,8 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * hour      | hours     | h         | `NSCalendarUnitHour`
  * minute    | minutes   | m         | `NSCalendarUnitMinute`
  * second    | seconds   | s         | `NSCalendarUnitSecond`
+ *
+ * @version 0.1.0
  */
 + (NSCalendarUnit)calendarUnitForKey:(NSString *)key;
 
