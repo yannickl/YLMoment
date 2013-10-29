@@ -265,6 +265,30 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * unsuffixed time looks like this `4 years`.
  * @return a string representing the relative time using the locale of the
  * moment and suffixed if necessary.
+ * @see: fromDate:withSuffix:
+ */
+- (NSString *)fromNowWithSuffix:(BOOL)suffixed;
+
+/**
+ * @abstract Returns a suffixed string representing the relative time from a
+ * given date using the locale of the moment.
+ * @param date The reference date.
+ * @return A suffixed string representing the relative time from a given date
+ * using the locale of the moment.
+ * @see fromDate:withSuffix:
+ * @version 0.1.0
+ */
+- (NSString *)fromDate:(NSDate *)date;
+
+/**
+ * @abstract Returns a suffixed string representing the relative time from a
+ * given date using the locale of the moment and suffixed if necessary.
+ * @param date The reference date.
+ * @param suffixed Tells whether the relative time needs to be suffixed. E.g.
+ * a relative suffixed time looks that `4 years ago` whereas a relative
+ * unsuffixed time looks like this `4 years`.
+ * @return A suffixed string representing the relative time from a given date
+ * using the locale of the moment and suffixed if necessary.
  * @discussion The breakdown of which string is displayed for each length
  * of time is outlined in the table below:
  *
@@ -284,7 +308,32 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  *
  * @version 0.1.0
  */
-- (NSString *)fromNowWithSuffix:(BOOL)suffixed;
+- (NSString *)fromDate:(NSDate *)date withSuffix:(BOOL)suffixed;
+
+/**
+ * @abstract Returns a suffixed string representing the relative time from a
+ * given moment using the locale of the moment.
+ * @param moment The reference moment.
+ * @return A suffixed string representing the relative time from a given
+ * moment using the locale of the moment.
+ * @see fromMoment:withSuffix:
+ * @version 0.1.0
+ */
+- (NSString *)fromMoment:(NSMoment *)moment;
+
+/**
+ * @abstract Returns a suffixed string representing the relative time from a
+ * given moment using the locale of the moment and suffixed if necessary.
+ * @param moment The reference moment.
+ * @param suffixed Tells whether the relative time needs to be suffixed. E.g.
+ * a relative suffixed time looks that `4 years ago` whereas a relative
+ * unsuffixed time looks like this `4 years`.
+ * @return A suffixed string representing the relative time from a given moment
+ * using the locale of the moment and suffixed if necessary.
+ * @see fromDate:withSuffix:
+ * @version 0.1.0
+ */
+- (NSString *)fromMoment:(NSMoment *)moment withSuffix:(BOOL)suffixed;
 
 #pragma mark Manipulating Moments
 /** @name Manipulating Moments */

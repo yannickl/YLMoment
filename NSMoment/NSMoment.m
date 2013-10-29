@@ -232,17 +232,27 @@
 
 - (NSString *)fromNowWithSuffix:(BOOL)suffixed
 {
+    return [self fromDate:[NSDate date] withSuffix:YES];
+}
+
+- (NSString *)fromDate:(NSDate *)date
+{
+    return [self fromDate:date withSuffix:YES];
+}
+
+- (NSString *)fromDate:(NSDate *)date withSuffix:(BOOL)suffixed
+{
     // Get the lang bundle
     NSBundle *langBundle = _langBundle ?: [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
     
     // Compute the time interval
-    double referenceTime = [_date timeIntervalSinceDate:[NSDate date]];
+    double referenceTime = [_date timeIntervalSinceDate:date];
     double seconds       = round(fabs(referenceTime));
     double minutes       = round(seconds / 60.0f);
     double hours         = round(minutes / 60.0f);
     double days          = round(hours / 24.0f);
     double years         = round(days / 365.0f);
-
+    
     // Build the formatted string
     NSString *formattedString = @"";
     int unit                  = 0;
@@ -287,7 +297,7 @@
         unit            = years;
     }
     formattedString = [NSString stringWithFormat:formattedString, unit];
-
+    
     // If the string needs to be suffixed
     if (suffixed)
     {
@@ -306,6 +316,16 @@
     }
     
     return formattedString;
+}
+
+- (NSString *)fromMoment:(NSMoment *)moment
+{
+    return [self fromMoment:moment withSuffix:YES];
+}
+
+- (NSString *)fromMoment:(NSMoment *)moment withSuffix:(BOOL)suffixed
+{
+    return [self fromDate:[moment date] withSuffix:suffixed];
 }
 
 #pragma mark Manipulating Moments
