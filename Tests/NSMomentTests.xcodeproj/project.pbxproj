@@ -23,6 +23,7 @@
 		F4605D89181FADEE007F83EF /* NSMomentTests+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605D88181FADEE007F83EF /* NSMomentTests+Helpers.m */; };
 		F4605D8C18202734007F83EF /* NSMomentTests+SOD_EOD.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605D8B18202734007F83EF /* NSMomentTests+SOD_EOD.m */; };
 		F4605D93182033E7007F83EF /* NSMomentTest+LangEs.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605D92182033E7007F83EF /* NSMomentTest+LangEs.m */; };
+		F4605D961820369E007F83EF /* NSMomentTest+LangSq.m in Sources */ = {isa = PBXBuildFile; fileRef = F4605D951820369E007F83EF /* NSMomentTest+LangSq.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		F4605D8B18202734007F83EF /* NSMomentTests+SOD_EOD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTests+SOD_EOD.m"; sourceTree = "<group>"; };
 		F4605D9118203307007F83EF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F4605D92182033E7007F83EF /* NSMomentTest+LangEs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTest+LangEs.m"; sourceTree = "<group>"; };
+		F4605D94182035CF007F83EF /* sq */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sq; path = sq.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F4605D951820369E007F83EF /* NSMomentTest+LangSq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTest+LangSq.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,7 @@
 				F4605D7F181EAE25007F83EF /* NSMomentTest+LangEn.m */,
 				F4605D92182033E7007F83EF /* NSMomentTest+LangEs.m */,
 				F4605D7C181E9D18007F83EF /* NSMomentTest+LangFr.m */,
+				F4605D951820369E007F83EF /* NSMomentTest+LangSq.m */,
 			);
 			name = Lang;
 			sourceTree = "<group>";
@@ -188,6 +192,7 @@
 				en,
 				fr,
 				es,
+				sq,
 			);
 			mainGroup = F4605D09181C326A007F83EF;
 			productRefGroup = F4605D09181C326A007F83EF;
@@ -254,6 +259,7 @@
 				F4605D93182033E7007F83EF /* NSMomentTest+LangEs.m in Sources */,
 				F4605D86181FA2FB007F83EF /* NSMomentTests+Add_Substract.m in Sources */,
 				F4605D89181FADEE007F83EF /* NSMomentTests+Helpers.m in Sources */,
+				F4605D961820369E007F83EF /* NSMomentTest+LangSq.m in Sources */,
 				F4605D7D181E9D18007F83EF /* NSMomentTest+LangFr.m in Sources */,
 				F4605D4E181C3FCD007F83EF /* NSMomentTests+Format.m in Sources */,
 				F4605D80181EAE25007F83EF /* NSMomentTest+LangEn.m in Sources */,
@@ -277,6 +283,7 @@
 				F4605D77181E9012007F83EF /* en */,
 				F4605D78181E9012007F83EF /* fr */,
 				F4605D9118203307007F83EF /* es */,
+				F4605D94182035CF007F83EF /* sq */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

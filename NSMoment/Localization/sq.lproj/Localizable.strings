@@ -1,0 +1,21 @@
+/* 
+  NSMomentFormat.strings
+  NSMomentTests
+
+  Created by YannickL on 27/10/2013.
+  Translation comes from the http://momemt.js project.
+*/
+
+"future" = "në %@";
+"past"   = "%@ me parë";
+"s"      = "disa sekonda";
+"m"      = "një minut";
+"mm"     = "%d minuta";
+"h"      = "një orë";
+"hh"     = "%d orë";
+"d"      = "një ditë";
+"dd"     = "%d ditë";
+"M"      = "një muaj";
+"MM"     = "%d muaj";
+"y"      = "një vit";
+"yy"     = "%d vite";
