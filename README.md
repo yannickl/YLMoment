@@ -42,6 +42,15 @@ NSLog(@"%@", [moment1 fromNow]); // 2 years ago
 
 NSMoment *moment2 = [NSMoment momentWithDateAsString:@"2012/06/20" format:@"yyyy/MM/dd"];
 NSLog(@"%@", [moment2 fromNow]); // a year ago
+
+NSLog(@"%@", [[[NSMoment now] startOf:@"day"] fromNow]);  // 19 hours ago
+NSLog(@"%@", [[[NSMoment now] endOf:@"day"] fromNow]);    // in 5 hours
+NSLog(@"%@", [[[NSMoment now] startOf:@"hour"] fromNow]); // 11 minutes ago
+```
+
+### Languages
+```objective-c
+
 ```
 
 ## License (MIT)
