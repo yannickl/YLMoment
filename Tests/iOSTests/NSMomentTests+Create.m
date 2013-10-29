@@ -35,22 +35,22 @@
 
 - (void)testCreateFromArray
 {
-    NSMoment *moment = [NSMoment momentWithArrayComponents:@[@2010]];
+    NSMoment *moment = [NSMoment momentWithArray:@[@2010]];
     expect([moment date]).notTo.beNil();
     
-    moment = [NSMoment momentWithArrayComponents:@[@2010, @1]];
+    moment = [NSMoment momentWithArray:@[@2010, @1]];
     expect([moment date]).notTo.beNil();
     
-    moment = [NSMoment momentWithArrayComponents:@[@2010, @1, @12]];
+    moment = [NSMoment momentWithArray:@[@2010, @1, @12]];
     expect([moment date]).notTo.beNil();
     
-    moment = [NSMoment momentWithArrayComponents:@[@2010, @1, @12, @1]];
+    moment = [NSMoment momentWithArray:@[@2010, @1, @12, @1]];
     expect([moment date]).notTo.beNil();
     
-    moment = [NSMoment momentWithArrayComponents:@[@2010, @1, @12, @1, @1]];
+    moment = [NSMoment momentWithArray:@[@2010, @1, @12, @1, @1]];
     expect([moment date]).notTo.beNil();
     
-    moment = [NSMoment momentWithArrayComponents:@[@2010, @1, @12, @1, @1, @1]];
+    moment = [NSMoment momentWithArray:@[@2010, @1, @12, @1, @1, @1]];
     expect([moment date]).notTo.beNil();
 
     NSCalendar *calendar         = [[NSMoment proxy] calendar];

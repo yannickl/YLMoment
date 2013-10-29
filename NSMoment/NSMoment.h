@@ -69,16 +69,17 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @discussion The moment will create a date in the current timezone.
  * @version 0.1.0
  */
-- (id)initWithArrayComponents:(NSArray *)dateAsArray;
+- (id)initWithArray:(NSArray *)dateAsArray;
 
 /**
  * @abstract Creates and returns a moment with an array of numbers that mirror
  * the following components ['year', 'month', 'day', 'hour', 'minute', 'second'].
  * @param dateAsArray An array which represent the date components.
  * @discussion The moment will create a date in the current timezone.
+ * @see initWithArray:
  * @version 0.1.0
  */
-+ (id)momentWithArrayComponents:(NSArray *)dateAsArray;
++ (id)momentWithArray:(NSArray *)dateAsArray;
 
 /**
  * @abstract Initializes a moment using the date representation of a given

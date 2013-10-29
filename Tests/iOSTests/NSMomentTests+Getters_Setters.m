@@ -21,7 +21,7 @@
 
 - (void)testGetters
 {
-    NSMoment *reference = [NSMoment momentWithArrayComponents:@[@2011, @9, @12, @6, @7, @8]];
+    NSMoment *reference = [NSMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
 
     expect([reference year]).to.equal(2011);
     expect([reference month]).to.equal(9);

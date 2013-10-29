@@ -21,7 +21,7 @@
 
 - (void)testAddCalendarUnit
 {
-    NSMoment *a = [NSMoment momentWithArrayComponents:@[@2011, @9, @12, @6, @7, @8]];
+    NSMoment *a = [NSMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
     
     expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitSecond] second]).to.equal(9);
     expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitMinute] minute]).to.equal(8);
@@ -33,7 +33,7 @@
 
 - (void)testAddStringLong
 {
-    NSMoment *a = [NSMoment momentWithArrayComponents:@[@2011, @9, @12, @6, @7, @8]];
+    NSMoment *a = [NSMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
     
     expect([[a addAmountOfTime:1 forUnitKey:@"second"] second]).to.equal(9);
     expect([[a addAmountOfTime:1 forUnitKey:@"minute"] minute]).to.equal(8);
@@ -45,7 +45,7 @@
 
 - (void)testAddStringLongPlural
 {
-    NSMoment *a = [NSMoment momentWithArrayComponents:@[@2011, @9, @12, @6, @7, @8]];
+    NSMoment *a = [NSMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
     
     expect([[a addAmountOfTime:1 forUnitKey:@"seconds"] second]).to.equal(9);
     expect([[a addAmountOfTime:1 forUnitKey:@"minutes"] minute]).to.equal(8);
@@ -57,7 +57,7 @@
 
 - (void)testAddStringShort
 {
-    NSMoment *a = [NSMoment momentWithArrayComponents:@[@2011, @9, @12, @6, @7, @8]];
+    NSMoment *a = [NSMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
     
     expect([[a addAmountOfTime:1 forUnitKey:@"s"] second]).to.equal(9);
     expect([[a addAmountOfTime:1 forUnitKey:@"m"] minute]).to.equal(8);

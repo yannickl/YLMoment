@@ -84,7 +84,7 @@
 
 #pragma mark -
 
-- (id)initWithArrayComponents:(NSArray *)dateAsArray
+- (id)initWithArray:(NSArray *)dateAsArray
 {
     NSInteger componentCount = [dateAsArray count];
     
@@ -108,9 +108,9 @@
     return [self initWithDate:[calendar dateFromComponents:components]];
 }
 
-+ (id)momentWithArrayComponents:(NSArray *)dateAsArray
++ (id)momentWithArray:(NSArray *)dateAsArray
 {
-    return [[self alloc] initWithArrayComponents:dateAsArray];
+    return [[self alloc] initWithArray:dateAsArray];
 }
 
 #pragma mark -
