@@ -117,7 +117,7 @@
 
 - (id)initWithDateAsString:(NSString *)dateAsString
 {
-    NSDataDetector *detector    = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:nil];
+    NSDataDetector *detector    = [NSDataDetector dataDetectorWithTypes:(NSTextCheckingTypes)NSTextCheckingTypeDate error:nil];
     NSTextCheckingResult *match = [detector firstMatchInString:dateAsString options:0 range:NSMakeRange(0, [dateAsString length])];
     
     return [self initWithDate:match.date];
