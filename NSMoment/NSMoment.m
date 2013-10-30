@@ -147,7 +147,7 @@
 - (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
 {
     NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
-    formatter.locale            = [NSLocale localeWithLocaleIdentifier:localeIdentifier];
+    formatter.locale            = [[NSLocale alloc] initWithLocaleIdentifier:localeIdentifier];
     formatter.dateFormat        = dateFormat;
     
     return [self initWithDate:[formatter dateFromString:dateAsString]];
@@ -344,25 +344,25 @@
     
     switch (unit)
     {
-        case NSCalendarUnitYear:
+        case kCFCalendarUnitYear:
             components.year = amount;
             break;
-        case NSCalendarUnitMonth:
+        case kCFCalendarUnitMonth:
             components.month = amount;
             break;
-        case NSCalendarUnitWeekOfMonth:
+        case kCFCalendarUnitWeekOfMonth:
             components.week = amount;
             break;
-        case NSCalendarUnitDay:
+        case kCFCalendarUnitDay:
             components.day = amount;
             break;
-        case NSCalendarUnitHour:
+        case kCFCalendarUnitHour:
             components.hour = amount;
             break;
-        case NSCalendarUnitMinute:
+        case kCFCalendarUnitMinute:
             components.minute = amount;
             break;
-        case NSCalendarUnitSecond:
+        case kCFCalendarUnitSecond:
             components.second = amount;
             break;
         default:
@@ -392,20 +392,20 @@
 {
     switch (unit)
     {
-        case NSCalendarUnitYear:
+        case kCFCalendarUnitYear:
             [self setMonth:1];
             /* falls through */
-        case NSCalendarUnitMonth:
+        case kCFCalendarUnitMonth:
             [self setDay:1];
             /* falls through */
-        case NSCalendarUnitWeekOfMonth:
-        case NSCalendarUnitDay:
+        case kCFCalendarUnitWeekOfMonth:
+        case kCFCalendarUnitDay:
             [self setHour:0];
             /* falls through */
-        case NSCalendarUnitHour:
+        case kCFCalendarUnitHour:
             [self setMinute:0];
             /* falls through */
-        case NSCalendarUnitMinute:
+        case kCFCalendarUnitMinute:
             [self setSecond:0];
             /* falls through */
         default:
@@ -424,7 +424,7 @@
 
 - (NSMoment *)endOfCalendarUnit:(NSCalendarUnit)unit
 {
-    return [[[self startOfCalendarUnit:unit] addAmountOfTime:1 forCalendarUnit:unit] addAmountOfTime:-1 forCalendarUnit:NSCalendarUnitSecond];
+    return [[[self startOfCalendarUnit:unit] addAmountOfTime:1 forCalendarUnit:unit] addAmountOfTime:-1 forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitSecond];
 }
 
 #pragma mark - Private Methods
@@ -496,17 +496,17 @@
     
     switch (unit)
     {
-        case NSCalendarUnitSecond:
+        case kCFCalendarUnitSecond:
             return components.second;
-        case NSMinuteCalendarUnit:
+        case kCFCalendarUnitMinute:
             return components.minute;
-        case NSHourCalendarUnit:
+        case kCFCalendarUnitHour:
             return components.hour;
-        case NSDayCalendarUnit:
+        case kCFCalendarUnitDay:
             return components.day;
-        case NSCalendarUnitMonth:
+        case kCFCalendarUnitMonth:
             return components.month;
-        case NSCalendarUnitYear:
+        case kCFCalendarUnitYear:
             return components.year;
         default:
             return 0;
@@ -516,26 +516,26 @@
 - (void)setValue:(NSUInteger)value forCalendarUnit:(NSCalendarUnit)unit
 {
     NSCalendar *currentCalendar  = _calendar ?: [[[self class] proxy] calendar];
-    NSDateComponents *components = [currentCalendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitTimeZone) fromDate:_date];
+    NSDateComponents *components = [currentCalendar components:(kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay | kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond | NSCalendarUnitTimeZone) fromDate:_date];
  
     switch (unit)
     {
-        case NSCalendarUnitSecond:
+        case kCFCalendarUnitSecond:
             components.second = value;
             break;
-        case NSCalendarUnitMinute:
+        case kCFCalendarUnitMinute:
             components.minute = value;
             break;
-        case NSCalendarUnitHour:
+        case kCFCalendarUnitHour:
             components.hour = value;
             break;
-        case NSCalendarUnitDay:
+        case kCFCalendarUnitDay:
             components.day = value;
             break;
-        case NSCalendarUnitMonth:
+        case kCFCalendarUnitMonth:
             components.month = value;
             break;
-        case NSCalendarUnitYear:
+        case kCFCalendarUnitYear:
             components.year = value;
             break;
         default:
@@ -547,77 +547,77 @@
 
 - (NSUInteger)second
 {
-    return [self getCalendarUnit:NSCalendarUnitSecond];
+    return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitSecond];
 }
 
 - (void)setSecond:(NSUInteger)second
 {
     if (second < 60)
     {
-        [self setValue:second forCalendarUnit:NSCalendarUnitSecond];
+        [self setValue:second forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitSecond];
     }
 }
 
 - (NSUInteger)minute
 {
-    return [self getCalendarUnit:NSCalendarUnitMinute];
+    return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitMinute];
 }
 
 - (void)setMinute:(NSUInteger)minute
 {
     if (minute < 60)
     {
-        [self setValue:minute forCalendarUnit:NSCalendarUnitMinute];
+        [self setValue:minute forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitMinute];
     }
 }
 
 - (NSUInteger)hour
 {
-    return [self getCalendarUnit:NSCalendarUnitHour];
+    return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitHour];
 }
 
 - (void)setHour:(NSUInteger)hour
 {
     if (hour < 24)
     {
-        [self setValue:hour forCalendarUnit:NSCalendarUnitHour];
+        [self setValue:hour forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitHour];
     }
 }
 
 - (NSUInteger)day
 {
-    return [self getCalendarUnit:NSCalendarUnitDay];
+    return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitDay];
 }
 
 - (void)setDay:(NSUInteger)day
 {
     if (day > 0 && day <= 31)
     {
-        [self setValue:day forCalendarUnit:NSCalendarUnitDay];
+        [self setValue:day forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitDay];
     }
 }
 
 - (NSUInteger)month
 {
-    return [self getCalendarUnit:NSCalendarUnitMonth];
+    return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitMonth];
 }
 
 - (void)setMonth:(NSUInteger)month
 {
     if (month > 0 && month <= 12)
     {
-        [self setValue:month forCalendarUnit:NSCalendarUnitMonth];
+        [self setValue:month forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitMonth];
     }
 }
 
 - (NSUInteger)year
 {
-    return [self getCalendarUnit:NSCalendarUnitYear];
+    return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitYear];
 }
 
 - (void)setYear:(NSUInteger)year
 {
-    [self setValue:year forCalendarUnit:NSCalendarUnitYear];
+    [self setValue:year forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitYear];
 }
 
 #pragma mark Helpers
@@ -626,25 +626,25 @@
 {
     if ([key isEqualToString:@"y"] || [key isEqualToString:@"year"] || [key isEqualToString:@"years"])
     {
-        return NSCalendarUnitYear;
+        return (NSCalendarUnit)kCFCalendarUnitYear;
     } else if ([key isEqualToString:@"M"] || [key isEqualToString:@"month"] || [key isEqualToString:@"months"])
     {
-        return NSCalendarUnitMonth;
+        return (NSCalendarUnit)kCFCalendarUnitMonth;
     } else if ([key isEqualToString:@"w"] | [key isEqualToString:@"week"] || [key isEqualToString:@"weeks"])
     {
-        return NSCalendarUnitWeekOfMonth;
+        return (NSCalendarUnit)kCFCalendarUnitWeekOfMonth;
     } else if ([key isEqualToString:@"d"] || [key isEqualToString:@"day"] || [key isEqualToString:@"days"])
     {
-        return NSCalendarUnitDay;
+        return (NSCalendarUnit)kCFCalendarUnitDay;
     } else if ([key isEqualToString:@"h"] || [key isEqualToString:@"hour"] || [key isEqualToString:@"hours"])
     {
-        return NSCalendarUnitHour;
+        return (NSCalendarUnit)kCFCalendarUnitHour;
     } else if ([key isEqualToString:@"m"] || [key isEqualToString:@"minute"] || [key isEqualToString:@"minutes"])
     {
-        return NSCalendarUnitMinute;
+        return (NSCalendarUnit)kCFCalendarUnitMinute;
     } else if ([key isEqualToString:@"s"] || [key isEqualToString:@"second"] || [key isEqualToString:@"seconds"])
     {
-        return NSCalendarUnitSecond;
+        return (NSCalendarUnit)kCFCalendarUnitSecond;
     }
     
     return -1;
