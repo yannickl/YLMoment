@@ -516,7 +516,7 @@
 - (void)setValue:(NSUInteger)value forCalendarUnit:(NSCalendarUnit)unit
 {
     NSCalendar *currentCalendar  = _calendar ?: [[[self class] proxy] calendar];
-    NSDateComponents *components = [currentCalendar components:(kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay | kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond | NSCalendarUnitTimeZone) fromDate:_date];
+    NSDateComponents *components = [currentCalendar components:(kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay | kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond) fromDate:_date];
  
     switch (unit)
     {
