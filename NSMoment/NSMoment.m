@@ -104,6 +104,7 @@
     components.second            = second;
     
     NSCalendar *calendar = [[[self class] proxy] calendar];
+    calendar.timeZone    = [[[self class] proxy] timeZone];
     
     return [self initWithDate:[calendar dateFromComponents:components]];
 }
@@ -148,6 +149,7 @@
 {
     NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
     formatter.locale            = [[NSLocale alloc] initWithLocaleIdentifier:localeIdentifier];
+    formatter.timeZone          = [[[self class] proxy] timeZone];
     formatter.dateFormat        = dateFormat;
     
     return [self initWithDate:[formatter dateFromString:dateAsString]];
@@ -190,6 +192,9 @@
 {
     NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
     formatter.locale            = _locale ?: [[[self class] proxy] locale];
+    formatter.timeZone          = _timeZone ?: [[[self class] proxy] timeZone];
+    formatter.dateStyle         = (_dateStyle != NSDateFormatterNoStyle) ? _dateStyle : [[[self class] proxy] dateStyle];
+    formatter.timeStyle         = (_timeStyle != NSDateFormatterNoStyle) ? _timeStyle : [[[self class] proxy] timeStyle];
     formatter.dateFormat        = dateFormat;
     
     return [formatter stringFromDate:_date] ?: @"Invalid Date";
@@ -427,66 +432,6 @@
     return [[[self startOfCalendarUnit:unit] addAmountOfTime:1 forCalendarUnit:unit] addAmountOfTime:-1 forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitSecond];
 }
 
-#pragma mark - Private Methods
-
-- (id)initProxy
-{
-    if ((self = [super init]))
-    {
-        _calendar = [NSCalendar currentCalendar];
-        _locale   = [NSLocale currentLocale];
-        
-        [self updateLangBundle];
-        [self momentInitiated];
-    }
-    return self;
-}
-
-- (void)momentInitiated
-{
-    [self addObserver:self forKeyPath:@"locale" options:0 context:nil];
-}
-
-- (void)updateLangBundle
-{
-    NSString *lang = [[_locale localeIdentifier] substringToIndex:2];
-    
-    NSBundle *classBundle = [NSBundle bundleForClass:[self class]];
-    NSURL *langURL        = [classBundle URLForResource:lang withExtension:@"lproj"];
-    
-    if (langURL)
-    {
-        _langBundle = [NSBundle bundleWithURL:langURL];
-    } else
-    {
-        NSArray *preferredLocalizations = [classBundle preferredLocalizations];
-        
-        for (NSString *preferredLocalization in preferredLocalizations)
-        {
-            langURL = [classBundle URLForResource:preferredLocalization withExtension:@"lproj"];
-            
-            if (langURL)
-            {
-                _langBundle = [NSBundle bundleWithURL:langURL];
-                break;
-            }
-        }
-    }
-}
-
-#pragma mark - KVO Delegate Method
-
-- (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context
-{
-    if ([keyPath isEqualToString:@"locale"])
-    {
-        [self updateLangBundle];
-    } else
-    {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
-}
-
 #pragma mark Getting/Setting Moment Components
 
 - (NSUInteger)getCalendarUnit:(NSCalendarUnit)unit
@@ -648,6 +593,70 @@
     }
     
     return -1;
+}
+
+#pragma mark - Private Methods
+
+- (id)initProxy
+{
+    if ((self = [super init]))
+    {
+        _calendar = [NSCalendar currentCalendar];
+        _locale   = [NSLocale currentLocale];
+        _timeZone = [NSTimeZone defaultTimeZone];
+        
+        [self updateLangBundle];
+        [self momentInitiated];
+    }
+    return self;
+}
+
+- (void)momentInitiated
+{
+    [self addObserver:self forKeyPath:@"locale" options:0 context:nil];
+    
+    _dateStyle = NSDateFormatterNoStyle;
+    _timeStyle = NSDateFormatterNoStyle;
+}
+
+- (void)updateLangBundle
+{
+    NSString *lang = [[_locale localeIdentifier] substringToIndex:2];
+    
+    NSBundle *classBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *langURL        = [classBundle URLForResource:lang withExtension:@"lproj"];
+    
+    if (langURL)
+    {
+        _langBundle = [NSBundle bundleWithURL:langURL];
+    } else
+    {
+        NSArray *preferredLocalizations = [classBundle preferredLocalizations];
+        
+        for (NSString *preferredLocalization in preferredLocalizations)
+        {
+            langURL = [classBundle URLForResource:preferredLocalization withExtension:@"lproj"];
+            
+            if (langURL)
+            {
+                _langBundle = [NSBundle bundleWithURL:langURL];
+                break;
+            }
+        }
+    }
+}
+
+#pragma mark - KVO Delegate Method
+
+- (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context
+{
+    if ([keyPath isEqualToString:@"locale"])
+    {
+        [self updateLangBundle];
+    } else
+    {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 @end

@@ -1,8 +1,11 @@
 ## Changelog
 
-### Version 0.1.0
+### Version 0.2.0
 
-Initial Commit:
+- [ADD] `timeZone`, `timeStyle` and `dateStyle` configuration for the format
+
+### Version 0.1.0 (Initial Commit)
+
 - Initializers from `NSDate`, `NSArray`, `String`, `String and Format`
 - Global configuration via proxy (`calendar` and `locale`)
 - Formating moments

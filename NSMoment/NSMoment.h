@@ -167,6 +167,28 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  */
 @property (atomic, strong) NSLocale *locale;
 
+/**
+ * @abstract The time zone that will be used to display the dates.
+ * @discussion The default value of the time zone is set to the default time 
+ * zone of the user.
+ * @version 0.2.0
+ */
+@property (atomic, strong) NSTimeZone *timeZone;
+
+/**
+ * @abstract The date style of the receiver.
+ * @discussion By default the date style is set to `NSDateFormatterNoStyle`.
+ * @version 0.2.0
+ */
+@property (atomic, assign) NSDateFormatterStyle dateStyle;
+
+/**
+ * @abstract The time style of the receiver.
+ * @discussion By default the date style is set to `NSDateFormatterNoStyle`.
+ * @version 0.2.0
+ */
+@property (atomic, assign) NSDateFormatterStyle timeStyle;
+
 #pragma mark Representing Moments as Strings
 /** @name Representing Moments as Strings */
 
