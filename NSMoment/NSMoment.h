@@ -29,12 +29,13 @@
 static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 
 /**
- * `NSMoment` is a library which provides an high abstraction level for parsing,
+ * NSMoment is a library which provides an high abstraction level for parsing,
  * validating, manipulating, and formatting the dates in Objective-C.
  *
- * Its API is inspired by the well know [moment.js](http://momentjs.com/)
- * library and its core is build upon the `Foundation Framework` components
- * (`NSDate`, `NSDateFormatter`,etc.).
+ * Its API is inspired by the well known [moment.js](http://momentjs.com/)
+ * library, however unlike its father, its core is built upon the Foundation
+ * Framework components (NSDate, NSDateFormatter,etc.) for a full 
+ * interoperability with iOS.
  */
 @interface NSMoment : NSObject
 
