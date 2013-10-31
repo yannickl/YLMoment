@@ -44,17 +44,7 @@ h1 {
 pre {
   background: #eee;
   padding: 5px;
-  border-radius: 3px;
-}
-code {
-  color: #333;
-  font-size: 11px;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-}
-pre code {
-  border: 0 none;
-  padding: 1.2em;
-  overflow-x: auto;
+  border-radius: 4px;
 }
 #header {
   text-align: center;
@@ -76,19 +66,21 @@ pre code {
 }
 h2 {
   margin: 30px 0;
+  text-transform: capitalize;
 }
 h2 a {
   font-size: 11px;
   position: relative;
   bottom: 4px;
 }
-#header .mongoose {
-  font-size: 146px;
-  font-weight: 100;
-  text-indent: -23px;
-}
-.load #header .mongoose {
-  letter-spacing: -14px;
+p .lang {
+  background: none repeat scroll 0 0 #FFFFFF;
+  display: inline-block;
+  border: 1px solid #999999;
+  border-radius: 3px 3px 3px 3px;
+  margin: 4px 2px;
+  padding: 5px 10px;
+  text-transform: capitalize;
 }
 .tagline {
   color: #333;
@@ -202,6 +194,10 @@ h2 a {
   #forkbanner { display: none }
   #header {
     padding-top: 12px;
+  }
+  #header .moment {
+    font-size: 70px;
+    text-indent: 0px;
   }
   .tagline {
     text-align: center;

@@ -15,7 +15,7 @@
     <div id="header">
       <h1><a href="https://github.com/YannickL/NSMoment" target="blank"><div class="moment">NSMoment</div></a></h1>
     </div>
-    <p class="tagline">Parsing, validating, manipulating, and formatting dates easily in <strong>Objective-C</strong></p>
+    <p class="tagline">Parse, validate, manipulate, and formatte dates easily in <strong>Objective-C</strong></p>
     <div id="links">
       <ul>
         <li><a href="http://yannickloriot.com/library/ios/nsmoment/Classes/NSMoment.html">Read the Doc</a></li>
@@ -31,10 +31,11 @@
     <div id="inner">
       <div>
         <p class="what">NSMoment is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.</p>
-        <p class="what">Its API is inspired by the well known <a href="http://momentjs.com/" target="blank">moment.js</a> library, however unlike its father, its core is built upon the Foundation Framework components (NSDate, NSDateFormatter,etc.)</p>
+        <p class="what">Its API is inspired by the well known <a href="http://momentjs.com/" target="blank">moment.js</a> library, however unlike its counterpart, its core is built upon the Foundation Framework components (NSDate, NSCalendar, etc.) to enable the interoperability with them.</p>
+        <p class="what">This library is designed to facilitate the manipulation of times, dates, calendars, and durations in Objective-C by providing a single and easy way (an unique class) to do everything.</p>
       </div>
       <div id="example">
-        <h2>Formatting dates</h2>
+        <h2>Formatting Dates</h2>
         <pre>
           <code>
 // Display: October 27 2013, 10:49:48 AM
@@ -78,6 +79,7 @@ NSLog(@"%@", [[[NSMoment now] startOf:@"hour"] fromNow]);
 
       <div id="example">
         <h2>Languages</h2>
+        <p>Currently supports <span class="lang">Albanian</span>, <span class="lang">English</span>, <span class="lang">French</span> and <span class="lang">Spanish</span> for relative times.</p>
         <pre>
           <code>
 // Display: il y a quelques secondes
