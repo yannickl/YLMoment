@@ -21,6 +21,7 @@ DerivedData
 Pods
 Tests/Pods
 Tests/Podfile.lock
+Tests/NSMomentTests.xcworkspace
 
 #CocoaDocs
 documentation
