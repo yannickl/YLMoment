@@ -38,8 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		001FA6DC27884179B6DA3E95 /* Pods-iOSTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTests.xcconfig"; path = "Pods/Pods-iOSTests.xcconfig"; sourceTree = SOURCE_ROOT; };
-		3159BCFC2F954E7096D2D5E8 /* Pods-OSXTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSXTests.xcconfig"; path = "Pods/Pods-OSXTests.xcconfig"; sourceTree = "<group>"; };
 		948899FAEE8742A59C4B7D65 /* libPods-OSXTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OSXTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4111A7A3F084D6097359C2E /* libPods-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F425CFC018282516002CABDC /* iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,10 +145,8 @@
 				F4605D35181C33AA007F83EF /* iOSTests */,
 				F425CFC71828296E002CABDC /* OSXTests */,
 				F4605D2E181C33AA007F83EF /* Frameworks */,
-				001FA6DC27884179B6DA3E95 /* Pods-iOSTests.xcconfig */,
 				F425CFC018282516002CABDC /* iOSTests.xctest */,
 				F425CFC51828296E002CABDC /* OSXTests.xctest */,
-				3159BCFC2F954E7096D2D5E8 /* Pods-OSXTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -400,7 +396,6 @@
 /* Begin XCBuildConfiguration section */
 		F425CFD31828296E002CABDC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3159BCFC2F954E7096D2D5E8 /* Pods-OSXTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -447,7 +442,6 @@
 		};
 		F425CFD41828296E002CABDC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3159BCFC2F954E7096D2D5E8 /* Pods-OSXTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -502,7 +496,6 @@
 		};
 		F4605D3F181C33AA007F83EF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 001FA6DC27884179B6DA3E95 /* Pods-iOSTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -551,7 +544,6 @@
 		};
 		F4605D40181C33AA007F83EF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 001FA6DC27884179B6DA3E95 /* Pods-iOSTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
