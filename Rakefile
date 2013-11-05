@@ -1,4 +1,7 @@
 namespace :test do
+  task :prepare do
+  end
+
   desc "Run the NSMoment Tests for iOS"
   task :ios => :prepare do
     $ios_success = system("xctool -workspace NSMomentTests.xcworkspace -scheme 'iOSTests' -sdk iphonesimulator -configuration Release test -test-sdk iphonesimulator")
