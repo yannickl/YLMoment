@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2906B141219D469E84EE1A45 /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D82D4D55A3204E20B688BB66 /* libPods-osx.a */; };
+		5D957872434843E7B2A1DE80 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 210F0A75D9E942AE81281766 /* libPods-ios.a */; };
 		79FAF62B9F5842A39BB3E06C /* libPods-OSXTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 948899FAEE8742A59C4B7D65 /* libPods-OSXTests.a */; };
 		A27AF576B9E74393937D3056 /* libPods-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4111A7A3F084D6097359C2E /* libPods-iOSTests.a */; };
 		F425CFC61828296E002CABDC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D41181C33E3007F83EF /* XCTest.framework */; };
@@ -38,8 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		210F0A75D9E942AE81281766 /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		948899FAEE8742A59C4B7D65 /* libPods-OSXTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OSXTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4111A7A3F084D6097359C2E /* libPods-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D82D4D55A3204E20B688BB66 /* libPods-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F425CFC018282516002CABDC /* iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F425CFC51828296E002CABDC /* OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F425CFC91828296E002CABDC /* OSXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OSXTests-Info.plist"; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			files = (
 				F425CFC61828296E002CABDC /* XCTest.framework in Frameworks */,
 				79FAF62B9F5842A39BB3E06C /* libPods-OSXTests.a in Frameworks */,
+				2906B141219D469E84EE1A45 /* libPods-osx.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,7 @@
 				F4605D46181C33F2007F83EF /* UIKit.framework in Frameworks */,
 				F4605D42181C33E3007F83EF /* XCTest.framework in Frameworks */,
 				A27AF576B9E74393937D3056 /* libPods-iOSTests.a in Frameworks */,
+				5D957872434843E7B2A1DE80 /* libPods-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +164,8 @@
 				F4605D41181C33E3007F83EF /* XCTest.framework */,
 				A4111A7A3F084D6097359C2E /* libPods-iOSTests.a */,
 				948899FAEE8742A59C4B7D65 /* libPods-OSXTests.a */,
+				210F0A75D9E942AE81281766 /* libPods-ios.a */,
+				D82D4D55A3204E20B688BB66 /* libPods-osx.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -288,7 +296,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-OSXTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-osx-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		720CE271DFCB4ED1B5066E61 /* Check Pods Manifest.lock */ = {
@@ -317,7 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-iOSTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-ios-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C046DAF74BAA4A0E9999F383 /* Check Pods Manifest.lock */ = {
@@ -432,7 +440,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "OSXTests/OSXTests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -473,7 +481,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "OSXTests/OSXTests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;
@@ -484,6 +492,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -491,6 +501,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
