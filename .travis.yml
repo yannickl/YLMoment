@@ -4,6 +4,6 @@ branches:
     - master
 before_install:
     - brew update
-    - brew uninstall xctool && brew install xctool --HEAD
+    - brew uninstall xctool && brew install xctool
     - cd Tests && pod install && cd $TRAVIS_BUILD_DIR
 script: rake test
