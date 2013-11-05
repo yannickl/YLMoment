@@ -6,12 +6,14 @@ def import_pods
   pod 'NSMoment', :path => '../'
 end
 
-target :iOSTests do
+target :ios do
   platform :ios, '5.0'
+  link_with 'iOSTests'
   import_pods
 end
 
-target :OSXTests do
+target :osx do
   platform :osx, '10.8'
+  link_with 'OSXTests'
   import_pods
 end
