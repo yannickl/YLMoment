@@ -4,12 +4,12 @@ namespace :test do
 
   desc "Run the NSMoment Tests for iOS"
   task :ios => :prepare do
-    $ios_success = system("xctool -workspace Tests/NSMomentTests.xcworkspace -scheme 'iOSTests' -sdk iphonesimulator -configuration Release test -test-sdk iphonesimulator")
+    $ios_success = system("xctool -workspace Tests/NSMomentTests.xcworkspace -scheme 'iOSTests' -sdk iphonesimulator test")
   end
 
   desc "Run the NSMoment Tests for Mac OS X"
   task :osx => :prepare do
-    $osx_success = system("xctool -workspace Tests/NSMomentTests.xcworkspace -scheme 'OSXTests' -sdk macosx -configuration Release test -test-sdk macosx")
+    $osx_success = system("xctool -workspace Tests/NSMomentTests.xcworkspace -scheme 'OSXTests' -sdk macosx test")
   end
 end
 
