@@ -237,7 +237,7 @@
 
 - (NSString *)fromNowWithSuffix:(BOOL)suffixed
 {
-    return [self fromDate:[NSDate date] withSuffix:YES];
+    return [self fromDate:[NSDate date] withSuffix:suffixed];
 }
 
 - (NSString *)fromDate:(NSDate *)date
