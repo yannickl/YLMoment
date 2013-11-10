@@ -177,14 +177,14 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 
 /**
  * @abstract The date style of the receiver.
- * @discussion By default the date style is set to `NSDateFormatterNoStyle`.
+ * @discussion By default the date style is set to `NSDateFormatterLongStyle`.
  * @version 0.2.0
  */
 @property (atomic, assign) NSDateFormatterStyle dateStyle;
 
 /**
  * @abstract The time style of the receiver.
- * @discussion By default the date style is set to `NSDateFormatterNoStyle`.
+ * @discussion By default the date style is set to `NSDateFormatterLongStyle`.
  * @version 0.2.0
  */
 @property (atomic, assign) NSDateFormatterStyle timeStyle;

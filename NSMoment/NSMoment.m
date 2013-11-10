@@ -69,7 +69,9 @@
     {
         if (date)
         {
-            _date = [[NSDate alloc] initWithTimeInterval:0 sinceDate:date];
+            _date      = [[NSDate alloc] initWithTimeInterval:0 sinceDate:date];
+            _dateStyle = -1;
+            _timeStyle = -1;
         }
         
         [self momentInitiated];
@@ -193,8 +195,8 @@
     NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
     formatter.locale            = _locale ?: [[[self class] proxy] locale];
     formatter.timeZone          = _timeZone ?: [[[self class] proxy] timeZone];
-    formatter.dateStyle         = (_dateStyle != NSDateFormatterNoStyle) ? _dateStyle : [[[self class] proxy] dateStyle];
-    formatter.timeStyle         = (_timeStyle != NSDateFormatterNoStyle) ? _timeStyle : [[[self class] proxy] timeStyle];
+    formatter.dateStyle         = (_dateStyle != -1) ? _dateStyle : [[[self class] proxy] dateStyle];
+    formatter.timeStyle         = (_timeStyle != -1) ? _timeStyle : [[[self class] proxy] timeStyle];
     formatter.dateFormat        = dateFormat;
     
     return [formatter stringFromDate:_date] ?: @"Invalid Date";
@@ -601,9 +603,11 @@
 {
     if ((self = [super init]))
     {
-        _calendar = [NSCalendar currentCalendar];
-        _locale   = [NSLocale currentLocale];
-        _timeZone = [NSTimeZone defaultTimeZone];
+        _calendar  = [NSCalendar currentCalendar];
+        _locale    = [NSLocale currentLocale];
+        _timeZone  = [NSTimeZone defaultTimeZone];
+        _dateStyle = NSDateFormatterLongStyle;
+        _timeStyle = NSDateFormatterLongStyle;
         
         [self updateLangBundle];
         [self momentInitiated];
@@ -614,9 +618,6 @@
 - (void)momentInitiated
 {
     [self addObserver:self forKeyPath:@"locale" options:0 context:nil];
-    
-    _dateStyle = NSDateFormatterNoStyle;
-    _timeStyle = NSDateFormatterNoStyle;
 }
 
 - (void)updateLangBundle
