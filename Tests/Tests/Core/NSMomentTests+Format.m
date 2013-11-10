@@ -41,6 +41,21 @@
     expect([reference format:@"yy"]).to.equal(@"09");
 }
 
+- (void)testFormatDefaultStyle
+{
+    // By default the format is set to `NSDateFormatterLongStyle`
+    [self testFormatLongStyle];
+}
+
+- (void)testFormatNoStyle
+{
+    NSMoment *moment = [NSMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
+    moment.dateStyle = NSDateFormatterNoStyle;
+    moment.timeStyle = NSDateFormatterNoStyle;
+    
+    expect([moment format:nil]).to.equal(@"");
+}
+
 - (void)testFormatShortStyle
 {
     NSMoment *moment = [NSMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];

@@ -156,4 +156,13 @@
     expect([reference3 fromNow]).to.equal(@"një ditë me parë");
 }
 
+- (void)testLangFromNowWithSuffix
+{
+    NSMoment *reference1 = [[NSMoment now] addAmountOfTime:-3 forCalendarUnit:NSCalendarUnitMonth];
+    expect([reference1 fromNowWithSuffix:NO]).to.equal(@"3 muaj");
+    
+    NSMoment *reference2 = [[NSMoment now] addAmountOfTime:9 forCalendarUnit:NSCalendarUnitHour];
+    expect([reference2 fromNowWithSuffix:YES]).to.equal(@"në 9 orë");
+}
+
 @end
