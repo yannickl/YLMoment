@@ -6,6 +6,11 @@ NSMoment is a library which provides an high abstraction level for parsing, vali
 
 Its API is inspired by the well known [moment.js](http://momentjs.com/) library, however unlike its father, its core is built upon the `Foundation Framework` components (`NSDate`, `NSDateFormatter`,etc.) for a full interoperability with iOS.
 
+## How To Get Started
+
+- [Download NSMoment](https://github.com/YannickL/NSMoment/archive/master.zip) and give it a try
+- Read the [blog posts](http://yannickloriot.com/2013/11/handle-times-dates-calendars-and-durations-like-a-pro-in-objective-c-with-nsmoment/)
+
 ## Installation
 
 ### Manually
