@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C3EC52F6F21D4DC5A1F10500 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC09F2AE9564D008900DA94 /* libPods-ios.a */; };
+		C66C7A081835554D00098659 /* NSMomentTest+LangNl.m in Sources */ = {isa = PBXBuildFile; fileRef = C66C7A071835554D00098659 /* NSMomentTest+LangNl.m */; };
 		ED7DF6AE538742429A8AEA2C /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE61FE220675422EAEE6FB3F /* libPods-osx.a */; };
 		F425CFC61828296E002CABDC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D41181C33E3007F83EF /* XCTest.framework */; };
 		F425CFCC1828296E002CABDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F425CFCA1828296E002CABDC /* InfoPlist.strings */; };
@@ -41,6 +42,7 @@
 		2F21035625A34A29A4656C6A /* Pods-ios.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.xcconfig"; path = "Pods/Pods-ios.xcconfig"; sourceTree = "<group>"; };
 		ADC09F2AE9564D008900DA94 /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE61FE220675422EAEE6FB3F /* libPods-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66C7A071835554D00098659 /* NSMomentTest+LangNl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTest+LangNl.m"; sourceTree = "<group>"; };
 		D38986F8261947CDA37C4DDE /* Pods-osx.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.xcconfig"; path = "Pods/Pods-osx.xcconfig"; sourceTree = "<group>"; };
 		F425CFC018282516002CABDC /* iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F425CFC51828296E002CABDC /* OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 		F425CFDD182844D1002CABDC /* Lang */ = {
 			isa = PBXGroup;
 			children = (
+				C66C7A071835554D00098659 /* NSMomentTest+LangNl.m */,
 				F425CFDE182844D1002CABDC /* NSMomentTest+LangEn.m */,
 				F425CFDF182844D1002CABDC /* NSMomentTest+LangEs.m */,
 				F425CFE0182844D1002CABDC /* NSMomentTest+LangFr.m */,
@@ -377,6 +380,7 @@
 				F425CFE8182844D1002CABDC /* NSMomentTest+LangEn.m in Sources */,
 				F425CFE6182844D1002CABDC /* NSMomentTests+Helpers.m in Sources */,
 				F425CFE4182844D1002CABDC /* NSMomentTests+Format.m in Sources */,
+				C66C7A081835554D00098659 /* NSMomentTest+LangNl.m in Sources */,
 				F425CFEB182844D1002CABDC /* NSMomentTest+LangSq.m in Sources */,
 				F425CFE7182844D1002CABDC /* NSMomentTests+SOD_EOD.m in Sources */,
 				F425CFE9182844D1002CABDC /* NSMomentTest+LangEs.m in Sources */,
