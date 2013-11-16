@@ -3,34 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>NSMoment</title>
+  <title>YLMoment</title>
   <link href="http://fonts.googleapis.com/css?family=Anonymous+Pro:400,700|Droid+Sans+Mono|Open+Sans:400,700|Linden+Hill|Quattrocento:400,700|News+Cycle:400,700|Antic+Slab|Cabin+Condensed:400,700" rel="stylesheet" type="text/css">
   <link href="stylesheets/stylesheet.css" rel="stylesheet">
   <link rel="stylesheet" href="stylesheets/xcode.css">
   <script src="javascripts/highlight.pack.js"></script>
 </head>
 <body>
-  <a id="forkbanner" href="https://github.com/YannickL/NSMoment"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  <a id="forkbanner" href="https://github.com/YannickL/YLMoment"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
   <div id="wrap" class="homepage">
     <div id="header">
-      <h1><a href="https://github.com/YannickL/NSMoment" target="blank"><div class="moment">NSMoment</div></a></h1>
+      <h1><a href="https://github.com/YannickL/YLMoment" target="blank"><div class="moment">YLMoment</div></a></h1>
     </div>
     <p class="tagline">Parse, validate, manipulate, and formatte dates easily in <strong>Objective-C</strong></p>
     <div id="links">
       <ul>
-        <li><a href="http://yannickloriot.com/library/ios/nsmoment/Classes/NSMoment.html">Read the Doc</a></li>
+        <li><a href="http://yannickloriot.com/library/ios/ylmoment/Classes/YLMoment.html">Read the Doc</a></li>
       </ul>
     </div>
     <div id="follow">
       <ul>
-        <li><iframe src="http://ghbtns.com/github-btn.html?user=YannickL&amp;repo=NSMoment&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px" class="github-btn"></iframe></li>
+        <li><iframe src="http://ghbtns.com/github-btn.html?user=YannickL&amp;repo=YLMoment&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px" class="github-btn"></iframe></li>
         <li id="version"><span>Version 0.1.0</span></li>
-        <li><iframe src="http://ghbtns.com/github-btn.html?user=YannickL&amp;repo=NSMoment&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px" class="github-btn"></iframe></li>
+        <li><iframe src="http://ghbtns.com/github-btn.html?user=YannickL&amp;repo=YLMoment&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px" class="github-btn"></iframe></li>
       </ul>
     </div>
     <div id="inner">
       <div>
-        <p class="what">NSMoment is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.</p>
+        <p class="what">YLMoment is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.</p>
         <p class="what">Its API is inspired by the well known <a href="http://momentjs.com/" target="blank">moment.js</a> library, however unlike its counterpart, its core is built upon the Foundation Framework components (NSDate, NSCalendar, etc.) to enable the interoperability with them.</p>
         <p class="what">This library is designed to facilitate the manipulation of times, dates, calendars, and durations in Objective-C by providing a single and easy way (an unique class) to do everything.</p>
       </div>
@@ -39,16 +39,16 @@
         <pre>
           <code>
 // Display: October 27 2013, 10:49:48 AM
-NSLog(@"%@", [[NSMoment now] format:@"MMMM dd yyyy, h:mm:ss a"]);
+NSLog(@"%@", [[YLMoment now] format:@"MMMM dd yyyy, h:mm:ss a"]);
 
 // Display: Oct 27 13
-NSLog(@"%@", [[NSMoment now] format:@"MMM dd yy"]); 
+NSLog(@"%@", [[YLMoment now] format:@"MMM dd yy"]); 
 
 // Display: 2013 escaped 2013
-NSLog(@"%@", [[NSMoment now] format:@"yyyy 'escaped' yyyy"]);
+NSLog(@"%@", [[YLMoment now] format:@"yyyy 'escaped' yyyy"]);
 
 // Display: 2013-10-27T10:49:48+0100
-NSLog(@"%@", [[NSMoment now] format]);
+NSLog(@"%@", [[YLMoment now] format]);
           </code>
         </pre>
       </div>
@@ -58,48 +58,48 @@ NSLog(@"%@", [[NSMoment now] format]);
         <pre>
           <code>
 // Display: 2 years ago
-NSLog(@"%@", [[NSMoment momentWithDateAsString:@"20111031"] fromNow]); 
+NSLog(@"%@", [[YLMoment momentWithDateAsString:@"20111031"] fromNow]); 
 
 // Display: a year ago
-NSMoment *m = 
-[NSMoment momentWithDateAsString:@"2012/06/20" format:@"yyyy/MM/dd"];
+YLMoment *m = 
+[YLMoment momentWithDateAsString:@"2012/06/20" format:@"yyyy/MM/dd"];
 NSLog(@"%@", [m fromNow]); 
 
 // Display: 19 hours ago
-NSLog(@"%@", [[[NSMoment now] startOf:@"day"] fromNow]); 
+NSLog(@"%@", [[[YLMoment now] startOf:@"day"] fromNow]); 
 
 // Display: in 5 hours
-NSLog(@"%@", [[[NSMoment now] endOf:@"day"] fromNow]); 
+NSLog(@"%@", [[[YLMoment now] endOf:@"day"] fromNow]); 
 
 // Display: 11 minutes ago
-NSLog(@"%@", [[[NSMoment now] startOf:@"hour"] fromNow]);
+NSLog(@"%@", [[[YLMoment now] startOf:@"hour"] fromNow]);
           </code>
         </pre>
       </div>
 
       <div id="example">
         <h2>Languages</h2>
-        <p class="what">NSMoment currently supports <span class="lang">Albanian</span>, <span class="lang">English</span>, <span class="lang">French</span> and <span class="lang">Spanish</span> for <em>relative times</em> and all the native languages for the <em>formatters</em>.</p>
+        <p class="what">YLMoment currently supports <span class="lang">Albanian</span>, <span class="lang">English</span>, <span class="lang">French</span> and <span class="lang">Spanish</span> for <em>relative times</em> and all the native languages for the <em>formatters</em>.</p>
         <pre>
           <code>
 // Display: il y a quelques secondes
-NSMoment *french = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+YLMoment *french = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [french setLocale:[NSLocale localeWithLocaleIdentifier:@"fr_FR"]];
 NSLog(@"%@", [french fromNow]);
 
 // Display: disa sekonda me parë
-NSMoment *albanian = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+YLMoment *albanian = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [albanian setLocale:[NSLocale localeWithLocaleIdentifier:@"sq_AL"]];
 NSLog(@"%@", [albanian fromNow]); 
 
 // Display: hace unos segundos
-NSMoment *spanish = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+YLMoment *spanish = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [spanish setLocale:[NSLocale localeWithLocaleIdentifier:@"es_ES"]];
 NSLog(@"%@", [spanish fromNow]);
 
 // Display: in 11 months
-NSMoment *reference = [NSMoment momentWithArray:@[@2013]];
-NSMoment *english   = [[NSMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+YLMoment *reference = [YLMoment momentWithArray:@[@2013]];
+YLMoment *english   = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [english setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
 NSLog(@"%@", [english fromMoment:reference]); 
           </code>
@@ -107,7 +107,7 @@ NSLog(@"%@", [english fromMoment:reference]);
       </div>
     </div>
   </div>
-  <p id="footer">NSMoment was created by <a href="http://yannickloriot.com">Yannick Loriot</a> and is released under the <a href="http://opensource.org/licenses/mit-license" target="_blank">MIT License.</a></p>
+  <p id="footer">YLMoment was created by <a href="http://yannickloriot.com">Yannick Loriot</a> and is released under the <a href="http://opensource.org/licenses/mit-license" target="_blank">MIT License.</a></p>
   <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
