@@ -1,6 +1,6 @@
 //
-//  NSMomentTests+Format.m
-//  NSMomentTests
+//  YLMomentTests+Format
+//  YLMomentTests
 //
 //  Created by YannickL on 26/10/2013.
 //
@@ -11,33 +11,33 @@
 #define EXP_SHORTHAND
 #import "Expecta.h"
 
-#import "NSMoment.h"
+#import "YLMoment.h"
 
-@interface NSMomentTests_Format : XCTestCase
+@interface YLMomentTests_Format : XCTestCase
 
 @end
 
-@implementation NSMomentTests_Format
+@implementation YLMomentTests_Format
 
 - (void)setUp
 {
     [super setUp];
     
-    [[NSMoment proxy] setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
-    [[NSMoment proxy] setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+    [[YLMoment proxy] setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+    [[YLMoment proxy] setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
 }
 
 - (void)tearDown
 {
-    [[NSMoment proxy] setLocale:[NSLocale currentLocale]];
-    [[NSMoment proxy] setTimeZone:[NSTimeZone defaultTimeZone]];
+    [[YLMoment proxy] setLocale:[NSLocale currentLocale]];
+    [[YLMoment proxy] setTimeZone:[NSTimeZone defaultTimeZone]];
     
     [super tearDown];
 }
 
 - (void)testFomatWith_yy
 {
-    NSMoment *reference = [NSMoment momentWithDateAsString:@"2009/04/05"];
+    YLMoment *reference = [YLMoment momentWithDateAsString:@"2009/04/05"];
     expect([reference format:@"yy"]).to.equal(@"09");
 }
 
@@ -49,7 +49,7 @@
 
 - (void)testFormatNoStyle
 {
-    NSMoment *moment = [NSMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
+    YLMoment *moment = [YLMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
     moment.dateStyle = NSDateFormatterNoStyle;
     moment.timeStyle = NSDateFormatterNoStyle;
     
@@ -58,7 +58,7 @@
 
 - (void)testFormatShortStyle
 {
-    NSMoment *moment = [NSMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
+    YLMoment *moment = [YLMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
     moment.dateStyle = NSDateFormatterShortStyle;
     moment.timeStyle = NSDateFormatterShortStyle;
     
@@ -67,7 +67,7 @@
 
 - (void)testFormatMediumStyle
 {
-    NSMoment *moment = [NSMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
+    YLMoment *moment = [YLMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
     moment.dateStyle = NSDateFormatterMediumStyle;
     moment.timeStyle = NSDateFormatterMediumStyle;
     
@@ -76,7 +76,7 @@
 
 - (void)testFormatLongStyle
 {
-    NSMoment *moment = [NSMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
+    YLMoment *moment = [YLMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
     moment.dateStyle = NSDateFormatterLongStyle;
     moment.timeStyle = NSDateFormatterLongStyle;
     
@@ -85,7 +85,7 @@
 
 - (void)testFormatFullStyle
 {
-    NSMoment *moment = [NSMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
+    YLMoment *moment = [YLMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
     moment.dateStyle = NSDateFormatterFullStyle;
     moment.timeStyle = NSDateFormatterFullStyle;
     

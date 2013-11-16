@@ -1,6 +1,6 @@
 //
-//  NSMomentTests+Getters_Setters.m
-//  NSMomentTests
+//  YLMomentTests+Getters_Setters
+//  YLMomentTests
 //
 //  Created by YannickL on 28/10/2013.
 //
@@ -11,17 +11,17 @@
 #define EXP_SHORTHAND
 #import "Expecta.h"
 
-#import "NSMoment.h"
+#import "YLMoment.h"
 
-@interface NSMomentTests_Getters_Setters : XCTestCase
+@interface YLMomentTests_Getters_Setters : XCTestCase
 
 @end
 
-@implementation NSMomentTests_Getters_Setters
+@implementation YLMomentTests_Getters_Setters
 
 - (void)testGetters
 {
-    NSMoment *reference = [NSMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
+    YLMoment *reference = [YLMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
 
     expect([reference year]).to.equal(2011);
     expect([reference month]).to.equal(9);
@@ -33,7 +33,7 @@
 
 - (void)testSetters
 {
-    NSMoment *reference = [NSMoment now];
+    YLMoment *reference = [YLMoment now];
     reference.year      = 2011;
     reference.month     = 9;
     reference.day       = 12;
@@ -48,7 +48,7 @@
     expect([reference minute]).to.equal(7);
     expect([reference second]).to.equal(8);
     
-    reference        = [NSMoment momentWithDateAsString:@"20130531" format:@"yyyyMMdd"];
+    reference        = [YLMoment momentWithDateAsString:@"20130531" format:@"yyyyMMdd"];
     reference.month  = 3;
     
     expect([reference month]).to.equal(3);

@@ -1,6 +1,6 @@
 //
-//  NSMomentTests+Add_Substract.m
-//  NSMomentTests
+//  YLMomentTests+Add_Substract
+//  YLMomentTests
 //
 //  Created by YannickL on 29/10/2013.
 //
@@ -11,17 +11,17 @@
 #define EXP_SHORTHAND
 #import "Expecta.h"
 
-#import "NSMoment.h"
+#import "YLMoment.h"
 
-@interface NSMomentTests_Add_Substract : XCTestCase
+@interface YLMomentTests_Add_Substract : XCTestCase
 
 @end
 
-@implementation NSMomentTests_Add_Substract
+@implementation YLMomentTests_Add_Substract
 
 - (void)testAddCalendarUnit
 {
-    NSMoment *a = [NSMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
+    YLMoment *a = [YLMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
     
     expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitSecond] second]).to.equal(9);
     expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitMinute] minute]).to.equal(8);
@@ -33,7 +33,7 @@
 
 - (void)testAddStringLong
 {
-    NSMoment *a = [NSMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
+    YLMoment *a = [YLMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
     
     expect([[a addAmountOfTime:1 forUnitKey:@"second"] second]).to.equal(9);
     expect([[a addAmountOfTime:1 forUnitKey:@"minute"] minute]).to.equal(8);
@@ -45,7 +45,7 @@
 
 - (void)testAddStringLongPlural
 {
-    NSMoment *a = [NSMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
+    YLMoment *a = [YLMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
     
     expect([[a addAmountOfTime:1 forUnitKey:@"seconds"] second]).to.equal(9);
     expect([[a addAmountOfTime:1 forUnitKey:@"minutes"] minute]).to.equal(8);
@@ -57,7 +57,7 @@
 
 - (void)testAddStringShort
 {
-    NSMoment *a = [NSMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
+    YLMoment *a = [YLMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
     
     expect([[a addAmountOfTime:1 forUnitKey:@"s"] second]).to.equal(9);
     expect([[a addAmountOfTime:1 forUnitKey:@"m"] minute]).to.equal(8);

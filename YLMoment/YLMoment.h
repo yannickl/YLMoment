@@ -1,5 +1,5 @@
 /*
- * NSMoment.h
+ * YLMoment.h
  *
  * Copyright 2013 Yannick Loriot.
  * http://yannickloriot.com
@@ -26,10 +26,10 @@
 
 #import <Foundation/Foundation.h>
 
-static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
+static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 
 /**
- * NSMoment is a library which provides an high abstraction level for parsing,
+ * YLMoment is a library which provides an high abstraction level for parsing,
  * validating, manipulating, and formatting the dates in Objective-C.
  *
  * Its API is inspired by the well known [moment.js](http://momentjs.com/)
@@ -37,7 +37,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * Framework components (NSDate, NSDateFormatter,etc.) for a full 
  * interoperability with iOS.
  */
-@interface NSMoment : NSObject
+@interface YLMoment : NSObject
 
 #pragma mark Creating and Initializing Moment Objects
 /** @name Creating and Initializing Moment Objects */
@@ -148,7 +148,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 /**
  * @abstract Returns the proxy for the receiver.
  * @return The appearance proxy for the receiver.
- * @discussion The proxy is useful to configuring the `NSMoment` in a global way.
+ * @discussion The proxy is useful to configuring the `YLMoment` in a global way.
  * @version 0.1.0
  */
 + (instancetype)proxy;
@@ -260,13 +260,13 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 
 /**
  * @abstract Returns a Boolean value that indicates whether a given object
- * is an `NSMoment` object and exactly equal the receiver.
+ * is an `YLMoment` object and exactly equal the receiver.
  * @param anotherMoment The moment to compare with the receiver.
- * @return YES if the anotherMoment is an `NSMoment` object and is exactly
+ * @return YES if the anotherMoment is an `YLMoment` object and is exactly
  * equal to the receiver, otherwise NO.
  * @version 0.1.0
  */
-- (BOOL)isEqualToMoment:(NSMoment *)anotherMoment;
+- (BOOL)isEqualToMoment:(YLMoment *)anotherMoment;
 
 #pragma mark Working with Relative Time
 /** @name Working with Relative Times */
@@ -343,7 +343,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @see fromMoment:withSuffix:
  * @version 0.1.0
  */
-- (NSString *)fromMoment:(NSMoment *)moment;
+- (NSString *)fromMoment:(YLMoment *)moment;
 
 /**
  * @abstract Returns a suffixed string representing the relative time from a
@@ -357,7 +357,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @see fromDate:withSuffix:
  * @version 0.1.0
  */
-- (NSString *)fromMoment:(NSMoment *)moment withSuffix:(BOOL)suffixed;
+- (NSString *)fromMoment:(YLMoment *)moment withSuffix:(BOOL)suffixed;
 
 #pragma mark Manipulating Moments
 /** @name Manipulating Moments */
@@ -372,7 +372,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @see calendarUnitForKey:
  * @version 0.1.0
  */
-- (NSMoment *)addAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key;
+- (YLMoment *)addAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key;
 
 /**
  * @abstract Mutates and returns the original moment by adding time. To add
@@ -384,7 +384,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * pattern.
  * @version 0.1.0
  */
-- (NSMoment *)addAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit;
+- (YLMoment *)addAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit;
 
 /**
  * @abstract Mutates and returns the original moment by adding a time duration.
@@ -393,7 +393,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * pattern.
  * @version 0.1.0
  */
-- (NSMoment *)addDuration:(NSTimeInterval)duration;
+- (YLMoment *)addDuration:(NSTimeInterval)duration;
 
 /**
  * @abstract Mutates and returns the original moment by setting it to the start of
@@ -404,7 +404,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @see startOfCalendarUnit:
  * @version 0.1.0
  */
-- (NSMoment *)startOf:(NSString *)unitString;
+- (YLMoment *)startOf:(NSString *)unitString;
 
 /**
  * @abstract Mutates and returns the original moment by setting it to the start of
@@ -414,7 +414,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * pattern.
  * @version 0.1.0
  */
-- (NSMoment *)startOfCalendarUnit:(NSCalendarUnit)unit;
+- (YLMoment *)startOfCalendarUnit:(NSCalendarUnit)unit;
 
 /**
  * @abstract Mutates and returns the original moment by setting it to the end of
@@ -426,7 +426,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @see endOfCalendarUnit:
  * @version 0.1.0
  */
-- (NSMoment *)endOf:(NSString *)unitString;
+- (YLMoment *)endOf:(NSString *)unitString;
 
 /**
  * @abstract Mutates and returns the original moment by setting it to the end of
@@ -437,7 +437,7 @@ static NSString * const NSMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * pattern.
  * @version 0.1.0
  */
-- (NSMoment *)endOfCalendarUnit:(NSCalendarUnit)unit;
+- (YLMoment *)endOfCalendarUnit:(NSCalendarUnit)unit;
 
 #pragma mark Getting/Setting Moment Components
 /** @name Getting/Setting Moment Components */

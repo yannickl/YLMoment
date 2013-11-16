@@ -1,6 +1,6 @@
 ## Changelog
 
-### Version 0.2.0
+### Version 0.2.0 (Under Development)
 
 - [ADD] `timeZone`, `timeStyle` and `dateStyle` configuration for the format
 - [FIX] `fromNowWithSuffix:` call
@@ -10,7 +10,7 @@
 
 - Initializers from `NSDate`, `NSArray`, `String`, `String and Format`
 - Global configuration via proxy (`calendar` and `locale`)
-- Formating moments
+- Formatting moments
 - Check the moment validity via the `isValid` method
 - Relative Dates (`from`, `fromNow`)
 - Manipulating Dates (`addAmountOfTime`, `addDuration`, `startOf`, `endOf`)

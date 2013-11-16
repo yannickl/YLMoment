@@ -11,26 +11,26 @@
 		ED7DF6AE538742429A8AEA2C /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE61FE220675422EAEE6FB3F /* libPods-osx.a */; };
 		F425CFC61828296E002CABDC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D41181C33E3007F83EF /* XCTest.framework */; };
 		F425CFCC1828296E002CABDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F425CFCA1828296E002CABDC /* InfoPlist.strings */; };
-		F425CFE2182844D1002CABDC /* NSMomentTests+Add_Substract.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD7182844D1002CABDC /* NSMomentTests+Add_Substract.m */; };
-		F425CFE3182844D1002CABDC /* NSMomentTests+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD8182844D1002CABDC /* NSMomentTests+Create.m */; };
-		F425CFE4182844D1002CABDC /* NSMomentTests+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD9182844D1002CABDC /* NSMomentTests+Format.m */; };
-		F425CFE5182844D1002CABDC /* NSMomentTests+Getters_Setters.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDA182844D1002CABDC /* NSMomentTests+Getters_Setters.m */; };
-		F425CFE6182844D1002CABDC /* NSMomentTests+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDB182844D1002CABDC /* NSMomentTests+Helpers.m */; };
-		F425CFE7182844D1002CABDC /* NSMomentTests+SOD_EOD.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDC182844D1002CABDC /* NSMomentTests+SOD_EOD.m */; };
-		F425CFE8182844D1002CABDC /* NSMomentTest+LangEn.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDE182844D1002CABDC /* NSMomentTest+LangEn.m */; };
-		F425CFE9182844D1002CABDC /* NSMomentTest+LangEs.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDF182844D1002CABDC /* NSMomentTest+LangEs.m */; };
-		F425CFEA182844D1002CABDC /* NSMomentTest+LangFr.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE0182844D1002CABDC /* NSMomentTest+LangFr.m */; };
-		F425CFEB182844D1002CABDC /* NSMomentTest+LangSq.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE1182844D1002CABDC /* NSMomentTest+LangSq.m */; };
-		F425CFEC182844E1002CABDC /* NSMomentTests+Add_Substract.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD7182844D1002CABDC /* NSMomentTests+Add_Substract.m */; };
-		F425CFED182844E1002CABDC /* NSMomentTests+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD8182844D1002CABDC /* NSMomentTests+Create.m */; };
-		F425CFEE182844E1002CABDC /* NSMomentTests+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD9182844D1002CABDC /* NSMomentTests+Format.m */; };
-		F425CFEF182844E1002CABDC /* NSMomentTests+Getters_Setters.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDA182844D1002CABDC /* NSMomentTests+Getters_Setters.m */; };
-		F425CFF0182844E1002CABDC /* NSMomentTests+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDB182844D1002CABDC /* NSMomentTests+Helpers.m */; };
-		F425CFF1182844E1002CABDC /* NSMomentTests+SOD_EOD.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDC182844D1002CABDC /* NSMomentTests+SOD_EOD.m */; };
-		F425CFF2182844E1002CABDC /* NSMomentTest+LangEn.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDE182844D1002CABDC /* NSMomentTest+LangEn.m */; };
-		F425CFF3182844E1002CABDC /* NSMomentTest+LangEs.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDF182844D1002CABDC /* NSMomentTest+LangEs.m */; };
-		F425CFF4182844E1002CABDC /* NSMomentTest+LangFr.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE0182844D1002CABDC /* NSMomentTest+LangFr.m */; };
-		F425CFF5182844E1002CABDC /* NSMomentTest+LangSq.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE1182844D1002CABDC /* NSMomentTest+LangSq.m */; };
+		F425CFE2182844D1002CABDC /* YLMomentTests+Add_Substract.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD7182844D1002CABDC /* YLMomentTests+Add_Substract.m */; };
+		F425CFE3182844D1002CABDC /* YLMomentTests+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD8182844D1002CABDC /* YLMomentTests+Create.m */; };
+		F425CFE4182844D1002CABDC /* YLMomentTests+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD9182844D1002CABDC /* YLMomentTests+Format.m */; };
+		F425CFE5182844D1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDA182844D1002CABDC /* YLMomentTests+Getters_Setters.m */; };
+		F425CFE6182844D1002CABDC /* YLMomentTests+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDB182844D1002CABDC /* YLMomentTests+Helpers.m */; };
+		F425CFE7182844D1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDC182844D1002CABDC /* YLMomentTests+SOD_EOD.m */; };
+		F425CFE8182844D1002CABDC /* YLMomentTest+LangEn.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDE182844D1002CABDC /* YLMomentTest+LangEn.m */; };
+		F425CFE9182844D1002CABDC /* YLMomentTest+LangEs.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDF182844D1002CABDC /* YLMomentTest+LangEs.m */; };
+		F425CFEA182844D1002CABDC /* YLMomentTest+LangFr.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */; };
+		F425CFEB182844D1002CABDC /* YLMomentTest+LangSq.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */; };
+		F425CFEC182844E1002CABDC /* YLMomentTests+Add_Substract.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD7182844D1002CABDC /* YLMomentTests+Add_Substract.m */; };
+		F425CFED182844E1002CABDC /* YLMomentTests+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD8182844D1002CABDC /* YLMomentTests+Create.m */; };
+		F425CFEE182844E1002CABDC /* YLMomentTests+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFD9182844D1002CABDC /* YLMomentTests+Format.m */; };
+		F425CFEF182844E1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDA182844D1002CABDC /* YLMomentTests+Getters_Setters.m */; };
+		F425CFF0182844E1002CABDC /* YLMomentTests+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDB182844D1002CABDC /* YLMomentTests+Helpers.m */; };
+		F425CFF1182844E1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDC182844D1002CABDC /* YLMomentTests+SOD_EOD.m */; };
+		F425CFF2182844E1002CABDC /* YLMomentTest+LangEn.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDE182844D1002CABDC /* YLMomentTest+LangEn.m */; };
+		F425CFF3182844E1002CABDC /* YLMomentTest+LangEs.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDF182844D1002CABDC /* YLMomentTest+LangEs.m */; };
+		F425CFF4182844E1002CABDC /* YLMomentTest+LangFr.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */; };
+		F425CFF5182844E1002CABDC /* YLMomentTest+LangSq.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */; };
 		F4605D3A181C33AA007F83EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4605D38181C33AA007F83EF /* InfoPlist.strings */; };
 		F4605D42181C33E3007F83EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D41181C33E3007F83EF /* XCTest.framework */; };
 		F4605D46181C33F2007F83EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D45181C33F2007F83EF /* UIKit.framework */; };
@@ -47,16 +47,16 @@
 		F425CFC91828296E002CABDC /* OSXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OSXTests-Info.plist"; sourceTree = "<group>"; };
 		F425CFCB1828296E002CABDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F425CFCF1828296E002CABDC /* OSXTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OSXTests-Prefix.pch"; sourceTree = "<group>"; };
-		F425CFD7182844D1002CABDC /* NSMomentTests+Add_Substract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTests+Add_Substract.m"; sourceTree = "<group>"; };
-		F425CFD8182844D1002CABDC /* NSMomentTests+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTests+Create.m"; sourceTree = "<group>"; };
-		F425CFD9182844D1002CABDC /* NSMomentTests+Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTests+Format.m"; sourceTree = "<group>"; };
-		F425CFDA182844D1002CABDC /* NSMomentTests+Getters_Setters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTests+Getters_Setters.m"; sourceTree = "<group>"; };
-		F425CFDB182844D1002CABDC /* NSMomentTests+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTests+Helpers.m"; sourceTree = "<group>"; };
-		F425CFDC182844D1002CABDC /* NSMomentTests+SOD_EOD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTests+SOD_EOD.m"; sourceTree = "<group>"; };
-		F425CFDE182844D1002CABDC /* NSMomentTest+LangEn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTest+LangEn.m"; sourceTree = "<group>"; };
-		F425CFDF182844D1002CABDC /* NSMomentTest+LangEs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTest+LangEs.m"; sourceTree = "<group>"; };
-		F425CFE0182844D1002CABDC /* NSMomentTest+LangFr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTest+LangFr.m"; sourceTree = "<group>"; };
-		F425CFE1182844D1002CABDC /* NSMomentTest+LangSq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMomentTest+LangSq.m"; sourceTree = "<group>"; };
+		F425CFD7182844D1002CABDC /* YLMomentTests+Add_Substract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTests+Add_Substract.m"; sourceTree = "<group>"; };
+		F425CFD8182844D1002CABDC /* YLMomentTests+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTests+Create.m"; sourceTree = "<group>"; };
+		F425CFD9182844D1002CABDC /* YLMomentTests+Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTests+Format.m"; sourceTree = "<group>"; };
+		F425CFDA182844D1002CABDC /* YLMomentTests+Getters_Setters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTests+Getters_Setters.m"; sourceTree = "<group>"; };
+		F425CFDB182844D1002CABDC /* YLMomentTests+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTests+Helpers.m"; sourceTree = "<group>"; };
+		F425CFDC182844D1002CABDC /* YLMomentTests+SOD_EOD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTests+SOD_EOD.m"; sourceTree = "<group>"; };
+		F425CFDE182844D1002CABDC /* YLMomentTest+LangEn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangEn.m"; sourceTree = "<group>"; };
+		F425CFDF182844D1002CABDC /* YLMomentTest+LangEs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangEs.m"; sourceTree = "<group>"; };
+		F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangFr.m"; sourceTree = "<group>"; };
+		F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangSq.m"; sourceTree = "<group>"; };
 		F4605D37181C33AA007F83EF /* iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOSTests-Info.plist"; sourceTree = "<group>"; };
 		F4605D39181C33AA007F83EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4605D3D181C33AA007F83EF /* iOSTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSTests-Prefix.pch"; sourceTree = "<group>"; };
@@ -119,12 +119,12 @@
 		F425CFD6182844D1002CABDC /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F425CFD7182844D1002CABDC /* NSMomentTests+Add_Substract.m */,
-				F425CFD8182844D1002CABDC /* NSMomentTests+Create.m */,
-				F425CFD9182844D1002CABDC /* NSMomentTests+Format.m */,
-				F425CFDA182844D1002CABDC /* NSMomentTests+Getters_Setters.m */,
-				F425CFDB182844D1002CABDC /* NSMomentTests+Helpers.m */,
-				F425CFDC182844D1002CABDC /* NSMomentTests+SOD_EOD.m */,
+				F425CFD7182844D1002CABDC /* YLMomentTests+Add_Substract.m */,
+				F425CFD8182844D1002CABDC /* YLMomentTests+Create.m */,
+				F425CFD9182844D1002CABDC /* YLMomentTests+Format.m */,
+				F425CFDA182844D1002CABDC /* YLMomentTests+Getters_Setters.m */,
+				F425CFDB182844D1002CABDC /* YLMomentTests+Helpers.m */,
+				F425CFDC182844D1002CABDC /* YLMomentTests+SOD_EOD.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -132,10 +132,10 @@
 		F425CFDD182844D1002CABDC /* Lang */ = {
 			isa = PBXGroup;
 			children = (
-				F425CFDE182844D1002CABDC /* NSMomentTest+LangEn.m */,
-				F425CFDF182844D1002CABDC /* NSMomentTest+LangEs.m */,
-				F425CFE0182844D1002CABDC /* NSMomentTest+LangFr.m */,
-				F425CFE1182844D1002CABDC /* NSMomentTest+LangSq.m */,
+				F425CFDE182844D1002CABDC /* YLMomentTest+LangEn.m */,
+				F425CFDF182844D1002CABDC /* YLMomentTest+LangEs.m */,
+				F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */,
+				F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */,
 			);
 			path = Lang;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F4605D0D181C326A007F83EF /* Build configuration list for PBXProject "NSMomentTests" */;
+			buildConfigurationList = F4605D0D181C326A007F83EF /* Build configuration list for PBXProject "YLMomentTests" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -355,16 +355,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F425CFEC182844E1002CABDC /* NSMomentTests+Add_Substract.m in Sources */,
-				F425CFED182844E1002CABDC /* NSMomentTests+Create.m in Sources */,
-				F425CFEE182844E1002CABDC /* NSMomentTests+Format.m in Sources */,
-				F425CFEF182844E1002CABDC /* NSMomentTests+Getters_Setters.m in Sources */,
-				F425CFF0182844E1002CABDC /* NSMomentTests+Helpers.m in Sources */,
-				F425CFF1182844E1002CABDC /* NSMomentTests+SOD_EOD.m in Sources */,
-				F425CFF2182844E1002CABDC /* NSMomentTest+LangEn.m in Sources */,
-				F425CFF3182844E1002CABDC /* NSMomentTest+LangEs.m in Sources */,
-				F425CFF4182844E1002CABDC /* NSMomentTest+LangFr.m in Sources */,
-				F425CFF5182844E1002CABDC /* NSMomentTest+LangSq.m in Sources */,
+				F425CFEC182844E1002CABDC /* YLMomentTests+Add_Substract.m in Sources */,
+				F425CFED182844E1002CABDC /* YLMomentTests+Create.m in Sources */,
+				F425CFEE182844E1002CABDC /* YLMomentTests+Format.m in Sources */,
+				F425CFEF182844E1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */,
+				F425CFF0182844E1002CABDC /* YLMomentTests+Helpers.m in Sources */,
+				F425CFF1182844E1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
+				F425CFF2182844E1002CABDC /* YLMomentTest+LangEn.m in Sources */,
+				F425CFF3182844E1002CABDC /* YLMomentTest+LangEs.m in Sources */,
+				F425CFF4182844E1002CABDC /* YLMomentTest+LangFr.m in Sources */,
+				F425CFF5182844E1002CABDC /* YLMomentTest+LangSq.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,16 +372,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F425CFE5182844D1002CABDC /* NSMomentTests+Getters_Setters.m in Sources */,
-				F425CFE3182844D1002CABDC /* NSMomentTests+Create.m in Sources */,
-				F425CFEA182844D1002CABDC /* NSMomentTest+LangFr.m in Sources */,
-				F425CFE8182844D1002CABDC /* NSMomentTest+LangEn.m in Sources */,
-				F425CFE6182844D1002CABDC /* NSMomentTests+Helpers.m in Sources */,
-				F425CFE4182844D1002CABDC /* NSMomentTests+Format.m in Sources */,
-				F425CFEB182844D1002CABDC /* NSMomentTest+LangSq.m in Sources */,
-				F425CFE7182844D1002CABDC /* NSMomentTests+SOD_EOD.m in Sources */,
-				F425CFE9182844D1002CABDC /* NSMomentTest+LangEs.m in Sources */,
-				F425CFE2182844D1002CABDC /* NSMomentTests+Add_Substract.m in Sources */,
+				F425CFE5182844D1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */,
+				F425CFE3182844D1002CABDC /* YLMomentTests+Create.m in Sources */,
+				F425CFEA182844D1002CABDC /* YLMomentTest+LangFr.m in Sources */,
+				F425CFE8182844D1002CABDC /* YLMomentTest+LangEn.m in Sources */,
+				F425CFE6182844D1002CABDC /* YLMomentTests+Helpers.m in Sources */,
+				F425CFE4182844D1002CABDC /* YLMomentTests+Format.m in Sources */,
+				F425CFEB182844D1002CABDC /* YLMomentTest+LangSq.m in Sources */,
+				F425CFE7182844D1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
+				F425CFE9182844D1002CABDC /* YLMomentTest+LangEs.m in Sources */,
+				F425CFE2182844D1002CABDC /* YLMomentTests+Add_Substract.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,7 +619,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4605D0D181C326A007F83EF /* Build configuration list for PBXProject "NSMomentTests" */ = {
+		F4605D0D181C326A007F83EF /* Build configuration list for PBXProject "YLMomentTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4605D0E181C326A007F83EF /* Debug */,

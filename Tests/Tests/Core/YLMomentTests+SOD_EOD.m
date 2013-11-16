@@ -1,6 +1,6 @@
 //
-//  NSMomentTests+SOD_EOD.m
-//  NSMomentTests
+//  YLMomentTests+SOD_EOD
+//  YLMomentTests
 //
 //  Created by YannickL on 29/10/2013.
 //
@@ -11,24 +11,24 @@
 #define EXP_SHORTHAND
 #import "Expecta.h"
 
-#import "NSMoment.h"
+#import "YLMoment.h"
 
-@interface NSMomentTests_SOD_EOD : XCTestCase
+@interface YLMomentTests_SOD_EOD : XCTestCase
 
 @end
 
-@implementation NSMomentTests_SOD_EOD
+@implementation YLMomentTests_SOD_EOD
 
 - (void)setUp
 {
     [super setUp];
     
-    [[NSMoment proxy] setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+    [[YLMoment proxy] setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
 }
 
 - (void)tearDown
 {
-    [[NSMoment proxy] setLocale:[NSLocale currentLocale]];
+    [[YLMoment proxy] setLocale:[NSLocale currentLocale]];
     
     [super tearDown];
 }
@@ -37,10 +37,10 @@
 
 - (void)testStartOfYear
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"year"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"years"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"y"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitYear];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"year"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"years"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"y"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitYear];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();
@@ -56,10 +56,10 @@
 
 - (void)testEndOfYear
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"year"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"years"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"y"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitYear];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"year"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"years"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"y"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitYear];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();
@@ -77,10 +77,10 @@
 
 - (void)testStartOfMonth
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"month"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"months"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"M"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitMonth];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"month"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"months"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"M"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitMonth];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();
@@ -96,10 +96,10 @@
 
 - (void)testEndOfMonth
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"month"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"months"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"M"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitMonth];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"month"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"months"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"M"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitMonth];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();
@@ -117,10 +117,10 @@
 
 - (void)testStartOfDay
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"day"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"days"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"d"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitDay];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"day"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"days"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"d"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitDay];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();
@@ -136,10 +136,10 @@
 
 - (void)testEndOfDay
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"day"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"days"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"d"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitDay];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"day"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"days"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"d"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitDay];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();
@@ -157,10 +157,10 @@
 
 - (void)testStartOfHour
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"hour"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"hours"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"h"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitHour];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"hour"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"hours"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"h"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitHour];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();
@@ -176,10 +176,10 @@
 
 - (void)testEndOfHour
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"hour"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"hours"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"h"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitHour];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"hour"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"hours"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"h"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitHour];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();
@@ -197,10 +197,10 @@
 
 - (void)testStartOfMinute
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"minute"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"minutes"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"m"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitMinute];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"minute"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"minutes"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"m"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitMinute];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();
@@ -216,10 +216,10 @@
 
 - (void)testEndOfMinute
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"minute"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"minutes"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"m"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitMinute];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"minute"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"minutes"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"m"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitMinute];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();
@@ -237,10 +237,10 @@
 
 - (void)testStartOfSecond
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"second"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"seconds"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"s"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitSecond];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"second"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"seconds"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOf:@"s"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] startOfCalendarUnit:NSCalendarUnitSecond];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();
@@ -256,10 +256,10 @@
 
 - (void)testEndOfSecond
 {
-    NSMoment *m  = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"second"];
-    NSMoment *ms = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"seconds"];
-    NSMoment *ma = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"s"];
-    NSMoment *mu = [[NSMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitSecond];
+    YLMoment *m  = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"second"];
+    YLMoment *ms = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"seconds"];
+    YLMoment *ma = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOf:@"s"];
+    YLMoment *mu = [[YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]] endOfCalendarUnit:NSCalendarUnitSecond];
     
     expect([m isEqualToMoment:ms]).to.beTruthy();
     expect([m isEqualToMoment:ma]).to.beTruthy();

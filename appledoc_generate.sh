@@ -6,4 +6,4 @@
 
 mkdir documentation
 
-/usr/local/bin/appledoc -h AppledocSettings.plist ./NSMoment
+/usr/local/bin/appledoc -h AppledocSettings.plist ./YLMoment

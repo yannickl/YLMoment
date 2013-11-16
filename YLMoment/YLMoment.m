@@ -1,5 +1,5 @@
 /*
- * NSMoment.m
+ * YLMoment.m
  *
  * Copyright 2013 Yannick Loriot.
  * http://yannickloriot.com
@@ -24,9 +24,9 @@
  *
  */
 
-#import "NSMoment.h"
+#import "YLMoment.h"
 
-@interface NSMoment ()
+@interface YLMoment ()
 #pragma mark internal
 @property (nonatomic, strong) NSDate   *date;
 
@@ -44,7 +44,7 @@
 
 @end
 
-@implementation NSMoment
+@implementation YLMoment
 
 - (void)dealloc
 {
@@ -173,7 +173,7 @@
 
 + (instancetype)proxy
 {
-    static NSMoment *_sharedInstance = nil;
+    static YLMoment *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[self alloc] initProxy];
@@ -187,7 +187,7 @@
 
 - (NSString *)format
 {
-    return [self format:NSMomentIso8601Format];
+    return [self format:YLMomentIso8601Format];
 }
 
 - (NSString *)format:(NSString *)dateFormat
@@ -218,7 +218,7 @@
 
 #pragma mark Comparing Moments
 
-- (BOOL)isEqualToMoment:(NSMoment *)anotherMoment
+- (BOOL)isEqualToMoment:(YLMoment *)anotherMoment
 {
     if ([anotherMoment isMemberOfClass:[self class]])
     {
@@ -325,26 +325,26 @@
     return formattedString;
 }
 
-- (NSString *)fromMoment:(NSMoment *)moment
+- (NSString *)fromMoment:(YLMoment *)moment
 {
     return [self fromMoment:moment withSuffix:YES];
 }
 
-- (NSString *)fromMoment:(NSMoment *)moment withSuffix:(BOOL)suffixed
+- (NSString *)fromMoment:(YLMoment *)moment withSuffix:(BOOL)suffixed
 {
     return [self fromDate:[moment date] withSuffix:suffixed];
 }
 
 #pragma mark Manipulating Moments
 
-- (NSMoment *)addAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key
+- (YLMoment *)addAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key
 {
     NSCalendarUnit unit = [[self class] calendarUnitForKey:key];
     
     return [self addAmountOfTime:amount forCalendarUnit:unit];
 }
 
-- (NSMoment *)addAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit
+- (YLMoment *)addAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit
 {
     NSCalendar *currentCalendar  = _calendar ?: [[[self class] proxy] calendar];
     NSDateComponents *components = [[NSDateComponents alloc] init];
@@ -381,21 +381,21 @@
     return self;
 }
 
-- (NSMoment *)addDuration:(NSTimeInterval)duration
+- (YLMoment *)addDuration:(NSTimeInterval)duration
 {
     _date = [_date dateByAddingTimeInterval:duration];
     
     return self;
 }
 
-- (NSMoment *)startOf:(NSString *)unitString
+- (YLMoment *)startOf:(NSString *)unitString
 {
     NSCalendarUnit unit = [[self class] calendarUnitForKey:unitString];
     
     return [self startOfCalendarUnit:unit];
 }
 
-- (NSMoment *)startOfCalendarUnit:(NSCalendarUnit)unit
+- (YLMoment *)startOfCalendarUnit:(NSCalendarUnit)unit
 {
     switch (unit)
     {
@@ -422,14 +422,14 @@
     return self;
 }
 
-- (NSMoment *)endOf:(NSString *)unitString
+- (YLMoment *)endOf:(NSString *)unitString
 {
     NSCalendarUnit unit = [[self class] calendarUnitForKey:unitString];
     
     return [self endOfCalendarUnit:unit];
 }
 
-- (NSMoment *)endOfCalendarUnit:(NSCalendarUnit)unit
+- (YLMoment *)endOfCalendarUnit:(NSCalendarUnit)unit
 {
     return [[[self startOfCalendarUnit:unit] addAmountOfTime:1 forCalendarUnit:unit] addAmountOfTime:-1 forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitSecond];
 }
