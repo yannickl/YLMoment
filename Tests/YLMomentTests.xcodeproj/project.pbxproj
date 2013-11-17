@@ -35,6 +35,7 @@
 		F4605D42181C33E3007F83EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D41181C33E3007F83EF /* XCTest.framework */; };
 		F4605D46181C33F2007F83EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D45181C33F2007F83EF /* UIKit.framework */; };
 		F4605D47181C3416007F83EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D43181C33EA007F83EF /* Foundation.framework */; };
+		F4FDEA391838D38D00DB3901 /* YLMomentTest+LangNl.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		F4605D41181C33E3007F83EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F4605D43181C33EA007F83EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F4605D45181C33F2007F83EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangNl.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				F425CFDE182844D1002CABDC /* YLMomentTest+LangEn.m */,
 				F425CFDF182844D1002CABDC /* YLMomentTest+LangEs.m */,
 				F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */,
+				F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */,
 				F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */,
 			);
 			path = Lang;
@@ -381,6 +384,7 @@
 				F425CFEB182844D1002CABDC /* YLMomentTest+LangSq.m in Sources */,
 				F425CFE7182844D1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
 				F425CFE9182844D1002CABDC /* YLMomentTest+LangEs.m in Sources */,
+				F4FDEA391838D38D00DB3901 /* YLMomentTest+LangNl.m in Sources */,
 				F425CFE2182844D1002CABDC /* YLMomentTests+Add_Substract.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

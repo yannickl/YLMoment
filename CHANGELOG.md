@@ -1,10 +1,11 @@
 ## Changelog
 
-### Version 0.2.0 (Under Development)
+### Version 0.2.0
 
 - [ADD] `timeZone`, `timeStyle` and `dateStyle` configuration for the format
 - [FIX] `fromNowWithSuffix:` call
-- [UPDATE] Default date/time format to `NSDateFormatterLongStyle`
+- [ADD] `Dutch` language
+- [CHANGE] Default date/time format to `NSDateFormatterLongStyle`
 
 ### Version 0.1.0 (Initial Commit)
 

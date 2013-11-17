@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:NSMomentTests.xcodeproj">
+      location = "self:YLMomentTests.xcodeproj">
    </FileRef>
 </Workspace>

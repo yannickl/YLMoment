@@ -1,0 +1,21 @@
+/*
+  YLMomentFormat.strings
+  YLMomentTests
+
+  Created by Pieter Claerhout on 08/11/2013.
+  Translation comes from the http://momemt.js project.
+*/
+
+"future" = "binnen %@";
+"past"   = "%@ geleden";
+"s"      = "enkele seconden";
+"m"      = "een minuut";
+"mm"     = "%d minuten";
+"h"      = "een uur";
+"hh"     = "%d uren";
+"d"      = "een dag";
+"dd"     = "%d dagen";
+"M"      = "een maand";
+"MM"     = "%d maand";
+"y"      = "een jaar";
+"yy"     = "%d jaar";
