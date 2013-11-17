@@ -98,6 +98,13 @@ YLMoment *english   = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 NSLog(@"%@", [english fromMoment:reference]); // in 11 months
 ```
 
+## Contact
+
+Yannick Loriot
+ - [https://twitter.com/yannickloriot](https://twitter.com/yannickloriot)
+ - [contact@yannickloriot.com](mailto:contact@yannickloriot.com)
+
+
 ## License (MIT)
 
 Copyright (c) 2013 - Yannick Loriot
