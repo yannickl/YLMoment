@@ -36,22 +36,22 @@
 - (void)testCreateFromArray
 {
     YLMoment *moment = [YLMoment momentWithArray:@[@2010]];
-    expect([moment date]).notTo.beNil();
+    expect([moment date]).toNot.beNil();
     
     moment = [YLMoment momentWithArray:@[@2010, @1]];
-    expect([moment date]).notTo.beNil();
+    expect([moment date]).toNot.beNil();
     
     moment = [YLMoment momentWithArray:@[@2010, @1, @12]];
-    expect([moment date]).notTo.beNil();
+    expect([moment date]).toNot.beNil();
     
     moment = [YLMoment momentWithArray:@[@2010, @1, @12, @1]];
-    expect([moment date]).notTo.beNil();
+    expect([moment date]).toNot.beNil();
     
     moment = [YLMoment momentWithArray:@[@2010, @1, @12, @1, @1]];
-    expect([moment date]).notTo.beNil();
+    expect([moment date]).toNot.beNil();
     
     moment = [YLMoment momentWithArray:@[@2010, @1, @12, @1, @1, @1]];
-    expect([moment date]).notTo.beNil();
+    expect([moment date]).toNot.beNil();
 
     NSCalendar *calendar         = [[YLMoment proxy] calendar];
     NSDateComponents *components = [[NSDateComponents alloc] init];
@@ -73,8 +73,8 @@
     NSDate *reference = [NSDate date];
     
     YLMoment *moment = [YLMoment momentWithDate:reference];
-    expect([moment date]).notTo.beNil();
-    expect([[moment date] isEqualToDate:reference]).to.beTruthy();
+    expect([moment date]).toNot.beNil();
+    expect([moment date]).to.equal(reference);
 }
 
 - (void)testCreateForDateMutation
@@ -82,22 +82,22 @@
     NSDate *reference = [NSDate date];
     YLMoment *moment  = [YLMoment momentWithDate:reference];
 
-    expect([moment date] == reference).notTo.beTruthy();
+    expect([moment date]).toNot.beIdenticalTo(reference);
 }
 
 - (void)testCreateFromNow
 {
     YLMoment *moment = [YLMoment now];
-    expect([moment date]).notTo.beNil();
+    expect([moment date]).toNot.beNil();
 }
 
 - (void)testCreateFromStringWithoutFormat
 {
     YLMoment *moment = [YLMoment momentWithDateAsString:@"Aug 9, 1995"];
-    expect([moment date]).notTo.beNil();
+    expect([moment date]).toNot.beNil();
     
     moment = [YLMoment momentWithDateAsString:@"Mon, 25 Dec 1995 13:30:00 GMT"];
-    expect([moment date]).notTo.beNil();
+    expect([moment date]).toNot.beNil();
     
     moment = [YLMoment momentWithDateAsString:@"I'm not a date"];
     expect([moment date]).to.beNil();
