@@ -70,8 +70,8 @@
     YLMoment *moment = [YLMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
     moment.dateStyle = NSDateFormatterMediumStyle;
     moment.timeStyle = NSDateFormatterMediumStyle;
-    
-    expect([moment format:nil]).to.equal(@"Nov 4, 2013, 2:56:04 PM");
+
+    expect([[moment format:nil] isEqualToString:@"Nov 4, 2013, 2:56:04 PM"]).to.beTruthy();
 }
 
 - (void)testFormatLongStyle
