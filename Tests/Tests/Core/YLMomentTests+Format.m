@@ -64,7 +64,7 @@
     
     #ifdef TARGET_IPHONE_SIMULATOR
     expect([moment format:nil]).to.equal(@"11/4/13, 2:56 PM");
-    #endi
+    #endif
 }
 
 - (void)testFormatMediumStyle
