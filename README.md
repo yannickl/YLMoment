@@ -51,7 +51,7 @@ $ open MyProject.xcworkspace
 
 #### Manually
 
-[Download](https://github.com/YannickL/YLMoment/archive/master.zip) the project and copy the `YLMoment` folder into your project and then simply import the "YLMoment.h" in the file(s) you would like to use it in.
+[Download](https://github.com/YannickL/YLMoment/archive/master.zip) the project and copy the `YLMoment` folder into your project and then simply `#import "YLMoment.h"` in the file(s) you would like to use it in.
 
 ## Usage
 
@@ -97,6 +97,13 @@ YLMoment *english   = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [english setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
 NSLog(@"%@", [english fromMoment:reference]); // in 11 months
 ```
+
+## Contact
+
+Yannick Loriot
+ - [https://twitter.com/yannickloriot](https://twitter.com/yannickloriot)
+ - [contact@yannickloriot.com](mailto:contact@yannickloriot.com)
+
 
 ## License (MIT)
 
