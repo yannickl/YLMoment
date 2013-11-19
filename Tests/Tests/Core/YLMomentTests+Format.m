@@ -41,12 +41,6 @@
     expect([reference format:@"yy"]).to.equal(@"09");
 }
 
-- (void)testFormatDefaultStyle
-{
-    // By default the format is set to `NSDateFormatterLongStyle`
-    [self testFormatLongStyle];
-}
-
 - (void)testFormatNoStyle
 {
     YLMoment *moment = [YLMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
@@ -56,15 +50,21 @@
     expect([moment format:nil]).to.equal(@"");
 }
 
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+
+- (void)testFormatDefaultStyle
+{
+    // By default the format is set to `NSDateFormatterLongStyle`
+    [self testFormatLongStyle];
+}
+
 - (void)testFormatShortStyle
 {
     YLMoment *moment = [YLMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
     moment.dateStyle = NSDateFormatterShortStyle;
     moment.timeStyle = NSDateFormatterShortStyle;
     
-    #ifdef TARGET_IPHONE_SIMULATOR
     expect([moment format:nil]).to.equal(@"11/4/13, 2:56 PM");
-    #endif
 }
 
 - (void)testFormatMediumStyle
@@ -73,9 +73,7 @@
     moment.dateStyle = NSDateFormatterMediumStyle;
     moment.timeStyle = NSDateFormatterMediumStyle;
 
-    #ifdef TARGET_IPHONE_SIMULATOR
     expect([moment format:nil]).to.equal(@"Nov 4, 2013, 2:56:04 PM");
-    #endif
 }
 
 - (void)testFormatLongStyle
@@ -84,9 +82,7 @@
     moment.dateStyle = NSDateFormatterLongStyle;
     moment.timeStyle = NSDateFormatterLongStyle;
     
-    #ifdef TARGET_IPHONE_SIMULATOR
     expect([moment format:nil]).to.equal(@"November 4, 2013 at 2:56:04 PM GMT");
-    #endif
 }
 
 - (void)testFormatFullStyle
@@ -94,10 +90,10 @@
     YLMoment *moment = [YLMoment momentWithArray:@[@2013, @11, @4, @14, @56, @4]];
     moment.dateStyle = NSDateFormatterFullStyle;
     moment.timeStyle = NSDateFormatterFullStyle;
-    
-    #ifdef TARGET_IPHONE_SIMULATOR
+
     expect([moment format:nil]).to.equal(@"Monday, November 4, 2013 at 2:56:04 PM GMT");
-    #endif
 }
+
+#endif
 
 @end
