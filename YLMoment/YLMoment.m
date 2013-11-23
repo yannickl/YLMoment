@@ -51,19 +51,19 @@
     [self removeObserver:self forKeyPath:@"locale"];
 }
 
-- (id)init
+- (instancetype)init
 {
     return [self initWithDate:[NSDate date]];
 }
 
-+ (id)now
++ (instancetype)now
 {
     return [[self alloc] init];
 }
 
 #pragma mark -
 
-- (id)initWithDate:(NSDate *)date
+- (instancetype)initWithDate:(NSDate *)date
 {
     if ((self = [super init]))
     {
@@ -79,14 +79,14 @@
     return self;
 }
 
-+ (id)momentWithDate:(NSDate *)date
++ (instancetype)momentWithDate:(NSDate *)date
 {
     return [[self alloc] initWithDate:date];
 }
 
 #pragma mark -
 
-- (id)initWithArray:(NSArray *)dateAsArray
+- (instancetype)initWithArray:(NSArray *)dateAsArray
 {
     NSInteger componentCount = [dateAsArray count];
     
@@ -111,14 +111,14 @@
     return [self initWithDate:[calendar dateFromComponents:components]];
 }
 
-+ (id)momentWithArray:(NSArray *)dateAsArray
++ (instancetype)momentWithArray:(NSArray *)dateAsArray
 {
     return [[self alloc] initWithArray:dateAsArray];
 }
 
 #pragma mark -
 
-- (id)initWithDateAsString:(NSString *)dateAsString
+- (instancetype)initWithDateAsString:(NSString *)dateAsString
 {
     NSDataDetector *detector    = [NSDataDetector dataDetectorWithTypes:(NSTextCheckingTypes)NSTextCheckingTypeDate error:nil];
     NSTextCheckingResult *match = [detector firstMatchInString:dateAsString options:0 range:NSMakeRange(0, [dateAsString length])];
@@ -126,28 +126,28 @@
     return [self initWithDate:match.date];
 }
 
-+ (id)momentWithDateAsString:(NSString *)dateAsString
++ (instancetype)momentWithDateAsString:(NSString *)dateAsString
 {
     return [[self alloc] initWithDateAsString:dateAsString];
 }
 
 #pragma mark -
 
-- (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
+- (instancetype)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
 {
     NSLocale *locale = [[[self class] proxy] locale];
     
     return [self initWithDateAsString:dateAsString format:dateFormat localeIdentifier:[locale localeIdentifier]];
 }
 
-+ (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
++ (instancetype)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
 {
     return [[self alloc] initWithDateAsString:dateAsString format:dateFormat];
 }
 
 #pragma mark -
 
-- (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
+- (instancetype)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
 {
     NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
     formatter.locale            = [[NSLocale alloc] initWithLocaleIdentifier:localeIdentifier];
@@ -157,7 +157,7 @@
     return [self initWithDate:[formatter dateFromString:dateAsString]];
 }
 
-+ (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
++ (instancetype)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
 {
     return [[self alloc] initWithDateAsString:dateAsString format:dateFormat localeIdentifier:localeIdentifier];
 }

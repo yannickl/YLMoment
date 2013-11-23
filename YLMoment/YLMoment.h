@@ -46,14 +46,14 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @abstract Creates and returns a moment which is set to the current date.
  * @version 0.1.0
  */
-+ (id)now;
++ (instancetype)now;
 
 /**
  * @abstract Initializes a moment using a given date.
  * @param date a date.
  * @version 0.1.0
  */
-- (id)initWithDate:(NSDate *)date;
+- (instancetype)initWithDate:(NSDate *)date;
 
 /**
  * @abstract Creates and returns a moment using a given date.
@@ -61,7 +61,7 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @see initWithDate:
  * @version 0.1.0
  */
-+ (id)momentWithDate:(NSDate *)date;
++ (instancetype)momentWithDate:(NSDate *)date;
 
 /**
  * @abstract Initializes a moment with an array of numbers that mirror the 
@@ -70,7 +70,7 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @discussion The moment will create a date in the current timezone.
  * @version 0.1.0
  */
-- (id)initWithArray:(NSArray *)dateAsArray;
+- (instancetype)initWithArray:(NSArray *)dateAsArray;
 
 /**
  * @abstract Creates and returns a moment with an array of numbers that mirror
@@ -80,7 +80,7 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @see initWithArray:
  * @version 0.1.0
  */
-+ (id)momentWithArray:(NSArray *)dateAsArray;
++ (instancetype)momentWithArray:(NSArray *)dateAsArray;
 
 /**
  * @abstract Initializes a moment using the date representation of a given
@@ -90,7 +90,7 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * format.
  * @version 0.1.0
  */
-- (id)initWithDateAsString:(NSString *)dateAsString;
+- (instancetype)initWithDateAsString:(NSString *)dateAsString;
 
 /**
  * @abstract Creates and returns a moment using the date representation of a 
@@ -101,7 +101,7 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @see initWithDateAsString:
  * @version 0.1.0
  */
-+ (id)momentWithDateAsString:(NSString *)dateAsString;
++ (instancetype)momentWithDateAsString:(NSString *)dateAsString;
 
 /**
  * @abstract Initialize a moment using the date representation of a given string
@@ -110,7 +110,7 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @param dateFormat The date format string used by the receiver.
  * @version 0.1.0
  */
-- (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat;
+- (instancetype)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat;
 
 /**
  * @abstract Creates and returns a moment using the date representation of a 
@@ -120,7 +120,7 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @see initWithDateAsString:format:
  * @version 0.1.0
  */
-+ (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat;
++ (instancetype)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat;
 
 /**
  * @abstract Initialize a moment using the date representation of a given string
@@ -129,7 +129,7 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @param dateFormat The date format string used by the receiver.
  * @param localeIdentifier The identifier for the new locale for the receiver.
  */
-- (id)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier;
+- (instancetype)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier;
 
 /**
  * @abstract Creates and returns a moment using the date representation of a
@@ -140,7 +140,7 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @see initWithDateAsString:format:localeIdentifier:
  * @version 0.1.0
  */
-+ (id)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier;
++ (instancetype)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier;
 
 #pragma mark Configuring Moments
 /** @name Configuring Moments */

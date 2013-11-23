@@ -29,7 +29,7 @@
 - (void)tearDown
 {
     [[YLMoment proxy] setLocale:[NSLocale currentLocale]];
-    
+
     [super tearDown];
 }
 
