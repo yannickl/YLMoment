@@ -24,6 +24,7 @@
     [super setUp];
     
     [[YLMoment proxy] setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+    [[YLMoment proxy] setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
 }
 
 - (void)tearDown
@@ -98,7 +99,8 @@
     
     moment = [YLMoment momentWithDateAsString:@"Mon, 25 Dec 1995 13:30:00 GMT"];
     expect([moment date]).toNot.beNil();
-    
+    expect([moment format]).to.equal(@"1995-12-25T13:30:00+0000");
+
     moment = [YLMoment momentWithDateAsString:@"I'm not a date"];
     expect([moment date]).to.beNil();
 }
@@ -108,6 +110,7 @@
     expect([[YLMoment momentWithDateAsString:@"05/1/2012 12:25:00" format:@"MM/d/yyyy hh:mm:ss"] format:@"MM/dd/yyyy"]).to.equal(@"05/01/2012");
     expect([[YLMoment momentWithDateAsString:@"05/1/2012 12:25:00 am" format:@"MM/d/yyyy hh:mm:ss a"] format:@"MM/dd/yyyy"]).to.equal(@"05/01/2012");
     expect([[YLMoment momentWithDateAsString:@"05/1/2012 12:25:00 pm" format:@"MM/d/yyyy hh:mm:ss a"] format:@"MM/dd/yyyy"]).to.equal(@"05/01/2012");
+    expect([[YLMoment momentWithDateAsString:@"05/1/2012 12:25:00 pm" format:@"not a format"] isValid]).to.beFalsy();
 }
 
 - (void)testCreateFromEmptyStringWithFormats
@@ -119,6 +122,18 @@
     expect([[YLMoment momentWithDateAsString:@"" format:@"MM"] isValid]).to.beFalsy();
     expect([[YLMoment momentWithDateAsString:@" " format:@"MM"] isValid]).to.beFalsy();
     expect([[YLMoment momentWithDateAsString:@" " format:@"DD"] isValid]).to.beFalsy();
+}
+
+- (void)testCreateFromStringWithFormatAndLocale
+{
+    YLMoment *moment = [YLMoment momentWithDateAsString:@"14 juillet 1998 à 15h" format:@"dd MM yyyy 'à' HH'h'" localeIdentifier:@"fr_FR"];
+    expect([moment format]).to.equal(@"1998-07-14T15:00:00+0000");
+    
+    moment = [YLMoment momentWithDateAsString:@"27 shtator 2004" format:@"dd MM yyyy" localeIdentifier:@"sq_AL"];
+    expect([moment format]).to.equal(@"2004-09-27T00:00:00+0000");
+    
+    moment = [YLMoment momentWithDateAsString:@"27 shtator 2004" format:@"dd MM yyyy" localeIdentifier:@"not a locale"];
+    expect([moment isValid]).to.beFalsy();
 }
 
 @end

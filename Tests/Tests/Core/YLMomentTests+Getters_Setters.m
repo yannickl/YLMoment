@@ -48,8 +48,8 @@
     expect([reference minute]).to.equal(7);
     expect([reference second]).to.equal(8);
     
-    reference        = [YLMoment momentWithDateAsString:@"20130531" format:@"yyyyMMdd"];
-    reference.month  = 3;
+    reference       = [YLMoment momentWithDateAsString:@"20130531" format:@"yyyyMMdd"];
+    reference.month = 3;
     
     expect([reference month]).to.equal(3);
 }
