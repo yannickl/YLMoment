@@ -84,12 +84,12 @@ YLMoment *albanian = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [albanian setLocale:[NSLocale localeWithLocaleIdentifier:@"sq_AL"]];
 NSLog(@"%@", [albanian fromNow]); // disa sekonda me parë
     
-YLMoment *spanish = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+YLMoment *spanish = [[YLMoment now] subtractAmountOfTime:3 forUnitKey:@"s"];
 [spanish setLocale:[NSLocale localeWithLocaleIdentifier:@"es_ES"]];
 NSLog(@"%@", [spanish fromNow]); // hace unos segundos
     
 YLMoment *reference = [YLMoment momentWithArray:@[@2013]];
-YLMoment *english   = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+YLMoment *english   = [[YLMoment now] subtractAmountOfTime:3 forUnitKey:@"s"];
 [english setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
 NSLog(@"%@", [english fromMoment:reference]); // in 11 months
 ```

@@ -20,5 +20,5 @@
 - Relative Dates (`from`, `fromNow`)
 - Manipulating Dates (`addAmountOfTime`, `addDuration`, `startOf`, `endOf`)
 - Getting/Setting the `seconds`, `minutes`, `hours`, `days`, `months`, `years`
-- Support for Albanian/English/French/Spanish
+- Support for `Albanian`/`English`/`French`/`Spanish`
 
