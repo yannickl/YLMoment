@@ -1,5 +1,9 @@
 ## Changelog
 
+### Version 0.3.0 (Under development)
+
+- [ADD] Subtract methods: `subtractAmountOfTime:forUnitKey:`, `subtractAmountOfTime:forCalendarUnit:` and `subtractDuration:`
+
 ### Version 0.2.0
 
 - [ADD] `timeZone`, `timeStyle` and `dateStyle` configuration for the format

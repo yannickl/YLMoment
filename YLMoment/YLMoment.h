@@ -364,8 +364,8 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 /** @name Manipulating Moments */
 
 /**
- * @abstract Mutates and returns the original moment by adding time. To add 
- * time, pass the key of what time you want to add, and the amount you want to add.
+ * @abstract Mutates and returns the original moment by adding time. To add time,
+ * pass the key of what time you want to add, and the corresponding amount.
  * @param amount The amount of time you want to add.
  * @param key The key of what time you want to add.
  * @return The current moment with the amount of time added for a fluent interface
@@ -377,8 +377,8 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 
 /**
  * @abstract Mutates and returns the original moment by adding time. To add
- * time, pass the calendar unit of what time you want to add, and the amount
- * you want to add.
+ * time, pass the calendar unit of what time you want to add, and the corresponding
+ * amount.
  * @param amount The amount of time you want to add.
  * @param unit The calendar unit of what time you want to add.
  * @return The current moment with the amount of time added for a fluent interface
@@ -395,6 +395,42 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @since 0.1.0
  */
 - (YLMoment *)addDuration:(NSTimeInterval)duration;
+
+/**
+ * @abstract Mutates and returns the original moment by subtracting time. To subtract
+ * time, pass the key of what time you want to subtract, and the corresponding amount.
+ * @param amount The amount of time you want to subtract.
+ * @param key The key of what time you want to subtract.
+ * @return The current moment with the amount of time subtracted for a fluent interface
+ * pattern.
+ * @see calendarUnitForKey:
+ * @see addAmountOfTime:forUnitKey:
+ * @since 0.3.0
+ */
+- (YLMoment *)subtractAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key;
+
+/**
+ * @abstract Mutates and returns the original moment by subtracting time. To add
+ * time, pass the calendar unit of what time you want to subtract, and the corresponding
+ * amount.
+ * @param amount The amount of time you want to subtract.
+ * @param unit The calendar unit of what time you want to subtract.
+ * @return The current moment with the amount of time subtracted for a fluent interface
+ * pattern.
+ * @see addAmountOfTime:forCalendarUnit:
+ * @since 0.3.0
+ */
+- (YLMoment *)subtractAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit;
+
+/**
+ * @abstract Mutates and returns the original moment by subtracting a time duration.
+ * @param duration A time interval to subtract.
+ * @return The current moment with the time duration subtracted for a fluent interface
+ * pattern.
+ * @see addDuration:
+ * @since 0.3.0
+ */
+- (YLMoment *)subtractDuration:(NSTimeInterval)duration;
 
 /**
  * @abstract Mutates and returns the original moment by setting it to the start of

@@ -388,6 +388,21 @@
     return self;
 }
 
+- (YLMoment *)subtractAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key
+{
+    return [self addAmountOfTime:-amount forCalendarUnit:key];
+}
+
+- (YLMoment *)subtractAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit
+{
+    return [self addAmountOfTime:-amount forCalendarUnit:unit];
+}
+
+- (YLMoment *)subtractDuration:(NSTimeInterval)duration
+{
+    return [self addDuration:-duration];
+}
+
 - (YLMoment *)startOf:(NSString *)unitString
 {
     NSCalendarUnit unit = [[self class] calendarUnitForKey:unitString];
