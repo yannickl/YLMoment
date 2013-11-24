@@ -192,12 +192,12 @@
 
 - (NSString *)format:(NSString *)dateFormat
 {
-    NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
-    formatter.locale            = _locale ?: [[[self class] proxy] locale];
-    formatter.timeZone          = _timeZone ?: [[[self class] proxy] timeZone];
-    formatter.dateStyle         = (_dateStyle != -1) ? _dateStyle : [[[self class] proxy] dateStyle];
-    formatter.timeStyle         = (_timeStyle != -1) ? _timeStyle : [[[self class] proxy] timeStyle];
-    formatter.dateFormat        = dateFormat;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.locale           = _locale ?: [[[self class] proxy] locale];
+    formatter.timeZone         = _timeZone ?: [[[self class] proxy] timeZone];
+    formatter.dateStyle        = (_dateStyle != -1) ? _dateStyle : [[[self class] proxy] dateStyle];
+    formatter.timeStyle        = (_timeStyle != -1) ? _timeStyle : [[[self class] proxy] timeStyle];
+    formatter.dateFormat       = dateFormat;
     
     return [formatter stringFromDate:_date] ?: @"Invalid Date";
 }
@@ -438,7 +438,7 @@
 
 - (NSUInteger)getCalendarUnit:(NSCalendarUnit)unit
 {
-    NSCalendar *currentCalendar = _calendar ?: [[[self class] proxy] calendar];
+    NSCalendar *currentCalendar  = _calendar ?: [[[self class] proxy] calendar];
     NSDateComponents *components = [currentCalendar components:unit fromDate:_date];
     
     switch (unit)
