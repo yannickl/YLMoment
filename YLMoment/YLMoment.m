@@ -390,7 +390,7 @@
 
 - (YLMoment *)subtractAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key
 {
-    return [self addAmountOfTime:-amount forCalendarUnit:key];
+    return [self addAmountOfTime:-amount forUnitKey:key];
 }
 
 - (YLMoment *)subtractAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit
