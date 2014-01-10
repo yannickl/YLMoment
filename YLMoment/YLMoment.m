@@ -27,11 +27,17 @@
 #import "YLMoment.h"
 
 @interface YLMoment ()
+/** The internal date once data computed */
 #pragma mark internal
-@property (nonatomic, strong) NSDate   *date;
+@property (nonatomic, strong) NSDate *date;
 
 #pragma mark langs
+/** Bundle the current language */
 @property (nonatomic, strong) NSBundle *langBundle;
+
+#pragma mark proxy
+/** Date detector used to convert strings to date */
+@property (nonatomic, strong) NSDataDetector *dateDetector;
 
 /** Init the proxy with the default values. */
 - (id)initProxy;
@@ -120,8 +126,8 @@
 
 - (instancetype)initWithDateAsString:(NSString *)dateAsString
 {
-    NSDataDetector *detector    = [NSDataDetector dataDetectorWithTypes:(NSTextCheckingTypes)NSTextCheckingTypeDate error:nil];
-    NSTextCheckingResult *match = [detector firstMatchInString:dateAsString options:0 range:NSMakeRange(0, [dateAsString length])];
+    NSDataDetector *dateDetector = [[[self class] proxy] dateDetector];
+    NSTextCheckingResult *match  = [dateDetector firstMatchInString:dateAsString options:0 range:NSMakeRange(0, [dateAsString length])];
     
     return [self initWithDate:match.date];
 }
@@ -149,10 +155,10 @@
 
 - (instancetype)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
 {
-    NSDateFormatter *formatter  = [[NSDateFormatter alloc] init];
-    formatter.locale            = [[NSLocale alloc] initWithLocaleIdentifier:localeIdentifier];
-    formatter.timeZone          = [[[self class] proxy] timeZone];
-    formatter.dateFormat        = dateFormat;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.locale           = [[NSLocale alloc] initWithLocaleIdentifier:localeIdentifier];
+    formatter.timeZone         = [[[self class] proxy] timeZone];
+    formatter.dateFormat       = dateFormat;
     
     return [self initWithDate:[formatter dateFromString:dateAsString]];
 }
@@ -623,6 +629,9 @@
         _timeZone  = [NSTimeZone defaultTimeZone];
         _dateStyle = NSDateFormatterLongStyle;
         _timeStyle = NSDateFormatterLongStyle;
+        
+        // Created at the proxy level to multiple instance (optimization)
+        _dateDetector = [NSDataDetector dataDetectorWithTypes:(NSTextCheckingTypes)NSTextCheckingTypeDate error:nil];
         
         [self updateLangBundle];
         [self momentInitiated];

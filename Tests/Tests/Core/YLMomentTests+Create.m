@@ -97,6 +97,10 @@
     YLMoment *moment = [YLMoment momentWithDateAsString:@"Aug 9, 1995"];
     expect([moment date]).toNot.beNil();
     
+    moment = [[YLMoment alloc] initWithDateAsString:@"Sun 24 Jan 2014 at 10:24 PST"];
+    expect([moment date]).toNot.beNil();
+    expect([moment format]).to.equal(@"2014-01-24T18:24:00+0000");
+    
     moment = [YLMoment momentWithDateAsString:@"Mon, 25 Dec 1995 13:30:00 GMT"];
     expect([moment date]).toNot.beNil();
     expect([moment format]).to.equal(@"1995-12-25T13:30:00+0000");
