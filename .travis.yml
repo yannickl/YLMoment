@@ -3,8 +3,6 @@ branches:
   only:
     - master
 before_install:
-    - gem install cocoapods
-    - brew update
-    - brew install xctool
+    - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
     - cd Tests && pod install && cd $TRAVIS_BUILD_DIR
 script: rake test
