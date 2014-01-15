@@ -1,0 +1,21 @@
+/* 
+  YLMomentFormat.strings
+  YLMoment
+
+  Created by Michel Albers on 15/01/2014.
+  Translation comes from the http://momemt.js project.
+*/
+
+"future" = "in %@";
+"past"   = "vor %@";
+"s"      = "ein paar Sekunden";
+"m"      = "einer Minute";
+"mm"     = "%d Minuten";
+"h"      = "einer Stunde";
+"hh"     = "%d Stunden";
+"d"      = "einem Tag";
+"dd"     = "%d Tagen";
+"M"      = "einem Monat";
+"MM"     = "%d Monate";
+"y"      = "einem Jahr";
+"yy"     = "%d Jahren";
