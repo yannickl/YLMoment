@@ -4,6 +4,7 @@
 
 - [ADD] Subtract methods: `subtractAmountOfTime:forUnitKey:`, `subtractAmountOfTime:forCalendarUnit:` and `subtractDuration:`
 - [REFACTORING] Move the date detector to the proxy to improve the performance
+- [ADD] `German` language
 
 ### Version 0.2.0
 
