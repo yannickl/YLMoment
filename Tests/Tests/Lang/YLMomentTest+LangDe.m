@@ -13,7 +13,7 @@
 
 #import "YLMoment.h"
 
-@interface YLMomentTest_LangEn : XCTestCase
+@interface YLMomentTest_LangDe : XCTestCase
 
 @end
 
@@ -75,16 +75,16 @@
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"einem Tag");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:36 forUnitKey:@"h"];
-    expect([start fromMoment:end withSuffix:NO]).to.equal(@"2 Tage");
+    expect([start fromMoment:end withSuffix:NO]).to.equal(@"2 Tagen");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:1 forUnitKey:@"d"];
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"einem Tag");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:5 forUnitKey:@"d"];
-    expect([start fromMoment:end withSuffix:NO]).to.equal(@"5 Tage");
+    expect([start fromMoment:end withSuffix:NO]).to.equal(@"5 Tagen");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:25 forUnitKey:@"d"];
-    expect([start fromMoment:end withSuffix:NO]).to.equal(@"25 Tage");
+    expect([start fromMoment:end withSuffix:NO]).to.equal(@"25 Tagen");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:26 forUnitKey:@"d"];
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"einem Monat");
@@ -120,13 +120,13 @@
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"einem Jahr");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:548 forUnitKey:@"d"];
-    expect([start fromMoment:end withSuffix:NO]).to.equal(@"2 Jahre");
+    expect([start fromMoment:end withSuffix:NO]).to.equal(@"2 Jahren");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:1 forUnitKey:@"y"];
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"einem Jahr");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:5 forUnitKey:@"y"];
-    expect([start fromMoment:end withSuffix:NO]).to.equal(@"5 Jahre");
+    expect([start fromMoment:end withSuffix:NO]).to.equal(@"5 Jahren");
 }
 
 - (void)testLangSuffix

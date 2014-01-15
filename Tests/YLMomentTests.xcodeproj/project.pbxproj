@@ -31,6 +31,8 @@
 		F425CFF3182844E1002CABDC /* YLMomentTest+LangEs.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFDF182844D1002CABDC /* YLMomentTest+LangEs.m */; };
 		F425CFF4182844E1002CABDC /* YLMomentTest+LangFr.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */; };
 		F425CFF5182844E1002CABDC /* YLMomentTest+LangSq.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */; };
+		F4381B281886B744008C50E0 /* YLMomentTest+LangDe.m in Sources */ = {isa = PBXBuildFile; fileRef = F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */; };
+		F4381B291886B7B1008C50E0 /* YLMomentTest+LangDe.m in Sources */ = {isa = PBXBuildFile; fileRef = F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */; };
 		F4605D3A181C33AA007F83EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4605D38181C33AA007F83EF /* InfoPlist.strings */; };
 		F4605D42181C33E3007F83EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D41181C33E3007F83EF /* XCTest.framework */; };
 		F4605D46181C33F2007F83EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D45181C33F2007F83EF /* UIKit.framework */; };
@@ -59,6 +61,7 @@
 		F425CFDF182844D1002CABDC /* YLMomentTest+LangEs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangEs.m"; sourceTree = "<group>"; };
 		F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangFr.m"; sourceTree = "<group>"; };
 		F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangSq.m"; sourceTree = "<group>"; };
+		F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangDe.m"; sourceTree = "<group>"; };
 		F4605D37181C33AA007F83EF /* iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOSTests-Info.plist"; sourceTree = "<group>"; };
 		F4605D39181C33AA007F83EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4605D3D181C33AA007F83EF /* iOSTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSTests-Prefix.pch"; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 		F425CFDD182844D1002CABDC /* Lang */ = {
 			isa = PBXGroup;
 			children = (
+				F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */,
 				F425CFDE182844D1002CABDC /* YLMomentTest+LangEn.m */,
 				F425CFDF182844D1002CABDC /* YLMomentTest+LangEs.m */,
 				F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */,
@@ -365,6 +369,7 @@
 				F425CFEF182844E1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */,
 				F425CFF0182844E1002CABDC /* YLMomentTests+Helpers.m in Sources */,
 				F425CFF1182844E1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
+				F4381B291886B7B1008C50E0 /* YLMomentTest+LangDe.m in Sources */,
 				F425CFF2182844E1002CABDC /* YLMomentTest+LangEn.m in Sources */,
 				F425CFF3182844E1002CABDC /* YLMomentTest+LangEs.m in Sources */,
 				F425CFF4182844E1002CABDC /* YLMomentTest+LangFr.m in Sources */,
@@ -384,6 +389,7 @@
 				F425CFE8182844D1002CABDC /* YLMomentTest+LangEn.m in Sources */,
 				F425CFE6182844D1002CABDC /* YLMomentTests+Helpers.m in Sources */,
 				F425CFE4182844D1002CABDC /* YLMomentTests+Format.m in Sources */,
+				F4381B281886B744008C50E0 /* YLMomentTest+LangDe.m in Sources */,
 				F425CFEB182844D1002CABDC /* YLMomentTest+LangSq.m in Sources */,
 				F425CFE7182844D1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
 				F425CFE9182844D1002CABDC /* YLMomentTest+LangEs.m in Sources */,
