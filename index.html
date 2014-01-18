@@ -54,6 +54,25 @@ NSLog(@"%@", [[YLMoment now] format]);
       </div>
       
       <div id="example">
+        <h2>Time Zones</h2>
+        <pre>
+          <code>
+// Uses my current time zone: here the CET time (GMT+1)
+YLMoment *now = [YLMoment now];
+NSLog(@"%@", [now format]); // 2014-01-18T18:51:10+0100
+
+// Change the time zone of the moment
+now.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+NSLog(@"%@", [now format]); // 2014-01-18T17:51:10+0000
+
+// Convenient way to get the UTC moment
+YLMoment *utc = [YLMoment utc];
+NSLog(@"%@", [utc format]); // 2014-01-18T17:51:10+0000
+          </code>
+        </pre>
+      </div>
+      
+            <div id="example">
         <h2>Relative Times</h2>
         <pre>
           <code>
