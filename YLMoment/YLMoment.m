@@ -57,6 +57,8 @@
     [self removeObserver:self forKeyPath:@"locale"];
 }
 
+#pragma mark - Creating and Initializing Moment Objects
+
 - (instancetype)init
 {
     return [self initWithDate:[NSDate date]];
@@ -198,7 +200,7 @@
     return [self format];
 }
 
-#pragma mark - Configuring Moments
+#pragma mark - Proxy Method
 
 + (instancetype)proxy
 {
@@ -209,8 +211,6 @@
     });
     return _sharedInstance;
 }
-
-#pragma mark - Public Methods
 
 #pragma mark Representing Moments as Strings
 

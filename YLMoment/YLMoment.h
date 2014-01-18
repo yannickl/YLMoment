@@ -178,8 +178,8 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  */
 + (instancetype)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat locale:(NSLocale *)locale timeZone:(NSTimeZone *)timeZone;
 
-#pragma mark Configuring Moments
-/** @name Configuring Moments */
+#pragma mark - Proxy Method
+/** @name Proxy Method */
 
 /**
  * @abstract Returns the proxy for the receiver.
@@ -188,6 +188,9 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @since 0.1.0
  */
 + (instancetype)proxy;
+
+#pragma mark Configuring Moments
+/** @name Configuring Moments */
 
 /**
  * @abstract The calendar that will be used for the date calculations.
