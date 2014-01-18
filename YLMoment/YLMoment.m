@@ -67,6 +67,13 @@
     return [[self alloc] init];
 }
 
++ (instancetype)utc {
+    YLMoment *moment = [[self class] now];
+    moment.timeZone  = [NSTimeZone timeZoneWithName:@"UTC"];
+    
+    return moment;
+}
+
 #pragma mark -
 
 - (instancetype)initWithDate:(NSDate *)date

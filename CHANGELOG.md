@@ -2,6 +2,8 @@
 
 ### Version 0.4.0 (Under development)
 
+- [ADD] `utc` convenient method
+
 ### Version 0.3.0 (2014-01-15)
 
 - [ADD] Subtract methods: `subtractAmountOfTime:forUnitKey:`, `subtractAmountOfTime:forCalendarUnit:` and `subtractDuration:`

@@ -49,6 +49,13 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 + (instancetype)now;
 
 /**
+ * @abstract Creates and returns a moment with the current datetime using 
+ * the Universal Coordinated Time (UTC).
+ * @since 0.4.0
+ */
++ (instancetype)utc;
+
+/**
  * @abstract Initializes a moment using a given date.
  * @param date a date.
  * @since 0.1.0

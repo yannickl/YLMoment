@@ -24,7 +24,6 @@
     [super setUp];
     
     [[YLMoment proxy] setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
-    [[YLMoment proxy] setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
 }
 
 - (void)tearDown
@@ -92,19 +91,33 @@
     expect([moment date]).toNot.beNil();
 }
 
+- (void)testCreateUTCDate
+{
+    YLMoment *utc = [YLMoment utc];
+    expect([utc date]).toNot.beNil();
+    
+    YLMoment *now = [YLMoment now];
+    expect([utc format]).toNot.equal([now format]);
+    
+    now.timeZone  = [NSTimeZone timeZoneWithName:@"UTC"];
+    expect([utc format]).to.equal([now format]);
+}
+
 - (void)testCreateFromStringWithoutFormat
 {
     YLMoment *moment = [YLMoment momentWithDateAsString:@"Aug 9, 1995"];
     expect([moment date]).toNot.beNil();
     
-    moment = [[YLMoment alloc] initWithDateAsString:@"Sun 24 Jan 2014 at 10:24 PST"];
+    moment          = [[YLMoment alloc] initWithDateAsString:@"Sun 24 Jan 2014 at 10:24 PST"];
+    moment.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
     expect([moment date]).toNot.beNil();
     expect([moment format]).to.equal(@"2014-01-24T18:24:00+0000");
     
-    moment = [YLMoment momentWithDateAsString:@"Mon, 25 Dec 1995 13:30:00 GMT"];
+    moment          = [YLMoment momentWithDateAsString:@"Mon, 25 Dec 1995 13:30:00 GMT"];
+    moment.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
     expect([moment date]).toNot.beNil();
     expect([moment format]).to.equal(@"1995-12-25T13:30:00+0000");
-
+    
     moment = [YLMoment momentWithDateAsString:@"I'm not a date"];
     expect([moment date]).to.beNil();
 }
@@ -131,9 +144,11 @@
 - (void)testCreateFromStringWithFormatAndLocale
 {
     YLMoment *moment = [YLMoment momentWithDateAsString:@"14 juillet 1998 à 15h" format:@"dd MM yyyy 'à' HH'h'" localeIdentifier:@"fr_FR"];
+    moment.timeZone  = [NSTimeZone timeZoneWithName:@"UTC"];
     expect([moment format]).to.equal(@"1998-07-14T15:00:00+0000");
     
-    moment = [YLMoment momentWithDateAsString:@"27 shtator 2004" format:@"dd MM yyyy" localeIdentifier:@"sq_AL"];
+    moment          = [YLMoment momentWithDateAsString:@"27 shtator 2004" format:@"dd MM yyyy" localeIdentifier:@"sq_AL"];
+    moment.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
     expect([moment format]).to.equal(@"2004-09-27T00:00:00+0000");
     
     moment = [YLMoment momentWithDateAsString:@"27 shtator 2004" format:@"dd MM yyyy" localeIdentifier:@"not a locale"];
