@@ -51,7 +51,7 @@ $ open MyProject.xcworkspace
 
 ## Usage
 
-### Formatting dates
+### Formatting Dates
 ```objective-c
 YLMoment *moment = [YLMoment now];
 
@@ -92,6 +92,20 @@ YLMoment *reference = [YLMoment momentWithArray:@[@2013]];
 YLMoment *english   = [[YLMoment now] subtractAmountOfTime:3 forUnitKey:@"s"];
 [english setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
 NSLog(@"%@", [english fromMoment:reference]); // in 11 months
+```
+
+### Time Zones
+```objective-c
+YLMoment *now = [YLMoment now]; // Using CET time (GMT+1)
+NSLog(@"%@", [now format]); // 2014-01-18T18:51:10+0100
+
+// Change the time zone of the moment
+now.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+NSLog(@"%@", [now format]); // 2014-01-18T17:51:10+0000
+
+// Convenient way to get the UTC moment
+YLMoment *utc = [YLMoment utc];
+NSLog(@"%@", [utc format]); // 2014-01-18T17:51:10+0000
 ```
 
 ## Contact
