@@ -74,6 +74,21 @@ NSLog(@"%@", [[[YLMoment now] endOf:@"day"] fromNow]);    // in 5 hours
 NSLog(@"%@", [[[YLMoment now] startOf:@"hour"] fromNow]); // 11 minutes ago
 ```
 
+### Time Zones
+```objective-c
+// Uses my current time zone: here the CET time (GMT+1)
+YLMoment *now = [YLMoment now];
+NSLog(@"%@", [now format]); // 2014-01-18T18:51:10+0100
+
+// Change the time zone of the moment
+now.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
+NSLog(@"%@", [now format]); // 2014-01-18T17:51:10+0000
+
+// Convenient way to use get the UTC time
+YLMoment *utc = [YLMoment utc];
+NSLog(@"%@", [utc format]); // 2014-01-18T17:51:10+0000
+```
+
 ### Languages
 ```objective-c
 YLMoment *french = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
@@ -92,21 +107,6 @@ YLMoment *reference = [YLMoment momentWithArray:@[@2013]];
 YLMoment *english   = [[YLMoment now] subtractAmountOfTime:3 forUnitKey:@"s"];
 [english setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
 NSLog(@"%@", [english fromMoment:reference]); // in 11 months
-```
-
-### Time Zones
-```objective-c
-// Uses my current time zone: here the CET time (GMT+1)
-YLMoment *now = [YLMoment now];
-NSLog(@"%@", [now format]); // 2014-01-18T18:51:10+0100
-
-// Change the time zone of the moment
-now.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];
-NSLog(@"%@", [now format]); // 2014-01-18T17:51:10+0000
-
-// Convenient way to get the UTC moment
-YLMoment *utc = [YLMoment utc];
-NSLog(@"%@", [utc format]); // 2014-01-18T17:51:10+0000
 ```
 
 ## Contact
