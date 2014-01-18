@@ -96,7 +96,8 @@ NSLog(@"%@", [english fromMoment:reference]); // in 11 months
 
 ### Time Zones
 ```objective-c
-YLMoment *now = [YLMoment now]; // Using CET time (GMT+1)
+// Uses my current time zone: here the CET time (GMT+1)
+YLMoment *now = [YLMoment now];
 NSLog(@"%@", [now format]); // 2014-01-18T18:51:10+0100
 
 // Change the time zone of the moment
