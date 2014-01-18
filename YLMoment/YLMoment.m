@@ -148,9 +148,7 @@
 
 - (instancetype)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
 {
-    NSLocale *locale = [[[self class] proxy] locale];
-    
-    return [self initWithDateAsString:dateAsString format:dateFormat localeIdentifier:[locale localeIdentifier]];
+    return [self initWithDateAsString:dateAsString format:dateFormat localeIdentifier:nil];
 }
 
 + (instancetype)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat
@@ -162,17 +160,35 @@
 
 - (instancetype)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
 {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.locale           = [[NSLocale alloc] initWithLocaleIdentifier:localeIdentifier];
-    formatter.timeZone         = [[[self class] proxy] timeZone];
-    formatter.dateFormat       = dateFormat;
+    NSLocale *locale = [NSLocale localeWithLocaleIdentifier:localeIdentifier];
     
-    return [self initWithDate:[formatter dateFromString:dateAsString]];
+    return [self initWithDateAsString:dateAsString format:dateFormat locale:locale timeZone:nil];
 }
 
 + (instancetype)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier
 {
     return [[self alloc] initWithDateAsString:dateAsString format:dateFormat localeIdentifier:localeIdentifier];
+}
+
+#pragma mark -
+
+- (instancetype)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat locale:(NSLocale *)locale timeZone:(NSTimeZone *)timeZone
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.locale           = locale ?: [[[self class] proxy] locale];
+    formatter.timeZone         = timeZone ?: [[[self class] proxy] timeZone];
+    formatter.dateFormat       = dateFormat;
+    
+    YLMoment *moment = [self initWithDate:[formatter dateFromString:dateAsString]];
+    moment.locale    = locale;
+    moment.timeZone  = timeZone;
+    
+    return moment;
+}
+
++ (instancetype)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat locale:(NSLocale *)locale timeZone:(NSTimeZone *)timeZone
+{
+    return [[self alloc] initWithDateAsString:dateAsString format:dateFormat locale:locale timeZone:timeZone];
 }
 
 #pragma mark - Properties

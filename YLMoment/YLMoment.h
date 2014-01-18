@@ -150,6 +150,34 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  */
 + (instancetype)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat localeIdentifier:(NSString *)localeIdentifier;
 
+/**
+ * @abstract Initialize a moment using the date representation of a given string
+ * interpreted, a given date format, a given locale, and a time zone.
+ * @param dateAsString The date string to parse.
+ * @param dateFormat The date format string used by the receiver.
+ * @param locale The locale object.
+ * @param timeZone The time zone object.
+ * @discussion The given `locale` and `timeZone` are set by default to the new
+ * moment. If you want you the global (proxy) value instead, set them to nil.
+ * @since 0.4.0
+ */
+- (instancetype)initWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat locale:(NSLocale *)locale timeZone:(NSTimeZone *)timeZone;
+
+/**
+ * @abstract Creates and returns a moment using the date representation of a
+ * given string interpreted, a given date format, a given locale, and a time
+ * zone.
+ * @param dateAsString The date string to parse.
+ * @param dateFormat The date format string used by the receiver.
+ * @param locale The locale object.
+ * @param timeZone The time zone object.
+ * @discussion The given `locale` and `timeZone` are set by default to the new
+ * moment. If you want you the global (proxy) value instead, set them to nil.
+ * @see initWithDateAsString:format:locale:timeZone:
+ * @since 0.4.0
+ */
++ (instancetype)momentWithDateAsString:(NSString *)dateAsString format:(NSString *)dateFormat locale:(NSLocale *)locale timeZone:(NSTimeZone *)timeZone;
+
 #pragma mark Configuring Moments
 /** @name Configuring Moments */
 

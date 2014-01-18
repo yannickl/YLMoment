@@ -3,6 +3,7 @@
 ### Version 0.4.0 (Under development)
 
 - [ADD] `utc` convenient method
+- [ADD] `initWithDateAsString:format:locale:timeZone:` and `momentWithDateAsString:format:locale:timeZone:` methods
 
 ### Version 0.3.0 (2014-01-15)
 

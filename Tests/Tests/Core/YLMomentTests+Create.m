@@ -141,14 +141,36 @@
     expect([[YLMoment momentWithDateAsString:@" " format:@"DD"] isValid]).to.beFalsy();
 }
 
-- (void)testCreateFromStringWithFormatAndLocale
+- (void)testCreateFromStringWithFormatWithLocale
 {
+    NSTimeZone *previousTimeZone = [[YLMoment proxy] timeZone];
+    
+    [[YLMoment proxy] setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+    
     YLMoment *moment = [YLMoment momentWithDateAsString:@"14 juillet 1998 à 15h" format:@"dd MM yyyy 'à' HH'h'" localeIdentifier:@"fr_FR"];
     moment.timeZone  = [NSTimeZone timeZoneWithName:@"UTC"];
     expect([moment format]).to.equal(@"1998-07-14T15:00:00+0000");
     
     moment          = [YLMoment momentWithDateAsString:@"27 shtator 2004" format:@"dd MM yyyy" localeIdentifier:@"sq_AL"];
     moment.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    expect([moment format]).to.equal(@"2004-09-27T00:00:00+0000");
+    
+    moment = [YLMoment momentWithDateAsString:@"27 shtator 2004" format:@"dd MM yyyy" localeIdentifier:@"not a locale"];
+    expect([moment isValid]).to.beFalsy();
+    
+    [[YLMoment proxy] setTimeZone:previousTimeZone];
+}
+
+- (void)testCreateFromStringWithFormatWithLocaleWithTimeZone
+{
+    NSTimeZone *utc    = [NSTimeZone timeZoneWithName:@"UTC"];
+    NSLocale *french   = [NSLocale localeWithLocaleIdentifier:@"fr_FR"];
+    NSLocale *albanian = [NSLocale localeWithLocaleIdentifier:@"sq_AL"];
+    
+    YLMoment *moment = [YLMoment momentWithDateAsString:@"14 juillet 1998 à 15h" format:@"dd MM yyyy 'à' HH'h'" locale:french timeZone:utc];
+    expect([moment format]).to.equal(@"1998-07-14T15:00:00+0000");
+    
+    moment          = [YLMoment momentWithDateAsString:@"27 shtator 2004" format:@"dd MM yyyy" locale:albanian timeZone:utc];
     expect([moment format]).to.equal(@"2004-09-27T00:00:00+0000");
     
     moment = [YLMoment momentWithDateAsString:@"27 shtator 2004" format:@"dd MM yyyy" localeIdentifier:@"not a locale"];
