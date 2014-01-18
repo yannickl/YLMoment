@@ -201,9 +201,14 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.locale           = _locale ?: [[[self class] proxy] locale];
     formatter.timeZone         = _timeZone ?: [[[self class] proxy] timeZone];
-    formatter.dateStyle        = (_dateStyle != -1) ? _dateStyle : [[[self class] proxy] dateStyle];
-    formatter.timeStyle        = (_timeStyle != -1) ? _timeStyle : [[[self class] proxy] timeStyle];
-    formatter.dateFormat       = dateFormat;
+    if (!dateFormat)
+    {
+        formatter.dateStyle = (_dateStyle != -1) ? _dateStyle : [[[self class] proxy] dateStyle];
+        formatter.timeStyle = (_timeStyle != -1) ? _timeStyle : [[[self class] proxy] timeStyle];
+    } else
+    {
+        formatter.dateFormat = dateFormat;
+    }
     
     return [formatter stringFromDate:_date] ?: @"Invalid Date";
 }
