@@ -16,8 +16,9 @@ Pod::Spec.new do |s|
                      :tag => s.version.to_s }
   s.requires_arc = true
 
-  s.source_files = ['YLMoment/*.{h,m}']
-  s.resources    = ['YLMoment/Localization/*.lproj']
+  s.source_files        = ['YLMoment/*.{h,m}']
+  s.ios.resource_bundle = { 'YLMoment-iOS' => ['YLMoment/Localization/*.lproj'] }
+  s.osx.resource_bundle = { 'YLMoment-OSX' => ['YLMoment/Localization/*.lproj'] }
 
   s.framework = 'Foundation'
 

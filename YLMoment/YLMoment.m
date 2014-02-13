@@ -26,6 +26,10 @@
 
 #import "YLMoment.h"
 
+/** The name of the bundle for the iOS plateform. */
+static NSString * const kYLMomentiOSBunbleName = @"YLMoment-iOS";
+/** The name of the bundle for the iOS plateform. */
+static NSString * const kYLMomentOSXBunbleName = @"YLMoment-OSX";
 /** The table name for the relative time strings. */
 static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTimeLocalizable";
 
@@ -677,14 +681,21 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
 
 - (void)updateLangBundle
 {
-    NSString *lang = [[_locale localeIdentifier] substringToIndex:2];
-    
     static NSBundle *bundle = nil;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        bundle = [NSBundle bundleForClass:[self class]];
+        NSBundle *classBundle = [NSBundle bundleForClass:[self class]];
+        
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+        NSString *bundlePath = [classBundle pathForResource:kYLMomentiOSBunbleName ofType:@"bundle"];
+#else
+        NSString *bundlePath = [classBundle pathForResource:kYLMomentOSXBunbleName ofType:@"bundle"];
+#endif
+        
+        bundle = [NSBundle bundleWithPath:bundlePath];
     });
 
+    NSString *lang = [[_locale localeIdentifier] substringToIndex:2];
     NSURL *langURL = [bundle URLForResource:lang withExtension:@"lproj"];
     if (langURL)
     {
