@@ -52,8 +52,8 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
 /** Called when the moment is initiated. */
 - (void)momentInitiated;
 
-/** Update the lang bundle with the current locale preferred localizations. */
-- (void)updateLangBundle;
+/** Returns the YLMoment lang bundle corresponding to a given locale identifier. */
+- (NSBundle *)langBundleForLocaleWithIdentifier:(NSString *)localeIdentifier;
 
 @end
 
@@ -668,7 +668,8 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
         // Created at the proxy level to multiple instance (optimization)
         _dateDetector = [NSDataDetector dataDetectorWithTypes:(NSTextCheckingTypes)NSTextCheckingTypeDate error:nil];
         
-        [self updateLangBundle];
+        _langBundle = [self langBundleForLocaleWithIdentifier:_locale.localeIdentifier];
+        
         [self momentInitiated];
     }
     return self;
@@ -679,7 +680,7 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     [self addObserver:self forKeyPath:@"locale" options:0 context:nil];
 }
 
-- (void)updateLangBundle
+- (NSBundle *)langBundleForLocaleWithIdentifier:(NSString *)localeIdentifier
 {
     static NSBundle *bundle = nil;
     static dispatch_once_t once;
@@ -695,26 +696,26 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
         bundle = [NSBundle bundleWithPath:bundlePath];
     });
 
-    NSString *lang = [[_locale localeIdentifier] substringToIndex:2];
-    NSURL *langURL = [bundle URLForResource:lang withExtension:@"lproj"];
-    if (langURL)
+    NSString *lang     = [localeIdentifier substringToIndex:2];
+    NSString *langPath = [bundle pathForResource:lang ofType:@"lproj"];
+    if (langPath)
     {
-        _langBundle = [NSBundle bundleWithURL:langURL];
+       return [NSBundle bundleWithPath:langPath];
     } else
     {
         NSArray *preferredLocalizations = [bundle preferredLocalizations];
         
         for (NSString *preferredLocalization in preferredLocalizations)
         {
-            langURL = [bundle URLForResource:preferredLocalization withExtension:@"lproj"];
+            langPath = [bundle pathForResource:preferredLocalization ofType:@"lproj"];
             
-            if (langURL)
+            if (langPath)
             {
-                _langBundle = [NSBundle bundleWithURL:langURL];
-                break;
+                return [NSBundle bundleWithPath:langPath];
             }
         }
     }
+    return nil;
 }
 
 #pragma mark - KVO Delegate Method
@@ -723,7 +724,7 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
 {
     if ([keyPath isEqualToString:@"locale"])
     {
-        [self updateLangBundle];
+        _langBundle = [self langBundleForLocaleWithIdentifier:_locale.localeIdentifier];
     } else
     {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];

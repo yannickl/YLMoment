@@ -37,6 +37,8 @@
 		F4605D42181C33E3007F83EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D41181C33E3007F83EF /* XCTest.framework */; };
 		F4605D46181C33F2007F83EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D45181C33F2007F83EF /* UIKit.framework */; };
 		F4605D47181C3416007F83EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D43181C33EA007F83EF /* Foundation.framework */; };
+		F48F2F2E18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F48F2F2D18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m */; };
+		F48F2F2F18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F48F2F2D18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m */; };
 		F4DF36B1183BA7700091E80A /* YLMomentTest+LangNl.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */; };
 		F4FDEA391838D38D00DB3901 /* YLMomentTest+LangNl.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,8 @@
 		F4605D41181C33E3007F83EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F4605D43181C33EA007F83EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F4605D45181C33F2007F83EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F48F2F2D18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMomentLocalizableStringsTest.m; sourceTree = "<group>"; };
+		F48F2F3018ACDF0500173D37 /* YLMoment_UnitTestAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLMoment_UnitTestAdditions.h; sourceTree = "<group>"; };
 		F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangNl.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +120,7 @@
 		F425CFD5182844D1002CABDC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F48F2F2C18ACDD9700173D37 /* Main */,
 				F425CFD6182844D1002CABDC /* Core */,
 				F425CFDD182844D1002CABDC /* Lang */,
 			);
@@ -189,6 +194,15 @@
 				F4605D3D181C33AA007F83EF /* iOSTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F48F2F2C18ACDD9700173D37 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F48F2F3018ACDF0500173D37 /* YLMoment_UnitTestAdditions.h */,
+				F48F2F2D18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		F4DD860A18292B79008D0D88 /* Products */ = {
@@ -372,6 +386,7 @@
 				F4381B291886B7B1008C50E0 /* YLMomentTest+LangDe.m in Sources */,
 				F425CFF2182844E1002CABDC /* YLMomentTest+LangEn.m in Sources */,
 				F425CFF3182844E1002CABDC /* YLMomentTest+LangEs.m in Sources */,
+				F48F2F2F18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */,
 				F425CFF4182844E1002CABDC /* YLMomentTest+LangFr.m in Sources */,
 				F4DF36B1183BA7700091E80A /* YLMomentTest+LangNl.m in Sources */,
 				F425CFF5182844E1002CABDC /* YLMomentTest+LangSq.m in Sources */,
@@ -391,6 +406,7 @@
 				F425CFE4182844D1002CABDC /* YLMomentTests+Format.m in Sources */,
 				F4381B281886B744008C50E0 /* YLMomentTest+LangDe.m in Sources */,
 				F425CFEB182844D1002CABDC /* YLMomentTest+LangSq.m in Sources */,
+				F48F2F2E18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */,
 				F425CFE7182844D1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
 				F425CFE9182844D1002CABDC /* YLMomentTest+LangEs.m in Sources */,
 				F4FDEA391838D38D00DB3901 /* YLMomentTest+LangNl.m in Sources */,
