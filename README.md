@@ -1,4 +1,4 @@
-## YLMoment [![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Version](https://cocoapod-badges.herokuapp.com/v/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Build Status](https://travis-ci.org/YannickL/YLMoment.png?branch=master)](https://travis-ci.org/YannickL/YLMoment) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/YannickL/ylmoment/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+## YLMoment [![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Version](https://cocoapod-badges.herokuapp.com/v/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Build Status](https://travis-ci.org/YannickL/YLMoment.png?branch=master)](https://travis-ci.org/YannickL/YLMoment)
 
 YLMoment is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.
 
