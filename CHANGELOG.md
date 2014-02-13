@@ -4,6 +4,7 @@
 
 - [ADD] `utc` convenient method
 - [ADD] `initWithDateAsString:format:locale:timeZone:` and `momentWithDateAsString:format:locale:timeZone:` methods
+- [FIX] Moves the localized files into the YLMoment bundle to avoid conflits with another libs
 
 ### Version 0.3.0 (2014-01-15)
 
