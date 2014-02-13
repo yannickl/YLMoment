@@ -1,7 +1,7 @@
 /*
- * YLMoment.h
+ * YLMoment
  *
- * Copyright 2013 Yannick Loriot.
+ * Copyright 2013 - present Yannick Loriot.
  * http://yannickloriot.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
