@@ -26,6 +26,9 @@
 
 #import "YLMoment.h"
 
+/** The table name for the relative time strings. */
+static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTimeLocalizable";
+
 @interface YLMoment ()
 /** The internal date once data computed */
 #pragma mark internal
@@ -285,7 +288,7 @@
 {
     // Get the lang bundle
     NSBundle *langBundle = _langBundle ?: [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
-    
+
     // Compute the time interval
     double referenceTime = [_date timeIntervalSinceDate:date];
     double seconds       = round(fabs(referenceTime));
@@ -299,42 +302,42 @@
     int unit                  = 0;
     if (seconds < 45)
     {
-        formattedString = [langBundle localizedStringForKey:@"s" value:@"a few seconds" table:nil];
+        formattedString = [langBundle localizedStringForKey:@"s" value:@"a few seconds" table:kYLMomentRelativeTimeStringTable];
         unit            = seconds;
     } else if (minutes == 1)
     {
-        formattedString = [langBundle localizedStringForKey:@"m" value:@"a minute" table:nil];
+        formattedString = [langBundle localizedStringForKey:@"m" value:@"a minute" table:kYLMomentRelativeTimeStringTable];
     } else if (minutes < 45)
     {
-        formattedString = [langBundle localizedStringForKey:@"mm" value:@"%d minutes" table:nil];
+        formattedString = [langBundle localizedStringForKey:@"mm" value:@"%d minutes" table:kYLMomentRelativeTimeStringTable];
         unit            = minutes;
     } else if (hours == 1)
     {
-        formattedString = [langBundle localizedStringForKey:@"h" value:@"an hour" table:nil];
+        formattedString = [langBundle localizedStringForKey:@"h" value:@"an hour" table:kYLMomentRelativeTimeStringTable];
     } else if (hours < 22)
     {
-        formattedString = [langBundle localizedStringForKey:@"hh" value:@"%d hours" table:nil];
+        formattedString = [langBundle localizedStringForKey:@"hh" value:@"%d hours" table:kYLMomentRelativeTimeStringTable];
         unit            = hours;
     } else if (days == 1)
     {
-        formattedString = [langBundle localizedStringForKey:@"d" value:@"a day" table:nil];
+        formattedString = [langBundle localizedStringForKey:@"d" value:@"a day" table:kYLMomentRelativeTimeStringTable];
     } else if (days <= 25)
     {
-        formattedString = [langBundle localizedStringForKey:@"dd" value:@"%d days" table:nil];
+        formattedString = [langBundle localizedStringForKey:@"dd" value:@"%d days" table:kYLMomentRelativeTimeStringTable];
         unit            = days;
     } else if (days <= 45)
     {
-        formattedString = [langBundle localizedStringForKey:@"M" value:@"a month" table:nil];
+        formattedString = [langBundle localizedStringForKey:@"M" value:@"a month" table:kYLMomentRelativeTimeStringTable];
     } else if (days < 345)
     {
-        formattedString = [langBundle localizedStringForKey:@"MM" value:@"%d months" table:nil];
+        formattedString = [langBundle localizedStringForKey:@"MM" value:@"%d months" table:kYLMomentRelativeTimeStringTable];
         unit            = round(days / 30);
     } else if (years == 1)
     {
-        formattedString = [langBundle localizedStringForKey:@"y" value:@"a year" table:nil];
+        formattedString = [langBundle localizedStringForKey:@"y" value:@"a year" table:kYLMomentRelativeTimeStringTable];
     } else
     {
-        formattedString = [langBundle localizedStringForKey:@"yy" value:@"%d years" table:nil];
+        formattedString = [langBundle localizedStringForKey:@"yy" value:@"%d years" table:kYLMomentRelativeTimeStringTable];
         unit            = years;
     }
     formattedString = [NSString stringWithFormat:formattedString, unit];
@@ -344,13 +347,13 @@
     {
         BOOL isFuture = (referenceTime > 0);
         
-        NSString *suffixedString = @"";
+        NSString *suffixedString = nil;
         if (isFuture)
         {
-            suffixedString = [langBundle localizedStringForKey:@"future" value:@"in %@" table:nil];
+            suffixedString = [langBundle localizedStringForKey:@"future" value:@"in %@" table:kYLMomentRelativeTimeStringTable];
         } else
         {
-            suffixedString = [langBundle localizedStringForKey:@"past" value:@"%@ ago" table:nil];
+            suffixedString = [langBundle localizedStringForKey:@"past" value:@"%@ ago" table:kYLMomentRelativeTimeStringTable];
         }
         
         formattedString = [NSString stringWithFormat:suffixedString, formattedString];
@@ -676,19 +679,23 @@
 {
     NSString *lang = [[_locale localeIdentifier] substringToIndex:2];
     
-    NSBundle *classBundle = [NSBundle bundleForClass:[self class]];
-    NSURL *langURL        = [classBundle URLForResource:lang withExtension:@"lproj"];
-    
+    static NSBundle *bundle = nil;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        bundle = [NSBundle bundleForClass:[self class]];
+    });
+
+    NSURL *langURL = [bundle URLForResource:lang withExtension:@"lproj"];
     if (langURL)
     {
         _langBundle = [NSBundle bundleWithURL:langURL];
     } else
     {
-        NSArray *preferredLocalizations = [classBundle preferredLocalizations];
+        NSArray *preferredLocalizations = [bundle preferredLocalizations];
         
         for (NSString *preferredLocalization in preferredLocalizations)
         {
-            langURL = [classBundle URLForResource:preferredLocalization withExtension:@"lproj"];
+            langURL = [bundle URLForResource:preferredLocalization withExtension:@"lproj"];
             
             if (langURL)
             {
@@ -701,7 +708,7 @@
 
 #pragma mark - KVO Delegate Method
 
-- (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"locale"])
     {
