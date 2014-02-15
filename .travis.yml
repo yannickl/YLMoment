@@ -4,5 +4,8 @@ branches:
     - master
 before_install:
     - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+    - sudo easy_install cpp-coveralls
     - cd Tests && pod install && cd $TRAVIS_BUILD_DIR
 script: rake test
+after_success:
+    - ./coveralls.rb --extension m
