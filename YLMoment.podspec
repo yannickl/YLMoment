@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'YLMoment'
-  s.version      = '0.4.0'
-  s.license      = { :type => 'MIT', :file => 'LICENSE' } 
+  s.version      = '0.4.1'
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.summary      = 'Parsing, validating, manipulating, and formatting dates easily in Objective-C (API inspired by moment.js)'
   s.description  = <<-DESC
                     YLMoment is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.
