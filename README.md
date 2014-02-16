@@ -28,7 +28,7 @@ Go to the directory of your Xcode project, and Create and Edit your Podfile and 
 $ cd /path/to/MyProject
 $ touch Podfile
 $ edit Podfile
-platform :ios, '5.0' 
+platform :ios, '5.0'
 # Or platform :osx, '10.8'
 pod 'YLMoment', '~> 0.2.0'
 ```
@@ -94,19 +94,24 @@ NSLog(@"%@", [utc format]); // 2014-01-18T17:51:10+0000
 YLMoment *french = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [french setLocale:[NSLocale localeWithLocaleIdentifier:@"fr_FR"]];
 NSLog(@"%@", [french fromNow]); // il y a quelques secondes
-    
+
 YLMoment *albanian = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [albanian setLocale:[NSLocale localeWithLocaleIdentifier:@"sq_AL"]];
 NSLog(@"%@", [albanian fromNow]); // disa sekonda me parë
-    
+
 YLMoment *spanish = [[YLMoment now] subtractAmountOfTime:3 forUnitKey:@"s"];
 [spanish setLocale:[NSLocale localeWithLocaleIdentifier:@"es_ES"]];
 NSLog(@"%@", [spanish fromNow]); // hace unos segundos
-    
+
 YLMoment *reference = [YLMoment momentWithArray:@[@2013]];
 YLMoment *english   = [[YLMoment now] subtractAmountOfTime:3 forUnitKey:@"s"];
 [english setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
 NSLog(@"%@", [english fromMoment:reference]); // in 11 months
+
+YLMoment *reference = [YLMoment momentWithArray:@[@2013]];
+YLMoment *portuguese   = [[YLMoment now] subtractAmountOfTime:3 forUnitKey:@"s"];
+[portuguese setLocale:[NSLocale localeWithLocaleIdentifier:@"pt_BR"]];
+NSLog(@"%@", [portuguese fromMoment:reference]); // em 11 meses
 ```
 
 ## Contact

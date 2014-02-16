@@ -1,5 +1,9 @@
 ## Changelog
 
+### Version 0.4.1 (Under development)
+
+- [ADD] `Portuguese` language
+
 ### Version 0.4.0 (Under development)
 
 - [ADD] `utc` convenient method
