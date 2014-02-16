@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="Parse, validate, manipulate, and formatte dates easily in Objective-C">
   <meta name="author" content="Yannick Loriot">
-  
+
   <meta property="og:title" content="YLMoment" />
   <meta property="og:description" content="Parse, validate, manipulate, and formatte dates easily in Objective-C" />
-  
+
   <link href="http://fonts.googleapis.com/css?family=Anonymous+Pro:400,700|Droid+Sans+Mono|Open+Sans:400,700|Linden+Hill|Quattrocento:400,700|News+Cycle:400,700|Antic+Slab|Cabin+Condensed:400,700" rel="stylesheet" type="text/css">
   <link href="stylesheets/stylesheet.css" rel="stylesheet">
   <link rel="stylesheet" href="stylesheets/xcode.css">
-  
+
   <script src="javascripts/highlight.pack.js"></script>
 </head>
 <body>
@@ -45,7 +45,7 @@
 NSLog(@"%@", [[YLMoment now] format:@"MMMM dd yyyy, h:mm:ss a"]);
 
 // Display: Oct 27 13
-NSLog(@"%@", [[YLMoment now] format:@"MMM dd yy"]); 
+NSLog(@"%@", [[YLMoment now] format:@"MMM dd yy"]);
 
 // Display: 2013 escaped 2013
 NSLog(@"%@", [[YLMoment now] format:@"yyyy 'escaped' yyyy"]);
@@ -55,7 +55,7 @@ NSLog(@"%@", [[YLMoment now] format]);
           </code>
         </pre>
       </div>
-      
+
       <div id="example">
         <h2>Time Zones</h2>
         <pre>
@@ -74,24 +74,24 @@ NSLog(@"%@", [utc format]); // 2014-01-18T17:51:10+0000
           </code>
         </pre>
       </div>
-      
+
             <div id="example">
         <h2>Relative Times</h2>
         <pre>
           <code>
 // Display: 2 years ago
-NSLog(@"%@", [[YLMoment momentWithDateAsString:@"20111031"] fromNow]); 
+NSLog(@"%@", [[YLMoment momentWithDateAsString:@"20111031"] fromNow]);
 
 // Display: a year ago
-YLMoment *m = 
+YLMoment *m =
 [YLMoment momentWithDateAsString:@"2012/06/20" format:@"yyyy/MM/dd"];
-NSLog(@"%@", [m fromNow]); 
+NSLog(@"%@", [m fromNow]);
 
 // Display: 19 hours ago
-NSLog(@"%@", [[[YLMoment now] startOf:@"day"] fromNow]); 
+NSLog(@"%@", [[[YLMoment now] startOf:@"day"] fromNow]);
 
 // Display: in 5 hours
-NSLog(@"%@", [[[YLMoment now] endOf:@"day"] fromNow]); 
+NSLog(@"%@", [[[YLMoment now] endOf:@"day"] fromNow]);
 
 // Display: 11 minutes ago
 NSLog(@"%@", [[[YLMoment now] startOf:@"hour"] fromNow]);
@@ -101,7 +101,7 @@ NSLog(@"%@", [[[YLMoment now] startOf:@"hour"] fromNow]);
 
       <div id="example">
         <h2>Languages</h2>
-        <p class="what">YLMoment currently supports <span class="lang">Albanian</span>, <span class="lang">Dutch</span>, <span class="lang">English</span>, <span class="lang">French</span>, <span class="lang">German</span> and <span class="lang">Spanish</span> for <em>relative times</em> and all the native languages for the <em>formatters</em>.</p>
+        <p class="what">YLMoment currently supports <span class="lang">Albanian</span>, <span class="lang">Dutch</span>, <span class="lang">English</span>, <span class="lang">French</span>, <span class="lang">German</span>, <span class="lang">Spanish</span> and <span class="lang">Portuguese</span> for <em>relative times</em> and all the native languages for the <em>formatters</em>.</p>
         <pre>
           <code>
 // Display: il y a quelques secondes
@@ -112,7 +112,7 @@ NSLog(@"%@", [french fromNow]);
 // Display: disa sekonda me parë
 YLMoment *albanian = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [albanian setLocale:[NSLocale localeWithLocaleIdentifier:@"sq_AL"]];
-NSLog(@"%@", [albanian fromNow]); 
+NSLog(@"%@", [albanian fromNow]);
 
 // Display: hace unos segundos
 YLMoment *spanish = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
@@ -121,9 +121,15 @@ NSLog(@"%@", [spanish fromNow]);
 
 // Display: in 11 months
 YLMoment *reference = [YLMoment momentWithArray:@[@2013]];
-YLMoment *english   = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+YLMoment *english = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [english setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
-NSLog(@"%@", [english fromMoment:reference]); 
+NSLog(@"%@", [english fromMoment:reference]);
+
+// Display: em 11 meses
+YLMoment *reference = [YLMoment momentWithArray:@[@2013]];
+YLMoment *portuguese = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
+[portuguese setLocale:[NSLocale localeWithLocaleIdentifier:@"pt_BR"]];
+NSLog(@"%@", [portuguese fromMoment:reference]);
           </code>
         </pre>
       </div>
