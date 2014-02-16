@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A54704E318B0759600497886 /* YLMomentTest+LangPt.m in Sources */ = {isa = PBXBuildFile; fileRef = A54704E218B0759600497886 /* YLMomentTest+LangPt.m */; };
 		C3EC52F6F21D4DC5A1F10500 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC09F2AE9564D008900DA94 /* libPods-ios.a */; };
 		ED7DF6AE538742429A8AEA2C /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE61FE220675422EAEE6FB3F /* libPods-osx.a */; };
 		F425CFC61828296E002CABDC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D41181C33E3007F83EF /* XCTest.framework */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		2F21035625A34A29A4656C6A /* Pods-ios.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.xcconfig"; path = "Pods/Pods-ios.xcconfig"; sourceTree = "<group>"; };
+		A54704E218B0759600497886 /* YLMomentTest+LangPt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangPt.m"; sourceTree = "<group>"; };
 		ADC09F2AE9564D008900DA94 /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE61FE220675422EAEE6FB3F /* libPods-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38986F8261947CDA37C4DDE /* Pods-osx.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.xcconfig"; path = "Pods/Pods-osx.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */,
 				F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */,
 				F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */,
+				A54704E218B0759600497886 /* YLMomentTest+LangPt.m */,
 			);
 			path = Lang;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				F425CFE6182844D1002CABDC /* YLMomentTests+Helpers.m in Sources */,
 				F425CFE4182844D1002CABDC /* YLMomentTests+Format.m in Sources */,
 				F4381B281886B744008C50E0 /* YLMomentTest+LangDe.m in Sources */,
+				A54704E318B0759600497886 /* YLMomentTest+LangPt.m in Sources */,
 				F425CFEB182844D1002CABDC /* YLMomentTest+LangSq.m in Sources */,
 				F48F2F2E18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */,
 				F425CFE7182844D1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,

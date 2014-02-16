@@ -14,3 +14,4 @@ Please keep the list sorted.
 
  * [Michel Albers](https://github.com/michelalbers)
  * [Pieter Claerhout](https://github.com/pieterclaerhout)
+ * [Douglas Brito de Medeiros](https://github.com/DouglasMedeiros)
