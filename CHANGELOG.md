@@ -4,7 +4,7 @@
 
 - [ADD] `Portuguese` language
 
-### Version 0.4.0 (Under development)
+### Version 0.4.0 (2014-02-14)
 
 - [ADD] `utc` convenient method
 - [ADD] `initWithDateAsString:format:locale:timeZone:` and `momentWithDateAsString:format:locale:timeZone:` methods
