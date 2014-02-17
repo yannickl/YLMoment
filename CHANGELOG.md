@@ -1,8 +1,11 @@
 ## Changelog
 
-### Version 0.4.1 (Under development)
+### Version 0.5.0 (Under development)
+
+### Version 0.4.1 (2014-02-17)
 
 - [ADD] `Portuguese` language
+- [FIX] Localized string for manual installation
 
 ### Version 0.4.0 (2014-02-14)
 
