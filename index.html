@@ -101,18 +101,13 @@ NSLog(@"%@", [[[YLMoment now] startOf:@"hour"] fromNow]);
 
       <div id="example">
         <h2>Languages</h2>
-        <p class="what">YLMoment currently supports <span class="lang">Albanian</span>, <span class="lang">Dutch</span>, <span class="lang">English</span>, <span class="lang">French</span>, <span class="lang">German</span>, <span class="lang">Spanish</span> and <span class="lang">Portuguese</span> for <em>relative times</em> and all the native languages for the <em>formatters</em>.</p>
+        <p class="what">YLMoment currently supports <span class="lang">Albanian</span>, <span class="lang">Dutch</span>, <span class="lang">English</span>, <span class="lang">French</span>, <span class="lang">German</span>, <span class="lang">Portuguese</span> and <span class="lang">Spanish</span> for <em>relative times</em> and all the native languages for the <em>formatters</em>.</p>
         <pre>
           <code>
 // Display: il y a quelques secondes
 YLMoment *french = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [french setLocale:[NSLocale localeWithLocaleIdentifier:@"fr_FR"]];
 NSLog(@"%@", [french fromNow]);
-
-// Display: disa sekonda me parë
-YLMoment *albanian = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
-[albanian setLocale:[NSLocale localeWithLocaleIdentifier:@"sq_AL"]];
-NSLog(@"%@", [albanian fromNow]);
 
 // Display: hace unos segundos
 YLMoment *spanish = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
@@ -126,7 +121,7 @@ YLMoment *english = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 NSLog(@"%@", [english fromMoment:reference]);
 
 // Display: em 11 meses
-YLMoment *reference = [YLMoment momentWithArray:@[@2013]];
+YLMoment *reference  = [YLMoment momentWithArray:@[@2013]];
 YLMoment *portuguese = [[YLMoment now] addAmountOfTime:-3 forUnitKey:@"s"];
 [portuguese setLocale:[NSLocale localeWithLocaleIdentifier:@"pt_BR"]];
 NSLog(@"%@", [portuguese fromMoment:reference]);
