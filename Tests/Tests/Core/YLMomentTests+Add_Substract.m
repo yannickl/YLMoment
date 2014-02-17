@@ -85,6 +85,14 @@
     expect([[a addAmountOfTime:1 forUnitKey:@"y"] year]).to.equal(2012);
 }
 
+- (void)testAddDuration {
+    YLMoment *a = [YLMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
+    
+    expect([[a addDuration:12] second]).to.equal(20);
+    expect([[a addDuration:-20] second]).to.equal(0);
+    expect([[a addDuration:-2] second]).to.equal(58);
+}
+
 - (void)testSubtractCalendarUnit
 {
     YLMoment *a = [YLMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
@@ -131,6 +139,14 @@
     expect([[a subtractAmountOfTime:1 forUnitKey:@"d"] day]).to.equal(11);
     expect([[a subtractAmountOfTime:1 forUnitKey:@"M"] month]).to.equal(8);
     expect([[a subtractAmountOfTime:1 forUnitKey:@"y"] year]).to.equal(2010);
+}
+
+- (void)testSubstractDuration {
+    YLMoment *a = [YLMoment momentWithArray:@[@2011, @9, @12, @6, @7, @8]];
+    
+    expect([[a subtractDuration:8] second]).to.equal(0);
+    expect([[a subtractDuration:-10] second]).to.equal(10);
+    expect([[a subtractDuration:0] second]).to.equal(10);
 }
 
 @end
