@@ -34,12 +34,17 @@
 		F425CFF5182844E1002CABDC /* YLMomentTest+LangSq.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */; };
 		F4381B281886B744008C50E0 /* YLMomentTest+LangDe.m in Sources */ = {isa = PBXBuildFile; fileRef = F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */; };
 		F4381B291886B7B1008C50E0 /* YLMomentTest+LangDe.m in Sources */ = {isa = PBXBuildFile; fileRef = F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */; };
+		F43B57FF18B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F43B57F518B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings */; };
+		F43B580018B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F43B57F518B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings */; };
+		F43B580118B22E41001E9993 /* YLMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = F43B57FE18B22E41001E9993 /* YLMoment.m */; };
+		F43B580218B22E41001E9993 /* YLMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = F43B57FE18B22E41001E9993 /* YLMoment.m */; };
 		F4605D3A181C33AA007F83EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4605D38181C33AA007F83EF /* InfoPlist.strings */; };
 		F4605D42181C33E3007F83EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D41181C33E3007F83EF /* XCTest.framework */; };
 		F4605D46181C33F2007F83EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D45181C33F2007F83EF /* UIKit.framework */; };
 		F4605D47181C3416007F83EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D43181C33EA007F83EF /* Foundation.framework */; };
 		F48F2F2E18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F48F2F2D18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m */; };
 		F48F2F2F18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F48F2F2D18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m */; };
+		F4AA173318B222950081F8AB /* YLMomentTest+LangPt.m in Sources */ = {isa = PBXBuildFile; fileRef = A54704E218B0759600497886 /* YLMomentTest+LangPt.m */; };
 		F4DF36B1183BA7700091E80A /* YLMomentTest+LangNl.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */; };
 		F4FDEA391838D38D00DB3901 /* YLMomentTest+LangNl.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */; };
 /* End PBXBuildFile section */
@@ -66,6 +71,15 @@
 		F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangFr.m"; sourceTree = "<group>"; };
 		F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangSq.m"; sourceTree = "<group>"; };
 		F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangDe.m"; sourceTree = "<group>"; };
+		F43B57F618B22E41001E9993 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		F43B57F718B22E41001E9993 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		F43B57F818B22E41001E9993 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		F43B57F918B22E41001E9993 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		F43B57FA18B22E41001E9993 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		F43B57FB18B22E41001E9993 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		F43B57FC18B22E41001E9993 /* sq */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sq; path = sq.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		F43B57FD18B22E41001E9993 /* YLMoment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLMoment.h; sourceTree = "<group>"; };
+		F43B57FE18B22E41001E9993 /* YLMoment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMoment.m; sourceTree = "<group>"; };
 		F4605D37181C33AA007F83EF /* iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOSTests-Info.plist"; sourceTree = "<group>"; };
 		F4605D39181C33AA007F83EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4605D3D181C33AA007F83EF /* iOSTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSTests-Prefix.pch"; sourceTree = "<group>"; };
@@ -156,9 +170,29 @@
 			path = Lang;
 			sourceTree = "<group>";
 		};
+		F43B57F318B22E41001E9993 /* YLMoment */ = {
+			isa = PBXGroup;
+			children = (
+				F43B57F418B22E41001E9993 /* Localization */,
+				F43B57FD18B22E41001E9993 /* YLMoment.h */,
+				F43B57FE18B22E41001E9993 /* YLMoment.m */,
+			);
+			name = YLMoment;
+			path = ../YLMoment;
+			sourceTree = "<group>";
+		};
+		F43B57F418B22E41001E9993 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F43B57F518B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		F4605D09181C326A007F83EF = {
 			isa = PBXGroup;
 			children = (
+				F43B57F318B22E41001E9993 /* YLMoment */,
 				F425CFD5182844D1002CABDC /* Tests */,
 				F4605D35181C33AA007F83EF /* iOSTests */,
 				F425CFC71828296E002CABDC /* OSXTests */,
@@ -282,6 +316,9 @@
 				es,
 				sq,
 				it,
+				de,
+				nl,
+				pt,
 			);
 			mainGroup = F4605D09181C326A007F83EF;
 			productRefGroup = F4605D09181C326A007F83EF;
@@ -300,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F425CFCC1828296E002CABDC /* InfoPlist.strings in Resources */,
+				F43B580018B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4605D3A181C33AA007F83EF /* InfoPlist.strings in Resources */,
+				F43B57FF18B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +421,7 @@
 			files = (
 				F425CFEC182844E1002CABDC /* YLMomentTests+Add_Substract.m in Sources */,
 				F425CFED182844E1002CABDC /* YLMomentTests+Create.m in Sources */,
+				F43B580218B22E41001E9993 /* YLMoment.m in Sources */,
 				F425CFEE182844E1002CABDC /* YLMomentTests+Format.m in Sources */,
 				F425CFEF182844E1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */,
 				F425CFF0182844E1002CABDC /* YLMomentTests+Helpers.m in Sources */,
@@ -390,6 +430,7 @@
 				F425CFF2182844E1002CABDC /* YLMomentTest+LangEn.m in Sources */,
 				F425CFF3182844E1002CABDC /* YLMomentTest+LangEs.m in Sources */,
 				F48F2F2F18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */,
+				F4AA173318B222950081F8AB /* YLMomentTest+LangPt.m in Sources */,
 				F425CFF4182844E1002CABDC /* YLMomentTest+LangFr.m in Sources */,
 				F4DF36B1183BA7700091E80A /* YLMomentTest+LangNl.m in Sources */,
 				F425CFF5182844E1002CABDC /* YLMomentTest+LangSq.m in Sources */,
@@ -402,6 +443,7 @@
 			files = (
 				F425CFE2182844D1002CABDC /* YLMomentTests+Add_Substract.m in Sources */,
 				F425CFE5182844D1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */,
+				F43B580118B22E41001E9993 /* YLMoment.m in Sources */,
 				F425CFE3182844D1002CABDC /* YLMomentTests+Create.m in Sources */,
 				F425CFEA182844D1002CABDC /* YLMomentTest+LangFr.m in Sources */,
 				F425CFE8182844D1002CABDC /* YLMomentTest+LangEn.m in Sources */,
@@ -426,6 +468,20 @@
 				F425CFCB1828296E002CABDC /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F43B57F518B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F43B57F618B22E41001E9993 /* de */,
+				F43B57F718B22E41001E9993 /* en */,
+				F43B57F818B22E41001E9993 /* es */,
+				F43B57F918B22E41001E9993 /* fr */,
+				F43B57FA18B22E41001E9993 /* nl */,
+				F43B57FB18B22E41001E9993 /* pt */,
+				F43B57FC18B22E41001E9993 /* sq */,
+			);
+			name = YLMomentRelativeTimeLocalizable.strings;
 			sourceTree = "<group>";
 		};
 		F4605D38181C33AA007F83EF /* InfoPlist.strings */ = {

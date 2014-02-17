@@ -682,22 +682,24 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
 
 - (NSBundle *)langBundleForLocaleWithIdentifier:(NSString *)localeIdentifier
 {
-    static NSBundle *bundle = nil;
+    static NSBundle *classBundle  = nil;
+    static NSBundle *momentBundle = nil;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        NSBundle *classBundle = [NSBundle bundleForClass:[self class]];
+        classBundle = [NSBundle bundleForClass:[self class]];
         
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
         NSString *bundlePath = [classBundle pathForResource:kYLMomentiOSBunbleName ofType:@"bundle"];
 #else
         NSString *bundlePath = [classBundle pathForResource:kYLMomentOSXBunbleName ofType:@"bundle"];
 #endif
-        
-        bundle = [NSBundle bundleWithPath:bundlePath];
+        momentBundle = [NSBundle bundleWithPath:bundlePath];
     });
 
+    NSBundle *bundle   = momentBundle ?: classBundle;
     NSString *lang     = [localeIdentifier substringToIndex:2];
     NSString *langPath = [bundle pathForResource:lang ofType:@"lproj"];
+    
     if (langPath)
     {
        return [NSBundle bundleWithPath:langPath];

@@ -3,7 +3,6 @@ inhibit_all_warnings!
 
 def import_pods
   pod 'Expecta', '~> 0.2.3'
-  pod 'YLMoment', :path => '../'
 end
 
 target :ios, :exclusive => true do
