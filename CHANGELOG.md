@@ -3,6 +3,7 @@
 ### Version 0.4.1 (Under development)
 
 - [ADD] `Portuguese` language
+- [FIX] Localized string for manual installation
 
 ### Version 0.4.0 (2014-02-14)
 
