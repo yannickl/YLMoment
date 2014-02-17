@@ -68,6 +68,12 @@
     expect([moment format:nil]).to.equal(@"");
 }
 
+- (void)testDescription {
+    YLMoment *moment = [YLMoment now];
+    
+    expect([moment description]).to.equal([moment format]);
+}
+
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 
 - (void)testFormatDefaultStyle

@@ -70,4 +70,19 @@
     expect([YLMoment calendarUnitForKey:@"s"]).to.equal(NSCalendarUnitSecond);
 }
 
+- (void)testMomentEqualsToMoment {
+    YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+    YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+    YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @0]];
+    
+    expect([moment1 isEqualToMoment:moment2]).to.beTruthy();
+    
+    expect([moment1 isEqualToMoment:moment3]).to.beFalsy();
+}
+
+- (void)testNilEqualsToMoment {
+    YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+    expect([moment1 isEqualToMoment:nil]).to.beFalsy();
+}
+
 @end
