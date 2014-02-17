@@ -1,4 +1,4 @@
-## YLMoment [![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Version](https://cocoapod-badges.herokuapp.com/v/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Build Status](https://travis-ci.org/YannickL/YLMoment.png?branch=master)](https://travis-ci.org/YannickL/YLMoment)
+## YLMoment [![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Version](https://cocoapod-badges.herokuapp.com/v/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Build Status](https://travis-ci.org/YannickL/YLMoment.png?branch=master)](https://travis-ci.org/YannickL/YLMoment) [![Coverage Status](https://coveralls.io/repos/YannickL/YLMoment/badge.png?branch=master)](https://coveralls.io/r/YannickL/YLMoment?branch=master)
 
 YLMoment is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.
 
@@ -107,11 +107,6 @@ YLMoment *reference = [YLMoment momentWithArray:@[@2013]];
 YLMoment *english   = [[YLMoment now] subtractAmountOfTime:3 forUnitKey:@"s"];
 [english setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
 NSLog(@"%@", [english fromMoment:reference]); // in 11 months
-
-YLMoment *reference = [YLMoment momentWithArray:@[@2013]];
-YLMoment *portuguese   = [[YLMoment now] subtractAmountOfTime:3 forUnitKey:@"s"];
-[portuguese setLocale:[NSLocale localeWithLocaleIdentifier:@"pt_BR"]];
-NSLog(@"%@", [portuguese fromMoment:reference]); // em 11 meses
 ```
 
 ## Contact
