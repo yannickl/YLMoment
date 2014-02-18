@@ -45,6 +45,7 @@
     expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitMinute] minute]).to.equal(8);
     expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitHour] hour]).to.equal(7);
     expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitDay] day]).to.equal(13);
+    expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitWeekOfMonth] day]).to.equal(20);
     expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitMonth] month]).to.equal(10);
     expect([[a addAmountOfTime:1 forCalendarUnit:NSCalendarUnitYear] year]).to.equal(2012);
 }
@@ -101,6 +102,7 @@
     expect([[a subtractAmountOfTime:1 forCalendarUnit:NSCalendarUnitMinute] minute]).to.equal(6);
     expect([[a subtractAmountOfTime:1 forCalendarUnit:NSCalendarUnitHour] hour]).to.equal(5);
     expect([[a subtractAmountOfTime:1 forCalendarUnit:NSCalendarUnitDay] day]).to.equal(11);
+    expect([[a subtractAmountOfTime:1 forCalendarUnit:NSCalendarUnitWeekOfMonth] day]).to.equal(4);
     expect([[a subtractAmountOfTime:1 forCalendarUnit:NSCalendarUnitMonth] month]).to.equal(8);
     expect([[a subtractAmountOfTime:1 forCalendarUnit:NSCalendarUnitYear] year]).to.equal(2010);
 }
