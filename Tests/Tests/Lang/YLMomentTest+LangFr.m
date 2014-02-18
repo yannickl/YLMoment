@@ -183,4 +183,9 @@
     expect([reference2 fromNowWithSuffix:YES]).to.equal(@"dans 9 heures");
 }
 
+- (void)testLandFromDate {
+    YLMoment *reference = [[YLMoment now] subtractAmountOfTime:6 forCalendarUnit:NSCalendarUnitMinute];
+    expect([reference fromDate:[NSDate date]]).to.equal(@"il y a 6 minutes");
+}
+
 @end

@@ -183,4 +183,9 @@
     expect([reference2 fromNowWithSuffix:YES]).to.equal(@"në 9 orë");
 }
 
+- (void)testLandFromDate {
+    YLMoment *reference = [[YLMoment now] subtractAmountOfTime:6 forCalendarUnit:NSCalendarUnitMinute];
+    expect([reference fromDate:[NSDate date]]).to.equal(@"6 minuta me parë");
+}
+
 @end

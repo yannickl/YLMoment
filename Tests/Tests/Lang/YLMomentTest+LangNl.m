@@ -174,4 +174,9 @@
     expect([reference3 fromNow]).to.equal(@"een dag geleden");
 }
 
+- (void)testLandFromDate {
+    YLMoment *reference = [[YLMoment now] subtractAmountOfTime:6 forCalendarUnit:NSCalendarUnitMinute];
+    expect([reference fromDate:[NSDate date]]).to.equal(@"6 minuten geleden");
+}
+
 @end
