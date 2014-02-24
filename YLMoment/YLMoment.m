@@ -660,7 +660,7 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     if ((self = [super init]))
     {
         _calendar  = [NSCalendar currentCalendar];
-        _locale    = [NSLocale currentLocale];
+        _locale    = [NSLocale localeWithLocaleIdentifier:[[NSLocale preferredLanguages] objectAtIndex:0]];
         _timeZone  = [NSTimeZone defaultTimeZone];
         _dateStyle = NSDateFormatterLongStyle;
         _timeStyle = NSDateFormatterLongStyle;
@@ -705,11 +705,11 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
        return [NSBundle bundleWithPath:langPath];
     } else
     {
-        NSArray *preferredLocalizations = [bundle preferredLocalizations];
+        NSArray *preferredLocales = [NSLocale preferredLanguages];
         
-        for (NSString *preferredLocalization in preferredLocalizations)
+        for (NSString *preferredLocale in preferredLocales)
         {
-            langPath = [bundle pathForResource:preferredLocalization ofType:@"lproj"];
+            langPath = [bundle pathForResource:preferredLocale ofType:@"lproj"];
             
             if (langPath)
             {
