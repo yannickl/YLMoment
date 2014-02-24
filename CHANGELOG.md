@@ -1,7 +1,5 @@
 ## Changelog
 
-### Version 0.5.0 (Under development)
-
 ### Version 0.4.1 (2014-02-17)
 
 - [ADD] `Portuguese` language
