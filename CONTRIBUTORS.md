@@ -12,6 +12,7 @@ Please keep the list sorted.
 
 ### People and companies, who have contributed
 
+ * [Alex Shepard](https://github.com/alexshepard)
  * [Douglas Brito de Medeiros](https://github.com/DouglasMedeiros)
  * [Michel Albers](https://github.com/michelalbers)
  * [Pieter Claerhout](https://github.com/pieterclaerhout)
