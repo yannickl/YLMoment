@@ -47,6 +47,8 @@
 		F4AA173318B222950081F8AB /* YLMomentTest+LangPt.m in Sources */ = {isa = PBXBuildFile; fileRef = A54704E218B0759600497886 /* YLMomentTest+LangPt.m */; };
 		F4DF36B1183BA7700091E80A /* YLMomentTest+LangNl.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */; };
 		F4FDEA391838D38D00DB3901 /* YLMomentTest+LangNl.m in Sources */ = {isa = PBXBuildFile; fileRef = F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */; };
+		FA3A095518BDECE5001B2475 /* YLMomentTest+LangJa.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A095418BDECE5001B2475 /* YLMomentTest+LangJa.m */; };
+		FA3A095618BDECE5001B2475 /* YLMomentTest+LangJa.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3A095418BDECE5001B2475 /* YLMomentTest+LangJa.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +91,8 @@
 		F48F2F2D18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMomentLocalizableStringsTest.m; sourceTree = "<group>"; };
 		F48F2F3018ACDF0500173D37 /* YLMoment_UnitTestAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLMoment_UnitTestAdditions.h; sourceTree = "<group>"; };
 		F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangNl.m"; sourceTree = "<group>"; };
+		FA0470E918BDEEEA00BC1B91 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		FA3A095418BDECE5001B2475 /* YLMomentTest+LangJa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangJa.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 				F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */,
 				F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */,
 				A54704E218B0759600497886 /* YLMomentTest+LangPt.m */,
+				FA3A095418BDECE5001B2475 /* YLMomentTest+LangJa.m */,
 			);
 			path = Lang;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				de,
 				nl,
 				pt,
+				ja,
 			);
 			mainGroup = F4605D09181C326A007F83EF;
 			productRefGroup = F4605D09181C326A007F83EF;
@@ -432,6 +438,7 @@
 				F48F2F2F18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */,
 				F4AA173318B222950081F8AB /* YLMomentTest+LangPt.m in Sources */,
 				F425CFF4182844E1002CABDC /* YLMomentTest+LangFr.m in Sources */,
+				FA3A095618BDECE5001B2475 /* YLMomentTest+LangJa.m in Sources */,
 				F4DF36B1183BA7700091E80A /* YLMomentTest+LangNl.m in Sources */,
 				F425CFF5182844E1002CABDC /* YLMomentTest+LangSq.m in Sources */,
 			);
@@ -454,6 +461,7 @@
 				F425CFEB182844D1002CABDC /* YLMomentTest+LangSq.m in Sources */,
 				F48F2F2E18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */,
 				F425CFE7182844D1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
+				FA3A095518BDECE5001B2475 /* YLMomentTest+LangJa.m in Sources */,
 				F425CFE9182844D1002CABDC /* YLMomentTest+LangEs.m in Sources */,
 				F4FDEA391838D38D00DB3901 /* YLMomentTest+LangNl.m in Sources */,
 			);
@@ -480,6 +488,7 @@
 				F43B57FA18B22E41001E9993 /* nl */,
 				F43B57FB18B22E41001E9993 /* pt */,
 				F43B57FC18B22E41001E9993 /* sq */,
+				FA0470E918BDEEEA00BC1B91 /* ja */,
 			);
 			name = YLMomentRelativeTimeLocalizable.strings;
 			sourceTree = "<group>";
