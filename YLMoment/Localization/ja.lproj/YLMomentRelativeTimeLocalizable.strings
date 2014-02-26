@@ -1,0 +1,21 @@
+/* 
+  YLMomentFormat.strings
+  YLMoment
+
+  Created by YannickL on 27/10/2013.
+  Translation comes from the http://momemt.js project.
+*/
+
+"future" = "%@後";
+"past"   = "%@前";
+"s"      = "数秒";
+"m"      = "1分";
+"mm"     = "%d分";
+"h"      = "1時間";
+"hh"     = "%d時間";
+"d"      = "1日";
+"dd"     = "%d日";
+"M"      = "1ヶ月";
+"MM"     = "%dヶ月";
+"y"      = "1年";
+"yy"     = "%d年";
