@@ -1,5 +1,9 @@
 ## Changelog
 
+### Version 0.5.0 (Under development)
+- [ADD] `Japanese` language
+- [FIX] Use the `preferredLanguages` method instead of the `currentLocale` method to get the current locale
+
 ### Version 0.4.1 (2014-02-17)
 
 - [ADD] `Portuguese` language
