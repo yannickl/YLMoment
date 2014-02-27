@@ -32,10 +32,13 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * YLMoment is a library which provides an high abstraction level for parsing,
  * validating, manipulating, and formatting the dates in Objective-C.
  *
- * Its API is inspired by the well known [moment.js](http://momentjs.com/)
- * library, however unlike its father, its core is built upon the Foundation
- * Framework components (NSDate, NSDateFormatter,etc.) for a full 
- * interoperability with iOS.
+ * Its API is inspired by the well known moment.js library, however unlike its
+ * counterpart, its core is built upon the Foundation Framework components 
+ * (NSDate, NSCalendar, etc.) to enable the interoperability with them.
+ *
+ * This library is designed to facilitate the manipulation of times, dates, 
+ * calendars, and durations in Objective-C by providing a single, easy, and 
+ * unified approach to dealing with them.
  */
 @interface YLMoment : NSObject
 
