@@ -38,6 +38,9 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
 #pragma mark internal
 @property (nonatomic, strong) NSDate *date;
 
+/** Returns the specified field value of the moment. */
+- (NSUInteger)getCalendarUnit:(NSCalendarUnit)unit;
+
 #pragma mark langs
 /** Bundle the current language */
 @property (nonatomic, strong) NSBundle *langBundle;
@@ -727,9 +730,6 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     if ([keyPath isEqualToString:@"locale"])
     {
         _langBundle = [self langBundleForLocaleWithIdentifier:_locale.localeIdentifier];
-    } else
-    {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
 
