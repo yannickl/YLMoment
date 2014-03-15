@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		276FA9FF18D02B18003A3E3F /* YLMomentTest+LangZh.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */; };
+		276FAA0018D02B1A003A3E3F /* YLMomentTest+LangZh.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */; };
 		A54704E318B0759600497886 /* YLMomentTest+LangPt.m in Sources */ = {isa = PBXBuildFile; fileRef = A54704E218B0759600497886 /* YLMomentTest+LangPt.m */; };
 		C3EC52F6F21D4DC5A1F10500 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC09F2AE9564D008900DA94 /* libPods-ios.a */; };
 		ED7DF6AE538742429A8AEA2C /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE61FE220675422EAEE6FB3F /* libPods-osx.a */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangZh.m"; sourceTree = "<group>"; };
+		2776776318D3FF9C00FB3B63 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
 		2F21035625A34A29A4656C6A /* Pods-ios.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.xcconfig"; path = "Pods/Pods-ios.xcconfig"; sourceTree = "<group>"; };
 		A54704E218B0759600497886 /* YLMomentTest+LangPt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangPt.m"; sourceTree = "<group>"; };
 		ADC09F2AE9564D008900DA94 /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +175,7 @@
 				F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */,
 				A54704E218B0759600497886 /* YLMomentTest+LangPt.m */,
 				FA3A095418BDECE5001B2475 /* YLMomentTest+LangJa.m */,
+				276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */,
 			);
 			path = Lang;
 			sourceTree = "<group>";
@@ -303,7 +308,7 @@
 		F4605D0A181C326A007F83EF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = YannickLoriot;
 				TargetAttributes = {
 					F425CFC41828296E002CABDC = {
@@ -325,6 +330,7 @@
 				nl,
 				pt,
 				ja,
+				zh,
 			);
 			mainGroup = F4605D09181C326A007F83EF;
 			productRefGroup = F4605D09181C326A007F83EF;
@@ -437,6 +443,7 @@
 				F425CFF3182844E1002CABDC /* YLMomentTest+LangEs.m in Sources */,
 				F48F2F2F18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */,
 				F4AA173318B222950081F8AB /* YLMomentTest+LangPt.m in Sources */,
+				276FAA0018D02B1A003A3E3F /* YLMomentTest+LangZh.m in Sources */,
 				F425CFF4182844E1002CABDC /* YLMomentTest+LangFr.m in Sources */,
 				FA3A095618BDECE5001B2475 /* YLMomentTest+LangJa.m in Sources */,
 				F4DF36B1183BA7700091E80A /* YLMomentTest+LangNl.m in Sources */,
@@ -460,6 +467,7 @@
 				A54704E318B0759600497886 /* YLMomentTest+LangPt.m in Sources */,
 				F425CFEB182844D1002CABDC /* YLMomentTest+LangSq.m in Sources */,
 				F48F2F2E18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */,
+				276FA9FF18D02B18003A3E3F /* YLMomentTest+LangZh.m in Sources */,
 				F425CFE7182844D1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
 				FA3A095518BDECE5001B2475 /* YLMomentTest+LangJa.m in Sources */,
 				F425CFE9182844D1002CABDC /* YLMomentTest+LangEs.m in Sources */,
@@ -489,6 +497,7 @@
 				F43B57FB18B22E41001E9993 /* pt */,
 				F43B57FC18B22E41001E9993 /* sq */,
 				FA0470E918BDEEEA00BC1B91 /* ja */,
+				2776776318D3FF9C00FB3B63 /* zh */,
 			);
 			name = YLMomentRelativeTimeLocalizable.strings;
 			sourceTree = "<group>";
@@ -520,6 +529,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -569,6 +579,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -603,6 +614,7 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -623,7 +635,6 @@
 			baseConfigurationReference = 2F21035625A34A29A4656C6A /* Pods-ios.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -675,7 +686,6 @@
 			baseConfigurationReference = 2F21035625A34A29A4656C6A /* Pods-ios.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
