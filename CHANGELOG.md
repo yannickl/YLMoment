@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 0.5.1 (2014-06-05)
+- [UPDATE] Xcode 5.1.1 version (to remove some warnings)
+
 ### Version 0.5.0 (2014-03-18)
 - [ADD] `Japanese` language
 - [ADD] `Chinese` language
