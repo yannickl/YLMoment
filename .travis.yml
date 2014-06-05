@@ -3,7 +3,7 @@ branches:
   only:
     - master
 before_install:
-    - brew update && brew upgrade `brew outdated`
+    - brew update && brew upgrade xctool
     - brew install xctool
     - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
     - cd Tests && pod install && cd $TRAVIS_BUILD_DIR
