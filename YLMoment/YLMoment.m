@@ -236,8 +236,8 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     formatter.timeZone         = _timeZone ?: [[[self class] proxy] timeZone];
     if (!dateFormat)
     {
-        formatter.dateStyle = (_dateStyle != -1) ? _dateStyle : [[[self class] proxy] dateStyle];
-        formatter.timeStyle = (_timeStyle != -1) ? _timeStyle : [[[self class] proxy] timeStyle];
+        formatter.dateStyle = ((NSUInteger)_dateStyle != -1) ? _dateStyle : [[[self class] proxy] dateStyle];
+        formatter.timeStyle = ((NSUInteger)_timeStyle != -1) ? _timeStyle : [[[self class] proxy] timeStyle];
     } else
     {
         formatter.dateFormat = dateFormat;
