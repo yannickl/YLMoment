@@ -3,7 +3,7 @@
   YLMoment
 
   Created by YannickL on 11/03/2014.
-  Translation comes from the http://momemt.js project.
+  Translation comes from the moment.js project. Learn more at http://momentjs.com
 */
 
 "future" = "%@后";
