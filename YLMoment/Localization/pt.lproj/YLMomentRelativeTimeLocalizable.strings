@@ -3,7 +3,7 @@
   YLMoment
 
   Created by Douglas Brito de Medeiros on 15/02/2014.
-  Translation comes from the http://momemt.js project.
+  Translation comes from the moment.js project. Learn more at http://momentjs.com
 */
 
 "future" = "em %@";
