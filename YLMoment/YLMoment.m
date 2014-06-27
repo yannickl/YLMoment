@@ -402,7 +402,7 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
             components.month = amount;
             break;
         case kCFCalendarUnitWeekOfMonth:
-            components.week = amount;
+            components.weekOfMonth = amount;
             break;
         case kCFCalendarUnitDay:
             components.day = amount;
