@@ -28,6 +28,7 @@ Go to the directory of your Xcode project, and Create and Edit your Podfile and 
 $ cd /path/to/MyProject
 $ touch Podfile
 $ edit Podfile
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '5.0'
 # Or platform :osx, '10.8'
 pod 'YLMoment', '~> 0.2.0'
