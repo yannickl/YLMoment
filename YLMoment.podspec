@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage     = 'http://yannickl.github.io/YLMoment/'
   s.authors      = { 'Yannick Loriot' => 'http://yannickloriot.com' }
-  s.source       = { :git => 'https://github.com/YannickL/YLMoment.git',
+  s.source       = { :git => 'https://github.com/yannickl/YLMoment.git',
                      :tag => s.version.to_s }
   s.requires_arc = true
 
