@@ -295,7 +295,8 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
 {
     // Get the lang bundle
     NSBundle *langBundle = _langBundle ?: [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
-
+    NSString * language = [[[YLMoment proxy] locale] localeIdentifier];
+   
     // Compute the time interval
     double referenceTime = [_date timeIntervalSinceDate:date];
     double seconds       = round(fabs(referenceTime));
@@ -307,47 +308,103 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     // Build the formatted string
     NSString *formattedString = @"";
     int unit                  = 0;
-    if (seconds < 45)
+    
+    if([language isEqualToString:@"ru_RU"])
     {
-        formattedString = [langBundle localizedStringForKey:@"s" value:@"a few seconds" table:kYLMomentRelativeTimeStringTable];
-        unit            = seconds;
-    } else if (minutes == 1)
-    {
-        formattedString = [langBundle localizedStringForKey:@"m" value:@"a minute" table:kYLMomentRelativeTimeStringTable];
-    } else if (minutes < 45)
-    {
-        formattedString = [langBundle localizedStringForKey:@"mm" value:@"%d minutes" table:kYLMomentRelativeTimeStringTable];
-        unit            = minutes;
-    } else if (hours == 1)
-    {
-        formattedString = [langBundle localizedStringForKey:@"h" value:@"an hour" table:kYLMomentRelativeTimeStringTable];
-    } else if (hours < 22)
-    {
-        formattedString = [langBundle localizedStringForKey:@"hh" value:@"%d hours" table:kYLMomentRelativeTimeStringTable];
-        unit            = hours;
-    } else if (days == 1)
-    {
-        formattedString = [langBundle localizedStringForKey:@"d" value:@"a day" table:kYLMomentRelativeTimeStringTable];
-    } else if (days <= 25)
-    {
-        formattedString = [langBundle localizedStringForKey:@"dd" value:@"%d days" table:kYLMomentRelativeTimeStringTable];
-        unit            = days;
-    } else if (days <= 45)
-    {
-        formattedString = [langBundle localizedStringForKey:@"M" value:@"a month" table:kYLMomentRelativeTimeStringTable];
-    } else if (days < 345)
-    {
-        formattedString = [langBundle localizedStringForKey:@"MM" value:@"%d months" table:kYLMomentRelativeTimeStringTable];
-        unit            = round(days / 30);
-    } else if (years == 1)
-    {
-        formattedString = [langBundle localizedStringForKey:@"y" value:@"a year" table:kYLMomentRelativeTimeStringTable];
-    } else
-    {
-        formattedString = [langBundle localizedStringForKey:@"yy" value:@"%d years" table:kYLMomentRelativeTimeStringTable];
-        unit            = years;
+        NSArray * minuteStrings = @[@"m", @"mm", @"mmm"];
+        NSArray * hourStrings = @[@"h", @"hh", @"hhh"];
+        NSArray * dayStrings = @[@"d", @"dd", @"ddd"];
+        NSArray * monthStrings = @[@"M", @"MM", @"MMM"];
+        NSArray * yearStrings = @[@"y", @"yy", @"yyy"];
+        
+        if (seconds < 45)
+        {
+            formattedString = [langBundle localizedStringForKey:@"s" value:@"несколько секунд" table:kYLMomentRelativeTimeStringTable];
+            unit            = seconds;
+        } else if (minutes == 1)
+        {
+            formattedString = [langBundle localizedStringForKey:@"1m" value:@"минуту" table:kYLMomentRelativeTimeStringTable];
+        } else if (minutes < 45)
+        {
+            formattedString = [langBundle localizedStringForKey:minuteStrings[[self getVerbFormForNumber:minutes]] value:@"%d minutes" table:kYLMomentRelativeTimeStringTable];
+            unit            = minutes;
+        } else if (hours == 1)
+        {
+            formattedString = [langBundle localizedStringForKey:@"1h" value:@"an hour" table:kYLMomentRelativeTimeStringTable];
+        } else if (hours < 22)
+        {
+            formattedString = [langBundle localizedStringForKey:hourStrings[[self getVerbFormForNumber:hours]] value:@"%d hours" table:kYLMomentRelativeTimeStringTable];
+            unit            = hours;
+        } else if (days == 1)
+        {
+            formattedString = [langBundle localizedStringForKey:@"1d" value:@"a day" table:kYLMomentRelativeTimeStringTable];
+        } else if (days <= 25)
+        {
+            formattedString = [langBundle localizedStringForKey:dayStrings[[self getVerbFormForNumber:days]] value:@"%d days" table:kYLMomentRelativeTimeStringTable];
+            unit            = days;
+        } else if (days <= 45)
+        {
+            formattedString = [langBundle localizedStringForKey:@"1M" value:@"a month" table:kYLMomentRelativeTimeStringTable];
+        } else if (days < 345)
+        {
+            int months = round(days / 30);
+            formattedString = [langBundle localizedStringForKey:monthStrings[[self getVerbFormForNumber:months]] value:@"%d months" table:kYLMomentRelativeTimeStringTable];
+            unit            = months;
+        } else if (years == 1)
+        {
+            formattedString = [langBundle localizedStringForKey:@"1y" value:@"a year" table:kYLMomentRelativeTimeStringTable];
+        } else
+        {
+            formattedString = [langBundle localizedStringForKey:yearStrings[[self getVerbFormForNumber:years]] value:@"%d years" table:kYLMomentRelativeTimeStringTable];
+            unit            = years;
+        }
+        formattedString = [NSString stringWithFormat:formattedString, unit];
     }
-    formattedString = [NSString stringWithFormat:formattedString, unit];
+    else
+    {
+
+        if (seconds < 45)
+        {
+            formattedString = [langBundle localizedStringForKey:@"s" value:@"a few seconds" table:kYLMomentRelativeTimeStringTable];
+            unit            = seconds;
+        } else if (minutes == 1)
+        {
+            formattedString = [langBundle localizedStringForKey:@"m" value:@"a minute" table:kYLMomentRelativeTimeStringTable];
+        } else if (minutes < 45)
+        {
+            formattedString = [langBundle localizedStringForKey:@"mm" value:@"%d minutes" table:kYLMomentRelativeTimeStringTable];
+            unit            = minutes;
+        } else if (hours == 1)
+        {
+            formattedString = [langBundle localizedStringForKey:@"h" value:@"an hour" table:kYLMomentRelativeTimeStringTable];
+        } else if (hours < 22)
+        {
+            formattedString = [langBundle localizedStringForKey:@"hh" value:@"%d hours" table:kYLMomentRelativeTimeStringTable];
+            unit            = hours;
+        } else if (days == 1)
+        {
+            formattedString = [langBundle localizedStringForKey:@"d" value:@"a day" table:kYLMomentRelativeTimeStringTable];
+        } else if (days <= 25)
+        {
+            formattedString = [langBundle localizedStringForKey:@"dd" value:@"%d days" table:kYLMomentRelativeTimeStringTable];
+            unit            = days;
+        } else if (days <= 45)
+        {
+            formattedString = [langBundle localizedStringForKey:@"M" value:@"a month" table:kYLMomentRelativeTimeStringTable];
+        } else if (days < 345)
+        {
+            formattedString = [langBundle localizedStringForKey:@"MM" value:@"%d months" table:kYLMomentRelativeTimeStringTable];
+            unit            = round(days / 30);
+        } else if (years == 1)
+        {
+            formattedString = [langBundle localizedStringForKey:@"y" value:@"a year" table:kYLMomentRelativeTimeStringTable];
+        } else
+        {
+            formattedString = [langBundle localizedStringForKey:@"yy" value:@"%d years" table:kYLMomentRelativeTimeStringTable];
+            unit            = years;
+        }
+        formattedString = [NSString stringWithFormat:formattedString, unit];
+    }
     
     // If the string needs to be suffixed
     if (suffixed)
@@ -721,6 +778,18 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
         }
     }
     return nil;
+}
+
+
+-(int) getVerbFormForNumber:(int) num
+{
+    int n = num%100;
+    int n1 = n%10;
+    if (n > 10 && n < 20) return 2;
+    if (n1 > 1 && n1 < 5) return 1;
+    if (n1 == 1) return 0;
+    
+    return 2;
 }
 
 #pragma mark - KVO Delegate Method
