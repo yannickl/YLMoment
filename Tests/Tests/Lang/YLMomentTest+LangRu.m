@@ -25,7 +25,6 @@
 - (void)setUp
 {
     [super setUp];
-    
     [[YLMoment proxy] setLocale:[NSLocale localeWithLocaleIdentifier:@"ru_RU"]];
 }
 
@@ -65,8 +64,8 @@
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:90 forUnitKey:@"m"];
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"2 часа");
     
-    end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:5 forUnitKey:@"h"];
-    expect([start fromMoment:end withSuffix:NO]).to.equal(@"5 часов");
+    end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:9 forUnitKey:@"h"];
+    expect([start fromMoment:end withSuffix:NO]).to.equal(@"9 часов");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:21 forUnitKey:@"h"];
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"21 час");

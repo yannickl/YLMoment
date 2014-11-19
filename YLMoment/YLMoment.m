@@ -309,7 +309,7 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     NSString *formattedString = @"";
     int unit                  = 0;
     
-    if([language isEqualToString:@"ru_RU"])
+    if([language isEqualToString:@"ru_RU"] || [language isEqualToString:@"ru"])
     {
         NSArray * minuteStrings = @[@"m", @"mm", @"mmm"];
         NSArray * hourStrings = @[@"h", @"hh", @"hhh"];
