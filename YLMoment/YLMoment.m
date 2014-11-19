@@ -326,21 +326,21 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
             formattedString = [langBundle localizedStringForKey:@"1m" value:@"минуту" table:kYLMomentRelativeTimeStringTable];
         } else if (minutes < 45)
         {
-            formattedString = [langBundle localizedStringForKey:minuteStrings[[self getVerbFormForNumber:minutes]] value:@"%d minutes" table:kYLMomentRelativeTimeStringTable];
+            formattedString = [langBundle localizedStringForKey:[self wordFromArray:minuteStrings forNumber:minutes]  value:@"%d minutes" table:kYLMomentRelativeTimeStringTable];
             unit            = minutes;
         } else if (hours == 1)
         {
             formattedString = [langBundle localizedStringForKey:@"1h" value:@"an hour" table:kYLMomentRelativeTimeStringTable];
         } else if (hours < 22)
         {
-            formattedString = [langBundle localizedStringForKey:hourStrings[[self getVerbFormForNumber:hours]] value:@"%d hours" table:kYLMomentRelativeTimeStringTable];
+            formattedString = [langBundle localizedStringForKey:[self wordFromArray:hourStrings forNumber:hours] value:@"%d hours" table:kYLMomentRelativeTimeStringTable];
             unit            = hours;
         } else if (days == 1)
         {
             formattedString = [langBundle localizedStringForKey:@"1d" value:@"a day" table:kYLMomentRelativeTimeStringTable];
         } else if (days <= 25)
         {
-            formattedString = [langBundle localizedStringForKey:dayStrings[[self getVerbFormForNumber:days]] value:@"%d days" table:kYLMomentRelativeTimeStringTable];
+            formattedString = [langBundle localizedStringForKey:[self wordFromArray:dayStrings forNumber:days] value:@"%d days" table:kYLMomentRelativeTimeStringTable];
             unit            = days;
         } else if (days <= 45)
         {
@@ -348,14 +348,14 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
         } else if (days < 345)
         {
             int months = round(days / 30);
-            formattedString = [langBundle localizedStringForKey:monthStrings[[self getVerbFormForNumber:months]] value:@"%d months" table:kYLMomentRelativeTimeStringTable];
+            formattedString = [langBundle localizedStringForKey:[self wordFromArray:monthStrings forNumber:months] value:@"%d months" table:kYLMomentRelativeTimeStringTable];
             unit            = months;
         } else if (years == 1)
         {
             formattedString = [langBundle localizedStringForKey:@"1y" value:@"a year" table:kYLMomentRelativeTimeStringTable];
         } else
         {
-            formattedString = [langBundle localizedStringForKey:yearStrings[[self getVerbFormForNumber:years]] value:@"%d years" table:kYLMomentRelativeTimeStringTable];
+            formattedString = [langBundle localizedStringForKey:[self wordFromArray:yearStrings forNumber:years] value:@"%d years" table:kYLMomentRelativeTimeStringTable];
             unit            = years;
         }
         formattedString = [NSString stringWithFormat:formattedString, unit];
@@ -713,6 +713,21 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     return -1;
 }
 
+/// Return rigth word form from array of words next to the numeral
+/// Exampe for getting «1 минута»
+/// array ['минута', 'минуты', 'минут'], num = 1
+-(NSString *) wordFromArray:(NSArray *)words forNumber:(int)num
+{
+    int n = num%100;
+    int n1 = n%10;
+    if (n > 10 && n < 20) return words[2];
+    if (n1 > 1 && n1 < 5) return words[1];
+    if (n1 == 1) return words[0];
+    
+    return words[2];
+}
+
+
 #pragma mark - Private Methods
 
 - (id)initProxy
@@ -778,18 +793,6 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
         }
     }
     return nil;
-}
-
-
--(int) getVerbFormForNumber:(int) num
-{
-    int n = num%100;
-    int n1 = n%10;
-    if (n > 10 && n < 20) return 2;
-    if (n1 > 1 && n1 < 5) return 1;
-    if (n1 == 1) return 0;
-    
-    return 2;
 }
 
 #pragma mark - KVO Delegate Method
