@@ -1,0 +1,36 @@
+/* 
+  YLMomentFormat.strings
+  YLMoment
+
+  Created by Artem Korotkikh on 18/11/2014.
+  Translation comes from the moment.js project. Learn more at http://momentjs.com
+*/
+
+"future" = "через %@";
+"past"   = "%@ назад";
+"s"      = "несколько секунд";
+"1m"      = "минуту";
+"1h"      = "час";
+"1d"      = "день";
+"1M"      = "месяц";
+"1y"      = "год";
+
+"m"      = "%d минута";
+"mm"     = "%d минуты";
+"mmm"     = "%d минут";
+
+"h"      = "%d час";
+"hh"     = "%d часа";
+"hhh"     = "%d часов";
+
+"d"      = "%d день";
+"dd"     = "%d дня";
+"ddd"     = "%d дней";
+
+"M"      = "%d месяц";
+"MM"     = "%d месяца";
+"MMM"     = "%d месяцев";
+
+"y"      = "%d год";
+"yy"     = "%d года";
+"yyy"     = "%d лет";
