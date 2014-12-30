@@ -1,10 +1,10 @@
-/* 
-  YLMomentFormat.strings
-  YLMoment
-
-  Created by Osman Saral on 30/12/2014.
-  Translation comes from the moment.js project. Learn more at http://momentjs.com
-*/
+/*
+ YLMomentFormat.strings
+ YLMoment
+ 
+ Created by Osman Saral on 30/12/2014.
+ Translation comes from the moment.js project. Learn more at http://momentjs.com
+ */
 
 "future" = "%@ sonra";
 "past"   = "%@ önce";
