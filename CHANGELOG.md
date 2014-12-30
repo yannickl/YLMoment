@@ -1,5 +1,9 @@
 ## Changelog
 
+### Version 0.5.2 (2014-12-30)
+
+- [ADD] `Turkish` language
+
 ### Version 0.5.1 (2014-06-05)
 - [UPDATE] Xcode 5.1.1 version (to remove some warnings)
 

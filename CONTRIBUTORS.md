@@ -18,3 +18,4 @@ Please keep the list sorted.
  * [Fanyj](https://github.com/fanyj)
  * [Michel Albers](https://github.com/michelalbers)
  * [Pieter Claerhout](https://github.com/pieterclaerhout)
+ * [Osman Saral](https://github.com/osrl)
