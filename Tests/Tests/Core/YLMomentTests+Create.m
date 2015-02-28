@@ -115,8 +115,6 @@
     expect([utc date]).toNot.beNil();
     
     YLMoment *now = [YLMoment now];
-    expect([utc format]).toNot.equal([now format]);
-    
     now.timeZone  = [NSTimeZone timeZoneWithName:@"UTC"];
     expect([utc format]).to.equal([now format]);
 }
