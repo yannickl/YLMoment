@@ -1,0 +1,20 @@
+/* 
+  YLMomentFormat.strings
+  YLMoment
+
+  Created by Chao Ruan on 19/08/2014.
+*/
+
+"future" = "trong %@";
+"past"   = "%@ trước";
+"s"      = "một vài giây";
+"m"      = "một phút";
+"mm"     = "%d phút";
+"h"      = "một giờ";
+"hh"     = "%d giờ";
+"d"      = "một ngày";
+"dd"     = "%d ngày";
+"M"      = "một tháng";
+"MM"     = "%d tháng";
+"y"      = "một năm";
+"yy"     = "%d năm";
