@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		276FA9FF18D02B18003A3E3F /* YLMomentTest+LangZh.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */; };
 		276FAA0018D02B1A003A3E3F /* YLMomentTest+LangZh.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */; };
+		A083DAF91BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m in Sources */ = {isa = PBXBuildFile; fileRef = A083DAF81BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m */; };
+		A0B09FC41BE1A52C00BF37AC /* YLMomentRelativeTimeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0B09FB91BE1A52C00BF37AC /* YLMomentRelativeTimeLocalizable.strings */; };
 		A54704E318B0759600497886 /* YLMomentTest+LangPt.m in Sources */ = {isa = PBXBuildFile; fileRef = A54704E218B0759600497886 /* YLMomentTest+LangPt.m */; };
 		C3EC52F6F21D4DC5A1F10500 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC09F2AE9564D008900DA94 /* libPods-ios.a */; };
 		ED7DF6AE538742429A8AEA2C /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE61FE220675422EAEE6FB3F /* libPods-osx.a */; };
@@ -36,8 +38,6 @@
 		F425CFF5182844E1002CABDC /* YLMomentTest+LangSq.m in Sources */ = {isa = PBXBuildFile; fileRef = F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */; };
 		F4381B281886B744008C50E0 /* YLMomentTest+LangDe.m in Sources */ = {isa = PBXBuildFile; fileRef = F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */; };
 		F4381B291886B7B1008C50E0 /* YLMomentTest+LangDe.m in Sources */ = {isa = PBXBuildFile; fileRef = F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */; };
-		F43B57FF18B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F43B57F518B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings */; };
-		F43B580018B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F43B57F518B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings */; };
 		F43B580118B22E41001E9993 /* YLMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = F43B57FE18B22E41001E9993 /* YLMoment.m */; };
 		F43B580218B22E41001E9993 /* YLMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = F43B57FE18B22E41001E9993 /* YLMoment.m */; };
 		F4605D3A181C33AA007F83EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4605D38181C33AA007F83EF /* InfoPlist.strings */; };
@@ -56,9 +56,19 @@
 /* Begin PBXFileReference section */
 		1A4EC13457F2621EA1A567BA /* Pods-osx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.release.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.release.xcconfig"; sourceTree = "<group>"; };
 		276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangZh.m"; sourceTree = "<group>"; };
-		2776776318D3FF9C00FB3B63 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
 		3F5C784BF7F94CC5AA4D6CB4 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
 		60B2268F4E6CDABB11D2A76D /* Pods-osx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.debug.xcconfig"; sourceTree = "<group>"; };
+		A083DAF81BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangVi.m"; sourceTree = "<group>"; };
+		A0B09FBA1BE1A52C00BF37AC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		A0B09FBB1BE1A52C00BF37AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		A0B09FBC1BE1A52C00BF37AC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		A0B09FBD1BE1A52C00BF37AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		A0B09FBE1BE1A52C00BF37AC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		A0B09FBF1BE1A52C00BF37AC /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		A0B09FC01BE1A52C00BF37AC /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		A0B09FC11BE1A52C00BF37AC /* sq */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sq; path = sq.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		A0B09FC21BE1A52C00BF37AC /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		A0B09FC31BE1A52C00BF37AC /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
 		A54704E218B0759600497886 /* YLMomentTest+LangPt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangPt.m"; sourceTree = "<group>"; };
 		ADC09F2AE9564D008900DA94 /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE61FE220675422EAEE6FB3F /* libPods-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,13 +89,6 @@
 		F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangFr.m"; sourceTree = "<group>"; };
 		F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangSq.m"; sourceTree = "<group>"; };
 		F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangDe.m"; sourceTree = "<group>"; };
-		F43B57F618B22E41001E9993 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
-		F43B57F718B22E41001E9993 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
-		F43B57F818B22E41001E9993 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
-		F43B57F918B22E41001E9993 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
-		F43B57FA18B22E41001E9993 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
-		F43B57FB18B22E41001E9993 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
-		F43B57FC18B22E41001E9993 /* sq */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sq; path = sq.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
 		F43B57FD18B22E41001E9993 /* YLMoment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLMoment.h; sourceTree = "<group>"; };
 		F43B57FE18B22E41001E9993 /* YLMoment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMoment.m; sourceTree = "<group>"; };
 		F4605D37181C33AA007F83EF /* iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOSTests-Info.plist"; sourceTree = "<group>"; };
@@ -97,7 +100,6 @@
 		F48F2F2D18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMomentLocalizableStringsTest.m; sourceTree = "<group>"; };
 		F48F2F3018ACDF0500173D37 /* YLMoment_UnitTestAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLMoment_UnitTestAdditions.h; sourceTree = "<group>"; };
 		F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangNl.m"; sourceTree = "<group>"; };
-		FA0470E918BDEEEA00BC1B91 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
 		FA3A095418BDECE5001B2475 /* YLMomentTest+LangJa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangJa.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0B09FB81BE1A52C00BF37AC /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				A0B09FB91BE1A52C00BF37AC /* YLMomentRelativeTimeLocalizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		A49C5A1BECFF6F0C6118F335 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +190,7 @@
 		F425CFDD182844D1002CABDC /* Lang */ = {
 			isa = PBXGroup;
 			children = (
+				A083DAF81BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m */,
 				F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */,
 				F425CFDE182844D1002CABDC /* YLMomentTest+LangEn.m */,
 				F425CFDF182844D1002CABDC /* YLMomentTest+LangEs.m */,
@@ -196,20 +207,12 @@
 		F43B57F318B22E41001E9993 /* YLMoment */ = {
 			isa = PBXGroup;
 			children = (
-				F43B57F418B22E41001E9993 /* Localization */,
+				A0B09FB81BE1A52C00BF37AC /* Localization */,
 				F43B57FD18B22E41001E9993 /* YLMoment.h */,
 				F43B57FE18B22E41001E9993 /* YLMoment.m */,
 			);
 			name = YLMoment;
 			path = ../YLMoment;
-			sourceTree = "<group>";
-		};
-		F43B57F418B22E41001E9993 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				F43B57F518B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings */,
-			);
-			path = Localization;
 			sourceTree = "<group>";
 		};
 		F4605D09181C326A007F83EF = {
@@ -285,6 +288,7 @@
 				F425CFC21828296E002CABDC /* Frameworks */,
 				F425CFC31828296E002CABDC /* Resources */,
 				39502A1232304B5AA75BF740 /* Copy Pods Resources */,
+				9E2CE418254E7BE0C2B92173 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,6 +308,7 @@
 				F4605D2A181C33AA007F83EF /* Frameworks */,
 				F4605D2B181C33AA007F83EF /* Resources */,
 				AFEE106CC02B479C86C003CA /* Copy Pods Resources */,
+				AA7887D9C4959BE5A1B711D5 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -342,6 +347,7 @@
 				pt,
 				ja,
 				zh,
+				vi,
 			);
 			mainGroup = F4605D09181C326A007F83EF;
 			productRefGroup = F4605D09181C326A007F83EF;
@@ -360,7 +366,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F425CFCC1828296E002CABDC /* InfoPlist.strings in Resources */,
-				F43B580018B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4605D3A181C33AA007F83EF /* InfoPlist.strings in Resources */,
-				F43B57FF18B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings in Resources */,
+				A0B09FC41BE1A52C00BF37AC /* YLMomentRelativeTimeLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +409,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		9E2CE418254E7BE0C2B92173 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-osx/Pods-osx-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA7887D9C4959BE5A1B711D5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		AFEE106CC02B479C86C003CA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -473,6 +508,7 @@
 				F425CFEA182844D1002CABDC /* YLMomentTest+LangFr.m in Sources */,
 				F425CFE8182844D1002CABDC /* YLMomentTest+LangEn.m in Sources */,
 				F425CFE6182844D1002CABDC /* YLMomentTests+Helpers.m in Sources */,
+				A083DAF91BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m in Sources */,
 				F425CFE4182844D1002CABDC /* YLMomentTests+Format.m in Sources */,
 				F4381B281886B744008C50E0 /* YLMomentTest+LangDe.m in Sources */,
 				A54704E318B0759600497886 /* YLMomentTest+LangPt.m in Sources */,
@@ -489,28 +525,29 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A0B09FB91BE1A52C00BF37AC /* YLMomentRelativeTimeLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0B09FBA1BE1A52C00BF37AC /* de */,
+				A0B09FBB1BE1A52C00BF37AC /* en */,
+				A0B09FBC1BE1A52C00BF37AC /* es */,
+				A0B09FBD1BE1A52C00BF37AC /* fr */,
+				A0B09FBE1BE1A52C00BF37AC /* ja */,
+				A0B09FBF1BE1A52C00BF37AC /* nl */,
+				A0B09FC01BE1A52C00BF37AC /* pt */,
+				A0B09FC11BE1A52C00BF37AC /* sq */,
+				A0B09FC21BE1A52C00BF37AC /* vi */,
+				A0B09FC31BE1A52C00BF37AC /* zh */,
+			);
+			name = YLMomentRelativeTimeLocalizable.strings;
+			sourceTree = "<group>";
+		};
 		F425CFCA1828296E002CABDC /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F425CFCB1828296E002CABDC /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		F43B57F518B22E41001E9993 /* YLMomentRelativeTimeLocalizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F43B57F618B22E41001E9993 /* de */,
-				F43B57F718B22E41001E9993 /* en */,
-				F43B57F818B22E41001E9993 /* es */,
-				F43B57F918B22E41001E9993 /* fr */,
-				F43B57FA18B22E41001E9993 /* nl */,
-				F43B57FB18B22E41001E9993 /* pt */,
-				F43B57FC18B22E41001E9993 /* sq */,
-				FA0470E918BDEEEA00BC1B91 /* ja */,
-				2776776318D3FF9C00FB3B63 /* zh */,
-			);
-			name = YLMomentRelativeTimeLocalizable.strings;
 			sourceTree = "<group>";
 		};
 		F4605D38181C33AA007F83EF /* InfoPlist.strings */ = {
