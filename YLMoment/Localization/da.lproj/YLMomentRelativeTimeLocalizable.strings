@@ -1,0 +1,21 @@
+/* 
+  YLMomentFormat.strings
+  YLMoment
+
+  Created by Faisal Mahmud (https://github.com/faisalmahmud) on 5/11/2015.
+  Translation comes from the moment.js project. Learn more at http://momentjs.com
+*/
+
+"future" = "om %@";
+"past"   = "%@ siden";
+"s"      = "få sekunder";
+"m"      = "et minut";
+"mm"     = "%d minutter";
+"h"      = "en time";
+"hh"     = "%d timer";
+"d"      = "en dag";
+"dd"     = "%d dage";
+"M"      = "en måned";
+"MM"     = "%d måneder";
+"y"      = "et år";
+"yy"     = "%d år";
