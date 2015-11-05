@@ -2,7 +2,7 @@ xcodeproj 'YLMomentTests'
 inhibit_all_warnings!
 
 def import_pods
-  pod 'Expecta', '~> 1’
+  pod 'Expecta', '~> 0’
 end
 
 target :ios, :exclusive => true do
