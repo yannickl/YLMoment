@@ -4,9 +4,9 @@ branches:
     - master
 before_install:
     - gem install xcpretty
-    - cd Tests && pod install && cd $TRAVIS_BUILD_DIR
-before_script:
+    - sudo gem install cocoapods
     - sudo easy_install cpp-coveralls
+    - cd Tests && pod install && cd $TRAVIS_BUILD_DIR
 after_success:
     - ./coveralls.rb --extension m --exclude-folder Tests
 script:
