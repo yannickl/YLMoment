@@ -13,6 +13,7 @@
 		A0B09FC41BE1A52C00BF37AC /* YLMomentRelativeTimeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0B09FB91BE1A52C00BF37AC /* YLMomentRelativeTimeLocalizable.strings */; };
 		A54704E318B0759600497886 /* YLMomentTest+LangPt.m in Sources */ = {isa = PBXBuildFile; fileRef = A54704E218B0759600497886 /* YLMomentTest+LangPt.m */; };
 		C3EC52F6F21D4DC5A1F10500 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC09F2AE9564D008900DA94 /* libPods-ios.a */; };
+		CE04A82C1BEBDB1D0082C2A5 /* YLMomentRelativeTimeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0B09FB91BE1A52C00BF37AC /* YLMomentRelativeTimeLocalizable.strings */; };
 		ED7DF6AE538742429A8AEA2C /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE61FE220675422EAEE6FB3F /* libPods-osx.a */; };
 		F425CFC61828296E002CABDC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D41181C33E3007F83EF /* XCTest.framework */; };
 		F425CFCC1828296E002CABDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F425CFCA1828296E002CABDC /* InfoPlist.strings */; };
@@ -366,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F425CFCC1828296E002CABDC /* InfoPlist.strings in Resources */,
+				CE04A82C1BEBDB1D0082C2A5 /* YLMomentRelativeTimeLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
