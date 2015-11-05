@@ -14,6 +14,7 @@ Please keep the list sorted.
 
  * [Alex Shepard](https://github.com/alexshepard)
  * [Applezqp](https://github.com/applezqp)
+ * [Chao Ruan](https://github.com/rcgary)
  * [Douglas Brito de Medeiros](https://github.com/DouglasMedeiros)
  * [Fanyj](https://github.com/fanyj)
  * [Michel Albers](https://github.com/michelalbers)

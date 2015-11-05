@@ -1,10 +1,14 @@
-## YLMoment [![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Version](https://cocoapod-badges.herokuapp.com/v/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Build Status](https://travis-ci.org/yannickl/YLMoment.png?branch=master)](https://travis-ci.org/yannickl/YLMoment) [![Coverage Status](https://coveralls.io/repos/yannickl/YLMoment/badge.svg?branch=master&service=github)](https://coveralls.io/github/yannickl/YLMoment?branch=master)
+## YLMoment
+
+[![Supported Platforms](https://cocoapod-badges.herokuapp.com/p/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Version](https://cocoapod-badges.herokuapp.com/v/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Build Status](https://travis-ci.org/yannickl/YLMoment.png?branch=master)](https://travis-ci.org/yannickl/YLMoment) [![Coverage Status](https://coveralls.io/repos/yannickl/YLMoment/badge.svg?branch=master&service=github)](https://coveralls.io/github/yannickl/YLMoment?branch=master)
 
 YLMoment is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.
 
 Its API is inspired by the well known [moment.js](http://momentjs.com/) library, however unlike its counterpart, its core is built upon the `Foundation Framework` components (`NSDate`, `NSCalendar`, etc.) to enable the interoperability with them.
 
 This library is designed to facilitate the manipulation of times, dates, calendars, and durations in Objective-C by providing a single, easy, and unified approach to dealing with them.
+
+YLMoment supports the `Albanian`, `Chinese`, `Dutch`, `English`, `French`, `German`, `Japanese`, `Portuguese`, `Spanish` and `Vietnamese` languages.
 
 ## Getting Started
 
@@ -91,7 +95,7 @@ $ edit Podfile
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '5.0'
 # Or platform :osx, '10.8'
-pod 'YLMoment', '~> 0.2.0'
+pod 'YLMoment', '~> 6.0.0'
 ```
 
 Install into your project:

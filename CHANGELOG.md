@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 0.6.0 (2015-11-05)
+- [ADD] `Vietnamese` language
+
 ### Version 0.5.1 (2014-06-05)
 - [UPDATE] Xcode 5.1.1 version (to remove some warnings)
 
@@ -42,4 +45,3 @@
 - Manipulating Dates (`addAmountOfTime`, `addDuration`, `startOf`, `endOf`)
 - Getting/Setting the `seconds`, `minutes`, `hours`, `days`, `months`, `years`
 - Support for `Albanian`/`English`/`French`/`Spanish`
-

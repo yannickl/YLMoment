@@ -191,7 +191,6 @@
 		F425CFDD182844D1002CABDC /* Lang */ = {
 			isa = PBXGroup;
 			children = (
-				A083DAF81BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m */,
 				F4381B271886B744008C50E0 /* YLMomentTest+LangDe.m */,
 				F425CFDE182844D1002CABDC /* YLMomentTest+LangEn.m */,
 				F425CFDF182844D1002CABDC /* YLMomentTest+LangEs.m */,
@@ -200,6 +199,7 @@
 				F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */,
 				A54704E218B0759600497886 /* YLMomentTest+LangPt.m */,
 				FA3A095418BDECE5001B2475 /* YLMomentTest+LangJa.m */,
+				A083DAF81BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m */,
 				276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */,
 			);
 			path = Lang;
@@ -326,7 +326,7 @@
 		F4605D0A181C326A007F83EF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = YannickLoriot;
 				TargetAttributes = {
 					F425CFC41828296E002CABDC = {
@@ -607,6 +607,7 @@
 				INFOPLIST_FILE = "OSXTests/OSXTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickloriot.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;
@@ -651,6 +652,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "OSXTests/OSXTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickloriot.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;
@@ -660,6 +662,7 @@
 		F4605D0E181C326A007F83EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -725,6 +728,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickloriot.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = xctest;
@@ -769,6 +773,7 @@
 				INFOPLIST_FILE = "iOSTests/iOSTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				MACOSX_DEPLOYMENT_TARGET = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickloriot.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
