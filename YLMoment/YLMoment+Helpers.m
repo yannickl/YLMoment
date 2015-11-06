@@ -28,28 +28,26 @@
 
 @implementation YLMoment (Helpers)
 
-+ (NSCalendarUnit)calendarUnitForKey:(NSString *)key
-{
-  if ([key isEqualToString:@"y"] || [key isEqualToString:@"year"] || [key isEqualToString:@"years"])
-  {
++ (NSCalendarUnit)calendarUnitForKey:(NSString *)key {
+  if ([key isEqualToString:@"y"] || [key isEqualToString:@"year"] || [key isEqualToString:@"years"]) {
     return (NSCalendarUnit)kCFCalendarUnitYear;
-  } else if ([key isEqualToString:@"M"] || [key isEqualToString:@"month"] || [key isEqualToString:@"months"])
-  {
+  }
+  else if ([key isEqualToString:@"M"] || [key isEqualToString:@"month"] || [key isEqualToString:@"months"]) {
     return (NSCalendarUnit)kCFCalendarUnitMonth;
-  } else if ([key isEqualToString:@"w"] | [key isEqualToString:@"week"] || [key isEqualToString:@"weeks"])
-  {
+  }
+  else if ([key isEqualToString:@"w"] | [key isEqualToString:@"week"] || [key isEqualToString:@"weeks"]) {
     return (NSCalendarUnit)kCFCalendarUnitWeekOfMonth;
-  } else if ([key isEqualToString:@"d"] || [key isEqualToString:@"day"] || [key isEqualToString:@"days"])
-  {
+  }
+  else if ([key isEqualToString:@"d"] || [key isEqualToString:@"day"] || [key isEqualToString:@"days"]) {
     return (NSCalendarUnit)kCFCalendarUnitDay;
-  } else if ([key isEqualToString:@"h"] || [key isEqualToString:@"hour"] || [key isEqualToString:@"hours"])
-  {
+  }
+  else if ([key isEqualToString:@"h"] || [key isEqualToString:@"hour"] || [key isEqualToString:@"hours"]) {
     return (NSCalendarUnit)kCFCalendarUnitHour;
-  } else if ([key isEqualToString:@"m"] || [key isEqualToString:@"minute"] || [key isEqualToString:@"minutes"])
-  {
+  }
+  else if ([key isEqualToString:@"m"] || [key isEqualToString:@"minute"] || [key isEqualToString:@"minutes"]) {
     return (NSCalendarUnit)kCFCalendarUnitMinute;
-  } else if ([key isEqualToString:@"s"] || [key isEqualToString:@"second"] || [key isEqualToString:@"seconds"])
-  {
+  }
+  else if ([key isEqualToString:@"s"] || [key isEqualToString:@"second"] || [key isEqualToString:@"seconds"]) {
     return (NSCalendarUnit)kCFCalendarUnitSecond;
   }
 

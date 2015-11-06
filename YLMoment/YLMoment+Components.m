@@ -38,13 +38,11 @@
 
 @implementation YLMoment (Components)
 
-- (NSUInteger)getCalendarUnit:(NSCalendarUnit)unit
-{
+- (NSUInteger)getCalendarUnit:(NSCalendarUnit)unit {
   NSCalendar *currentCalendar  = self.calendar ?: [[[self class] proxy] calendar];
   NSDateComponents *components = [currentCalendar components:unit fromDate:self.date];
 
-  switch (unit)
-  {
+  switch (unit) {
     case kCFCalendarUnitSecond:
       return components.second;
     case kCFCalendarUnitMinute:
@@ -62,13 +60,11 @@
   }
 }
 
-- (void)setValue:(NSUInteger)value forCalendarUnit:(NSCalendarUnit)unit
-{
+- (void)setValue:(NSUInteger)value forCalendarUnit:(NSCalendarUnit)unit {
   NSCalendar *currentCalendar  = self.calendar ?: [[[self class] proxy] calendar];
   NSDateComponents *components = [currentCalendar components:(kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay | kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond) fromDate:self.date];
 
-  switch (unit)
-  {
+  switch (unit) {
     case kCFCalendarUnitSecond:
       components.second = value;
       break;
@@ -94,78 +90,61 @@
   self.date = [currentCalendar dateFromComponents:components];
 }
 
-- (NSUInteger)second
-{
+- (NSUInteger)second {
   return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitSecond];
 }
 
-- (void)setSecond:(NSUInteger)second
-{
-  if (second < 60)
-  {
+- (void)setSecond:(NSUInteger)second {
+  if (second < 60) {
     [self setValue:second forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitSecond];
   }
 }
 
-- (NSUInteger)minute
-{
+- (NSUInteger)minute {
   return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitMinute];
 }
 
-- (void)setMinute:(NSUInteger)minute
-{
-  if (minute < 60)
-  {
+- (void)setMinute:(NSUInteger)minute {
+  if (minute < 60) {
     [self setValue:minute forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitMinute];
   }
 }
 
-- (NSUInteger)hour
-{
+- (NSUInteger)hour {
   return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitHour];
 }
 
-- (void)setHour:(NSUInteger)hour
-{
-  if (hour < 24)
-  {
+- (void)setHour:(NSUInteger)hour {
+  if (hour < 24) {
     [self setValue:hour forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitHour];
   }
 }
 
-- (NSUInteger)day
-{
+- (NSUInteger)day {
   return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitDay];
 }
 
-- (void)setDay:(NSUInteger)day
-{
-  if (day > 0 && day <= 31)
-  {
+- (void)setDay:(NSUInteger)day {
+  if (day > 0 && day <= 31) {
     [self setValue:day forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitDay];
   }
 }
 
-- (NSUInteger)month
-{
+- (NSUInteger)month {
   return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitMonth];
 }
 
-- (void)setMonth:(NSUInteger)month
-{
-  if (month > 0 && month <= 12)
-  {
+- (void)setMonth:(NSUInteger)month {
+  if (month > 0 && month <= 12) {
     [self setValue:month forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitMonth];
   }
 }
 
-- (NSUInteger)year
-{
+- (NSUInteger)year {
   return [self getCalendarUnit:(NSCalendarUnit)kCFCalendarUnitYear];
 }
 
-- (void)setYear:(NSUInteger)year
-{
+- (void)setYear:(NSUInteger)year {
   [self setValue:year forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitYear];
 }
 

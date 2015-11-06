@@ -39,20 +39,17 @@
 
 #pragma mark Manipulating Moments
 
-- (YLMoment *)addAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key
-{
+- (YLMoment *)addAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key {
   NSCalendarUnit unit = [[self class] calendarUnitForKey:key];
 
   return [self addAmountOfTime:amount forCalendarUnit:unit];
 }
 
-- (YLMoment *)addAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit
-{
+- (YLMoment *)addAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit {
   NSCalendar *currentCalendar  = self.calendar ?: [[[self class] proxy] calendar];
   NSDateComponents *components = [[NSDateComponents alloc] init];
 
-  switch (unit)
-  {
+  switch (unit) {
     case kCFCalendarUnitYear:
       components.year = amount;
       break;
@@ -83,39 +80,32 @@
   return self;
 }
 
-- (YLMoment *)addDuration:(NSTimeInterval)duration
-{
+- (YLMoment *)addDuration:(NSTimeInterval)duration {
   self.date = [self.date dateByAddingTimeInterval:duration];
 
   return self;
 }
 
-- (YLMoment *)subtractAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key
-{
+- (YLMoment *)subtractAmountOfTime:(NSInteger)amount forUnitKey:(NSString *)key {
   return [self addAmountOfTime:-amount forUnitKey:key];
 }
 
-- (YLMoment *)subtractAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit
-{
+- (YLMoment *)subtractAmountOfTime:(NSInteger)amount forCalendarUnit:(NSCalendarUnit)unit {
   return [self addAmountOfTime:-amount forCalendarUnit:unit];
 }
 
-- (YLMoment *)subtractDuration:(NSTimeInterval)duration
-{
+- (YLMoment *)subtractDuration:(NSTimeInterval)duration {
   return [self addDuration:-duration];
 }
 
-- (YLMoment *)startOf:(NSString *)unitString
-{
+- (YLMoment *)startOf:(NSString *)unitString {
   NSCalendarUnit unit = [[self class] calendarUnitForKey:unitString];
 
   return [self startOfCalendarUnit:unit];
 }
 
-- (YLMoment *)startOfCalendarUnit:(NSCalendarUnit)unit
-{
-  switch (unit)
-  {
+- (YLMoment *)startOfCalendarUnit:(NSCalendarUnit)unit {
+  switch (unit) {
     case kCFCalendarUnitYear:
       [self setMonth:1];
       /* falls through */
@@ -139,15 +129,13 @@
   return self;
 }
 
-- (YLMoment *)endOf:(NSString *)unitString
-{
+- (YLMoment *)endOf:(NSString *)unitString {
   NSCalendarUnit unit = [[self class] calendarUnitForKey:unitString];
 
   return [self endOfCalendarUnit:unit];
 }
 
-- (YLMoment *)endOfCalendarUnit:(NSCalendarUnit)unit
-{
+- (YLMoment *)endOfCalendarUnit:(NSCalendarUnit)unit {
   return [[[self startOfCalendarUnit:unit] addAmountOfTime:1 forCalendarUnit:unit] addAmountOfTime:-1 forCalendarUnit:(NSCalendarUnit)kCFCalendarUnitSecond];
 }
 

@@ -24,36 +24,11 @@
  *
  */
 
-#import "YLMoment+Description.h"
+#import "YLMomentObject.h"
 
-@implementation YLMoment (Description)
+@interface YLMoment (Bundle)
 
-#pragma mark - Properties
-
-- (NSString *)description {
-  return [self format];
-}
-
-#pragma mark - Representing Moments as Strings
-
-- (NSString *)format {
-  return [self format:YLMomentIso8601Format];
-}
-
-- (NSString *)format:(NSString *)dateFormat {
-  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-  formatter.locale           = self.locale ?: [[[self class] proxy] locale];
-  formatter.timeZone         = self.timeZone ?: [[[self class] proxy] timeZone];
-
-  if (!dateFormat) {
-    formatter.dateStyle = ((NSUInteger)self.dateStyle != -1) ? self.dateStyle : [[[self class] proxy] dateStyle];
-    formatter.timeStyle = ((NSUInteger)self.timeStyle != -1) ? self.timeStyle : [[[self class] proxy] timeStyle];
-  }
-  else {
-    formatter.dateFormat = dateFormat;
-  }
-
-  return [formatter stringFromDate:self.date] ?: @"Invalid Date";
-}
+/** Returns the YLMoment lang bundle corresponding to a given locale identifier. */
+- (NSBundle *)langBundleForLocaleWithIdentifier:(NSString *)localeIdentifier;
 
 @end
