@@ -39,6 +39,7 @@ static NSString * const kYLMomentOSXBunbleName = @"YLMoment-OSX";
   static NSBundle *classBundle  = nil;
   static NSBundle *momentBundle = nil;
   static dispatch_once_t once;
+
   dispatch_once(&once, ^{
     classBundle = [NSBundle bundleForClass:[self class]];
 
@@ -47,10 +48,12 @@ static NSString * const kYLMomentOSXBunbleName = @"YLMoment-OSX";
 #else
     NSString *bundlePath = [classBundle pathForResource:kYLMomentOSXBunbleName ofType:@"bundle"];
 #endif
+
     momentBundle = [NSBundle bundleWithPath:bundlePath];
   });
 
-  NSBundle *bundle   = momentBundle ?: classBundle;
+  NSBundle *bundle = momentBundle ?: classBundle;
+
   NSString *lang     = [localeIdentifier substringToIndex:2];
   NSString *langPath = [bundle pathForResource:lang ofType:@"lproj"];
 
