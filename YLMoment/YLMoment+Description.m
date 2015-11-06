@@ -24,14 +24,41 @@
  *
  */
 
-#ifndef YLMoment_h
-#define YLMoment_h
-
-#import "YLMomentObject.h"
-#import "YLMoment+Components.h"
 #import "YLMoment+Description.h"
-#import "YLMoment+Helpers.h"
-#import "YLMoment+Manipulation.h"
-#import "YLMoment+RelativeTime.h"
 
-#endif
+@implementation YLMoment (Description)
+
+#pragma mark - Properties
+
+- (NSString *)description
+{
+  return [self format];
+}
+
+#pragma mark - Representing Moments as Strings
+
+- (NSString *)format
+{
+  return [self format:YLMomentIso8601Format];
+}
+
+- (NSString *)format:(NSString *)dateFormat
+{
+  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+  formatter.locale           = self.locale ?: [[[self class] proxy] locale];
+  formatter.timeZone         = self.timeZone ?: [[[self class] proxy] timeZone];
+
+  if (!dateFormat)
+  {
+    formatter.dateStyle = ((NSUInteger)self.dateStyle != -1) ? self.dateStyle : [[[self class] proxy] dateStyle];
+    formatter.timeStyle = ((NSUInteger)self.timeStyle != -1) ? self.timeStyle : [[[self class] proxy] timeStyle];
+  }
+  else
+  {
+    formatter.dateFormat = dateFormat;
+  }
+
+  return [formatter stringFromDate:self.date] ?: @"Invalid Date";
+}
+
+@end

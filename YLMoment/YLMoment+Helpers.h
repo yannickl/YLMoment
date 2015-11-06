@@ -24,14 +24,34 @@
  *
  */
 
-#ifndef YLMoment_h
-#define YLMoment_h
-
 #import "YLMomentObject.h"
-#import "YLMoment+Components.h"
-#import "YLMoment+Description.h"
-#import "YLMoment+Helpers.h"
-#import "YLMoment+Manipulation.h"
-#import "YLMoment+RelativeTime.h"
 
-#endif
+/**
+ * Category with some helper methods.
+ */
+@interface YLMoment (Helpers)
+
+/**
+ * @abstract Returns the `NSCalendarUnit` corresponding to a given unit string
+ * key.
+ * @param key A unit string key.
+ * @return The `NSCalendarUnit` corresponding to a given unit string key. `-1`
+ * if the key is unknow.
+ * @discussion There are some shorthand keys as well if you're into that whole
+ * brevity thing:
+ *
+ * Singular  | Plural    | Shorthand | NSCalendarUnit Correspondence
+ * --------- | --------- | --------- | -----------------------------
+ * year      | years     | y         | `NSCalendarUnitYear`
+ * month     | months    | M         | `NSCalendarUnitMonth`
+ * week      | weeks     | w         | `NSCalendarUnitWeekOfMonth`
+ * day       | days      | d         | `NSCalendarUnitDay`
+ * hour      | hours     | h         | `NSCalendarUnitHour`
+ * minute    | minutes   | m         | `NSCalendarUnitMinute`
+ * second    | seconds   | s         | `NSCalendarUnitSecond`
+ *
+ * @since 0.1.0
+ */
++ (NSCalendarUnit)calendarUnitForKey:(NSString *)key;
+
+@end
