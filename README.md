@@ -8,8 +8,6 @@ Its API is inspired by the well known [moment.js](http://momentjs.com/) library,
 
 This library is designed to facilitate the manipulation of times, dates, calendars, and durations in Objective-C by providing a single, easy, and unified approach to dealing with them.
 
-YLMoment supports the `Albanian`, `Chinese`, `Dutch`, `English`, `French`, `German`, `Japanese`, `Portuguese`, `Spanish` and `Vietnamese` languages.
-
 ## Getting Started
 
 If you want have a quick overview of the project take a look to this [blog post](http://yannickloriot.com/2013/11/handle-times-dates-calendars-and-durations-like-a-pro-in-objective-c-with-YLMoment/).
@@ -74,11 +72,27 @@ YLMoment *english   = [[YLMoment now] subtractAmountOfTime:3 forUnitKey:@"s"];
 NSLog(@"%@", [english fromMoment:reference]); // in 11 months
 ```
 
-### Installation
+## Supported languages
+
+Here the list of supported languages:
+- Albanian
+- Chinese
+- Dutch
+- English
+- French
+- German
+- Japanese
+- Portuguese
+- Spanish
+- Vietnamese
+
+All contribution is welcomed!
+
+## Installation
 
 The recommended approach to use _YLMoment_ in your project is using the [CocoaPods](http://cocoapods.org/) package manager, as it provides flexible dependency management and dead simple installation.
 
-#### CocoaPods
+### CocoaPods
 
 Install CocoaPods if not already available:
 
@@ -110,7 +124,7 @@ Open your project in Xcode from the .xcworkspace file (not the usual project fil
 $ open MyProject.xcworkspace
 ```
 
-#### Manually
+### Manually
 
 [Download](https://github.com/YannickL/YLMoment/archive/master.zip) the project and copy the `YLMoment` folder into your project and then simply `#import "YLMoment.h"` in the file(s) you would like to use it in.
 
