@@ -1,6 +1,6 @@
 [![YLMoment](http://yannickloriot.com/resources/ylmoment-logo.png)](http://yannickl.github.io/YLMoment/)
 
-[![Supported Platforms](https://cocoapod-badges.herokuapp.com/p/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Version](https://cocoapod-badges.herokuapp.com/v/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Build Status](https://travis-ci.org/yannickl/YLMoment.png?branch=master)](https://travis-ci.org/yannickl/YLMoment) [![Coverage Status](https://coveralls.io/repos/yannickl/YLMoment/badge.svg?branch=master&service=github)](https://coveralls.io/github/yannickl/YLMoment?branch=master)
+[![Supported Platforms](https://cocoapod-badges.herokuapp.com/p/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Version](https://cocoapod-badges.herokuapp.com/v/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Build Status](https://travis-ci.org/yannickl/YLMoment.svg?branch=master)](https://travis-ci.org/yannickl/YLMoment) [![Coverage Status](https://coveralls.io/repos/yannickl/YLMoment/badge.svg?branch=master&service=github)](https://coveralls.io/github/yannickl/YLMoment?branch=master)
 
 YLMoment is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.
 
