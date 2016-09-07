@@ -94,7 +94,7 @@ Here the list of supported languages:
 - Spanish
 - Vietnamese
 
-All contribution is welcomed!
+All contribution is welcomed! ;)
 
 ## Installation
 
