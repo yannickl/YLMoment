@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B85704A11DCD11E4000188A0 /* YLMoment.h in Headers */ = {isa = PBXBuildFile; fileRef = B857049F1DCD11E4000188A0 /* YLMoment.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B85704B51DCD1294000188A0 /* YLMoment+Bundle.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704A71DCD1294000188A0 /* YLMoment+Bundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B85704B51DCD1294000188A0 /* YLMoment+Bundle.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704A71DCD1294000188A0 /* YLMoment+Bundle.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B85704B61DCD1294000188A0 /* YLMoment+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = B85704A81DCD1294000188A0 /* YLMoment+Bundle.m */; };
 		B85704B71DCD1294000188A0 /* YLMoment+Components.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704A91DCD1294000188A0 /* YLMoment+Components.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B85704B81DCD1294000188A0 /* YLMoment+Components.m in Sources */ = {isa = PBXBuildFile; fileRef = B85704AA1DCD1294000188A0 /* YLMoment+Components.m */; };
@@ -119,8 +119,8 @@
 				B85704B91DCD1294000188A0 /* YLMoment+Description.h in Headers */,
 				B85704BD1DCD1294000188A0 /* YLMoment+Manipulation.h in Headers */,
 				B85704A11DCD11E4000188A0 /* YLMoment.h in Headers */,
-				B85704B51DCD1294000188A0 /* YLMoment+Bundle.h in Headers */,
 				B85704B71DCD1294000188A0 /* YLMoment+Components.h in Headers */,
+				B85704B51DCD1294000188A0 /* YLMoment+Bundle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +334,7 @@
 		B85704A51DCD11E4000188A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -351,6 +352,7 @@
 		B85704A61DCD11E4000188A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
