@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		B85704A11DCD11E4000188A0 /* YLMoment.h in Headers */ = {isa = PBXBuildFile; fileRef = B857049F1DCD11E4000188A0 /* YLMoment.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B85704B51DCD1294000188A0 /* YLMoment+Bundle.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704A71DCD1294000188A0 /* YLMoment+Bundle.h */; };
+		B85704B51DCD1294000188A0 /* YLMoment+Bundle.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704A71DCD1294000188A0 /* YLMoment+Bundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B85704B61DCD1294000188A0 /* YLMoment+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = B85704A81DCD1294000188A0 /* YLMoment+Bundle.m */; };
-		B85704B71DCD1294000188A0 /* YLMoment+Components.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704A91DCD1294000188A0 /* YLMoment+Components.h */; };
+		B85704B71DCD1294000188A0 /* YLMoment+Components.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704A91DCD1294000188A0 /* YLMoment+Components.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B85704B81DCD1294000188A0 /* YLMoment+Components.m in Sources */ = {isa = PBXBuildFile; fileRef = B85704AA1DCD1294000188A0 /* YLMoment+Components.m */; };
-		B85704B91DCD1294000188A0 /* YLMoment+Description.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704AB1DCD1294000188A0 /* YLMoment+Description.h */; };
+		B85704B91DCD1294000188A0 /* YLMoment+Description.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704AB1DCD1294000188A0 /* YLMoment+Description.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B85704BA1DCD1294000188A0 /* YLMoment+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = B85704AC1DCD1294000188A0 /* YLMoment+Description.m */; };
-		B85704BB1DCD1294000188A0 /* YLMoment+Helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704AD1DCD1294000188A0 /* YLMoment+Helpers.h */; };
+		B85704BB1DCD1294000188A0 /* YLMoment+Helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704AD1DCD1294000188A0 /* YLMoment+Helpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B85704BC1DCD1294000188A0 /* YLMoment+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B85704AE1DCD1294000188A0 /* YLMoment+Helpers.m */; };
-		B85704BD1DCD1294000188A0 /* YLMoment+Manipulation.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704AF1DCD1294000188A0 /* YLMoment+Manipulation.h */; };
+		B85704BD1DCD1294000188A0 /* YLMoment+Manipulation.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704AF1DCD1294000188A0 /* YLMoment+Manipulation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B85704BE1DCD1294000188A0 /* YLMoment+Manipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = B85704B01DCD1294000188A0 /* YLMoment+Manipulation.m */; };
-		B85704BF1DCD1294000188A0 /* YLMoment+RelativeTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704B11DCD1294000188A0 /* YLMoment+RelativeTime.h */; };
+		B85704BF1DCD1294000188A0 /* YLMoment+RelativeTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704B11DCD1294000188A0 /* YLMoment+RelativeTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B85704C01DCD1294000188A0 /* YLMoment+RelativeTime.m in Sources */ = {isa = PBXBuildFile; fileRef = B85704B21DCD1294000188A0 /* YLMoment+RelativeTime.m */; };
-		B85704C11DCD1294000188A0 /* YLMomentObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704B31DCD1294000188A0 /* YLMomentObject.h */; };
+		B85704C11DCD1294000188A0 /* YLMomentObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B85704B31DCD1294000188A0 /* YLMomentObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B85704C21DCD1294000188A0 /* YLMomentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B85704B41DCD1294000188A0 /* YLMomentObject.m */; };
 		B85704CF1DCD12A4000188A0 /* YLMomentRelativeTimeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B85704C41DCD12A4000188A0 /* YLMomentRelativeTimeLocalizable.strings */; };
 /* End PBXBuildFile section */
