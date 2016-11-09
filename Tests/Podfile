@@ -1,27 +1,15 @@
-xcodeproj 'YLMomentTests'
-inhibit_all_warnings!
+source 'https://github.com/CocoaPods/Specs.git'
 
 def import_pods
   pod 'Expecta', '~> 0'
 end
 
-target :ios, :exclusive => true do
+target 'iOSTests' do
   platform :ios, '5.0'
-  link_with 'iOSTests'
   import_pods
 end
 
-target :osx, :exclusive => true do
+target 'OSXTests' do
     platform :osx, '10.8'
-    link_with 'OSXTests'
     import_pods
-end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['ARCHS'] = "$(ARCHS_STANDARD_INCLUDING_64_BIT)"
-      config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
-    end
-  end
 end
