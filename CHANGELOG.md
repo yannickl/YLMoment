@@ -1,7 +1,8 @@
 ## Changelog
 
-### Version 0.7.0 (under development)
-- [REFACTORING] Create a category for each feature group
+### Version 0.7.0 (2016-11-11)
+- [REFACTORING] use the `floor` instead of `round` to print the elapsed time.
+- [ADD] `Italian` language
 
 ### Version 0.6.0 (2015-11-05)
 - [ADD] `Vietnamese` language

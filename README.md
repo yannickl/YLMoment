@@ -89,6 +89,7 @@ Here the list of supported languages:
 - English
 - French
 - German
+- Italian
 - Japanese
 - Portuguese
 - Spanish
@@ -117,7 +118,7 @@ $ edit Podfile
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '5.0'
 # Or platform :osx, '10.8'
-pod 'YLMoment', '~> 0.6.0'
+pod 'YLMoment', '~> 0.7.0'
 ```
 
 Install into your project:

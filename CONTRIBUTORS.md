@@ -16,6 +16,8 @@ Please keep the list sorted.
  * [Applezqp](https://github.com/applezqp)
  * [Chao Ruan](https://github.com/rcgary)
  * [Douglas Brito de Medeiros](https://github.com/DouglasMedeiros)
+ * [Jhonathan Wyterlin](https://github.com/jwyterlin)
  * [Fanyj](https://github.com/fanyj)
  * [Michel Albers](https://github.com/michelalbers)
+ * [Orientemario](https://github.com/orientemario)
  * [Pieter Claerhout](https://github.com/pieterclaerhout)
