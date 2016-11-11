@@ -114,12 +114,12 @@
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"een maand");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:46 forUnitKey:@"d"];
-    expect([start fromMoment:end withSuffix:NO]).to.equal(@"2 maand");
+    expect([start fromMoment:end withSuffix:NO]).to.equal(@"1 maand");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:74 forUnitKey:@"d"];
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"2 maand");
     
-    end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:76 forUnitKey:@"d"];
+    end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:90 forUnitKey:@"d"];
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"3 maand");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:1 forUnitKey:@"M"];

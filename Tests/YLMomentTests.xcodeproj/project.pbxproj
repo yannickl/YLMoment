@@ -26,6 +26,9 @@
 		CEE753A91BECCB26001FF6ED /* YLMoment+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE753A71BECCB26001FF6ED /* YLMoment+Helpers.m */; };
 		CEE753AC1BECD4D9001FF6ED /* YLMoment+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE753AB1BECD4D9001FF6ED /* YLMoment+Bundle.m */; };
 		CEE753AD1BECD4D9001FF6ED /* YLMoment+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE753AB1BECD4D9001FF6ED /* YLMoment+Bundle.m */; };
+		CEE7B5DF1DD5F9710020C0F3 /* YLMomentTest+LangIt.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE7B5DE1DD5F9710020C0F3 /* YLMomentTest+LangIt.m */; };
+		CEE7B5E31DD5F9DB0020C0F3 /* YLMomentTest+LangIt.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE7B5DE1DD5F9710020C0F3 /* YLMomentTest+LangIt.m */; };
+		CEE7B5E41DD5FC970020C0F3 /* YLMomentTest+LangVi.m in Sources */ = {isa = PBXBuildFile; fileRef = A083DAF81BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m */; };
 		D40FC7F2103A23A4648C3635 /* libPods-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DBD5EB9D564C598ED8E940 /* libPods-iOSTests.a */; };
 		F425CFC61828296E002CABDC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4605D41181C33E3007F83EF /* XCTest.framework */; };
 		F425CFCC1828296E002CABDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F425CFCA1828296E002CABDC /* InfoPlist.strings */; };
@@ -99,6 +102,10 @@
 		CEE753A71BECCB26001FF6ED /* YLMoment+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMoment+Helpers.m"; sourceTree = "<group>"; };
 		CEE753AB1BECD4D9001FF6ED /* YLMoment+Bundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMoment+Bundle.m"; sourceTree = "<group>"; };
 		CEE753AE1BECD714001FF6ED /* YLMoment+Bundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YLMoment+Bundle.h"; sourceTree = "<group>"; };
+		CEE7B5DE1DD5F9710020C0F3 /* YLMomentTest+LangIt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangIt.m"; sourceTree = "<group>"; };
+		CEE7B5E01DD5F99F0020C0F3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CEE7B5E11DD5F99F0020C0F3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CEE7B5E21DD5F9AA0020C0F3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
 		F425CFC018282516002CABDC /* iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F425CFC51828296E002CABDC /* OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F425CFC91828296E002CABDC /* OSXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OSXTests-Info.plist"; sourceTree = "<group>"; };
@@ -220,10 +227,11 @@
 				F425CFDE182844D1002CABDC /* YLMomentTest+LangEn.m */,
 				F425CFDF182844D1002CABDC /* YLMomentTest+LangEs.m */,
 				F425CFE0182844D1002CABDC /* YLMomentTest+LangFr.m */,
-				F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */,
-				F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */,
-				A54704E218B0759600497886 /* YLMomentTest+LangPt.m */,
+				CEE7B5DE1DD5F9710020C0F3 /* YLMomentTest+LangIt.m */,
 				FA3A095418BDECE5001B2475 /* YLMomentTest+LangJa.m */,
+				F4FDEA381838D38D00DB3901 /* YLMomentTest+LangNl.m */,
+				A54704E218B0759600497886 /* YLMomentTest+LangPt.m */,
+				F425CFE1182844D1002CABDC /* YLMomentTest+LangSq.m */,
 				A083DAF81BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m */,
 				276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */,
 			);
@@ -387,6 +395,7 @@
 				ja,
 				zh,
 				vi,
+				it,
 			);
 			mainGroup = F4605D09181C326A007F83EF;
 			productRefGroup = F4605D09181C326A007F83EF;
@@ -525,6 +534,7 @@
 				F425CFED182844E1002CABDC /* YLMomentTests+Create.m in Sources */,
 				F425CFEE182844E1002CABDC /* YLMomentTests+Format.m in Sources */,
 				F425CFEF182844E1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */,
+				CEE7B5E31DD5F9DB0020C0F3 /* YLMomentTest+LangIt.m in Sources */,
 				F425CFF0182844E1002CABDC /* YLMomentTests+Helpers.m in Sources */,
 				F425CFF1182844E1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
 				CEE753A51BECC929001FF6ED /* YLMoment+Components.m in Sources */,
@@ -539,6 +549,7 @@
 				F425CFF4182844E1002CABDC /* YLMomentTest+LangFr.m in Sources */,
 				FA3A095618BDECE5001B2475 /* YLMomentTest+LangJa.m in Sources */,
 				CEE753A11BECC72E001FF6ED /* YLMoment+RelativeTime.m in Sources */,
+				CEE7B5E41DD5FC970020C0F3 /* YLMomentTest+LangVi.m in Sources */,
 				F4DF36B1183BA7700091E80A /* YLMomentTest+LangNl.m in Sources */,
 				F425CFF5182844E1002CABDC /* YLMomentTest+LangSq.m in Sources */,
 			);
@@ -560,6 +571,7 @@
 				F425CFE3182844D1002CABDC /* YLMomentTests+Create.m in Sources */,
 				F425CFEA182844D1002CABDC /* YLMomentTest+LangFr.m in Sources */,
 				F425CFE8182844D1002CABDC /* YLMomentTest+LangEn.m in Sources */,
+				CEE7B5DF1DD5F9710020C0F3 /* YLMomentTest+LangIt.m in Sources */,
 				F425CFE6182844D1002CABDC /* YLMomentTests+Helpers.m in Sources */,
 				A083DAF91BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m in Sources */,
 				F425CFE4182844D1002CABDC /* YLMomentTests+Format.m in Sources */,
@@ -591,6 +603,7 @@
 				A0B09FC11BE1A52C00BF37AC /* sq */,
 				A0B09FC21BE1A52C00BF37AC /* vi */,
 				A0B09FC31BE1A52C00BF37AC /* zh */,
+				CEE7B5E21DD5F9AA0020C0F3 /* it */,
 			);
 			name = YLMomentRelativeTimeLocalizable.strings;
 			sourceTree = "<group>";
@@ -599,6 +612,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F425CFCB1828296E002CABDC /* en */,
+				CEE7B5E11DD5F99F0020C0F3 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -607,6 +621,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F4605D39181C33AA007F83EF /* en */,
+				CEE7B5E01DD5F99F0020C0F3 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
