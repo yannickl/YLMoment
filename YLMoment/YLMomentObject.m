@@ -257,6 +257,13 @@
     return YES;
 }
 
+- (BOOL)isBetweenMoments:(YLMoment *)startMoment andEndMoment:(YLMoment *)endMoment {
+    if ([self isAfterMoment:startMoment] && [self isBeforeMoment:endMoment]) {
+        return YES;
+    }
+    return NO;
+}
+
 #pragma mark - Proxy Method
 
 + (instancetype)proxy {

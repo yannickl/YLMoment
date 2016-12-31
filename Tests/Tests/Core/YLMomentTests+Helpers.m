@@ -105,4 +105,16 @@
     expect([moment1 isAfterMoment:moment3]).to.beTruthy();
 }
 
+- (void)testMomentIsBetweenMoments {
+    YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+    YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @4]];
+    YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
+    
+    expect([moment1 isBetweenMoments:moment2 andEndMoment:moment3]).to.beTruthy();
+    expect([moment1 isBetweenMoments:moment2 andEndMoment:moment1]).to.beFalsy();
+    expect([moment1 isBetweenMoments:moment1 andEndMoment:moment2]).to.beFalsy();
+    expect([moment1 isBetweenMoments:moment3 andEndMoment:moment1]).to.beFalsy();
+    expect([moment1 isBetweenMoments:moment1 andEndMoment:moment3]).to.beFalsy();
+}
+
 @end
