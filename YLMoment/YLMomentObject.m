@@ -243,6 +243,20 @@
     return YES;
 }
 
+- (BOOL)isAfterMoment:(YLMoment *)comparedMoment {
+    // If moment is equal to comparedMoment or not a `YLMoment` then return NO
+    if ([self isEqualToMoment:comparedMoment]) {
+        return NO;
+    }
+    
+    // If moment is before the comparedMoment then return NO
+    if ([self isBeforeMoment:comparedMoment]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 #pragma mark - Proxy Method
 
 + (instancetype)proxy {
