@@ -85,4 +85,14 @@
     expect([moment1 isEqualToMoment:nil]).to.beFalsy();
 }
 
+- (void)testMomentIsBeforeMoment {
+    YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+    YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
+    YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @4]];
+    
+    expect([moment1 isBeforeMoment:moment2]).to.beTruthy();
+    expect([moment1 isBeforeMoment:moment1]).to.beFalsy();
+    expect([moment1 isBeforeMoment:moment3]).to.beFalsy();
+}
+
 @end

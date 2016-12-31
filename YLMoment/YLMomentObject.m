@@ -201,6 +201,48 @@
   return NO;
 }
 
+- (BOOL)isBeforeMoment:(YLMoment *)comparedMoment {
+    // If moment is equal to comparedMoment or not a `YLMoment` then return NO
+    if ([self isEqualToMoment:comparedMoment]) {
+        return NO;
+    }
+    
+    NSCalendar *currentCalendar = self.calendar ?: [[[self class] proxy] calendar];
+    
+    NSCalendar *comparedCalendar = comparedMoment.calendar ?: [[[self class] proxy] calendar];
+    
+    NSDateComponents *currentComponents = [currentCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:self.date];
+    
+    NSDateComponents *comparedComponents = [comparedCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:comparedMoment.date];
+    
+    // Compare both calendar components for year, month, day, hour, minute, second and early return if the currentMoment's components are greater than comparedMoment's components
+    if (currentComponents.year > comparedComponents.year) {
+        return NO;
+    }
+    
+    if (currentComponents.month > comparedComponents.month) {
+        return NO;
+    }
+    
+    if (currentComponents.day > comparedComponents.day) {
+        return NO;
+    }
+    
+    if (currentComponents.hour > comparedComponents.hour) {
+        return NO;
+    }
+    
+    if (currentComponents.minute > comparedComponents.minute) {
+        return NO;
+    }
+    
+    if (currentComponents.second > comparedComponents.second) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 #pragma mark - Proxy Method
 
 + (instancetype)proxy {

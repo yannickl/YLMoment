@@ -253,6 +253,16 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  */
 - (BOOL)isEqualToMoment:(YLMoment *)anotherMoment;
 
+/**
+ * @abstract Returns a Boolean value that indicates whether a given object 
+ * is an `YLMoment` and is of a later date than the receiver's.
+ * @param anotherMoment The moment to be compared with the receiver.
+ * @return YES if the anotherMoment is an `YLMoment` object and of a later 
+ * date than the receiver, otherwise NO.
+ * @since 0.8.0
+ */
+- (BOOL)isBeforeMoment:(YLMoment *)anotherMoment;
+
 #pragma mark - Proxy Method
 /** @name Proxy Method */
 
