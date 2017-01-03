@@ -245,6 +245,7 @@
 
 - (BOOL)isAfterMoment:(YLMoment *)comparedMoment {
     // If moment is equal to comparedMoment or not a `YLMoment` then return NO
+    // Keep isEqualToMoment check before isBeforeMoment to prevent false positive
     if ([self isEqualToMoment:comparedMoment]) {
         return NO;
     }
@@ -258,9 +259,16 @@
 }
 
 - (BOOL)isBetweenMoments:(YLMoment *)startMoment andEndMoment:(YLMoment *)endMoment {
-    if ([self isAfterMoment:startMoment] && [self isBeforeMoment:endMoment]) {
+    // Guard condition when startMoment is same as endMoment and the reference moment, return YES
+    // Keep isEqualToMoment checks before isBeforeMoment and isAfterMoment checks to prevent false positive
+    if ([startMoment isEqualToMoment:endMoment] && [self isEqualToMoment:startMoment]) {
         return YES;
     }
+    
+    if ([self isBeforeMoment:endMoment] && [self isAfterMoment:startMoment]) {
+        return YES;
+    }
+    
     return NO;
 }
 
