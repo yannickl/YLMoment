@@ -11,7 +11,7 @@ Its API is inspired by the well known [moment.js](http://momentjs.com/) library,
 This library is designed to facilitate the manipulation of times, dates, calendars, and durations in Objective-C by providing a single, easy, and unified approach to dealing with them.
 
 <p align="center">
-    <a href="#getting-started">Getting Started</a> • <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#contact">Contact</a> • <a href="#license">License</a>
+    <a href="#getting-started">Getting Started</a> • <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#contact">Contact</a> • <a href="#license-mit">License</a>
 </p>
 
 ## Getting Started
