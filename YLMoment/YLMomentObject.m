@@ -206,6 +206,10 @@
     if ([self isEqualToMoment:comparedMoment]) {
         return NO;
     }
+
+    if (![[self timeZone] isEqualToTimeZone:comparedMoment.timeZone]) {
+        comparedMoment.timeZone = [NSTimeZone timeZoneWithName:self.timeZone.name];
+    }
     
     NSCalendar *currentCalendar = self.calendar ?: [[[self class] proxy] calendar];
     
