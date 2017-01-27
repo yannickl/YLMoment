@@ -201,6 +201,81 @@
   return NO;
 }
 
+- (BOOL)isBeforeMoment:(YLMoment *)comparedMoment {
+    // If moment is equal to comparedMoment or not a `YLMoment` then return NO
+    if ([self isEqualToMoment:comparedMoment]) {
+        return NO;
+    }
+
+    if (![[self timeZone] isEqualToTimeZone:comparedMoment.timeZone]) {
+        comparedMoment.timeZone = [NSTimeZone timeZoneWithName:self.timeZone.name];
+    }
+    
+    NSCalendar *currentCalendar = self.calendar ?: [[[self class] proxy] calendar];
+    
+    NSCalendar *comparedCalendar = comparedMoment.calendar ?: [[[self class] proxy] calendar];
+    
+    NSDateComponents *currentComponents = [currentCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:self.date];
+    
+    NSDateComponents *comparedComponents = [comparedCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:comparedMoment.date];
+    
+    // Compare both calendar components for year, month, day, hour, minute, second and early return if the currentMoment's components are greater than comparedMoment's components
+    if (currentComponents.year > comparedComponents.year) {
+        return NO;
+    }
+    
+    if (currentComponents.month > comparedComponents.month) {
+        return NO;
+    }
+    
+    if (currentComponents.day > comparedComponents.day) {
+        return NO;
+    }
+    
+    if (currentComponents.hour > comparedComponents.hour) {
+        return NO;
+    }
+    
+    if (currentComponents.minute > comparedComponents.minute) {
+        return NO;
+    }
+    
+    if (currentComponents.second > comparedComponents.second) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (BOOL)isAfterMoment:(YLMoment *)comparedMoment {
+    // If moment is equal to comparedMoment or not a `YLMoment` then return NO
+    // Keep isEqualToMoment check before isBeforeMoment to prevent false positive
+    if ([self isEqualToMoment:comparedMoment]) {
+        return NO;
+    }
+    
+    // If moment is before the comparedMoment then return NO
+    if ([self isBeforeMoment:comparedMoment]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (BOOL)isBetweenMoments:(YLMoment *)startMoment andEndMoment:(YLMoment *)endMoment {
+    // Guard condition when startMoment is same as endMoment and the reference moment, return YES
+    // Keep isEqualToMoment checks before isBeforeMoment and isAfterMoment checks to prevent false positive
+    if ([startMoment isEqualToMoment:endMoment] && [self isEqualToMoment:startMoment]) {
+        return YES;
+    }
+    
+    if ([self isBeforeMoment:endMoment] && [self isAfterMoment:startMoment]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 #pragma mark - Proxy Method
 
 + (instancetype)proxy {
