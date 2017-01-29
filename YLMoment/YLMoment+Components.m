@@ -53,10 +53,8 @@
       return components.day;
     case kCFCalendarUnitMonth:
       return components.month;
-    case kCFCalendarUnitYear:
-      return components.year;
     default:
-      return 0;
+      return components.year;
   }
 }
 
