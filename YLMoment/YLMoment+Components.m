@@ -82,6 +82,7 @@
       break;
     case kCFCalendarUnitYear:
       components.year = value;
+      /* falls through */
     default:
       break;
   }

@@ -215,36 +215,12 @@
     
     NSCalendar *comparedCalendar = comparedMoment.calendar ?: [[[self class] proxy] calendar];
     
-    NSDateComponents *currentComponents = [currentCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:self.date];
+    NSDateComponents *c1 = [currentCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:self.date];
     
-    NSDateComponents *comparedComponents = [comparedCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:comparedMoment.date];
+    NSDateComponents *c2 = [comparedCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:comparedMoment.date];
     
     // Compare both calendar components for year, month, day, hour, minute, second and early return if the currentMoment's components are greater than comparedMoment's components
-    if (currentComponents.year > comparedComponents.year) {
-        return NO;
-    }
-    
-    if (currentComponents.month > comparedComponents.month) {
-        return NO;
-    }
-    
-    if (currentComponents.day > comparedComponents.day) {
-        return NO;
-    }
-    
-    if (currentComponents.hour > comparedComponents.hour) {
-        return NO;
-    }
-    
-    if (currentComponents.minute > comparedComponents.minute) {
-        return NO;
-    }
-    
-    if (currentComponents.second > comparedComponents.second) {
-        return NO;
-    }
-    
-    return YES;
+    return (c1.year <= c2.year) && (c1.month <= c2.month) && (c1.day <= c2.day) && (c1.hour <= c2.hour) && (c1.minute <= c2.minute) && (c1.second <= c2.second);
 }
 
 - (BOOL)isAfterMoment:(YLMoment *)comparedMoment {

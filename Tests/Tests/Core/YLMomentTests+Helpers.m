@@ -39,82 +39,91 @@
 
 - (void)testCalendarUnitForKeySingular
 {
-    expect([YLMoment calendarUnitForKey:@"year"]).to.equal(NSCalendarUnitYear);
-    expect([YLMoment calendarUnitForKey:@"month"]).to.equal(NSCalendarUnitMonth);
-    expect([YLMoment calendarUnitForKey:@"week"]).to.equal(NSCalendarUnitWeekOfMonth);
-    expect([YLMoment calendarUnitForKey:@"day"]).to.equal(NSCalendarUnitDay);
-    expect([YLMoment calendarUnitForKey:@"hour"]).to.equal(NSCalendarUnitHour);
-    expect([YLMoment calendarUnitForKey:@"minute"]).to.equal(NSCalendarUnitMinute);
-    expect([YLMoment calendarUnitForKey:@"second"]).to.equal(NSCalendarUnitSecond);
+  expect([YLMoment calendarUnitForKey:@"year"]).to.equal(NSCalendarUnitYear);
+  expect([YLMoment calendarUnitForKey:@"month"]).to.equal(NSCalendarUnitMonth);
+  expect([YLMoment calendarUnitForKey:@"week"]).to.equal(NSCalendarUnitWeekOfMonth);
+  expect([YLMoment calendarUnitForKey:@"day"]).to.equal(NSCalendarUnitDay);
+  expect([YLMoment calendarUnitForKey:@"hour"]).to.equal(NSCalendarUnitHour);
+  expect([YLMoment calendarUnitForKey:@"minute"]).to.equal(NSCalendarUnitMinute);
+  expect([YLMoment calendarUnitForKey:@"second"]).to.equal(NSCalendarUnitSecond);
 }
 
 - (void)testCalendarUnitForKeyPlural
 {
-    expect([YLMoment calendarUnitForKey:@"years"]).to.equal(NSCalendarUnitYear);
-    expect([YLMoment calendarUnitForKey:@"months"]).to.equal(NSCalendarUnitMonth);
-    expect([YLMoment calendarUnitForKey:@"weeks"]).to.equal(NSCalendarUnitWeekOfMonth);
-    expect([YLMoment calendarUnitForKey:@"days"]).to.equal(NSCalendarUnitDay);
-    expect([YLMoment calendarUnitForKey:@"hours"]).to.equal(NSCalendarUnitHour);
-    expect([YLMoment calendarUnitForKey:@"minutes"]).to.equal(NSCalendarUnitMinute);
-    expect([YLMoment calendarUnitForKey:@"seconds"]).to.equal(NSCalendarUnitSecond);
+  expect([YLMoment calendarUnitForKey:@"years"]).to.equal(NSCalendarUnitYear);
+  expect([YLMoment calendarUnitForKey:@"months"]).to.equal(NSCalendarUnitMonth);
+  expect([YLMoment calendarUnitForKey:@"weeks"]).to.equal(NSCalendarUnitWeekOfMonth);
+  expect([YLMoment calendarUnitForKey:@"days"]).to.equal(NSCalendarUnitDay);
+  expect([YLMoment calendarUnitForKey:@"hours"]).to.equal(NSCalendarUnitHour);
+  expect([YLMoment calendarUnitForKey:@"minutes"]).to.equal(NSCalendarUnitMinute);
+  expect([YLMoment calendarUnitForKey:@"seconds"]).to.equal(NSCalendarUnitSecond);
 }
 
 - (void)testCalendarUnitForKeyShort
 {
-    expect([YLMoment calendarUnitForKey:@"y"]).to.equal(NSCalendarUnitYear);
-    expect([YLMoment calendarUnitForKey:@"M"]).to.equal(NSCalendarUnitMonth);
-    expect([YLMoment calendarUnitForKey:@"w"]).to.equal(NSCalendarUnitWeekOfMonth);
-    expect([YLMoment calendarUnitForKey:@"d"]).to.equal(NSCalendarUnitDay);
-    expect([YLMoment calendarUnitForKey:@"h"]).to.equal(NSCalendarUnitHour);
-    expect([YLMoment calendarUnitForKey:@"m"]).to.equal(NSCalendarUnitMinute);
-    expect([YLMoment calendarUnitForKey:@"s"]).to.equal(NSCalendarUnitSecond);
+  expect([YLMoment calendarUnitForKey:@"y"]).to.equal(NSCalendarUnitYear);
+  expect([YLMoment calendarUnitForKey:@"M"]).to.equal(NSCalendarUnitMonth);
+  expect([YLMoment calendarUnitForKey:@"w"]).to.equal(NSCalendarUnitWeekOfMonth);
+  expect([YLMoment calendarUnitForKey:@"d"]).to.equal(NSCalendarUnitDay);
+  expect([YLMoment calendarUnitForKey:@"h"]).to.equal(NSCalendarUnitHour);
+  expect([YLMoment calendarUnitForKey:@"m"]).to.equal(NSCalendarUnitMinute);
+  expect([YLMoment calendarUnitForKey:@"s"]).to.equal(NSCalendarUnitSecond);
+}
+
+- (void)testCalUnitForInvalidKey
+{
+  NSUInteger invalid = -1;
+
+  expect([YLMoment calendarUnitForKey:@"foo"]).to.equal(invalid);
+  expect([YLMoment calendarUnitForKey:@"bar"]).to.equal(invalid);
 }
 
 - (void)testMomentEqualsToMoment {
-    YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
-    YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
-    YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @0]];
-    
-    expect([moment1 isEqualToMoment:moment2]).to.beTruthy();
-    
-    expect([moment1 isEqualToMoment:moment3]).to.beFalsy();
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @0]];
+
+  expect([moment1 isEqualToMoment:moment2]).to.beTruthy();
+
+  expect([moment1 isEqualToMoment:moment3]).to.beFalsy();
 }
 
 - (void)testNilEqualsToMoment {
-    YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
-    expect([moment1 isEqualToMoment:nil]).to.beFalsy();
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  expect([moment1 isEqualToMoment:nil]).to.beFalsy();
 }
 
 - (void)testMomentIsBeforeMoment {
-    YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
-    YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
-    YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @4]];
-    
-    expect([moment1 isBeforeMoment:moment2]).to.beTruthy();
-    expect([moment1 isBeforeMoment:moment1]).to.beFalsy();
-    expect([moment1 isBeforeMoment:moment3]).to.beFalsy();
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
+  YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @4]];
+
+  expect([moment1 isBeforeMoment:moment2]).to.beTruthy();
+  expect([moment1 isBeforeMoment:moment1]).to.beFalsy();
+  expect([moment1 isBeforeMoment:moment3]).to.beFalsy();
 }
 
 - (void)testMomentIsAfterMoment {
-    YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
-    YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
-    YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @4]];
-    
-    expect([moment1 isAfterMoment:moment2]).to.beFalsy();
-    expect([moment1 isAfterMoment:moment1]).to.beFalsy();
-    expect([moment1 isAfterMoment:moment3]).to.beTruthy();
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
+  YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @4]];
+
+  expect([moment1 isAfterMoment:moment2]).to.beFalsy();
+  expect([moment1 isAfterMoment:moment1]).to.beFalsy();
+  expect([moment1 isAfterMoment:moment3]).to.beTruthy();
 }
 
 - (void)testMomentIsBetweenMoments {
-    YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
-    YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @4]];
-    YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
-    
-    expect([moment1 isBetweenMoments:moment2 andEndMoment:moment3]).to.beTruthy();
-    expect([moment1 isBetweenMoments:moment2 andEndMoment:moment1]).to.beFalsy();
-    expect([moment1 isBetweenMoments:moment1 andEndMoment:moment2]).to.beFalsy();
-    expect([moment1 isBetweenMoments:moment3 andEndMoment:moment1]).to.beFalsy();
-    expect([moment1 isBetweenMoments:moment1 andEndMoment:moment3]).to.beFalsy();
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @4]];
+  YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
+
+  expect([moment1 isBetweenMoments:moment2 andEndMoment:moment3]).to.beTruthy();
+  expect([moment1 isBetweenMoments:moment2 andEndMoment:moment1]).to.beFalsy();
+  expect([moment1 isBetweenMoments:moment1 andEndMoment:moment2]).to.beFalsy();
+  expect([moment1 isBetweenMoments:moment3 andEndMoment:moment1]).to.beFalsy();
+  expect([moment1 isBetweenMoments:moment1 andEndMoment:moment3]).to.beFalsy();
+  expect([moment1 isBetweenMoments:moment1 andEndMoment:moment1]).to.beTruthy();
 }
 
 @end
