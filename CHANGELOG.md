@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 0.8.0 (2017-01-29)
+- [ADD] `isBeforeMoment`, `isAfterMoment` and `isBetweenMoments` methods
+
 ### Version 0.7.0 (2016-11-11)
 - [REFACTORING] use the `floor` instead of `round` to print the elapsed time.
 - [ADD] `Italian` language

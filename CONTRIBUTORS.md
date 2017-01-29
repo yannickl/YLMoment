@@ -15,6 +15,7 @@ Please keep the list sorted.
  * [Alex Shepard](https://github.com/alexshepard)
  * [Applezqp](https://github.com/applezqp)
  * [Chao Ruan](https://github.com/rcgary)
+ * [Darren Tong](https://github.com/strictlyd)
  * [Douglas Brito de Medeiros](https://github.com/DouglasMedeiros)
  * [Jhonathan Wyterlin](https://github.com/jwyterlin)
  * [Fanyj](https://github.com/fanyj)
