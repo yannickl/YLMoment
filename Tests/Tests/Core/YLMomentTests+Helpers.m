@@ -97,20 +97,26 @@
   YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
   YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
   YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @4]];
+  YLMoment *moment4 = [YLMoment momentWithDateAsString:@"01/01/2016 01:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+  YLMoment *moment5 = [YLMoment momentWithDateAsString:@"01/01/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
 
   expect([moment1 isBeforeMoment:moment2]).to.beTruthy();
   expect([moment1 isBeforeMoment:moment1]).to.beFalsy();
   expect([moment1 isBeforeMoment:moment3]).to.beFalsy();
+  expect([moment4 isBeforeMoment:moment5]).to.beTruthy();
 }
 
 - (void)testMomentIsAfterMoment {
   YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
   YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
   YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @4]];
+  YLMoment *moment4 = [YLMoment momentWithDateAsString:@"01/01/2016 01:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+  YLMoment *moment5 = [YLMoment momentWithDateAsString:@"01/01/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
 
   expect([moment1 isAfterMoment:moment2]).to.beFalsy();
   expect([moment1 isAfterMoment:moment1]).to.beFalsy();
   expect([moment1 isAfterMoment:moment3]).to.beTruthy();
+  expect([moment4 isAfterMoment:moment5]).to.beFalsy();
 }
 
 - (void)testMomentIsBetweenMoments {
