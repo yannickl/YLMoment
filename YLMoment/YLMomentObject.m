@@ -220,7 +220,7 @@
     NSDateComponents *c2 = [comparedCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:comparedMoment.date];
     
     // Compare both calendar components for year, month, day, hour, minute, second and early return if the currentMoment's components are greater than comparedMoment's components
-    return (c1.year <= c2.year) && (c1.month <= c2.month) && (c1.day <= c2.day) && (c1.hour <= c2.hour) && (c1.minute <= c2.minute) && (c1.second <= c2.second);
+    return (c1.year < c2.year) || (c1.month < c2.month) || (c1.day < c2.day) || (c1.hour < c2.hour) || (c1.minute < c2.minute) || (c1.second < c2.second);
 }
 
 - (BOOL)isAfterMoment:(YLMoment *)comparedMoment {

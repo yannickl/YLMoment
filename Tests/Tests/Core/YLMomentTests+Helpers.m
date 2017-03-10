@@ -103,6 +103,62 @@
   expect([moment1 isBeforeMoment:moment3]).to.beFalsy();
 }
 
+- (void)testMomentIsBeforeMomentYear {
+  YLMoment *moment1 = [YLMoment momentWithDateAsString:@"01/01/2016 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+  YLMoment *moment2 = [YLMoment momentWithDateAsString:@"01/01/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+
+  expect([moment1 isBeforeMoment:moment2]).to.beTruthy();
+  expect([moment2 isBeforeMoment:moment1]).to.beFalsy();
+}
+
+- (void)testMomentIsBeforeMomentMonth {
+  YLMoment *moment1 = [YLMoment momentWithDateAsString:@"01/01/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+  YLMoment *moment2 = [YLMoment momentWithDateAsString:@"01/02/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+
+  expect([moment1 isBeforeMoment:moment2]).to.beTruthy();
+  expect([moment2 isBeforeMoment:moment1]).to.beFalsy();
+}
+
+- (void)testMomentIsBeforeMomentDay {
+  YLMoment *moment1 = [YLMoment momentWithDateAsString:@"01/01/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+  YLMoment *moment2 = [YLMoment momentWithDateAsString:@"02/01/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+
+  expect([moment1 isBeforeMoment:moment2]).to.beTruthy();
+  expect([moment2 isBeforeMoment:moment1]).to.beFalsy();
+}
+
+- (void)testMomentIsBeforeMomentHour {
+  YLMoment *moment1 = [YLMoment momentWithDateAsString:@"01/01/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+  YLMoment *moment2 = [YLMoment momentWithDateAsString:@"01/01/2017 01:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+
+  expect([moment1 isBeforeMoment:moment2]).to.beTruthy();
+  expect([moment2 isBeforeMoment:moment1]).to.beFalsy();
+}
+
+- (void)testMomentIsBeforeMomentMinute {
+  YLMoment *moment1 = [YLMoment momentWithDateAsString:@"01/01/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+  YLMoment *moment2 = [YLMoment momentWithDateAsString:@"01/01/2017 00:01:00" format:@"dd/MM/yyyy hh:mm:ss"];
+
+  expect([moment1 isBeforeMoment:moment2]).to.beTruthy();
+  expect([moment2 isBeforeMoment:moment1]).to.beFalsy();
+}
+
+- (void)testMomentIsBeforeMomentSecond {
+  YLMoment *moment1 = [YLMoment momentWithDateAsString:@"01/01/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+  YLMoment *moment2 = [YLMoment momentWithDateAsString:@"01/01/2017 00:00:01" format:@"dd/MM/yyyy hh:mm:ss"];
+
+  expect([moment1 isBeforeMoment:moment2]).to.beTruthy();
+  expect([moment2 isBeforeMoment:moment1]).to.beFalsy();
+}
+
+- (void)testMomentIsBeforeMomentEqual {
+  YLMoment *moment1 = [YLMoment momentWithDateAsString:@"01/01/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+  YLMoment *moment2 = [YLMoment momentWithDateAsString:@"01/01/2017 00:00:00" format:@"dd/MM/yyyy hh:mm:ss"];
+
+  expect([moment1 isBeforeMoment:moment2]).to.beFalsy();
+  expect([moment2 isBeforeMoment:moment1]).to.beFalsy();
+}
+
 - (void)testMomentIsAfterMoment {
   YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
   YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
