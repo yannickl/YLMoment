@@ -93,6 +93,105 @@
   expect([moment1 isEqualToMoment:nil]).to.beFalsy();
 }
 
+- (void)testMomentIsSameMoment {
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @0]];
+
+  expect([moment1 isSameMoment:moment2]).to.beTruthy();
+  expect([moment1 isSameMoment:moment3]).to.beFalsy();
+}
+
+- (void)testMomentIsSameMomentForUnitYear {
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment3 = [YLMoment momentWithArray:@[@2012, @2, @2, @3, @4, @5]];
+
+  expect([moment1 isSameMoment:moment2 forUnit:NSCalendarUnitYear]).to.beTruthy();
+  expect([moment1 isSameMoment:moment3 forUnit:NSCalendarUnitYear]).to.beFalsy();
+}
+
+- (void)testMomentIsSameMomentForUnitMonth {
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @3, @2, @3, @4, @5]];
+  YLMoment *moment4 = [YLMoment momentWithArray:@[@2012, @2, @2, @3, @4, @5]];
+
+  expect([moment1 isSameMoment:moment2 forUnit:NSCalendarUnitMonth]).to.beTruthy();
+  expect([moment1 isSameMoment:moment3 forUnit:NSCalendarUnitMonth]).to.beFalsy();
+  expect([moment1 isSameMoment:moment4 forUnit:NSCalendarUnitMonth]).to.beFalsy();
+}
+
+- (void)testMomentIsSameMomentForUnitDay {
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @3, @3, @4, @5]];
+  YLMoment *moment4 = [YLMoment momentWithArray:@[@2011, @3, @2, @3, @4, @5]];
+  YLMoment *moment5 = [YLMoment momentWithArray:@[@2012, @2, @2, @3, @4, @5]];
+
+  expect([moment1 isSameMoment:moment2 forUnit:NSCalendarUnitDay]).to.beTruthy();
+  expect([moment1 isSameMoment:moment3 forUnit:NSCalendarUnitDay]).to.beFalsy();
+  expect([moment1 isSameMoment:moment4 forUnit:NSCalendarUnitDay]).to.beFalsy();
+  expect([moment1 isSameMoment:moment5 forUnit:NSCalendarUnitDay]).to.beFalsy();
+}
+
+- (void)testMomentIsSameMomentForUnitHour {
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @4, @4, @5]];
+  YLMoment *moment4 = [YLMoment momentWithArray:@[@2011, @2, @3, @3, @4, @5]];
+  YLMoment *moment5 = [YLMoment momentWithArray:@[@2011, @3, @2, @3, @4, @5]];
+  YLMoment *moment6 = [YLMoment momentWithArray:@[@2012, @2, @2, @3, @4, @5]];
+
+  expect([moment1 isSameMoment:moment2 forUnit:NSCalendarUnitHour]).to.beTruthy();
+  expect([moment1 isSameMoment:moment3 forUnit:NSCalendarUnitHour]).to.beFalsy();
+  expect([moment1 isSameMoment:moment4 forUnit:NSCalendarUnitHour]).to.beFalsy();
+  expect([moment1 isSameMoment:moment5 forUnit:NSCalendarUnitHour]).to.beFalsy();
+  expect([moment1 isSameMoment:moment6 forUnit:NSCalendarUnitHour]).to.beFalsy();
+}
+
+- (void)testMomentIsSameMomentForUnitMinute {
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @5, @5]];
+  YLMoment *moment4 = [YLMoment momentWithArray:@[@2011, @2, @2, @4, @4, @5]];
+  YLMoment *moment5 = [YLMoment momentWithArray:@[@2011, @2, @3, @3, @4, @5]];
+  YLMoment *moment6 = [YLMoment momentWithArray:@[@2011, @3, @2, @3, @4, @5]];
+  YLMoment *moment7 = [YLMoment momentWithArray:@[@2012, @2, @2, @3, @4, @5]];
+
+  expect([moment1 isSameMoment:moment2 forUnit:NSCalendarUnitMinute]).to.beTruthy();
+  expect([moment1 isSameMoment:moment3 forUnit:NSCalendarUnitMinute]).to.beFalsy();
+  expect([moment1 isSameMoment:moment4 forUnit:NSCalendarUnitMinute]).to.beFalsy();
+  expect([moment1 isSameMoment:moment5 forUnit:NSCalendarUnitMinute]).to.beFalsy();
+  expect([moment1 isSameMoment:moment6 forUnit:NSCalendarUnitMinute]).to.beFalsy();
+  expect([moment1 isSameMoment:moment7 forUnit:NSCalendarUnitMinute]).to.beFalsy();
+}
+
+- (void)testMomentIsSameMomentForUnitSecond {
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment3 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
+  YLMoment *moment4 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @5, @5]];
+  YLMoment *moment5 = [YLMoment momentWithArray:@[@2011, @2, @2, @4, @4, @5]];
+  YLMoment *moment6 = [YLMoment momentWithArray:@[@2011, @2, @3, @3, @4, @5]];
+  YLMoment *moment7 = [YLMoment momentWithArray:@[@2011, @3, @2, @3, @4, @5]];
+  YLMoment *moment8 = [YLMoment momentWithArray:@[@2012, @2, @2, @3, @4, @5]];
+
+  expect([moment1 isSameMoment:moment2 forUnit:NSCalendarUnitSecond]).to.beTruthy();
+  expect([moment1 isSameMoment:moment3 forUnit:NSCalendarUnitSecond]).to.beFalsy();
+  expect([moment1 isSameMoment:moment4 forUnit:NSCalendarUnitSecond]).to.beFalsy();
+  expect([moment1 isSameMoment:moment5 forUnit:NSCalendarUnitSecond]).to.beFalsy();
+  expect([moment1 isSameMoment:moment6 forUnit:NSCalendarUnitSecond]).to.beFalsy();
+  expect([moment1 isSameMoment:moment7 forUnit:NSCalendarUnitSecond]).to.beFalsy();
+  expect([moment1 isSameMoment:moment8 forUnit:NSCalendarUnitSecond]).to.beFalsy();
+}
+
+- (void)testMomentIsSameMomentForUnsupportedUnit {
+  YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
+  expect([moment1 isSameMoment:moment2 forUnit:NSCalendarUnitWeekday]).to.beFalsy();
+}
+
 - (void)testMomentIsBeforeMoment {
   YLMoment *moment1 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @5]];
   YLMoment *moment2 = [YLMoment momentWithArray:@[@2011, @2, @2, @3, @4, @6]];
