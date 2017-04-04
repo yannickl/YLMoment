@@ -201,6 +201,14 @@
   return NO;
 }
 
+- (BOOL)isSameMoment:(YLMoment *)comparedMoment {
+    if (![[self timeZone] isEqualToTimeZone:comparedMoment.timeZone]) {
+        comparedMoment.timeZone = [NSTimeZone timeZoneWithName:self.timeZone.name];
+    }
+
+    return [self isEqualToMoment:comparedMoment];
+}
+
 - (BOOL)isBeforeMoment:(YLMoment *)comparedMoment {
     // If moment is equal to comparedMoment or not a `YLMoment` then return NO
     if ([self isEqualToMoment:comparedMoment]) {
