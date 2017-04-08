@@ -1,5 +1,9 @@
 ## Changelog
 
+### Version 0.9.0 (2017-04-08)
+- [ADD] `isSameMoment` method
+- [REFACTORING] improving the `isBeforeMoment` method 
+
 ### Version 0.8.0 (2017-01-29)
 - [ADD] `isBeforeMoment`, `isAfterMoment` and `isBetweenMoments` methods
 
