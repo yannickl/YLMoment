@@ -122,7 +122,7 @@ $ edit Podfile
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '5.0'
 # Or platform :osx, '10.8'
-pod 'YLMoment', '~> 0.9.0'
+pod 'YLMoment', '~> 0.9.1'
 ```
 
 Install into your project:

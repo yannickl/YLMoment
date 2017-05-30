@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'YLMoment'
-  s.version          = '0.9.0'
+  s.version          = '0.9.1'
   s.license          = 'MIT'
   s.summary          = 'Parsing, validating, manipulating, and formatting dates easily in Objective-C (API inspired by moment.js)'
   s.description      = <<-DESC
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.ios.framework = 'Foundation'
   s.osx.framework = 'Foundation'
 
-  s.ios.deployment_target = '5.0'
-  s.osx.deployment_target = '10.8'
+  s.ios.deployment_target     = '5.0'
+  s.osx.deployment_target     = '10.8'
   s.watchos.deployment_target = '3.0'
 end

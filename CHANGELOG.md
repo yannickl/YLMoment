@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 0.9.1 (2017-05-30)
+- [ADD] watchos support
+
 ### Version 0.9.0 (2017-04-08)
 - [ADD] `isSameMoment` method
 - [REFACTORING] improving the `isBeforeMoment` method 
