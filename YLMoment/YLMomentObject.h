@@ -300,7 +300,7 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * @abstract Returns `BOOL` when comparing if a given moment's date is between two other moments.
  * @param startMoment The starting reference moment being compared against.
  * @param endMoment The ending reference moment being compared against.
- * @return
+ * @return YES if the anotherMoment is an `YLMoment` object and of an later
  * @since 0.8.0
  */
 - (BOOL)isBetweenMoments:(YLMoment *)startMoment andEndMoment:(YLMoment *)endMoment;
