@@ -19,7 +19,7 @@
 	<key>--project-name</key>
 	<string>YLMoment</string>
 	<key>--project-version</key>
-	<string>0.4.1</string>
+	<string>0.9.0</string>
 	<key>--docset-feed-url</key>
 	<string>http://yannickloriot.com/library/ios/ylmoment/</string>
 	<key>--docset-package-url</key>

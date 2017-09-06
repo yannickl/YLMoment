@@ -70,7 +70,7 @@
       break;
     case kCFCalendarUnitSecond:
       components.second = amount;
-      break;
+      /* falls through */
     default:
       break;
   }

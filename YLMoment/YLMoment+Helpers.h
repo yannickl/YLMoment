@@ -36,7 +36,7 @@
  * key.
  * @param key A unit string key.
  * @return The `NSCalendarUnit` corresponding to a given unit string key. `-1`
- * if the key is unknow.
+ * if the key is unknown.
  * @discussion There are some shorthand keys as well if you're into that whole
  * brevity thing:
  *

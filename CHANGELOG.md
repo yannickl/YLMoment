@@ -1,7 +1,18 @@
 ## Changelog
 
-### Version 0.7.0 (under development)
-- [REFACTORING] Create a category for each feature group
+### Version 0.9.1 (2017-05-30)
+- [ADD] watchos support
+
+### Version 0.9.0 (2017-04-08)
+- [ADD] `isSameMoment` method
+- [REFACTORING] improving the `isBeforeMoment` method 
+
+### Version 0.8.0 (2017-01-29)
+- [ADD] `isBeforeMoment`, `isAfterMoment` and `isBetweenMoments` methods
+
+### Version 0.7.0 (2016-11-11)
+- [REFACTORING] use the `floor` instead of `round` to print the elapsed time.
+- [ADD] `Italian` language
 
 ### Version 0.6.0 (2015-11-05)
 - [ADD] `Vietnamese` language

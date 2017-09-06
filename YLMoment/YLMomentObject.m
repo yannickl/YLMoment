@@ -201,6 +201,87 @@
   return NO;
 }
 
+- (BOOL)isSameMoment:(YLMoment *)comparedMoment {
+    if (![[self timeZone] isEqualToTimeZone:comparedMoment.timeZone]) {
+        comparedMoment.timeZone = [NSTimeZone timeZoneWithName:self.timeZone.name];
+    }
+
+    return [self isEqualToMoment:comparedMoment];
+}
+
+- (BOOL)isSameMoment:(YLMoment *)comparedMoment forUnit:(NSCalendarUnit)calendarUnit{
+    if (![[self timeZone] isEqualToTimeZone:comparedMoment.timeZone]) {
+        comparedMoment.timeZone = [NSTimeZone timeZoneWithName:self.timeZone.name];
+    }
+
+    NSCalendar *currentCalendar = self.calendar ?: [[[self class] proxy] calendar];
+
+    NSCalendar *comparedCalendar = comparedMoment.calendar ?: [[[self class] proxy] calendar];
+
+    NSDateComponents *c1 = [currentCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:self.date];
+
+    NSDateComponents *c2 = [comparedCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:comparedMoment.date];
+
+    switch (calendarUnit) {
+        case NSCalendarUnitYear:
+            return (c1.year == c2.year);
+        case NSCalendarUnitMonth:
+            return (c1.year == c2.year) && (c1.month == c2.month);
+        case NSCalendarUnitDay:
+            return (c1.year == c2.year) && (c1.month == c2.month) && (c1.day == c2.day);
+        case NSCalendarUnitHour:
+            return (c1.year == c2.year) && (c1.month == c2.month) && (c1.day == c2.day) && (c1.hour == c2.hour);
+        case NSCalendarUnitMinute:
+            return (c1.year == c2.year) && (c1.month == c2.month) && (c1.day == c2.day) && (c1.hour == c2.hour) && (c1.minute == c2.minute);
+        case NSCalendarUnitSecond:
+            return (c1.year == c2.year) && (c1.month == c2.month) && (c1.day == c2.day) && (c1.hour == c2.hour) && (c1.minute == c2.minute) && (c1.second == c2.second);
+        default:
+            return NO;
+    }
+}
+
+- (BOOL)isBeforeMoment:(YLMoment *)comparedMoment {
+    // If moment is equal to comparedMoment or not a `YLMoment` then return NO
+    if ([self isEqualToMoment:comparedMoment]) {
+        return NO;
+    }
+
+    if (![[self timeZone] isEqualToTimeZone:comparedMoment.timeZone]) {
+        comparedMoment.timeZone = [NSTimeZone timeZoneWithName:self.timeZone.name];
+    }
+    
+    return [_date isEqualToDate:[_date earlierDate:[comparedMoment date]]];
+}
+
+- (BOOL)isAfterMoment:(YLMoment *)comparedMoment {
+    // If moment is equal to comparedMoment or not a `YLMoment` then return NO
+    // Keep isEqualToMoment check before isBeforeMoment to prevent false positive
+    if ([self isEqualToMoment:comparedMoment]) {
+        return NO;
+    }
+    
+    // If moment is before the comparedMoment then return NO
+    if ([self isBeforeMoment:comparedMoment]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (BOOL)isBetweenMoments:(YLMoment *)startMoment andEndMoment:(YLMoment *)endMoment {
+    // Guard condition when startMoment is same as endMoment and the reference moment, return YES
+    // Keep isEqualToMoment checks before isBeforeMoment and isAfterMoment checks to prevent false positive
+    if ([startMoment isEqualToMoment:endMoment] && [self isEqualToMoment:startMoment]) {
+        return YES;
+    }
+    
+    if ([self isBeforeMoment:endMoment] && [self isAfterMoment:startMoment]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 #pragma mark - Proxy Method
 
 + (instancetype)proxy {

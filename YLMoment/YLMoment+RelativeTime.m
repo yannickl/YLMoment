@@ -95,7 +95,7 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
   }
   else if (days < 345) {
     formattedString = [localBundle localizedStringForKey:@"MM" value:@"%d months" table:kYLMomentRelativeTimeStringTable];
-    unit            = round(days / 30);
+    unit            = floor(days / 30);
   }
   else if (years == 1) {
     formattedString = [localBundle localizedStringForKey:@"y" value:@"a year" table:kYLMomentRelativeTimeStringTable];

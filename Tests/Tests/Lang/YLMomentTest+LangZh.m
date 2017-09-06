@@ -114,12 +114,12 @@
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"1个月");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:46 forUnitKey:@"d"];
-    expect([start fromMoment:end withSuffix:NO]).to.equal(@"2个月");
+    expect([start fromMoment:end withSuffix:NO]).to.equal(@"1个月");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:74 forUnitKey:@"d"];
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"2个月");
     
-    end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:76 forUnitKey:@"d"];
+    end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:90 forUnitKey:@"d"];
     expect([start fromMoment:end withSuffix:NO]).to.equal(@"3个月");
     
     end = [[YLMoment momentWithArray:@[@2007, @1, @28]] addAmountOfTime:1 forUnitKey:@"M"];

@@ -70,9 +70,9 @@ static NSString * const kYLMomentOSXBunbleName = @"YLMoment-OSX";
         return [NSBundle bundleWithPath:langPath];
       }
     }
-  }
 
-  return nil;
+    return nil;
+  }
 }
 
 @end
