@@ -54,7 +54,11 @@
 @implementation YLMoment
 
 - (void)dealloc {
-  [self removeObserver:self forKeyPath:@"locale"];
+  @try {
+    [self removeObserver:self forKeyPath:@"locale"];
+  } @catch(id exception) {
+    NSLog(@"YLMoment warning: %@", exception);
+  }
 }
 
 #pragma mark - Creating and Initializing Moment Objects
