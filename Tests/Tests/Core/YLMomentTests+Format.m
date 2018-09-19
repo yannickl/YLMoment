@@ -97,7 +97,7 @@
     moment.dateStyle = NSDateFormatterMediumStyle;
     moment.timeStyle = NSDateFormatterMediumStyle;
 
-    expect([moment format:nil]).to.equal(@"Nov 4, 2013, 2:56:04 PM");
+    expect([moment format:nil]).to.equal(@"Nov 4, 2013 at 2:56:04 PM");
 }
 
 - (void)testFormatLongStyle
@@ -115,7 +115,7 @@
     moment.dateStyle = NSDateFormatterFullStyle;
     moment.timeStyle = NSDateFormatterFullStyle;
 
-    expect([moment format:nil]).to.equal(@"Monday, November 4, 2013 at 2:56:04 PM GMT");
+    expect([moment format:nil]).to.equal(@"Monday, November 4, 2013 at 2:56:04 PM Greenwich Mean Time");
 }
 
 #endif
