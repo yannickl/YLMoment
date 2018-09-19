@@ -17,6 +17,7 @@ Please keep the list sorted.
  * [Chao Ruan](https://github.com/rcgary)
  * [Darren Tong](https://github.com/strictlyd)
  * [Douglas Brito de Medeiros](https://github.com/DouglasMedeiros)
+ * [Eric DeLabar](https://github.com/edelabar)
  * [Jhonathan Wyterlin](https://github.com/jwyterlin)
  * [Fanyj](https://github.com/fanyj)
  * [Michel Albers](https://github.com/michelalbers)

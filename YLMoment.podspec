@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'YLMoment'
-  s.version          = '0.9.1'
+  s.version          = '0.10.0'
   s.license          = 'MIT'
   s.summary          = 'Parsing, validating, manipulating, and formatting dates easily in Objective-C (API inspired by moment.js)'
   s.description      = <<-DESC

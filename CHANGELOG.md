@@ -1,5 +1,8 @@
 ## Changelog
 
+### Version 0.10.0 (2018-09-19)
+- [ADD] Carthage support
+
 ### Version 0.9.1 (2017-05-30)
 - [ADD] watchos support
 
