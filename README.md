@@ -4,7 +4,7 @@
 
 [![License](https://cocoapod-badges.herokuapp.com/l/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Supported Platforms](https://cocoapod-badges.herokuapp.com/p/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Version](https://cocoapod-badges.herokuapp.com/v/YLMoment/badge.svg)](http://cocoadocs.org/docsets/YLMoment/) [![Build Status](https://travis-ci.org/yannickl/YLMoment.svg?branch=master)](https://travis-ci.org/yannickl/YLMoment) [![codecov](https://codecov.io/gh/yannickl/YLMoment/branch/master/graph/badge.svg)](https://codecov.io/gh/yannickl/YLMoment)
 
-YLMoment is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.
+***🕐 YLMoment*** is a library which provides an high abstraction level for parsing, validating, manipulating, and formatting the dates in Objective-C.
 
 Its API is inspired by the well known [moment.js](http://momentjs.com/) library, however unlike its counterpart, its core is built upon the `Foundation Framework` components (`NSDate`, `NSCalendar`, etc.) to enable the interoperability with them.
 
